@@ -54,9 +54,8 @@
     }
   ],
   "remaining_manual_actions": [
-    "Record separate narrated technical demonstration",
-    "Confirm course acceptance of locally rendered videos 02/03 imported into Google Vids; preserve exact production provenance",
     "Verify published links signed out",
-    "Student verifies original source audio excerpts"
+    "Student verifies original source audio excerpts",
+    "Student watches the AI-narrated technical demo and confirms understanding"
   ]
 }

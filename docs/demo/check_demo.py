@@ -4,6 +4,9 @@ from faster_whisper import WhisperModel
 p=Path('data/media/technical-demo');scenes=json.loads((p/'scenes.json').read_text());model=WhisperModel('small.en',device='cpu',compute_type='int8')
 results=[]
 for i,scene in enumerate(scenes,1):
+ cached=p/f'scene-{i:02}-qa.json'
+ if cached.exists():
+  results.append(json.loads(cached.read_text()));continue
  f=p/f'scene-{i:02}_000.wav'
  if not f.exists():break
  segments,_=model.transcribe(str(f),language='en',beam_size=5)

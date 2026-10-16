@@ -19,8 +19,8 @@ Reference: preserved README.md and ARCHITECTURE.md. This is an evidence-based de
 | Three 3–5 minute videos | 244.32 / 269.79 / 261.49 seconds; student listened and approved |
 | Google Vids / HeyGen production | 01 visuals authored in Vids; 02/03 locally authored and imported, then actually exported through Vids. Precise hybrid provenance disclosed; not all visuals Vids-authored. |
 | Free articles and unlisted videos with mutual links | All six URLs recorded and reciprocal links saved; Everyone and Unlisted verified in UI. Signed-out access still pending; YouTube external clickable links need channel verification. |
-| Separate 4–6 minute technical demo | Build/export in progress; see docs/demo and delivery record when complete. AI narration disclosed; student must understand the demonstrated system. |
-| GitHub repository and submission documentation | Public Wuhubing/ps04-research-loop authorized and created; final push verification recorded in SUBMISSION.md |
+| Separate 4–6 minute technical demo | 5:19 video exported, decoded and delivered as a GitHub release asset; production record retains hash and automatic QA. AI narration disclosed; student must understand the demonstrated system. |
+| GitHub repository and submission documentation | Public Wuhubing/ps04-research-loop created and pushed; final push verification recorded in SUBMISSION.md |
 | Reflection and costs | Student suggests larger literature search and cross-domain insights; implementation tradeoffs documented; subscription and local compute costs unknown |
 | Original audio quotation verification | PENDING genuine student listening to the 16 linked source excerpts; finished-video listening does not fulfill this check |
 | One-week working plan | Original seven-day plan retained with actual early completion dates; elapsed work was not backdated or inflated |

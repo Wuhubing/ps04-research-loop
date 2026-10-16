@@ -39,9 +39,12 @@ def main():
    production=[read(r/f'video_{p}_production.json') if (r/f'video_{p}_production.json').exists() else {} for p in ['01','02','03']]
    if all(x.get('cloud_production_url') for x in production):
     pending.remove('Produce three videos in Google Vids')
-    pending.append('Confirm course acceptance of locally rendered videos 02/03 imported into Google Vids; preserve exact production provenance')
+    if not all(x.get('vids_export_completed') for x in production[1:]):pending.append('Export imported videos 02/03 through Google Vids; preserve hybrid production provenance')
    if not published.get('signed_out_access_verified'):pending.append('Verify published links signed out')
    if not all(x.get('human_source_listening') for x in production):pending.append('Student verifies original source audio excerpts')
+  if (r/'technical_demo.json').exists() and read(r/'technical_demo.json').get('url'):
+   pending.remove('Record separate narrated technical demonstration')
+   pending.append('Student watches the AI-narrated technical demo and confirms understanding')
   manifest=dict(review_id=current['review_id'],assets=assets,remaining_manual_actions=pending)
   write(dest/'manifest.json',manifest)
   if not (dest/'publication_links.json').exists():write(dest/'publication_links.json',[dict(piece_id=p,substack_url=None,youtube_url=None) for p in ['01','02','03']])

@@ -1,3 +1,9 @@
+# Delivered technical demonstration
+
+The 5:19 saved-artifact walkthrough is now delivered via the GitHub release linked in SUBMISSION.md. Its script is docs/demo/narration.md; production and automatic QA records are in the latest editorial run. This uses AI narration and readable excerpts, not a live screen capture. Student playback and understanding verification remain pending.
+
+## Original recording outline (retained)
+
 # Technical demonstration recording outline
 
 This is a recording guide, not a completed video. Target 4–6 minutes. Narrate in English and keep the terminal and evidence text large enough to read. Record after the second live run and genuine student review; do not claim those steps have happened until they have.
