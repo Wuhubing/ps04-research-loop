@@ -1,0 +1,14 @@
+{
+  "stage": "create_series",
+  "status": "completed",
+  "input_count": null,
+  "output_count": null,
+  "started_at": "2026-10-14T03:36:38.098659Z",
+  "finished_at": "2026-10-14T03:50:34.293344Z",
+  "tools_or_models": [
+    "bash"
+  ],
+  "cost_usd": null,
+  "cost_estimated": false,
+  "errors": []
+}

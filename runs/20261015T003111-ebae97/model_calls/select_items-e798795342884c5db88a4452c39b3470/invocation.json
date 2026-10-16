@@ -1,0 +1,7 @@
+{
+  "provider": "ChatGPT-authenticated Codex CLI",
+  "model": "gpt-6-astra",
+  "model_source": "Explicit CLI argument from local model setting",
+  "reasoning_effort": "medium",
+  "cost_usd": null
+}

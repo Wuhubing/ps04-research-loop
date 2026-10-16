@@ -1,0 +1,30 @@
+{
+  "evidence_versions_unchanged": 23,
+  "newly_eligible_count": 0,
+  "changed_version_count": 0,
+  "verdict_changes": [
+    {
+      "item_id": "b1f8d59a9e19a86e11b1f913",
+      "before": {
+        "item_id": "b1f8d59a9e19a86e11b1f913",
+        "version_id": "d65818cf27d705500dbc6ee16a00aa24ff79c55f10cb82e034d39e559cbc1994",
+        "decision": "defer",
+        "reason": "October 5 publication is in-window and the workspace-preserving context reset is directly relevant to student experiment design. However, defer this version until supporting artifacts and reporting inconsistencies are resolved. The headline 66.0% and 44.4% improvements concern min\u2013max normalized aggregate scores, not universal task gains; LWE-rec favors the single-run baseline ([saved text, Table 1 and \u00a75.2](data/assets/b1f8d59a9e19a86e11b1f913/d65818cf27d705500dbc6ee16a00aa24ff79c55f10cb82e034d39e559cbc1994/text.txt)). Section 5.1 says every run uses the 33%/66% cadence and five replicates, whereas Appendix G includes 50% rounds and Appendix B specifies four tinyCIFAR seeds. Appendix A's Borden-inv means differ from Table 1 without a clear reconciliation. Appendix I labels prompts but omits their actual text; no accessible study-code or run-log link is supplied. Equal token-credit budgets do not establish equal total execution cost: Appendix B explicitly distinguishes credits from wall-clock and includes GPU training without sufficient hardware accounting. The embedding's held-out agreement tests the same model's similarity judgments, not independent scientific validation (\u00a73; Appendix F). The work was conducted at Microsoft Research and evaluates GitHub Copilot CLI, an institutional commercial connection to disclose (\u00a71 footnote; \u00a72; acknowledgments). No independent replication is supplied. Potential novelty is inference-time search control, explicitly without weight updates (\u00a77), but the present evidence cannot support a reproducible performance recommendation.",
+        "piece_ids": []
+      },
+      "after": {
+        "item_id": "b1f8d59a9e19a86e11b1f913",
+        "version_id": "d65818cf27d705500dbc6ee16a00aa24ff79c55f10cb82e034d39e559cbc1994",
+        "decision": "accept",
+        "reason": "The supplied October 5 publication date is in-window. Accept for the proposed intervention and evidence scrutiny: preserve the workspace, clear conversation context, branch under a budget and select by an external grader. This directly informs students' experiment scheduling; it changes inference-time search, not model weights ([saved text, \u00a7\u00a72, 4 and 7](data/assets/b1f8d59a9e19a86e11b1f913/d65818cf27d705500dbc6ee16a00aa24ff79c55f10cb82e034d39e559cbc1994/text.txt)). The authors report matched token-credit baselines across 13 tasks and fork-only/flush-only ablations on 11 (\u00a7\u00a75.1\u20135.3). Credits meter model tokens, not total hardware expenditure or elapsed time (Appendix B), so equal credits cannot establish lower total cost or faster execution. Explicitly disclose unresolved reporting conflicts: \u00a75.1 says five runs per task and a universal 33%/66% schedule, while Appendix B gives four tinyCIFAR seeds and Appendix G reports some 50% schedules; \u00a76.1 describes a 71% trigger. Table 1 and Appendix A disagree on Borden-inv means (64.62/85.85 versus 59.92/80.24), without a supplied reconciliation. Do not use the headline 66.0%/44.4% normalized-score gains to establish best-result claims until clarified; Table 1 also shows LWE-rec favoring the serial baseline. The idea-basin interpretation depends on an LLM generating specifications and judging their similarity; held-out triplets and a second embedding validate agreement with that judge, not independent scientific ground truth (Appendix F). Human review is a safeguard, not evidence that bias occurred. Researchers choose tasks, graders and schedules. Full prompt bodies are missing from the supplied Appendix I, hardware details are insufficient for complete cost reproduction, and no independent replication is supplied. Microsoft Research internship affiliation is disclosed in the acknowledgments; this is an interested author evaluation, not external validation.",
+        "piece_ids": [
+          "01",
+          "02",
+          "03"
+        ]
+      }
+    }
+  ],
+  "wording_only_decision_changes": 22,
+  "interpretation": "Controlled snapshot comparison under a changed policy, but not a deterministic causal experiment: model variability can also affect decisions and wording. Six original student-reviewed verdicts remain unchanged. Fork-and-Flush method-only acceptance is an AI extension, not a student-reviewed case."
+}

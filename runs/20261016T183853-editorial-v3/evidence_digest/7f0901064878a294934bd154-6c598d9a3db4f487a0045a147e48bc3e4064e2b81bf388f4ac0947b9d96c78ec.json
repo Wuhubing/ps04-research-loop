@@ -1,0 +1,78 @@
+{
+  "item_id": "7f0901064878a294934bd154",
+  "version_id": "6c598d9a3db4f487a0045a147e48bc3e4064e2b81bf388f4ac0947b9d96c78ec",
+  "synopsis": "This accepted preprint contributes author-reported controlled experiments to pieces 01–03: what ML engineering work a single coding-agent session can perform, how to compare added orchestration, and how selection protocols and costs affect trustworthy results. Its evidentiary role is a primary experimental report about the authors’ own system, not independent replication. It supports testing a minimal baseline under matched resources, while retaining human choices about tasks, prompts, benchmark repairs and configurations. The passages below are the citation anchors; this orientation does not independently support later claims.",
+  "limitations_and_counterevidence": "Statistical indistinguishability does not establish equivalence or universal harness redundancy. The weaker Gemma backbone favors MLEvolve on percentile; frontier results also depend on metric and backbone. Original default29 ablations and repaired fixed30 comparisons must remain distinct. NatureBench uses repeated online evaluation and oracle-best scoring, with unequal scoring opportunities. Malena’s modeled inference cost can exceed a more elaborate harness’s cost; cache hits are estimated, and inference hosting is separate from experiment hardware. Limited seeds, possible contamination and tuning asymmetry constrain interpretation. The supplied source documents settings and repairs but supplies no independent replication or external researcher assessment; its reproducibility statement is not evidence that a complete executable release and all raw traces were independently reproduced.",
+  "passages": [
+    {
+      "purpose": "Methods and trustworthy evaluation: distinguish validation-based self-selection from hidden-test oracle selection, identify the confidence-interval scope, and record experiment hardware.",
+      "locator": {
+        "type": "text",
+        "quote": "When reporting performance of a method that produces several submissions, we distinguish between self-selection, where the reported submission is the one with the best validation score reported by the agent, and oracle selection, where it is the one with the best hidden test score.\nUnless otherwise specified, we report self-selected performance. Percentile indicates the percentage of human leaderboard entries that score worse than the agent.\nWe report 95% Confidence Intervals (CIs) on macro-task averages, holding the set of tasks fixed and bootstrapping on the seeds available for each task.\nUnless otherwise stated, we report results with the GLM 5.2 backbone; Appendix [A.4](#A1.SS4) lists all models used.\nAcross all experiments, agents’ resources stay fixed at 1\\(\\times\\)A100 80GB, 12 CPU cores and 144GB of RAM; backbones are served locally with vLLM ([Kwon et al., 2023](#bib.bib24))."
+      }
+    },
+    {
+      "purpose": "Delegation boundary: describe the agent’s freedom to design and execute pipelines within a human-configured environment and time budget, including the harness’s continuation mechanism.",
+      "locator": {
+        "type": "text",
+        "quote": "Malena. The same coding-agent environment as Oneshot, but the session is allowed to span the iteration’s entire time budget in place of a single production run, and the one-production-run and documentation requirements are lifted. The instructions grant the agent freedom to design any number of pipelines and produce any number of submissions, dividing its budget as it sees fit. The harness drives the session as a turn loop: whenever the agent ends a turn before the budget expires, it is re-prompted with a short follow-up message that reports the remaining time."
+      }
+    },
+    {
+      "purpose": "Human intervention and benchmark comparability: preserve the distinction between original default29 ablations and repaired fixed30 external comparisons.",
+      "locator": {
+        "type": "text",
+        "quote": "Results presented in Section [4](#S4) are reported on the original MLE-bench without any intervention, and in the 29 task split (without either bms or alaska2).\nThis split is referred to in this work as the default29 task split.\nWe note that a subset of our tasks has been previously reported containing issues in the MLE-bench preparation scripts.\nSuch issues may include missing data needed to correctly train ML pipelines, data present that leaks the ground truth predictions, etc.\nWe have identified four competitions that could either lead to impossible tasks or are susceptible to cheating.\nIn order to maintain a fair comparison set between our baselines and other tested public harnesses, we fixed such issues and report their performance for all results in this paper when comparing against existing baselines.\nSuch tasks are marked with ‡ in Table [3](#A1.T3) and the split is labeled as the fixed30 set in this paper."
+      }
+    },
+    {
+      "purpose": "Comparisons and counterevidence: retain backbone-dependent findings and the significant weaker-model regression; the authors’ word “equivalent” must not be upgraded into demonstrated equivalence.",
+      "locator": {
+        "type": "text",
+        "quote": "We find that Malena outperforms every presented baseline at the GLM 5.2 backbone across both performance metrics; obtains strictly better percentile scores for Kimi K3, and either beats or comes up as statistically indistinguishable at the DeepSeek V4 Flash.\nThe only backbone where Malena presents a significant regression against other baselines is with Gemma 4 31B — the weaker of all models tested — where MLEvolve outperforms according to the percentile metric, while maintaining an equivalent medal rate at our current statistical power."
+      }
+    },
+    {
+      "purpose": "Reported headline result and matched comparison: anchor the authors’ GLM medal-rate comparison without treating it as a universal result.",
+      "locator": {
+        "type": "text",
+        "quote": "Holding the model, hardware, and budget fixed, none of the published harnesses we tested significantly outperforms the plain agent session with frontier backbones. With GLM 5.2, Malena earns a medal on 62.5% of the competitions, compared with 47.1% for the best external harness tested. Across all backbones, our statistical analysis either favours Malena over the other harnesses or finds no significant medal-rate difference between them."
+      }
+    },
+    {
+      "purpose": "Cost counterevidence: minimal orchestration does not imply cheaper inference; preserve the modeled nature of the comparison and the proposed cache-volume explanation.",
+      "locator": {
+        "type": "text",
+        "quote": "Although total token volumes are comparable across agentic harnesses, cost is driven\nalmost entirely by cache-read tokens. At GLM 5.2, Malena’s modeled\nUSD cost ($12.12) is \\(\\approx\\)6.2\\(\\times\\) AiScientist’s ($1.95), even though its input and\noutput token volumes are comparable to Arbor’s and AiScientist’s --- only its cache-read\nusage is roughly an order of magnitude higher."
+      }
+    },
+    {
+      "purpose": "Cost and reproducibility qualification: separate inference-hosting hardware from experiment hardware and preserve pricing assumptions and missing cache telemetry.",
+      "locator": {
+        "type": "text",
+        "quote": "All backbones are served locally with vLLM ([Kwon et al., 2023](#bib.bib24)) on 8\\(\\times\\)B200 or 8\\(\\times\\)A100 80GB nodes for smaller models.\nUnless otherwise specified, all models run with reasoning enabled at their maximum available configuration, and at their canonical maximum sequence length.\nInput and output costs, when reported, are the weighted effective per-token prices listed\nfor each backbone on [https://openrouter.ai/](https://openrouter.ai/) — a marketplace that aggregates\nmultiple inference providers per model and reports a usage-weighted effective price across\nthem, rather than any single provider’s list price — snapshotted around September 2026.\nCache-read cost is modeled as \\(0.1\\times\\) the input cost: none of the harnesses compared\nhere report real cache-hit token counts directly (see the per-method telemetry notes in\nSection [5.1](#S5.SS1) and Appendix [D.4](#A4.SS4)), so this\nis a fixed discount applied uniformly rather than a per-backbone reported cache price."
+      }
+    },
+    {
+      "purpose": "Evaluation counterevidence: NatureBench’s oracle-best metric rewards repeated scoring opportunities, potentially disadvantaging MLEvolve independently of strategy quality.",
+      "locator": {
+        "type": "text",
+        "quote": "Because the harness’s own protocol reports the best score achieved anywhere in the run —\nan oracle score, as described in Appendix [A.3](#A1.SS3) — rather than a\nself-selected final submission, this metric implicitly rewards however many independent\nattempts a harness manages to get graded within the time budget, on top of whatever quality\ngains its search process makes. Table [21](#A4.T21) reports the number of\n/evaluate calls per run for each harness, across our full NatureBench run cohort.\nMalena and AiScientist call the endpoint at a broadly similar rate\n(median 16 and 18 calls per run, respectively); MLEvolve calls it substantially less often\n(median 8 calls per run). Since a benefit under an oracle-best-of-run metric scales with the\nnumber of independent scoring opportunities exercised, this asymmetry may put MLEvolve at a\nmechanical disadvantage on this particular metric, independent of any difference in the\nquality of the strategies it discovers."
+      }
+    },
+    {
+      "purpose": "Limitations and competing explanations: retain the authors’ contamination, statistical-power, coordination-scope and tuning-asymmetry qualifications.",
+      "locator": {
+        "type": "text",
+        "quote": "Most of our results rely on MLE-bench, which has known task-preparation\nissues and, being built from public Kaggle competitions, is a plausible contamination target;\nwe mitigate this by fixing broken tasks, directly checking for contamination, and additionally\nevaluating on NatureBench. A second limitation is statistical power: some results still have\nconfidence intervals wide enough to preclude strong claims about effect size, though we believe\nthe weaker no-worse-than claims are well supported.\nA third is scope: most harness interventions we test operate within a single worker, and we leave a more in-depth exploration of sophisticated inter-agent coordination protocols to future work.\nA fourth is possible asymmetry in tuning effort between Malena and the external harnesses it is compared against; Appendix [D.3](#A4.SS3) documents the backbone-specific bug fixes and configuration ablations we applied to each external harness to mitigate this."
+      }
+    },
+    {
+      "purpose": "Reproducibility and statistical-power gap: anchor the actual seed budget and preserve the authors’ qualification on effect-size claims; their confidence in “no worse” remains an attributed interpretation.",
+      "locator": {
+        "type": "text",
+        "quote": "A second limitation is statistical power. Some of our results still have confidence\nintervals wide enough that we cannot make strong claims about the size of an effect; we\nbelieve our weaker claims of Malena being no worse than a given baseline are well\nsupported (Appendix [A.5](#A1.SS5) reports the paired-comparison methodology this\nrelies on), but stronger claims about exactly how much better should be read with this in\nmind. This is a direct consequence of cost: running agents for the full 24-hour budget is\nexpensive, so we could only afford 3–4 seeds per task at 24 hours, versus 6–10 seeds per\ntask for our 6-hour and completion-only conditions."
+      }
+    }
+  ]
+}

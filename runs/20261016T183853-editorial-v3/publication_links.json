@@ -1,0 +1,19 @@
+{
+  "verified_at": "2026-10-16T20:04:51.908879+00:00",
+  "youtube": {
+    "01": "https://youtu.be/GpkQYzDhcTs",
+    "02": "https://youtu.be/dYsUBNhOEtA",
+    "03": "https://youtu.be/l2P54o1BgG8"
+  },
+  "substack": {
+    "01": "https://researchloopweibing.substack.com/p/research-loop-delegate-the-experiment",
+    "02": "https://researchloopweibing.substack.com/p/research-loop-a-better-score-is-only",
+    "03": "https://researchloopweibing.substack.com/p/research-loop-build-an-experiment"
+  },
+  "technical_demo": null,
+  "signed_out_access_verified": false,
+  "external_source_links": "Source URLs included; Studio warns external clickable links require channel verification.",
+  "reciprocal_links_verified": true,
+  "substack_access": "Everyone; free web publication; email delivery disabled",
+  "substack_signed_out_verification": "External unauthenticated fetch tool could not access newly published URLs; Everyone setting and full reader-facing pages verified in signed-in browser."
+}

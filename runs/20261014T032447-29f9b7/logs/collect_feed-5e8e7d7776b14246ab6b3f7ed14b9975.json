@@ -1,0 +1,18 @@
+{
+  "stage": "collect_feed",
+  "status": "failed",
+  "input_count": 3,
+  "output_count": 2,
+  "started_at": "2026-10-14T03:24:47.122572Z",
+  "tools_or_models": [
+    "requests",
+    "feedparser"
+  ],
+  "cost_usd": null,
+  "cost_estimated": false,
+  "errors": [
+    "arxiv-seeds: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=45)",
+    "arxiv-discovery: 429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:autoresearch&sortBy=submittedDate&sortOrder=descending&max_results=8"
+  ],
+  "finished_at": "2026-10-14T03:26:43.859375Z"
+}

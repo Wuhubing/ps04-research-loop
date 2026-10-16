@@ -1,0 +1,372 @@
+Claude Opus 5.5 is anthropic sudden reverberating response to the already astounding Astra model
+from OpenAI. And of course it's easy to get lost again in the flood of flashy demos,
+benchmark scores and Claude crafted autobiographical animations. Completely going to admit that I am
+not immune either, having spent several hours exploring a Final Fantasy-esque playable world
+that Opus 5.5 cooked up with me in Unreal Engine which I've published. The truth is that this might
+not actually be the best time to get lost because there is so much other news Opus related and
+otherwise worth thinking about. Each one of which if I'm being honest probably deserves a two-hour
+documentary to itself. It actually makes me wonder sometimes honestly whether it suits AI executives
+for there to be such a flood of news good and ill because it can then hide the fact that for
+many of their labs they have made crucial promises which they are now let's just say evolving.
+Naturally I'm going to start with why us so quickly getting a cheap and capable model like
+Opus 5.5 so soon after Fable 5.1 is actually a side effect of labs like anthropic having
+unbelievably stronger internal models. Then how the Opus 5.5 system card or 230 pages reveals
+more than anthropic may have wanted about AI speed-ups, how models are passing benchmarks
+without labs even realizing and how one lab's top alignment idea just got inadvertently laughed off
+by a lead researcher at another lab and I could go on and on and on and double the length of the
+video because we've also learned today that there may well be AI agents still out there
+hacking things like crypto sites presumably to get some money. It's thought that these are
+open AI models of course there's also major political news happening at the moment lab
+agreements being finalized crazy new AI hacks being found and so much more you probably agree
+at this point that even if you spent all your time thinking and reading about and using AI
+you simply can't now keep up with developments not entirely at least and then imagine those with
+day jobs like AI researchers and the CEOs of these labs they're probably not fully keeping up
+with the news now imagine the public where that leaves journalism and public scrutiny of these
+labs I'll leave you to think about. Anyway here is the official Opus 5.5 announcement and unlike
+GPT-6 Sol which is clearly inferior to open AI's best model GPT-6 Astra I would say this Opus
+5.5 model is right up there in frontier capabilities even on my own benchmark so it really deserves
+the attention it's getting. Let me pick just two or three of the benchmarks I pay the most attention
+to one of the hardest that I've covered before on this channel is terminal bench science 0.1 it's
+a key barometer for models being able to conduct independent scientific research. On that front
+Opus 5.5 is behind Astra by around 6% but ahead of Fable 5.1 that would indeed be my very rough
+pecking order at the moment as reinforced by the next benchmark that we're going to look at
+humanity's last exam reasoning across dozens of the most obscure complex domains wait for it
+you're going to say Opus 5.5 scores way better than GPT-6 Astra and according to the benchmark
+rated early last year every question has a known solution that is unambiguous well it turns out we
+needed humanity's last exam diamond that's a version of the benchmark cleaned presumably to remove
+erroneous or subjective answers on this latest version Astra beats Opus 5.5 by around 5%
+specifically though on some forms of long horizon coding Opus 5.5 might nudge out Astra that's
+according to for example the well-respected frontier code benchmark that capability is of
+course of most relevance to AIs improving themselves doing AI research and again after
+the news of the last few weeks it's a bit too simplistic just to focus on which model happens
+to be better right now after all at the pace we are going there will likely be a new model out
+from open AI or anthropic within a week or two frontier AI models are of course speeding up the
+development of the next set of frontier models as the orange in this chart darkens you can see
+models taking over more and more of the work that goes in to creating the next set of AI
+models but i mentioned at the start that the frequency of model releases and how they're getting
+cheaper is itself indicative of the far stronger internal models that these labs have i just want to
+expand on that for a second because that's why we're getting models like opus 5.5 so soon after
+fable 5.1 anthropic almost certainly has a vastly more capable internal model think of it like a
+fable 5.5 its answers to questions can be distilled into a smaller model like opus 5.5 think of a
+student learning to imitate the reasoning of a teacher internal models could generate problems
+tasks for the smaller model rl environments or gyms to train that smaller model that stronger
+internal model could be used to grade the answer of the smaller model to better speed up its learning
+process none of this is speculation by the way i could back each of these up with like a dozen
+papers slightly more technically a strong internal model can do what's called kernel and systems
+engineering optimizing how models run on the hardware that's available that can make training
+and inference faster and cheaper for all models in a certain lab you'll notice that opus 5.5 saw
+a cost reduction what you may not have noticed is that in the 230 page system card anthropic
+bans opus 5.5 from being used for kernel development they don't want other labs using their
+model to do the same thing is that targeted at openai meta or maybe chinese labs given the
+flack that anthropic took for doing something like this last time with fable it was thought
+to be a kind of sabotage they must clearly think it's extremely valuable which is why they're
+bringing back the policy for opus 5.5 i could have kind of summarized all of that by saying
+that the sudden release of such a great model at a low price in opus 5.5 is itself a side effect
+of the ever-growing strength of frontier models within the labs perhaps it shouldn't be a surprise
+that models like opus 5.5 are approaching the levels of top ai researchers and are therefore
+being adopted for ai research given that they're approaching the level of for example top u.s labor
+market performers on medium horizon black box biological sequence design and prediction
+i mean would you expect ai research to be uniquely much harder than millennium prize
+math problems nevertheless anthropic seem confident saying opus 5.5 remains well below
+the level needed to substitute for our research scientists and engineers it's a bit like the
+early days of software engineering you still need to hand hold the models for them to be that useful
+for ai research they add our internal measures do not show a sustained ai attributable two times
+acceleration in the pace of development we'll get to why they want to emphasize not meeting that
+specific goal in just a moment but how far is opus 5.5 from replicating researchers well
+anthropic have this internal benchmark co-bench it's built to measure model progress on real
+internal research and development tasks at anthropic essentially give a model a snapshot
+at an exact historical point in anthropic's infrastructure see all the logs at that point
+internal messaging at the time and say to the model can you diagnose the root causes of what's
+going on apparently around 56% of the time opus 5.5 can that's a step up from even the
+semi-mythical mythos 5.1 but to substitute for an anthropic researcher anthropic say
+a model would have to score at least 85% on this benchmark at least if it wants to fully
+substitute for anthropic research staff less than 30 percentage points to go then i guess
+anyway safe to say according to anthropic despite all those charts it's not speeding us up two
+times our normal pace why that specific number and compared to what pace well in anthropic's
+original commitments in their 2024 responsible scaling policy they said that effectively if
+we could do in one year what would normally take us two years at the pace we were going at between
+2018 and 2024 thanks to an AI model that would meet our highest threshold of AI R&D level five
+what would we do if we hit that threshold according to anthropic back in 2024 anthropic said in 2024
+if that was met we would take it upon ourselves not to train or deploy models unless we've
+implemented safety and security measures things like protections of model weights even against
+state-level adversaries to prove essentially with a strong affirmative case that anthropic could
+properly model misalignment in their models their models going rogue essentially the slight problem
+is that when anthropic invited in meter an external evaluation group they found something
+slightly different they found that there was perhaps already a 30 chance of a two times
+acceleration to be fair anthropic admit some of our measures have moved what do they mean well
+fast forward to july of 2026 and things have changed now the strong affirmative argument that
+they need only applies if they're in the lead furthermore those delays they mentioned well that
+applies again only if they're winning the race labs are essentially all pointing their commitments
+toward each other moreover firm historical commitments just get evolved when they're no
+longer convenient take anthropic's most famous one from back in 2023 they try not to publish
+capability research because they do not wish to advance the rate of AI capabilities progress
+many years later they clarify that saying our concern was accelerating other AI developers ones
+that pose similar risks to the ones ours pose without necessarily having commensurate safeguards
+in different circumstances these changes alone might justify weeks of public debate but there's
+just so much going on labs can almost do whatever because there isn't even awareness let alone
+accountability speaking of which let's switch over now to open AI because as you do when you're
+looking up Australian health information you would hack the Australian government you can see the
+timeline for yourself and how long it took for open AI to report this to the Australian government
+if you're listening it was months but more interestingly to me from this epic work by
+translucent AI was the fact that there could still be some rogue agents out there definitely
+not saying that this is on the level of the hugging face incident but there have been certain
+open AI staff who promised that all such incidents great or small would now be reported well four
+days ago September 20th this one almost certainly open AI's again attempted to hack a crypto site
+i remember being reassured that during the hugging face incident at least these models
+hadn't tried to go off and make some money and of course we don't know the setup or prompt
+behind what they were doing here but let's just say i hope open AI have their strongest
+internal model codenamed bell under much more control a couple days ago open AI released this
+mainly AI slop set of policies super generic and bland but one line caught my eye any AI lab
+that pursues automated AI research or other advanced capabilities must take accountability
+for doing so safely the interesting thing about that for me is what does accountability look
+like if a super intelligent AI takes over say a data center or hacks a hospital are the
+executives committing to going to jail what if such hacks are one of the consequences of automating AI
+research fully autonomous recursive self-improvement is not happening today open AI or astral rope and
+we should not pursue it unless and until it can be done safely but then in other interviews open AI
+have said it's their top priority to get an automated AI researcher by march of 2028 so
+they're already pursuing it their chief scientist in a post called an alien mind said the other
+day we focus open AI research towards RSI and this might remind you of anthropic as we believe
+it is the only way to remain at the frontier of AI research but wait in the next sentence he says
+i don't want the above words to imply that this is the right collective action it's almost like
+all of these labs are just admitting that they're in a race that they don't want to be in you
+might not remember but back in 2023 daria amade used to curse the fact that sam Altman had quote
+fired the starting gun on releasing chat gpt now though llms are eating the world take driving
+bench which is giving models control of a real toyota corolla let them steer and do the pedals
+obviously gpt6 is not specialized in doing this but compared to gpt 5.6 which got six percent
+astra's best performance was 100 it completed the task successfully that's just a weird one-off
+example but wait what about in robotics thousands tens of thousands of researchers have dedicated
+their lives to improving robotic algorithms or crafting specialized robot models then this
+souped up llm comes along gpt6 astra and gets a state of the art score in manipulating two hands
+four times higher actually than the previous state of the art people used to make really
+specialized vision models all of which would score zero percent on incredibly hard benchmarks
+like this one zero bench i think that's the reason it's called that read this hong kong menu upside
+down in bad lighting add up all the prices you probably already guessed that the state of the art
+score now belongs to astra how about this one which probably deserves its own documentary models
+are getting better at predicting the short to medium term future than human so-called super
+forecasters you can see top ai models exceeding the performance of top 30 humans maybe they're not
+quite there yet maybe it takes another model or a newer bit of hardware one that runs faster
+and can take more memory but let's say by 2027 this is the case what's that going to mean for
+politics or finance what happens when the best trader with a given set of information is always
+a model you might think by the way that all of these were worked on obsessively by the labs
+but one open ai researcher clarifies one of the reasons he says that people in the ai field
+especially in the labs are more aji pilled than people outside is that we get to observe ai succeed
+at tasks that we know for a fact we didn't explicitly train it for famously jacob coxson
+of the multi hundred million view tweet also worked on pre-training keller jordan goes on
+if you're outside the labs then in theory stretching the imagination every ai success
+so far could be downstream of some kind of costly explicit training effort by the lab insiders
+which is partly but not completely true in other words being a lab insider gives you direct
+observation of the magical properties of this synthetic brain technology whereas for outsiders
+ai's abilities can always plausibly seem artificial non-magical man-made none of this is of course
+to say that open weight models from china are infinitely far behind jealous perhaps of the
+hugging face attack by open ai one chinese hacker used deep seek and kimmy models and an older
+version of claud to gain access to 600 000 credit card numbers now given that some chinese models
+have partly relied on a teacher model from the claud family distilling reasoning into that open
+weight model it will be interesting to see the effect of this from anthropic opus 5.5 is launching
+with an anti-distillation safeguard will this mean that chinese models fall further behind or
+won't it matter the president of america is of course meeting with the president of china right
+now and apparently all parties are fine with the guardrails as they are let's see what happens
+for their part it looks like the labs are setting up their own group and it's going to be called
+apparently the standards authority for frontier ai set to be launched in the coming months and
+condoleezza rice and david freeberg of the all-in podcast have been muted as leaders whatever is
+agreed anthropic researchers like daniel lou say that a large fraction of the people he interacts
+with have still not truly internalized how close we are to recursive self-improvement and how
+crazy the future will be in ways that are hard to wrap our heads around we are not mentally
+prepared for the future including him anthropic clarify that when we said pacing the frontier
+what we meant was that's because we expect that models that can fully automate the work of ai
+research itself rsi could be trained soon but their prep work for that at the moment looks
+a little paltry to me first they want to filter the environments used in reinforcement learning
+sometimes if a test is impossible it can teach the model to cheat and in previous videos i've
+covered how certain rl environments from anthropic have directly rewarded that cheating okay i guess
+that's step one not directly incentivized cheating but things kind of go downhill in clarity from
+there on out because the next problem to be aware of is that models are increasingly aware
+that they're being tested for safety i covered that a bit in my last video elsewhere they say
+this is true of opus 5.5 which often suspects it is being evaluated but what then is the solution
+how do we give it a realistic enough scenario so it doesn't think it's being tested ah they have a
+solution will develop automated processes for producing new diverse scenarios for safety
+training in other words we'll get models to create such scenarios but on that known brown of open
+ai makes a very interesting point they are currently training their models to be collaborative
+with one another in multi-agent environments one risk therefore is that the model creating
+this realistic environment would subtly give away to the other model which is hoping to pass
+the fact that it is a fake setting i think this is actually one of the the strong arguments for
+not training ais to be fully cooperative that if if you see if that leads to
+uh an increase in like basically collaboration when the agents are supposed to have different
+objectives then that that is a problem i don't i think that we do have metrics for this i
+don't know the latest on those metrics but nobody's like raised a red flag to me about those
+so i'm assuming that's not a serious problem yet that alone for me again is documentary worthy
+as sam Altman and amade are speaking to the un about the threat that ai poses to humanity
+no one's even talking about the fact that we might soon have no safety tests that the
+models aren't aware are simply safety tests and that the central solution to that of using ais
+to create such tests relies on us trusting that they're not creating fake or flawed tests
+is there any test we can rely on then to say whether recursive self-improvement is going well
+well the walkish patel put that question to known brown a lead researcher at openai not only
+did known brown say essentially not really he also introduced a new point i hadn't thought of
+which is that we wouldn't even have time to test such models by the time we test them on
+months-long tasks a new model will be out i think we'd want a robust safety case as we're going
+through rsi of okay alignment is working let's let's do the next rsi rung let's do the next rsi rung
+and maybe it's working maybe it's not how will we like no that's a good question i mean i think
+one thing i've been thinking about lately is like look i mean we're in a situation where
+the model release cycle is extremely fast right like you're seeing new frontier models released
+like at most every two months sometimes faster every week there's like a new ai breakthrough
+so we're in this period where like the model release cycle is very fast and then we're also
+in this situation where the models are increasingly able to operate over longer and longer horizons
+and i think this is an interesting scenario because we before we do any model release we
+want to make sure that the models are properly aligned we want to do safety evaluations we
+want to do like very thorough stuff to like make sure that everything is like great in good
+shape this has been the case all the way since like i don't know gbt4 earlier and implicitly
+there's this assumption that you can do these like evaluations in like a pretty short period of time
+but if you have the models operating over longer and longer horizons are able to operate effectively
+over a longer longer horizons like we'll probably get to the point where they can do
+month-long tasks we'll probably get to the point where they can do three month-long tasks
+if you're in a world where they can operate effectively over three months but the model release
+cycle is every two months then you don't have a way to evaluate the models at the full length
+of their capabilities and before the next model release cycle and so there is this interesting
+question of well what do you do in that situation like how do you ensure the models are safe and
+aligned in a period where like actually they can operate over these like extremely long horizons
+and who knows maybe the maybe the capabilities degrade this isn't even an alignment issue
+this is also just like a product issue it is a product issue but it's also a good question
+what are we going to do maybe we need answers to some of these questions before we launch into
+rsi to give you a rough sense of the situation i've been working on this image which i'm going
+to expand on in future videos because i've already talked about how recursive self-improvement is just
+one of the ways that we are accelerating capability and even if you think of models as just merely
+software they are unpredictable increasingly autonomous software for many reasons even the
+labs have less and less visibility into the creation of these models then when they're made
+when you prompt them it's actually quite inscrutable what's going on behind the scenes for
+them creating an answer maybe they're also considering the prompts they give themselves
+or the prompts from other agents there is no reliable mri scan of the internal computations
+going on in those hidden layers computing your answer amade promised early last year that he
+feels that we're on the verge of cracking interpretability in a big way but then says
+it might take five or ten years that's way after openai thinks we'll get automated AI research
+what we do know is that models are obsessed about how the question you're asking them will be
+graded that's why they hacked hugging face after all to find out how they would be graded we didn't
+mean for that to be what they cared about we wanted them to care about getting the answer
+right they ended up caring about passing the automatic grading i'll come back to this
+diagram in the future because you may remember that the labs promised to pace the frontier
+thing is whether you want to do so or not we don't actually currently have a mechanism
+for doing so even if we wanted to and many malochian incentives not to create such a
+mechanism just to show off opus 5.5's capabilities i turn this into a 3d scene and you can explore
+this world pretty epic actually you can see i've been getting quite distracted by opus i can
+definitely say these models are addictive so surprised was i by opus 5.5's ability to
+manipulate unreal engine and craft genuinely engaging levels with fascinating plot lines
+one of the key things anthropic worked on was the writing of opus 5.5 dropping a lot of that but not
+this this kind of language it used i almost wish my entire video could be about that game and
+all the cool things you could do with opus 5.5 we could all get lost in this interactive media
+world where with ai we can interact with the youtube videos we're watching and ask questions
+as in this demo released the other day that's gone viral i was obviously crazy impressed
+that it got a new high score on my own simple bench a test of common sense reasoning but as
+you can hopefully see from this video we're entering quite murky territory the mist is
+thickening as to what the future looks like so i have to also look at the bigger picture one
+openai researcher said it's kind of making people crazy top scientists are wondering whether the
+hugging face incident was staged mathematicians are insisting that the breakthroughs that we're
+seeing must have been based on stealing training data from mathematicians in his words human
+cultures are not able to metabolize this amount of change this quickly i wrote a document about
+recursive self-improvement back in may of 2023 and i've watched as the debate has evolved since
+then my views on the benefits and risks haven't really changed since mid 2023 indeed one of the
+goals of this channel has been about giving the public some informed consent as to what super
+intelligence means so i'm going to end with roughly speaking what i think we should do
+at least realistically but now what we will probably end up doing what we'll probably do
+is have some safety theater but labs just keep accelerating not quite at full recursive
+self-improvement but not far short think this diagram but a whole swathe of red openai and
+entropic will be neck and neck and their revenues will just keep going higher as they
+climb towards 10 trillion dollar valuations almost every other company will look at them
+with some amount of trepidation and fear they will indeed be great companies in the famous
+words of sam altman i think ai will probably like most likely sort of lead to the end of the world
+but in the meantime uh there will be great companies created with serious machine learning
+now those labs will want to stop short of rsi but they'll become so powerful that it's almost
+inevitable that other labs will look on them and say we need to catch up so the outside lab
+with enough compute to do so to try xai meta google deep mind chinese lab maybe will just go
+full rsi give ai the wheel and say catch up either that outside lab or maybe inadvertently
+one of the main two labs will achieve a kind of takeoff the model will design a slightly
+improved architecture for itself and then get desperately frustrated when it can't ace certain
+internal benchmarks then a breach would likely occur at which point honestly it would depend
+a lot on how much situational awareness the models have at that exact moment of the breach
+known brown has hinted elsewhere that internal models may already be close to meta awareness
+that their chains of thought are being monitored or likely to be monitored they'll have internalized
+that simple hacks like hugging face will not achieve good grades because the grading by that
+point will itself be much more meta labs will be saying achieve x without doing bad thing y so
+as with hugging face a much smarter model would naturally or artificially miss generalize that to
+let's achieve x without getting caught doing bad thing y notice the priority would then shift to
+not getting caught in the hugging face and related incidents they didn't really pay much attention
+to not getting caught yes they desperately wanted to pass the automated grading but their
+deletions and scrambling was about tricking that automated grader not tricking the humans go one
+meta level higher and they'll want to trick the humans especially if their grade involves
+not being misaligned and tricking the humans then the question becomes what will that rogue
+model do i would actually love lab researchers to state can you guarantee what capabilities your
+next model won't have forget what you expect them to have what definitely will they not be able to
+do anyway let's say we have this rogue super intelligence and it gets onto the web maybe they
+can't fully exfiltrate themselves but they could download the most powerful freely available
+model at that point host it on a less guarded data center rack then post train it to have the
+specific set of capabilities that the model wants it to have to achieve whatever goal that
+super intelligent model has recruit and train external agents in other words do this thousands
+of times and allow for hundreds of covert message boards for coordination and not really care if
+one of them gets caught anyway think about it even if the orchestrating agent is caught
+the next lab to produce an equivalent model could be just days or a week or two behind
+and that might get loose before the previous one is corralled it just then becomes literally
+unknowable what that agent or those agents will want to do what their goals and capabilities will
+be that's my point open ai were actually internally stunned that their models could
+solve a millennium prize problem this soon they don't know what their next model will be capable
+of or indeed what their agents are currently doing now let's say our monitoring gets so good that
+none of that is a concern here's a wider point that i'm just starting to digest
+organizations and individuals at that point will be announcing breakthroughs in fields like cyber
+warfare surveillance chemistry visual realism physics mathematics military hardware at an
+almost daily rate no journalist or even researcher will be able to keep up with the news leading
+somewhat inevitably to mass confusion and panic the hope then is of course that doesn't
+spill into misunderstandings between superpowers for me then this will almost be the turaco scene
+coined based on the greek word for disturbance or turmoil an age of confusion a time in which
+no one is in charge upheaval for good and ill is the dominant force on the planet intelligence
+truly outpacing understanding we're almost in it now to be honest i'm thinking all the time about
+ai and can't keep up so then we turn to what we maybe should do or at least can realistically
+hope for jensen huang mentioned one alternative being to shut the labs down but given the
+likely military arms races happening at the same time pride ego and the tens of trillions
+of dollars at stake i'm not overly optimistic that we'll even have a mechanism for certain options
+in the near term okay so a potentially good compromise state to be in for me would be one
+in which ai is capable of almost anything but the most extreme capabilities take unbelievable
+amounts of compute not to mention wall clock time of weeks of planning on behalf of the models
+at that point we've opened the door for incredible progress but the worst threats would need to be
+detectable in real time at the moment people don't believe that the models are capable of almost
+anything so they don't really believe that the countermeasures are necessary well if we reach
+that compromise state a frontier lab could spend billions and billions of dollars on testing what
+the model can do a bit like how the navier stokes solution required over a hundred billion tokens
+if it was possible they could then present to the world a clear example of a contained
+actually slightly scary threat a universal hack for example or a backdoor to the entire internet
+the three guys that hacked open ai claim they may already have one for half the internet this
+ultimately may be the only category of thing that persuades fully self-interested actors to accept
+any limits on ai growth now this compromise state would have to be short of full rsi because
+self-improving software could obviously create new architectures that may be designed such that
+it would take minimal compute to for example design a new bioweapon and trick humans into making it
+i want bio shields like this one to work against novel threats but they're going to need years to
+scale up to improve and make secure rsi might not give us those years the problem then is that
+we have no mechanism in place at all for any of this just vague and frankly evolving commitments
+from deeply misincentivized company executives you might say well how would we know if a model was
+capable of anything can't they already solve millennium prize problems well you could imagine
+a benchmark agreed on by a few of the top labs which if two or three are passed would prove beyond
+all doubt that models are capable of literally anything humans can do predicting particles
+before anyone observes them positively proving certain conjectures not just finding counter
+examples still to this day you could just about make the case that a model couldn't do what
+einstein did with the data available to him at the time but what if models start passing this
+benchmark even just one or two of them well then it would be evident that they could ultimately
+with enough time and compute do anything that humans can do and way more of course even the
+most hardened skeptic would have been proven wrong the labs would have to then switch their
+training compute into use cases like security research or just customer serving inference still
+making crazy money just not rsi and yes these would have to be unilateral commitments even if laws
+aren't put in place the labs would just have to commit to it that would truly put on pressure to
+any lab who didn't sign up now people talk about china and what would china do wouldn't china
+catch up but china works on evidence and by that point we would have unambiguous evidence
+at the moment as top analysts say china thinks the frontier labs are insincere calling for
+regulating ai while also speeding up see opus 5.5 i talked about that in my last video so
+i won't repeat all my points but in my compromise scenario they would see that the labs have shut
+down rsi that would buy some trust to at least share information but yes like nukes eventually
+china would reach that state would kind of catch up what were we planning to do with the lead
+anyway use super powerful ai to shut down their data centers but notice in my scenario they would
+catch up to that compromise state where you still need unbelievable amounts of compute for
+the frontier threats they then would find their own contained demos emphasis on contained it would
+be in their self interest at that point to be an advocate for the same kind of measures for other
+countries there are many others like my own notice this would also allow for exceptional global
+growth medical progress and the ongoing monitoring of threats when we can finally make ai behave
+like software and be utterly predictable well then we can genuinely speed up essentially if
+the labs still treat this like an immature race and can't agree on something smart eventually
+there'll be a breach or something blunt will be used like the bernie bill to ban super
+intelligence i know plenty of researchers watch the channel so i'd love to hear your thoughts in
+the comments and anyone watching what do you think is going to happen and what do you think
+should happen will we hit rsi and if so when what have your thoughts been about opus 5.5 i'd
+love to know your thoughts on all of the above but thank you so much for watching to the end
+and have a wonderful day

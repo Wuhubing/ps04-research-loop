@@ -1,0 +1,78 @@
+{
+  "item_id": "b1f8d59a9e19a86e11b1f913",
+  "version_id": "d65818cf27d705500dbc6ee16a00aa24ff79c55f10cb82e034d39e559cbc1994",
+  "synopsis": "For pieces 01–03, this author evaluation contributes a concrete experiment-scheduling intervention: preserve workspace files, clear conversational context, branch within a budget, and select continuations using task scores. Its evidentiary role is a proposed method with author-reported comparisons and ablations, plus a useful case in scrutinizing evaluation and reproducibility. It changes inference-time search, not model weights. Researchers supply tasks, graders, prompts and schedules; the source does not establish independently replicated autonomous discovery. The reported normalized gains remain claims requiring clarification of inconsistent results and configurations.",
+  "limitations_and_counterevidence": "Unresolved reporting conflicts include five fork-and-flush runs per task versus four tinyCIFAR seeds; a universal 33%/66% schedule versus some 50% schedules and a described 71% trigger; and Borden-inv means of 64.62/85.85 in Table 1 versus 59.92/80.24 in Appendix A. Do not use the headline gains to establish best-result, faster-execution or lower-total-cost claims. LWE-rec favors the serial baseline; individual ablations also outperform the combined method on some tasks. Credits meter model tokens, not elapsed time or complete hardware expenditure. The idea maps measure agreement with judgments from the same LLM deployment that generated their specifications; held-out judgments and a second embedding do not supply independent scientific ground truth. Human review is a safeguard, not evidence that bias occurred. The supplied prompt appendix lacks the promised prompt bodies, hardware detail is insufficient for complete cost reproduction, and no independent replication is supplied. The authors disclose Microsoft Research internships. This card is source extraction only; orientation text does not replace passage citations.",
+  "passages": [
+    {
+      "purpose": "Abstract: intervention and headline author-reported comparison across 13 tasks. Preserve as a reported result, subject to the unresolved inconsistencies below.",
+      "locator": {
+        "type": "text",
+        "quote": "Our method forks the agent into parallel trajectories, each inheriting the accumulated workspace but starting with a fresh chat context. After running each trajectory for a fixed horizon, the agent continues from the highest-scoring one. Across \\(13\\) long-horizon research and engineering tasks, with individual agent runs lasting up to several days, fork-and-flush outperformed the single-run and best-of-\\(N\\) baselines by a relative improvement of \\(66.0\\%\\) and \\(44.4\\%\\), respectively, on the min–max normalized average score under an equal compute budget."
+      }
+    },
+    {
+      "purpose": "Section 5.1: matched-budget baselines, model choices, replication count and researcher-selected schedule. This supplies one side of the seed-count and cadence contradictions.",
+      "locator": {
+        "type": "text",
+        "quote": "Baselines. We compare our method against two strategies under strictly matched global budgets. The single-run baseline spends the full budget \\(B\\) sequentially on a single lineage; we execute eight independent single-run baselines per task. The best-of-\\(N\\) baseline (\\(N{=}4\\)) distributes the budget equally, allocating \\(B/4\\) to each of four independent runs and keeping the best final result.\nEvaluation Setup.\nEach task is allocated a fixed per-run compute budget \\(B\\), as detailed in Table [4](#A2.T4). Within a given task, all conditions utilize the identical underlying agent model: GPT-5.6-terra at high reasoning effort for eleven tasks, and GPT-5.5 at extra-high reasoning effort for kernel and tinyCIFAR. Each task is evaluated across five independent fork-and-flush runs. We report the maximum, mean, and standard deviation of final scores for each task, alongside a min–max normalized average across all thirteen tasks.\nFork-and-Flush Configuration.\nEvery fork-and-flush run in Table [1](#S4.T1) adheres to a fixed forced cadence featuring three fan-outs, removing the need for fragile plateau detection. The run opens with an initial round of \\(K{=}4\\) agents launched from empty workspaces, selecting the highest-scoring candidate as the leader. Two subsequent fork-and-flush rounds are triggered strictly by budget consumption—at \\(33\\%\\) and \\(66\\%\\) of \\(B\\)."
+      }
+    },
+    {
+      "purpose": "Table 1: counterevidence and the main-table Borden-inv values. Columns are single-run, best-of-4 and fork-and-flush, each ordered max/mean/sd; LWE-rec favors single-run.",
+      "locator": {
+        "type": "text",
+        "quote": "| LWE-rec | \\(\\mathbf{158.0}\\) | \\(\\mathbf{155.3}\\) | 2.37 | 146.00 | 141.14 | 10.30 | 153.00 | 144.60 | 9.31 | \n| LLM-SQL | \\(\\mathbf{27.05}\\) | 26.90 | 0.18 | \\(\\mathbf{27.05}\\) | 26.93 | 0.21 | \\(\\mathbf{27.05}\\) | \\(\\mathbf{27.04}\\) | 0.01 | \n| order-add | 30.29 | 24.60 | 4.45 | 27.23 | 26.23 | 1.16 | \\(\\mathbf{66.78}\\) | \\(\\mathbf{49.52}\\) | 13.60 | \n| Borden-inv | 79.55 | 64.62 | 18.12 | 86.28 | 76.45 | 9.47 | \\(\\mathbf{93.90}\\) | \\(\\mathbf{85.85}\\) | 5.54 | "
+      }
+    },
+    {
+      "purpose": "Section 5.3: author-reported ablation comparison and its cost-related coverage limitation; the two longest tasks were excluded.",
+      "locator": {
+        "type": "text",
+        "quote": "To isolate the contributions of our core mechanisms, we evaluate the impact of forking without flushing the context, and flushing the context without forking across 11 tasks (excluding the two longest-horizon tasks that are expensive to run). In Table [2](#S5.T2), we report the performance of all four methods as the min–max normalized final score at the task’s budget, averaged across all tasks. The flush-only and fork-only ablations achieve scores of 0.55 and 0.57 respectively, compared to 0.45 for the standard single-run baseline, and 0.71 for the full fork-and-flush method."
+      }
+    },
+    {
+      "purpose": "Appendix A: task-level qualifications to aggregate ablation gains, including job-shop and p150, and conflicting Borden-inv means. Columns are single-run, flush only, fork only and fork-and-flush.",
+      "locator": {
+        "type": "text",
+        "quote": "| job-shop | \\(9.66\\) | \\(10.00\\) | \\(\\mathbf{10.43}\\) | \\(\\mathit{10.33}\\) | \n| AHC014 | \\(23.71\\) | \\(23.04\\) | \\(\\mathit{24.59}\\) | \\(\\mathbf{57.46}\\) | \n| p150 | \\(123.47\\) | \\(\\mathbf{160.80}\\) | \\(128.57\\) | \\(\\mathit{129.74}\\) | \n| p171 | \\(84.26\\) | \\(79.73\\) | \\(\\mathit{86.68}\\) | \\(\\mathbf{92.79}\\) | \n| sphere-pack | \\(43.87\\) | \\(43.74\\) | \\(\\mathit{44.36}\\) | \\(\\mathbf{44.94}\\) | \n| relay-lay | \\(72.61\\) | \\(\\mathit{72.80}\\) | \\(72.79\\) | \\(\\mathbf{72.81}\\) | \n| LWE-rec | \\(\\mathbf{155.3}\\) | \\(\\mathit{148.4}\\) | \\(147.0\\) | \\(144.6\\) | \n| LLM-SQL | \\(26.90\\) | \\(\\mathit{27.01}\\) | \\(26.93\\) | \\(\\mathbf{27.04}\\) | \n| order-add | \\(24.60\\) | \\(\\mathit{40.73}\\) | \\(30.09\\) | \\(\\mathbf{49.52}\\) | \n| Borden-inv | \\(59.92\\) | \\(65.85\\) | \\(\\mathit{78.02}\\) | \\(\\mathbf{80.24}\\) | "
+      }
+    },
+    {
+      "purpose": "Appendix B: seed-count exception and the cost-accounting boundary. Equal token credits cannot by themselves establish equal elapsed time or complete execution cost.",
+      "locator": {
+        "type": "text",
+        "quote": "Every task has eight independent single-run baselines\nand five fork-and-flush seeds (four on tinyCIFAR). A credit\nmeters model tokens, not wall-clock."
+      }
+    },
+    {
+      "purpose": "Appendix F: dependence between specification generation and similarity judging, plus the precise held-out validation target. This supports methodological scrutiny, not a claim that judge bias was demonstrated.",
+      "locator": {
+        "type": "text",
+        "quote": "(iii) Triplet Comparison. An LLM judge answers ordinal queries—is anchor \\(a\\)’s approach closer to \\(b\\)’s or to \\(c\\)’s?—over the specifications, mixing within-run triplets with cross-condition anchors balanced across conditions. The judge is the same LLM deployment that wrote the specifications, so a single model accounts for every generated token in the pipeline, and each map is built from \\(6{,}375\\) judgments (\\(5{,}610\\) on p150).\n(iv) Embedding.\nWe fit a two-dimensional t-STE embedding ([van der Maaten and Weinberger, 2012](#bib.bib28)) to the judged rankings, keeping the best of eight random restarts by training agreement. One in five judged triplets per anchor is held out and never used in fitting; Table [6](#A6.T6) reports agreement on those held-out judgments."
+      }
+    },
+    {
+      "purpose": "Appendix G: explicit schedule exception for runs represented in Table 1, contradicting Section 5.1's universal cadence statement.",
+      "locator": {
+        "type": "text",
+        "quote": "On kernel and tinyCIFAR, some runs use a single forced round at \\(50\\%\\) of the budget (Appendix [D](#A4))."
+      }
+    },
+    {
+      "purpose": "Section 6.1: additional unresolved trigger percentage. Retain the authors' strong basin interpretation as their claim rather than independently established geometry.",
+      "locator": {
+        "type": "text",
+        "quote": "At the flush fan-out (triggered at \\(71\\%\\) of the budget), the winning branch (\\(b_{3}\\)) moves \\(43\\) units in its very first submission after the flush, definitively landing in a different basin; the three rejected branches each move at most one unit and stay where they forked."
+      }
+    },
+    {
+      "purpose": "Appendix I: reproducibility gap visible in the supplied text—the continuation prompt heading leads directly to the branch heading without a prompt body. Also records a human-authored directive applied to only half the branches.",
+      "locator": {
+        "type": "text",
+        "quote": "Continuation message.. Sent at the start of every episode after the first, in every condition (single-run, best-of-4 draws, fork-and-flush trunks and branches), whenever the harness resumes a session:\nBranch directive.. Appended to the first message of a directed branch in a fork-and-flush round. In each round two of the \\(K\\) branches carry it; the others start from the same workspace with no directive:"
+      }
+    }
+  ]
+}

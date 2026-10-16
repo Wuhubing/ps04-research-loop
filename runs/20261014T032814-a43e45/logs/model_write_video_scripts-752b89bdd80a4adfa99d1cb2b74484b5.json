@@ -1,0 +1,15 @@
+{
+  "stage": "model_write_video_scripts",
+  "status": "completed",
+  "input_count": 1,
+  "output_count": 1,
+  "started_at": "2026-10-14T03:48:50.367768Z",
+  "tools_or_models": [
+    "codex exec",
+    "gpt-6-astra"
+  ],
+  "cost_usd": null,
+  "cost_estimated": false,
+  "errors": [],
+  "finished_at": "2026-10-14T03:50:34.219497Z"
+}

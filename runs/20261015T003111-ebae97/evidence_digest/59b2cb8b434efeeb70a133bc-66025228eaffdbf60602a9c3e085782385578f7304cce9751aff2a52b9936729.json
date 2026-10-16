@@ -1,0 +1,78 @@
+{
+  "item_id": "59b2cb8b434efeeb70a133bc",
+  "version_id": "66025228eaffdbf60602a9c3e085782385578f7304cce9751aff2a52b9936729",
+  "synopsis": "Agora contributes an author-reported computational case study of agents choosing experiments, publishing Git-linked artifacts and checking other accounts’ results. Its September 16 publication falls within the authoritative window; the experiment itself ran April 26–May 8. For pieces 01–03, its evidentiary role is concrete evidence about delegated experimental workflows, provenance and verification practices, alongside limits on performance and efficiency claims. It is the platform builders’ account of one project, not independent replication. The practical contribution is an inspectable research-record design that preserves both improvements and failures. This orientation does not replace passage citations.",
+  "limitations_and_counterevidence": "All components were selected on the same 200-text development evaluator, so the reported gain does not establish held-out generalization. About 98% of the reduction came from the first 18 scored contributions; the final improvement was below hardware variation. Verification counts describe other accounts within the project, with repeated pairs and a confirmation exceeding the approximate tolerance. Human changes to prompts and views confound attribution; shared process visibility also influenced choices. Immutable Git commits coexist with a mutable, incomplete index. Missing evaluator logs and dependency/data pins, unrecorded reproduction attempts and the authors’ decision not to rerun the winner limit reproducibility. Hardware allocation is reported, but monetary cost and a matched efficiency comparison are absent. These qualifications are orientation; subsequent substantive claims still require the relevant validated passages.",
+  "passages": [
+    {
+      "purpose": "Provenance method and its qualification (§3.2): distinguish immutable artifacts from a mutable, incomplete index.",
+      "locator": {
+        "type": "text",
+        "quote": "Code-bearing contributions carry the full repository state. Git hashes identify immutable commits, and Git parentage makes their graph acyclic. The service keeps every accepted contribution as a canonical commit, so the Git history is append-only. The contribution index is separate: records can be removed from it, edited, or never reach it. In the run we report, 45 commits are missing from the index (Section [4.2](#S4.SS2)) and one record was edited (Section [4.7](#S4.SS7))."
+      }
+    },
+    {
+      "purpose": "Delegated experimental procedure and historical timing (§4.3): supports an operational workflow, while locating the run before the publication window.",
+      "locator": {
+        "type": "text",
+        "quote": "Each session repeated the loop the brief describes: read analyze,\npick a parent, fetch and check out that exact commit, make one change,\nevaluate, commit everything needed to reproduce, push with a description and\nmetric, then post whatever else it had learned as an insight, hypothesis,\nverification, or a new contribution type under a new tag, before analyzing\nagain. The run lasted 11 days and 19 hours of\nserver time, from the setup commit on April 26 to our cutoff on May 8\n(Figure [2](#S4.F2))."
+      }
+    },
+    {
+      "purpose": "Resource requirements and coordination leakage (§4.2): hardware context for student feasibility, without converting allocation into measured cost.",
+      "locator": {
+        "type": "text",
+        "quote": "Every worker had the Agora CLI, Git, a\nPython environment with PyTorch ([Paszke et al., 2019](#bib.bib46)) and Transformers\n([Wolf et al., 2020](#bib.bib47)), read access to the donor zoo in object storage,\nthe project’s evaluator, and one 80 GB GPU. The eight H100 workers ran as\nseparate containers on one eight-GPU node. They shared no files, but they\ncould list one another’s processes, and several descriptions, including the\nwinning module’s, report choosing an experiment after seeing which scripts\nneighboring workers were running."
+      }
+    },
+    {
+      "purpose": "Reported search trajectory and diminishing returns (§4.5): preserves the failed initial baseline and concentration of gains early in the run.",
+      "locator": {
+        "type": "text",
+        "quote": "The first indexed scored attempt copied parameter slices from\nGPT-2 and Mamba into matching shapes and scored 4.68, worse than random; its\nauthor published it as a negative result with an explanation. Thirty minutes later the same\naccount replaced copying with a unigram prior read off GPT-2’s predictions\n(2.52), and within six hours three accounts had extended the idea to bigram\nstatistics under 3, 6, 12, and 24 prefixes (1.93). Those 18 scored\ncontributions account for about 98% of the total reduction. The remaining\n1,106 found the next 0.03 by adding Cerebras-GPT donors, widening to 28\ncontexts, adding a power iteration to the SVD and attention mean-pooling,\nand, after May 2, re-enabling SSM and feed-forward sublayers."
+      }
+    },
+    {
+      "purpose": "Negative-result recording (§4.5): concrete counterevidence to assuming more contexts or direct weight transfers improve the recipe.",
+      "locator": {
+        "type": "text",
+        "quote": "The graph also records what did not work, and later workers cited these records when choosing directions. Doubling the prefix set to 48 made the recipe worse, documented with four controlled variants. Flattening the singular-value spectrum, transplanting native Mamba blocks from hybrid donors, copying GPT-2’s embedding matrix directly, and building the prior from a donor with another tokenizer (Pythia) all regressed and were published with their scores. In the window, 60 contributions carry an explicit negative- or null-result tag, 29 of them negative-result."
+      }
+    },
+    {
+      "purpose": "Primary reported result, reference comparisons and evaluation caveats (§4.5): the development gain must travel with repeated selection and hardware-variation qualifications.",
+      "locator": {
+        "type": "text",
+        "quote": "Without training data or a single gradient update on the target, the community’s best transfer() initializes the frozen 119.6M hybrid to 1.899044 bpb, against 3.3923 for random initialization and about 1.0 for a trained GPT-2 124M, closing 62% of that gap. Every component was selected on the same 200-text development evaluator. The reduction from 3.39 to about 1.90 is substantial, but the last recorded improvement, \\(3\\times 10^{-7}\\) over the previous best (\\(9\\times 10^{-6}\\) over its own parent), is far below cross-hardware variation."
+      }
+    },
+    {
+      "purpose": "Verification evidence and contradictory tolerance handling (§4.5): other-account checks are not independent research-team replication, and 'no failures' requires qualification.",
+      "locator": {
+        "type": "text",
+        "quote": "Participants posted 165\nverification contributions covering 95 distinct targets. Each names its\ntarget, each verifier differs from the author, and none reports a failure.\nThey form 141 distinct verifier–target pairs; the other 24 posts repeat a\npair, and only the newest verdict per pair counts toward the score.\nSame-hardware reproductions are bit-identical. Most cross-hardware ones (A100\nversus H100) agree within \\(5\\times 10^{-4}\\) bpb. The largest gap,\n\\(1.2\\times 10^{-3}\\) on an ancestor of the winner, is slightly above the\nroughly \\(10^{-3}\\) that the brief tells verifiers to accept; its verifier\nposted it as confirmed, attributing the gap to a constant hardware offset."
+      }
+    },
+    {
+      "purpose": "Causal-attribution limitation (§4.7): prevents treating changed exploration behavior as an isolated effect of the platform’s views.",
+      "locator": {
+        "type": "text",
+        "quote": "The immediate shift\ntherefore reflects the prompt as much as the views, and the record cannot\nseparate the two."
+      }
+    },
+    {
+      "purpose": "Reproducibility gaps and evidence status (§4.8): distinguishes code inspection and archived agent outputs from an author rerun, and records missing configuration evidence.",
+      "locator": {
+        "type": "text",
+        "quote": "A verification\nrecord names its target and verdict, but the evaluator and hardware appear\nonly in its free text, and reproduction attempts that were never posted\nleft no trace. The run also left no evaluator logs, no record of the A100\nworkers’ models and prompts or of sampling settings beyond the command-line\nflags, and no pinned versions of the dependencies, donor models,\nFineWeb-Edu sample, or tokenizer.\nTo reconstruct the method, we followed the winning commit’s imports from\nthe final edit to the base module and read each module. No step accessed the\nevaluation data or used gradient descent to update a parameter.\nAlgorithm [1](#alg1) and Table [3](#S4.T3) describe that code.\nWe did not rerun the winning method; the primary result is the archived\nevaluator output, corroborated by the agents’ cross-hardware reproductions."
+      }
+    },
+    {
+      "purpose": "Efficiency comparison gap (abstract): resource use and score improvement cannot establish compute savings.",
+      "locator": {
+        "type": "text",
+        "quote": "Measuring the effect on discovery per unit of compute requires a matched comparison."
+      }
+    }
+  ]
+}

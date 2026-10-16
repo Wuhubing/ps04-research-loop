@@ -1,0 +1,19 @@
+{
+  "recorded_at": "2026-10-16T19:52:48.797752+00:00",
+  "user_statement": "我听了没问题，继续帮我把三个视频发布到 YouTube，设成 unlisted。",
+  "scope": "Publish these three reviewed videos to YouTube as unlisted; does not approve unpublished articles or assert original-source audio verification.",
+  "videos": [
+    {
+      "piece": "01",
+      "sha256": "74321112e843cc568c9482e72eee1a27166a8b24e4236d9e53b27b13a221c1bd"
+    },
+    {
+      "piece": "02",
+      "sha256": "2e94aa50486dffe93845f43661a731ee6d34d0b1385de1d20dc9adac0c959dab"
+    },
+    {
+      "piece": "03",
+      "sha256": "97c3406c4d8856636e2638d3a4052b45612a7f1e19e54b85e948736e4d29a5fa"
+    }
+  ]
+}

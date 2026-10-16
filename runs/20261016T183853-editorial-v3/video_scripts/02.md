@@ -1,0 +1,132 @@
+# Which Claims Survive? Local Gains Need Separate Validity and Transfer Checks
+
+**Research Loop · Google Vids script draft**  
+**As of:** 2026-10-15 (UTC)  
+**Evidence window:** 2026-09-16–2026-10-15, inclusive; frozen evidence supplied for this revision.  
+**Planned runtime:** approximately 4 minutes at 130–140 words per minute.  
+**Spoken length:** approximately 540 words. Narration only is spoken and suitable for subtitles.  
+**Format:** Simple diagrams, text cards and source excerpts; no avatar. Scene timings are proposed edit positions, not source timestamps. All sources are text; recording timestamps do not apply.
+
+### Scene 1 · The acceptance question · 0:00–0:28
+<!-- claim_id: 02-c6 -->
+
+**Narration**
+
+An agent finds a better score. Should you accept its result? Our interpretation of these reports is: check three things separately. Does the implementation pass validity checks? Does it improve the chosen metric? And does that improvement advance the scientific or practical objective? As of October fifteenth, twenty twenty-six, the defensible conclusions are conditional, tied to particular protocols and evaluations.
+
+**Visual**
+
+Show the title and exact as-of date: **2026-10-15 UTC**. Reveal three separate boxes: “Validity,” “Chosen metric,” and “Intended objective.” Label this framework **Research Loop interpretation**. Cite the [kernel study](https://arxiv.org/abs/2610.10394), excerpt locator “Repeated generation and a formulation-first prompt,” and the [production report](https://arxiv.org/abs/2609.30541), “Limitations,” passage beginning “Third, the evaluation metrics.”
+
+### Scene 2 · A better proxy is not the destination · 0:28–1:08
+<!-- claim_id: 02-c1 -->
+
+**Narration**
+
+Start with protein language models. The protein-search authors report that two recipes lowered validation loss and still beat their reference on that measure after twelve hours of training. But lower loss did not identify the strongest recipe for contact precision, itself a proxy for downstream protein folding.
+
+In their main campaign, only four of seven changes survived final ablation. The authors chose the search setup and applied a human gate. Our interpretation is narrow: search-time improvement was an incomplete acceptance criterion in this study, not evidence of a fully autonomous scientific discovery.
+
+**Visual**
+
+Draw “Lower validation loss” and “Contact precision” as separate measures, with no equivalence sign. Add “4 of 7 changes survived final ablation.” Mark results **Authors report** and the acceptance lesson **Interpretation**.
+
+Source: [Hill-Climbing a Protein Language Model](https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/). Text locators: “Failure mode: Perfect on reward, failure on science”; “What survived the human gate.” Display exact excerpt: “Four of the seven changes survive the final ablation study.”
+
+### Scene 3 · Passing a screen is not certification · 1:08–1:41
+<!-- claim_id: 02-c2 -->
+
+**Narration**
+
+The kernel authors tested whether generated programs survived checks beyond the public screen. In their first stress-test run, forty unrestricted programs entered. Thirty-five passed the public screen. Hidden checks then falsified twelve of those thirty-five.
+
+That is a finding about this generated cohort, not a universal agent failure rate. And surviving the broader checks still did not certify a program. The authors describe those survivors as empirically unfalsified. A finite test can expose a failure without proving that every remaining implementation is valid everywhere.
+
+**Visual**
+
+Use a flow diagram: “40 programs → 35 public-screen passes → 12 falsified by hidden checks.” Label **First stress-test cohort only**. Do not present a universal percentage.
+
+Source: [Kernel Autoresearch for Open-Ended Model Discovery](https://arxiv.org/abs/2610.10394). Text locator: “Results and failure modes,” paragraphs beginning “The hidden suite exposes failures” and “The diagnostic cohorts behaved.” Exact excerpt: “The unrestricted programs that survived remain empirically unfalsified, and they are not certified.”
+
+### Scene 4 · Transfer needs its own evidence · 1:41–2:11
+<!-- claim_id: 02-c3 -->
+
+**Narration**
+
+Transfer is a separate question. In the kernel study, archived DWF won only four of sixteen real-data comparisons. In a separate forecasting check, all three ten-year forward diagnostic splits favored CAKE over the selected discovery.
+
+Our interpretation is that broad superiority does not survive these checks. These results do not erase every local gain. They limit where a gain can reasonably be claimed. A result under one evaluation protocol cannot silently become a promise about another dataset or forecasting horizon.
+
+**Visual**
+
+Show two distinct cards: “Archived DWF: 4/16 real-data comparisons” and “Ten-year forward diagnostics: 3 splits favor CAKE.” Label **Separate transfer checks**.
+
+Source: [Kernel Autoresearch](https://arxiv.org/abs/2610.10394). Text locators: Appendix B.7, paragraph beginning “The real-data check is less favorable”; “Long-horizon diagnostic.” Exact excerpt: “These three diagnostic splits favor CAKE for ten-year forward prediction.”
+
+### Scene 5 · Protecting code does not validate a metric · 2:11–2:49
+<!-- claim_id: 02-c4 -->
+
+**Narration**
+
+The production report says that preventing the agent from changing evaluator code prevents metric gaming. But the same report describes improved coherence producing unusable clusters, with deep levels collapsing into singletons. The researchers added constraints and a usability metric.
+
+Our interpretation: the prevention claim is too strong. Evaluator integrity and metric validity need separate checks. This evidence comes from book recommendation at one organization. Its offline metrics were not validated against actual customer outcomes in this study, so a better offline score does not establish better customer outcomes.
+
+**Visual**
+
+Place a lock over “Evaluator code.” Beside it, show “Coherence improves → unusable hierarchy.” Label the first **Code integrity** and the second **Metric validity**.
+
+Source: [AutoResearch at Production Scale](https://arxiv.org/abs/2609.30541). Text locators: “V-E Validation Protocol,” second precaution; “III-E Metric Fixation”; “Limitations,” third limitation. Exact excerpts: “the resulting hierarchy was unusable” and “neither has been validated against actual customer outcomes in this study.”
+
+### Scene 6 · Make orchestration earn its place · 2:49–3:25
+<!-- claim_id: 02-c5 -->
+
+**Narration**
+
+Malena adds a baseline lesson. Its authors report that, with model, hardware and budget matched, tested published harnesses did not significantly outperform their plain agent session with frontier backbones.
+
+But the weaker Gemma backbone favored MLEvolve on percentile. Backbone dependence and limited statistical power matter: a nonsignificant difference does not prove equivalence, and this study does not establish universal harness redundancy.
+
+Our practical interpretation is to compare added orchestration against a simple, resource-matched baseline before crediting the extra machinery for an improvement.
+
+**Visual**
+
+Draw two comparison lanes: “Plain session” and “Published harness,” sharing “Same model · hardware · budget.” Add an exception card: “Gemma 4 31B: MLEvolve favored on percentile.”
+
+Source: [How Much of a Harness Does a Strong Agent Need for Autonomous ML Engineering?](https://arxiv.org/abs/2609.40303). Text locators: opening excerpt, paragraph beginning “We then confirm the same picture”; “D.2 Detailed MLE-bench results”; “Limitations.” Exact excerpt: “some results still have confidence intervals wide enough to preclude strong claims about effect size”.
+
+### Scene 7 · Report three outcomes · 3:25–4:00
+<!-- claim_id: 02-c6 -->
+
+**Narration**
+
+For your next experiment, report three outcomes separately: validity checks, the chosen metric, and the intended objective. None should silently substitute for another.
+
+These are separate author-reported cases, not independent replications of one general effect. Independent replication is not supplied here. The useful lesson is conditional: an intervention helped under a particular protocol, or a verification step exposed a particular failure. Keep that boundary attached to the result when you decide what to trust.
+
+**Visual**
+
+Return to the three boxes. Under each, show a blank field: “Evidence and limits.” End with **Separate cases ≠ independent replication of one effect** and **Research Loop interpretation**.
+
+Sources: [kernel study](https://arxiv.org/abs/2610.10394), “Repeated generation and a formulation-first prompt,” excerpt “a correct PSD argument does not make the submitted code a valid kernel on the full domain”; [production report](https://arxiv.org/abs/2609.30541), “Limitations”; [protein-search report](https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/), “Failure mode: Perfect on reward, failure on science.”
+
+### YouTube description draft
+
+A higher search score is only one part of an experimental result. Research Loop examines four author-reported cases involving protein-model recipes, kernel validity and transfer, production metrics, and agent harness comparisons.
+
+The practical takeaway: report implementation validity, metric improvement and progress toward the intended objective separately. Findings remain bounded by the authors’ protocols, baselines and limitations. These separate cases do not supply independent replication of a general effect.
+
+**As of:** 2026-10-15 UTC. Evidence window: 2026-09-16–2026-10-15, inclusive.
+
+**Article:** [ARTICLE_URL — insert accessible URL after publication]
+
+**Sources and text locators:**
+
+- [Protein-search report](https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/) — “Failure mode: Perfect on reward, failure on science”; “What survived the human gate.”
+- [Kernel Autoresearch](https://arxiv.org/abs/2610.10394) — “Results and failure modes”; “Repeated generation and a formulation-first prompt”; Appendix B.7, “The real-data check is less favorable”; “Long-horizon diagnostic.”
+- [AutoResearch at Production Scale](https://arxiv.org/abs/2609.30541) — “III-E Metric Fixation”; “V-E Validation Protocol”; “Limitations.”
+- [Malena harness study](https://arxiv.org/abs/2609.40303) — opening excerpt beginning “We then confirm the same picture”; “D.2 Detailed MLE-bench results”; “Limitations.”
+
+All cited materials are text sources. Locators identify sections or excerpts; there are no recording timestamps.
+
+**AI-assistance disclosure:** AI assisted in drafting this script and description from the supplied brief and evidence excerpts. This disclosure does not assert completed human review, video production or publication. Final editorial approval remains with the student.

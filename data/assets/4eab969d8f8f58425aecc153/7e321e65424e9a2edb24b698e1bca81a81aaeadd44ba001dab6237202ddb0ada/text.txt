@@ -1,0 +1,47 @@
+Happy Sunday, !
+Welcome back to your weekly AI news roundup.
+In case you missed it, here’s this week’s Thursday post:
+Note: If you’re consistently missing out on my emails, remember to check your “Promotions” tab and mark whytryai@substack.com as a “Safe Sender.”
+Here’s what happened in AI last week:
+👩💻 AI releases
+- Aleph Alpha open-sourced Kolibri, a [German-and-English AI model built in Europe](https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/) for organizations that need to run AI on their own hardware.
+- Anthropic news: 
+  - Claude Code now has “mods”: small add-ons that [change how it looks and behaves](https://claude.com/blog/claude-code-mods) (and Claude can even make new ones for you).
+  - Claude Sonnet 5.5 is a [faster and cheaper upgrade to Sonnet 5](https://www.anthropic.com/claude-sonnet-5-5) that nearly matches [Opus 5.5](https://www.whytryai.com/p/opus-5-5-vs-opus-4-6-vibe-check) on everyday knowledge-work tasks.
+- Black Forest Labs released FLUX 3 Image that lets you [move and edit elements by drawing boxes on a canvas](https://bfl.ai/models/flux-3-image) while keeping the rest of the image intact.
+- ElevenLabs launched Eleven v4, its [most expressive text-to-speech model yet](https://elevenlabs.io/blog/eleven-v4), which can also clone a voice from just ten seconds of input audio.
+- Google launched Guided Vision in Gemini Live on Android, which [helps blind and low-vision users](https://blog.google/innovation-and-ai/products/gemini-app/guided-vision-gemini-live/) find objects, match outfits, read fine print, and more.
+- Ideogram released Ideogram 4.5, an image editing model that [keeps the picture consistent across multiple edits](https://ideogram.ai/models/4.5/), even on high-resolution images.
+- Meta news: 
+  - Edits assistant in Instagram’s Edits app can [study how your posts perform and suggest](https://creators.instagram.com/blog/edits-assistant/) captions, hooks, and scripts based on what works for you.
+  - Muse for Small Business is an AI agent that [plugs into tools like Canva and Shopify](https://about.fb.com/news/2026/09/introducing-muse-small-business/) to help business owners analyze campaigns, optimize ads, and more.
+  - Muse Gadgets lets you [connect Muse to homemade devices](https://gadgets.muse.ai/) like e-ink displays and Raspberry Pi boards using free, open-source kits.
+- Microsoft news: 
+  - MAI-Transcribe-2-Streaming is a real-time transcription model that [turns live speech into text](https://microsoft.ai/news/our-first-streaming-transcription-model/) in 60 languages.
+  - MAI-Voice-2.1 is a [realistic and expressive text-to-speech model](https://microsoft.ai/models/mai-voice-2-1/) that can instantly match a voice from a short clip and speaks 23 languages.
+- OpenAI news: 
+  - Dots are always-on agents with their own cloud computers that learn your preferences and can [keep working on tasks while you’re away](https://openai.com/index/introducing-dots/).
+  - GPT-6.1 Sol [nearly matches GPT-6 Astra performance](https://openai.com/index/introducing-gpt-6-1-sol/) on coding, computer use, and professional work tasks for a fifth of the price.
+  - Sign in with ChatGPT lets users [log in to third-party apps with their ChatGPT accounts](https://help.openai.com/en/articles/20001410-sign-in-with-chatgpt) and use their subscription credits and rate limits in certain apps.
+- Shopify news: 
+  - Canvas lets merchants [design their whole store from a single workspace](https://www.shopify.com/news/introducing-canvas) together with a “Sidekick” AI agent that makes changes in real time.
+  - WebMCP checkout lets [AI agents complete purchases on Shopify stores](https://x.com/gilgNYC/status/2104583942728822998), including with Shop Pay.
+- SpaceXAI launched Team Bots: shared Grok assistants that [learn from your team’s files and apps](https://x.ai/news/team-bots) and remember context for everyone.
+🔬 AI research
+- Google news: 
+  - Gemini 4 Argon is a frontier model that [beats top-tier counterparts from other AI labs](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/) on many benchmarks (only for cybersecurity defenders for now).
+  - Skills for Gemini and Workspace let users [save and reuse custom AI instructions across tasks](https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html), rolling out in October and eventually replacing Gems.
+- Runway opened early access to Runway Ads that create visual ads, publish them to Google, Meta, and TikTok, and [optimize them based on performance](https://runway.com/news/company-news/introducing-runway-ads).
+📖 AI resources
+- “[Jagged Performance of Frontier Models](https://www.fig.inc/blog/astra-opus-5-5-and-other-frontier-models-demonstrate-jagged-performance-across-sota-agentic-tasks-from-web-browsing-to-robotics/)” [REPORT]: comparison of how top AI models handle real agent tasks like web browsing, by Fig Labs.
+- “[GLM-5.3 Cyber Capabilities](https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities)” [REPORT]: Anthropic’s red-team analysis of inadequate safeguards on hacking-capable open-weight models.
+- “[Open TTS Leaderboard](https://huggingface.co/blog/open-tts-leaderboard)” [BENCHMARK]: a Hugging Face leaderboard to compare open text-to-speech models on multilingual speech and voice cloning.
+- “[State of Agent Skills](https://vercel.com/blog/state-of-agent-skills)” [REPORT]: Vercel’s look at what people are teaching AI agents through its skills.sh registry and which skills actually get installed.
+🔀 AI random
+- Ataraxos, built by researchers from Carnegie Mellon, MIT, NYU, and Stanford, [beat the best human Stratego player 15-1](https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/) after only $8K in training costs.
+- The FTC [opened an investigation](https://www.reuters.com/business/ftc-opens-probe-into-ai-giants-including-anthropic-openai-new-york-post-reports-2026-09-30/) into Anthropic, OpenAI, and other AI companies over the risks their products may pose to consumers.
+🤦♂️ AI fail of the week
+Even with the self-juggling disappearing ghost balls, the real mystery here is somehow the choice of outfit.
+🔐 All my paid goodies in one place
+Take a peek at what’s behind the paywall:
+Can't not think of Dippin' Dots and/or the addictive game Two Dots.

@@ -1,0 +1,78 @@
+{
+  "item_id": "27b20d8820941053973c26f4",
+  "version_id": "4126f2eebaafaa9fde65cc866a5d982ad2139e084a6753ba820a51c5aa797b72",
+  "synopsis": "Author-reported preprint evidence for pieces 01–03: agents edit molecular optimizer code, receive experimental feedback, and produce candidates subsequently tested on unseen molecules and potentials. Its contribution is a concrete computational case connecting delegated algorithm development, protected evaluation and provenance, transfer results, and substantial search infrastructure. It supports discussion of what to delegate, how to assess results, and what reproduction requires; it is not independent replication or evidence of student-scale affordability. Publication on October 5 falls within the authoritative September 16–October 15 window; update and retrieval dates are separate events. This orientation does not replace passage citations.",
+  "limitations_and_counterevidence": "The abstract's consistent-improvement claim needs qualification: AutoSella-A regresses on solvated DFT systems. Reported benchmark means exclude unsuccessful optimizations, and average energy recovery does not establish identical minima or uniformly better outcomes. Validation participates repeatedly in candidate selection; it is not an untouched final test. Search and final comparisons use different Sella fragment settings, and ablation effects are conditional and nonadditive. Force-call reductions do not establish total monetary savings after search and other computation. The poor Grok run is a boundary case, not a general model ranking. The supplied text links code but does not establish independent reproduction, completeness of released artifacts, total financial cost, or independent researcher assessment. All substantive synthesis claims still require validated passages.",
+  "passages": [
+    {
+      "purpose": "Delegated search and budget (§3.4): the agent receives per-instance feedback; two searches each run for 66 active hours.",
+      "locator": {
+        "type": "text",
+        "quote": "After every evaluation, the agent reads a per-molecule table which contains relative force calls, relative energy, final energy difference and convergence status for each molecule.\nThis supports formulation of chemically grounded hypotheses, since a mechanism can be targeted at specific molecules.\nThe Algorithm [1](#alg1) and Appendix [C.2](#A3.SS2) describe the loop in detail.\nWe ran the loop independently for 66 active research hours with Claude Code driving Claude Fable 5.1 (max) and Codex driving GPT-6 Astra (high), producing AutoSella-F and AutoSella-A, respectively."
+      }
+    },
+    {
+      "purpose": "Acceptance method and its limits (§3.5): error checks, energy and cost gates, repeated validation selection, and lack of direct geometry inspection.",
+      "locator": {
+        "type": "text",
+        "quote": "It must have \\(\\bar{r}^{t}\\geq 1\\), no evaluation errors such as optimizer exceptions, non-finite numerical values, malformed output, and a force-call cost below \\(C^{\\star}_{\\text{per-mol}}-\\delta\\), where \\(\\delta=10^{-4}\\) keeps numerical noise from counting as progress.\nNote that on training and validation, non-converged optimizations stopped by a force-call remain in the averages.\nWe call these conditions the validity gate.\nIf they are met, \\(a^{t}\\) is evaluated on the validation split and replaces the champion only if the same requirements hold there: no evaluation errors, \\(\\bar{r}^{t,V}\\geq 1\\), and \\(C^{t,V}_{\\text{per-mol}}<C^{\\star,V}_{\\text{per-mol}}-\\delta\\) – the generalization gate.\nIf either gate fails, the edit is discarded and the agent edits \\(a^{\\star}\\) again.\nThe condition \\(\\bar{r}^{t}\\geq 1\\) stops the agent from hacking the convergence criteria and saving force calls by under-relaxing.\nThe generalization gate then ensures that accepted improvement holds on unseen molecules, preventing the overfitting to the training set.\nNeither gate inspects the geometry itself, so we additionally compare the optimized conformations with the ones from Sella, by heavy-atom RMSD and by vibrational analysis, in Appendix [E](#A5)."
+      }
+    },
+    {
+      "purpose": "Protected evaluation, candidate provenance and compute scale (Appendix C.1): concrete infrastructure requirements rather than evidence of inexpensive student reproduction.",
+      "locator": {
+        "type": "text",
+        "quote": "Keeping this infrastructure outside the agent’s environment protects the scoring procedure and reference data from modification, while distributing independent molecular optimizations allows each candidate to be evaluated in parallel across the dataset. The agent submits its candidate through a fixed, run-specific SSH relay, which exposes the JSON evaluation protocol without granting general remote-shell access or exposing the host’s SSH credentials. The gateway associates the submission with its Git commit, source hash, dataset release, and training or validation split, then creates one optimization task per molecule. Task identifiers enter a first-in, first-out Redis queue; task inputs, execution states, and results are stored separately under those identifiers. Available workers claim tasks atomically from the shared queue and execute each complete molecular optimization in a guarded subprocess, obtaining energies and forces from GFN2-xTB. The pool is comprised of 192 single-thread workers across 4 remote evaluation hosts with Intel Xeon Gold 6348 CPU."
+      }
+    },
+    {
+      "purpose": "Surrogate-to-target result and contradictory evidence (§4.2): reported DFT benefit for AutoSella-F, regression for AutoSella-A, and the authors' cost interpretation rather than a measured monetary accounting.",
+      "locator": {
+        "type": "text",
+        "quote": "The autoresearch scored every candidate on GFN2-xTB alone, so the question is whether the mechanisms behind the improvement are general or fitted to that potential.\nTable [2](#S4.T2) repeats the measurement on the classical force field GFN-FF ([Spicher and Grimme, 2020](#bib.bib1)), and on DFT at the r2SCAN-3c level ([Grimme et al., 2021](#bib.bib33)) through\nORCA ([Neese, 2022](#bib.bib32)).\nWe show that the force call saving carry over to them.\nAutoSella-F saves more force calls than AutoSella-A in every available comparison.\nThe largest saving under DFT occurs on Solvated PubChem, where AutoSella-F requires only \\(40.24\\%\\) of Sella’s force calls while achieving \\(1.27\\%\\) greater mean energy recovery. Its mean energy recovery exceeds the baseline on all four datasets.\nConsistent with the limited generalization to complex multi-fragment systems observed in Section [4.1](#S4.SS1), AutoSella-A uses \\(109.06\\%\\) of Sella’s force calls per molecule and recovers less energy (\\(\\bar{r}=0.993028\\)) on Solvated PubChem systems under DFT.\nUnder DFT the force call dominates the calculation, so the reduction in force calls lowers the cost of the job proportionally, making the AutoSella optimizers practically useful.\nRemarkably, this was obtained without the autoresearch ever evaluating a DFT gradient."
+      }
+    },
+    {
+      "purpose": "Benchmark denominator qualification (Table 1 introductory text): failures and non-convergence are excluded from reported means.",
+      "locator": {
+        "type": "text",
+        "quote": "Err. b/a counts optimization errors and molecules not converged in 200 steps (500 steps for Solvated Pubchem) for baseline/algorithm; means exclude them."
+      }
+    },
+    {
+      "purpose": "Quality beyond aggregate energy (Appendix E, GFN2-xTB): operational same-minimum definition, strong single-molecule agreement, very low fragment-system agreement, and the qualification that different endpoints need not be worse.",
+      "locator": {
+        "type": "text",
+        "quote": "A molecule satisfies our “same minimum” criterion when RMSD \\(<0.1\\) Å, \\(|\\Delta E|<0.1\\) kcal mol-1, and the candidate spectrum contains no frequency below \\(-50\\) cm-1. This cutoff provides a practical tolerance for the comparison rather than proof of a local minimum.\nAutoSella-F and AutoSella-A satisfy the same-minimum criterion on \\(97.2\\%\\) and \\(97.6\\%\\) of Test molecules, and \\(93.2\\%\\) and \\(95.7\\%\\) of Dipeptides, respectively.\nThe median RMSD over jointly converged pairs is \\(5\\times 10^{-4}\\) Å on Test and \\(8\\times 10^{-4}\\) Å on Dipeptides for both optimizers, more than two orders of magnitude below the \\(0.1\\) Å threshold.\nAgreement falls to \\(39.8\\%\\) and \\(69.5\\%\\) on AA–ligand pairs, and to \\(1.0\\%\\) and \\(18.0\\%\\) on Solvated PubChem.\nWe hypothesize this is due to a greater variety of relative fragment poses and intermolecular contacts, including alternative arrangements of the surrounding water molecules in Solvated PubChem.\nLow agreement with Sella, however, need not imply poor relaxation: the alternative endpoints on average lie below the reference energy, as Table [3](#A4.T3) shows."
+      }
+    },
+    {
+      "purpose": "Baseline comparability and reproduction settings (Appendix B): distinguish the search/ablation reference from the faster fragment-enabled final comparison.",
+      "locator": {
+        "type": "text",
+        "quote": "Sella’s allow_fragments argument controls the coordinate representation: True gives disconnected fragments explicit translation and rotation coordinates, whereas False joins them through artificial coordinate connections without changing the potential. Testing both settings showed that False achieved greater energy reduction but required more force calls. We therefore started the evolution with this more costly allow_fragments=False variant, seeking efficiency gains while preserving its energy recovery.\nThe initial Sella program with allow_fragments=False is the reference for the Fable/Astra and Grok progress plots (Figures [2](#S4.F2) and [4](#A8.F4)) and the ablation study (Figure [3](#A7.F3)).\nThe evaluation comparisons use Sella with allow_fragments=True: Figure [1](#S1.F1), and Tables [1](#S4.T1), [2](#S4.T2), [3](#A4.T3), [4](#A5.T4), [5](#A6.T5), [6](#A6.T6), [7](#A8.T7), .\nThis fragment-enabled reference requires fewer force calls on amino acid–ligand pairs and Solvated PubChem."
+      }
+    },
+    {
+      "purpose": "Mechanistic interpretation limit (Appendix G.4): joint ablations show that individual component effects cannot be added.",
+      "locator": {
+        "type": "text",
+        "quote": "We supplement all single block removals with joint removals: Fable C & E and Astra B & C, B & E, and B & G. These pairs probe the contact model and its step correction, and the physical prior’s connections to calibration, curvature treatment, and the surrogate. For all four tested pairs on validation, joint removal increases cost less than the sum of the individual removal penalties. Thus, the single-block effects cannot be treated as independent, additive contributions."
+      }
+    },
+    {
+      "purpose": "Unsuccessful search boundary case (Appendix H): accepted improvements do not guarantee useful held-out performance; retain failures and omitted DFT evaluation without generalizing to a model ranking.",
+      "locator": {
+        "type": "text",
+        "quote": "The run recorded 900 candidates, and accepted 44 improvements.\nIts final champion, AutoSella-G, was obtained at cycle 897 and reduced mean relative force-call cost to 97.79% on training and 98.14% on validation.\nFigure [4](#A8.F4) shows the full run, which spans 66 active research hours.\nOn the held-out GFN2-xTB benchmarks, AutoSella-G provides little benefit on single-molecule systems and performs substantially worse on the intermolecular datasets (Table [7](#A8.T7)).\nIts mean per-molecule force-call cost is 99.27% of Sella on Test and 100.49% on Dipeptides, rising to 148.77% on amino acid–ligand pairs and 239.85% on Solvated PubChem (calculated on converged optimizations).\nFor Solvated PubChem, 64 optimizations do not converge within the budget and four encounter execution errors.\nGiven this poor GFN2-xTB performance, we did not evaluate AutoSella-G with DFT and excluded it from the main-text comparisons."
+      }
+    },
+    {
+      "purpose": "Reproducibility pointer (§1): establishes the authors' code-release claim and supplied URL only; repository contents and independent reproduction were not checked.",
+      "locator": {
+        "type": "text",
+        "quote": "Our code is publicly available at [https://github.com/vdeshchenya/autosella](https://github.com/vdeshchenya/autosella)."
+      }
+    }
+  ]
+}

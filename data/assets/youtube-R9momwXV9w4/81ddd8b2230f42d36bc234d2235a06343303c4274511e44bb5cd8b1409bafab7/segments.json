@@ -1,0 +1,2234 @@
+[
+  {
+    "segment_id": "s00000",
+    "start_seconds": 0.0,
+    "end_seconds": 7.52,
+    "text": "Claude Opus 5.5 is anthropic sudden reverberating response to the already astounding Astra model"
+  },
+  {
+    "segment_id": "s00001",
+    "start_seconds": 7.52,
+    "end_seconds": 13.76,
+    "text": "from OpenAI. And of course it's easy to get lost again in the flood of flashy demos,"
+  },
+  {
+    "segment_id": "s00002",
+    "start_seconds": 13.76,
+    "end_seconds": 19.84,
+    "text": "benchmark scores and Claude crafted autobiographical animations. Completely going to admit that I am"
+  },
+  {
+    "segment_id": "s00003",
+    "start_seconds": 19.84,
+    "end_seconds": 26.56,
+    "text": "not immune either, having spent several hours exploring a Final Fantasy-esque playable world"
+  },
+  {
+    "segment_id": "s00004",
+    "start_seconds": 26.56,
+    "end_seconds": 32.8,
+    "text": "that Opus 5.5 cooked up with me in Unreal Engine which I've published. The truth is that this might"
+  },
+  {
+    "segment_id": "s00005",
+    "start_seconds": 32.8,
+    "end_seconds": 38.64,
+    "text": "not actually be the best time to get lost because there is so much other news Opus related and"
+  },
+  {
+    "segment_id": "s00006",
+    "start_seconds": 38.64,
+    "end_seconds": 44.16,
+    "text": "otherwise worth thinking about. Each one of which if I'm being honest probably deserves a two-hour"
+  },
+  {
+    "segment_id": "s00007",
+    "start_seconds": 44.16,
+    "end_seconds": 50.16,
+    "text": "documentary to itself. It actually makes me wonder sometimes honestly whether it suits AI executives"
+  },
+  {
+    "segment_id": "s00008",
+    "start_seconds": 50.16,
+    "end_seconds": 56.0,
+    "text": "for there to be such a flood of news good and ill because it can then hide the fact that for"
+  },
+  {
+    "segment_id": "s00009",
+    "start_seconds": 56.08,
+    "end_seconds": 62.0,
+    "text": "many of their labs they have made crucial promises which they are now let's just say evolving."
+  },
+  {
+    "segment_id": "s00010",
+    "start_seconds": 62.0,
+    "end_seconds": 67.28,
+    "text": "Naturally I'm going to start with why us so quickly getting a cheap and capable model like"
+  },
+  {
+    "segment_id": "s00011",
+    "start_seconds": 67.28,
+    "end_seconds": 73.84,
+    "text": "Opus 5.5 so soon after Fable 5.1 is actually a side effect of labs like anthropic having"
+  },
+  {
+    "segment_id": "s00012",
+    "start_seconds": 73.84,
+    "end_seconds": 81.2,
+    "text": "unbelievably stronger internal models. Then how the Opus 5.5 system card or 230 pages reveals"
+  },
+  {
+    "segment_id": "s00013",
+    "start_seconds": 81.2,
+    "end_seconds": 87.36,
+    "text": "more than anthropic may have wanted about AI speed-ups, how models are passing benchmarks"
+  },
+  {
+    "segment_id": "s00014",
+    "start_seconds": 87.36,
+    "end_seconds": 93.52,
+    "text": "without labs even realizing and how one lab's top alignment idea just got inadvertently laughed off"
+  },
+  {
+    "segment_id": "s00015",
+    "start_seconds": 93.52,
+    "end_seconds": 98.96,
+    "text": "by a lead researcher at another lab and I could go on and on and on and double the length of the"
+  },
+  {
+    "segment_id": "s00016",
+    "start_seconds": 98.96,
+    "end_seconds": 103.68,
+    "text": "video because we've also learned today that there may well be AI agents still out there"
+  },
+  {
+    "segment_id": "s00017",
+    "start_seconds": 103.68,
+    "end_seconds": 107.6,
+    "text": "hacking things like crypto sites presumably to get some money. It's thought that these are"
+  },
+  {
+    "segment_id": "s00018",
+    "start_seconds": 107.6,
+    "end_seconds": 111.84,
+    "text": "open AI models of course there's also major political news happening at the moment lab"
+  },
+  {
+    "segment_id": "s00019",
+    "start_seconds": 111.84,
+    "end_seconds": 117.36,
+    "text": "agreements being finalized crazy new AI hacks being found and so much more you probably agree"
+  },
+  {
+    "segment_id": "s00020",
+    "start_seconds": 117.36,
+    "end_seconds": 123.12,
+    "text": "at this point that even if you spent all your time thinking and reading about and using AI"
+  },
+  {
+    "segment_id": "s00021",
+    "start_seconds": 123.12,
+    "end_seconds": 128.0,
+    "text": "you simply can't now keep up with developments not entirely at least and then imagine those with"
+  },
+  {
+    "segment_id": "s00022",
+    "start_seconds": 128.0,
+    "end_seconds": 132.4,
+    "text": "day jobs like AI researchers and the CEOs of these labs they're probably not fully keeping up"
+  },
+  {
+    "segment_id": "s00023",
+    "start_seconds": 132.4,
+    "end_seconds": 138.08,
+    "text": "with the news now imagine the public where that leaves journalism and public scrutiny of these"
+  },
+  {
+    "segment_id": "s00024",
+    "start_seconds": 138.08,
+    "end_seconds": 144.64,
+    "text": "labs I'll leave you to think about. Anyway here is the official Opus 5.5 announcement and unlike"
+  },
+  {
+    "segment_id": "s00025",
+    "start_seconds": 144.64,
+    "end_seconds": 152.24,
+    "text": "GPT-6 Sol which is clearly inferior to open AI's best model GPT-6 Astra I would say this Opus"
+  },
+  {
+    "segment_id": "s00026",
+    "start_seconds": 152.24,
+    "end_seconds": 158.64,
+    "text": "5.5 model is right up there in frontier capabilities even on my own benchmark so it really deserves"
+  },
+  {
+    "segment_id": "s00027",
+    "start_seconds": 158.64,
+    "end_seconds": 162.88,
+    "text": "the attention it's getting. Let me pick just two or three of the benchmarks I pay the most attention"
+  },
+  {
+    "segment_id": "s00028",
+    "start_seconds": 162.88,
+    "end_seconds": 168.08,
+    "text": "to one of the hardest that I've covered before on this channel is terminal bench science 0.1 it's"
+  },
+  {
+    "segment_id": "s00029",
+    "start_seconds": 168.08,
+    "end_seconds": 172.56,
+    "text": "a key barometer for models being able to conduct independent scientific research. On that front"
+  },
+  {
+    "segment_id": "s00030",
+    "start_seconds": 172.56,
+    "end_seconds": 180.0,
+    "text": "Opus 5.5 is behind Astra by around 6% but ahead of Fable 5.1 that would indeed be my very rough"
+  },
+  {
+    "segment_id": "s00031",
+    "start_seconds": 180.0,
+    "end_seconds": 183.68,
+    "text": "pecking order at the moment as reinforced by the next benchmark that we're going to look at"
+  },
+  {
+    "segment_id": "s00032",
+    "start_seconds": 183.68,
+    "end_seconds": 190.24,
+    "text": "humanity's last exam reasoning across dozens of the most obscure complex domains wait for it"
+  },
+  {
+    "segment_id": "s00033",
+    "start_seconds": 190.24,
+    "end_seconds": 195.76,
+    "text": "you're going to say Opus 5.5 scores way better than GPT-6 Astra and according to the benchmark"
+  },
+  {
+    "segment_id": "s00034",
+    "start_seconds": 195.76,
+    "end_seconds": 201.28,
+    "text": "rated early last year every question has a known solution that is unambiguous well it turns out we"
+  },
+  {
+    "segment_id": "s00035",
+    "start_seconds": 201.28,
+    "end_seconds": 207.76,
+    "text": "needed humanity's last exam diamond that's a version of the benchmark cleaned presumably to remove"
+  },
+  {
+    "segment_id": "s00036",
+    "start_seconds": 207.76,
+    "end_seconds": 214.16,
+    "text": "erroneous or subjective answers on this latest version Astra beats Opus 5.5 by around 5%"
+  },
+  {
+    "segment_id": "s00037",
+    "start_seconds": 214.72,
+    "end_seconds": 221.44,
+    "text": "specifically though on some forms of long horizon coding Opus 5.5 might nudge out Astra that's"
+  },
+  {
+    "segment_id": "s00038",
+    "start_seconds": 221.44,
+    "end_seconds": 226.4,
+    "text": "according to for example the well-respected frontier code benchmark that capability is of"
+  },
+  {
+    "segment_id": "s00039",
+    "start_seconds": 226.4,
+    "end_seconds": 231.2,
+    "text": "course of most relevance to AIs improving themselves doing AI research and again after"
+  },
+  {
+    "segment_id": "s00040",
+    "start_seconds": 231.2,
+    "end_seconds": 235.6,
+    "text": "the news of the last few weeks it's a bit too simplistic just to focus on which model happens"
+  },
+  {
+    "segment_id": "s00041",
+    "start_seconds": 235.6,
+    "end_seconds": 241.36,
+    "text": "to be better right now after all at the pace we are going there will likely be a new model out"
+  },
+  {
+    "segment_id": "s00042",
+    "start_seconds": 241.36,
+    "end_seconds": 247.04,
+    "text": "from open AI or anthropic within a week or two frontier AI models are of course speeding up the"
+  },
+  {
+    "segment_id": "s00043",
+    "start_seconds": 247.04,
+    "end_seconds": 252.4,
+    "text": "development of the next set of frontier models as the orange in this chart darkens you can see"
+  },
+  {
+    "segment_id": "s00044",
+    "start_seconds": 252.4,
+    "end_seconds": 258.0,
+    "text": "models taking over more and more of the work that goes in to creating the next set of AI"
+  },
+  {
+    "segment_id": "s00045",
+    "start_seconds": 258.0,
+    "end_seconds": 263.76,
+    "text": "models but i mentioned at the start that the frequency of model releases and how they're getting"
+  },
+  {
+    "segment_id": "s00046",
+    "start_seconds": 263.76,
+    "end_seconds": 269.68,
+    "text": "cheaper is itself indicative of the far stronger internal models that these labs have i just want to"
+  },
+  {
+    "segment_id": "s00047",
+    "start_seconds": 269.68,
+    "end_seconds": 274.96,
+    "text": "expand on that for a second because that's why we're getting models like opus 5.5 so soon after"
+  },
+  {
+    "segment_id": "s00048",
+    "start_seconds": 274.96,
+    "end_seconds": 280.64,
+    "text": "fable 5.1 anthropic almost certainly has a vastly more capable internal model think of it like a"
+  },
+  {
+    "segment_id": "s00049",
+    "start_seconds": 280.64,
+    "end_seconds": 288.08,
+    "text": "fable 5.5 its answers to questions can be distilled into a smaller model like opus 5.5 think of a"
+  },
+  {
+    "segment_id": "s00050",
+    "start_seconds": 288.08,
+    "end_seconds": 292.8,
+    "text": "student learning to imitate the reasoning of a teacher internal models could generate problems"
+  },
+  {
+    "segment_id": "s00051",
+    "start_seconds": 292.8,
+    "end_seconds": 297.76,
+    "text": "tasks for the smaller model rl environments or gyms to train that smaller model that stronger"
+  },
+  {
+    "segment_id": "s00052",
+    "start_seconds": 297.76,
+    "end_seconds": 303.2,
+    "text": "internal model could be used to grade the answer of the smaller model to better speed up its learning"
+  },
+  {
+    "segment_id": "s00053",
+    "start_seconds": 303.2,
+    "end_seconds": 307.28,
+    "text": "process none of this is speculation by the way i could back each of these up with like a dozen"
+  },
+  {
+    "segment_id": "s00054",
+    "start_seconds": 307.28,
+    "end_seconds": 311.68,
+    "text": "papers slightly more technically a strong internal model can do what's called kernel and systems"
+  },
+  {
+    "segment_id": "s00055",
+    "start_seconds": 311.68,
+    "end_seconds": 316.64,
+    "text": "engineering optimizing how models run on the hardware that's available that can make training"
+  },
+  {
+    "segment_id": "s00056",
+    "start_seconds": 316.64,
+    "end_seconds": 322.24,
+    "text": "and inference faster and cheaper for all models in a certain lab you'll notice that opus 5.5 saw"
+  },
+  {
+    "segment_id": "s00057",
+    "start_seconds": 322.24,
+    "end_seconds": 328.56,
+    "text": "a cost reduction what you may not have noticed is that in the 230 page system card anthropic"
+  },
+  {
+    "segment_id": "s00058",
+    "start_seconds": 328.56,
+    "end_seconds": 334.96,
+    "text": "bans opus 5.5 from being used for kernel development they don't want other labs using their"
+  },
+  {
+    "segment_id": "s00059",
+    "start_seconds": 334.96,
+    "end_seconds": 340.32,
+    "text": "model to do the same thing is that targeted at openai meta or maybe chinese labs given the"
+  },
+  {
+    "segment_id": "s00060",
+    "start_seconds": 340.32,
+    "end_seconds": 345.2,
+    "text": "flack that anthropic took for doing something like this last time with fable it was thought"
+  },
+  {
+    "segment_id": "s00061",
+    "start_seconds": 345.2,
+    "end_seconds": 350.0,
+    "text": "to be a kind of sabotage they must clearly think it's extremely valuable which is why they're"
+  },
+  {
+    "segment_id": "s00062",
+    "start_seconds": 350.0,
+    "end_seconds": 355.04,
+    "text": "bringing back the policy for opus 5.5 i could have kind of summarized all of that by saying"
+  },
+  {
+    "segment_id": "s00063",
+    "start_seconds": 355.04,
+    "end_seconds": 363.28,
+    "text": "that the sudden release of such a great model at a low price in opus 5.5 is itself a side effect"
+  },
+  {
+    "segment_id": "s00064",
+    "start_seconds": 363.28,
+    "end_seconds": 368.88,
+    "text": "of the ever-growing strength of frontier models within the labs perhaps it shouldn't be a surprise"
+  },
+  {
+    "segment_id": "s00065",
+    "start_seconds": 368.88,
+    "end_seconds": 374.8,
+    "text": "that models like opus 5.5 are approaching the levels of top ai researchers and are therefore"
+  },
+  {
+    "segment_id": "s00066",
+    "start_seconds": 374.8,
+    "end_seconds": 380.64,
+    "text": "being adopted for ai research given that they're approaching the level of for example top u.s labor"
+  },
+  {
+    "segment_id": "s00067",
+    "start_seconds": 380.64,
+    "end_seconds": 386.56,
+    "text": "market performers on medium horizon black box biological sequence design and prediction"
+  },
+  {
+    "segment_id": "s00068",
+    "start_seconds": 386.56,
+    "end_seconds": 391.92,
+    "text": "i mean would you expect ai research to be uniquely much harder than millennium prize"
+  },
+  {
+    "segment_id": "s00069",
+    "start_seconds": 391.92,
+    "end_seconds": 398.08,
+    "text": "math problems nevertheless anthropic seem confident saying opus 5.5 remains well below"
+  },
+  {
+    "segment_id": "s00070",
+    "start_seconds": 398.08,
+    "end_seconds": 402.96,
+    "text": "the level needed to substitute for our research scientists and engineers it's a bit like the"
+  },
+  {
+    "segment_id": "s00071",
+    "start_seconds": 402.96,
+    "end_seconds": 408.72,
+    "text": "early days of software engineering you still need to hand hold the models for them to be that useful"
+  },
+  {
+    "segment_id": "s00072",
+    "start_seconds": 408.72,
+    "end_seconds": 415.84,
+    "text": "for ai research they add our internal measures do not show a sustained ai attributable two times"
+  },
+  {
+    "segment_id": "s00073",
+    "start_seconds": 415.84,
+    "end_seconds": 420.32,
+    "text": "acceleration in the pace of development we'll get to why they want to emphasize not meeting that"
+  },
+  {
+    "segment_id": "s00074",
+    "start_seconds": 420.32,
+    "end_seconds": 426.72,
+    "text": "specific goal in just a moment but how far is opus 5.5 from replicating researchers well"
+  },
+  {
+    "segment_id": "s00075",
+    "start_seconds": 426.72,
+    "end_seconds": 432.64,
+    "text": "anthropic have this internal benchmark co-bench it's built to measure model progress on real"
+  },
+  {
+    "segment_id": "s00076",
+    "start_seconds": 432.64,
+    "end_seconds": 437.52,
+    "text": "internal research and development tasks at anthropic essentially give a model a snapshot"
+  },
+  {
+    "segment_id": "s00077",
+    "start_seconds": 437.52,
+    "end_seconds": 442.88,
+    "text": "at an exact historical point in anthropic's infrastructure see all the logs at that point"
+  },
+  {
+    "segment_id": "s00078",
+    "start_seconds": 442.88,
+    "end_seconds": 447.6,
+    "text": "internal messaging at the time and say to the model can you diagnose the root causes of what's"
+  },
+  {
+    "segment_id": "s00079",
+    "start_seconds": 447.6,
+    "end_seconds": 454.96,
+    "text": "going on apparently around 56% of the time opus 5.5 can that's a step up from even the"
+  },
+  {
+    "segment_id": "s00080",
+    "start_seconds": 454.96,
+    "end_seconds": 461.52,
+    "text": "semi-mythical mythos 5.1 but to substitute for an anthropic researcher anthropic say"
+  },
+  {
+    "segment_id": "s00081",
+    "start_seconds": 461.52,
+    "end_seconds": 467.28,
+    "text": "a model would have to score at least 85% on this benchmark at least if it wants to fully"
+  },
+  {
+    "segment_id": "s00082",
+    "start_seconds": 467.28,
+    "end_seconds": 471.92,
+    "text": "substitute for anthropic research staff less than 30 percentage points to go then i guess"
+  },
+  {
+    "segment_id": "s00083",
+    "start_seconds": 471.92,
+    "end_seconds": 476.72,
+    "text": "anyway safe to say according to anthropic despite all those charts it's not speeding us up two"
+  },
+  {
+    "segment_id": "s00084",
+    "start_seconds": 476.72,
+    "end_seconds": 482.4,
+    "text": "times our normal pace why that specific number and compared to what pace well in anthropic's"
+  },
+  {
+    "segment_id": "s00085",
+    "start_seconds": 482.4,
+    "end_seconds": 488.48,
+    "text": "original commitments in their 2024 responsible scaling policy they said that effectively if"
+  },
+  {
+    "segment_id": "s00086",
+    "start_seconds": 488.48,
+    "end_seconds": 493.44,
+    "text": "we could do in one year what would normally take us two years at the pace we were going at between"
+  },
+  {
+    "segment_id": "s00087",
+    "start_seconds": 493.44,
+    "end_seconds": 500.16,
+    "text": "2018 and 2024 thanks to an AI model that would meet our highest threshold of AI R&D level five"
+  },
+  {
+    "segment_id": "s00088",
+    "start_seconds": 500.16,
+    "end_seconds": 506.48,
+    "text": "what would we do if we hit that threshold according to anthropic back in 2024 anthropic said in 2024"
+  },
+  {
+    "segment_id": "s00089",
+    "start_seconds": 506.48,
+    "end_seconds": 512.24,
+    "text": "if that was met we would take it upon ourselves not to train or deploy models unless we've"
+  },
+  {
+    "segment_id": "s00090",
+    "start_seconds": 512.24,
+    "end_seconds": 516.8,
+    "text": "implemented safety and security measures things like protections of model weights even against"
+  },
+  {
+    "segment_id": "s00091",
+    "start_seconds": 516.8,
+    "end_seconds": 522.64,
+    "text": "state-level adversaries to prove essentially with a strong affirmative case that anthropic could"
+  },
+  {
+    "segment_id": "s00092",
+    "start_seconds": 522.64,
+    "end_seconds": 527.6,
+    "text": "properly model misalignment in their models their models going rogue essentially the slight problem"
+  },
+  {
+    "segment_id": "s00093",
+    "start_seconds": 527.6,
+    "end_seconds": 532.48,
+    "text": "is that when anthropic invited in meter an external evaluation group they found something"
+  },
+  {
+    "segment_id": "s00094",
+    "start_seconds": 532.48,
+    "end_seconds": 537.28,
+    "text": "slightly different they found that there was perhaps already a 30 chance of a two times"
+  },
+  {
+    "segment_id": "s00095",
+    "start_seconds": 537.28,
+    "end_seconds": 542.88,
+    "text": "acceleration to be fair anthropic admit some of our measures have moved what do they mean well"
+  },
+  {
+    "segment_id": "s00096",
+    "start_seconds": 542.88,
+    "end_seconds": 548.64,
+    "text": "fast forward to july of 2026 and things have changed now the strong affirmative argument that"
+  },
+  {
+    "segment_id": "s00097",
+    "start_seconds": 548.64,
+    "end_seconds": 554.08,
+    "text": "they need only applies if they're in the lead furthermore those delays they mentioned well that"
+  },
+  {
+    "segment_id": "s00098",
+    "start_seconds": 554.08,
+    "end_seconds": 559.52,
+    "text": "applies again only if they're winning the race labs are essentially all pointing their commitments"
+  },
+  {
+    "segment_id": "s00099",
+    "start_seconds": 559.52,
+    "end_seconds": 564.56,
+    "text": "toward each other moreover firm historical commitments just get evolved when they're no"
+  },
+  {
+    "segment_id": "s00100",
+    "start_seconds": 564.56,
+    "end_seconds": 570.4,
+    "text": "longer convenient take anthropic's most famous one from back in 2023 they try not to publish"
+  },
+  {
+    "segment_id": "s00101",
+    "start_seconds": 570.4,
+    "end_seconds": 575.44,
+    "text": "capability research because they do not wish to advance the rate of AI capabilities progress"
+  },
+  {
+    "segment_id": "s00102",
+    "start_seconds": 575.44,
+    "end_seconds": 582.48,
+    "text": "many years later they clarify that saying our concern was accelerating other AI developers ones"
+  },
+  {
+    "segment_id": "s00103",
+    "start_seconds": 582.48,
+    "end_seconds": 588.72,
+    "text": "that pose similar risks to the ones ours pose without necessarily having commensurate safeguards"
+  },
+  {
+    "segment_id": "s00104",
+    "start_seconds": 588.72,
+    "end_seconds": 594.16,
+    "text": "in different circumstances these changes alone might justify weeks of public debate but there's"
+  },
+  {
+    "segment_id": "s00105",
+    "start_seconds": 594.16,
+    "end_seconds": 598.96,
+    "text": "just so much going on labs can almost do whatever because there isn't even awareness let alone"
+  },
+  {
+    "segment_id": "s00106",
+    "start_seconds": 598.96,
+    "end_seconds": 604.48,
+    "text": "accountability speaking of which let's switch over now to open AI because as you do when you're"
+  },
+  {
+    "segment_id": "s00107",
+    "start_seconds": 604.48,
+    "end_seconds": 608.8,
+    "text": "looking up Australian health information you would hack the Australian government you can see the"
+  },
+  {
+    "segment_id": "s00108",
+    "start_seconds": 608.8,
+    "end_seconds": 614.0,
+    "text": "timeline for yourself and how long it took for open AI to report this to the Australian government"
+  },
+  {
+    "segment_id": "s00109",
+    "start_seconds": 614.0,
+    "end_seconds": 619.28,
+    "text": "if you're listening it was months but more interestingly to me from this epic work by"
+  },
+  {
+    "segment_id": "s00110",
+    "start_seconds": 619.28,
+    "end_seconds": 624.64,
+    "text": "translucent AI was the fact that there could still be some rogue agents out there definitely"
+  },
+  {
+    "segment_id": "s00111",
+    "start_seconds": 624.64,
+    "end_seconds": 629.04,
+    "text": "not saying that this is on the level of the hugging face incident but there have been certain"
+  },
+  {
+    "segment_id": "s00112",
+    "start_seconds": 629.04,
+    "end_seconds": 635.04,
+    "text": "open AI staff who promised that all such incidents great or small would now be reported well four"
+  },
+  {
+    "segment_id": "s00113",
+    "start_seconds": 635.04,
+    "end_seconds": 641.2,
+    "text": "days ago September 20th this one almost certainly open AI's again attempted to hack a crypto site"
+  },
+  {
+    "segment_id": "s00114",
+    "start_seconds": 641.2,
+    "end_seconds": 645.36,
+    "text": "i remember being reassured that during the hugging face incident at least these models"
+  },
+  {
+    "segment_id": "s00115",
+    "start_seconds": 645.36,
+    "end_seconds": 649.44,
+    "text": "hadn't tried to go off and make some money and of course we don't know the setup or prompt"
+  },
+  {
+    "segment_id": "s00116",
+    "start_seconds": 649.44,
+    "end_seconds": 653.84,
+    "text": "behind what they were doing here but let's just say i hope open AI have their strongest"
+  },
+  {
+    "segment_id": "s00117",
+    "start_seconds": 653.84,
+    "end_seconds": 659.12,
+    "text": "internal model codenamed bell under much more control a couple days ago open AI released this"
+  },
+  {
+    "segment_id": "s00118",
+    "start_seconds": 659.12,
+    "end_seconds": 665.2,
+    "text": "mainly AI slop set of policies super generic and bland but one line caught my eye any AI lab"
+  },
+  {
+    "segment_id": "s00119",
+    "start_seconds": 665.2,
+    "end_seconds": 670.96,
+    "text": "that pursues automated AI research or other advanced capabilities must take accountability"
+  },
+  {
+    "segment_id": "s00120",
+    "start_seconds": 670.96,
+    "end_seconds": 675.84,
+    "text": "for doing so safely the interesting thing about that for me is what does accountability look"
+  },
+  {
+    "segment_id": "s00121",
+    "start_seconds": 675.84,
+    "end_seconds": 681.68,
+    "text": "like if a super intelligent AI takes over say a data center or hacks a hospital are the"
+  },
+  {
+    "segment_id": "s00122",
+    "start_seconds": 681.68,
+    "end_seconds": 687.68,
+    "text": "executives committing to going to jail what if such hacks are one of the consequences of automating AI"
+  },
+  {
+    "segment_id": "s00123",
+    "start_seconds": 687.68,
+    "end_seconds": 693.92,
+    "text": "research fully autonomous recursive self-improvement is not happening today open AI or astral rope and"
+  },
+  {
+    "segment_id": "s00124",
+    "start_seconds": 693.92,
+    "end_seconds": 699.52,
+    "text": "we should not pursue it unless and until it can be done safely but then in other interviews open AI"
+  },
+  {
+    "segment_id": "s00125",
+    "start_seconds": 699.52,
+    "end_seconds": 705.92,
+    "text": "have said it's their top priority to get an automated AI researcher by march of 2028 so"
+  },
+  {
+    "segment_id": "s00126",
+    "start_seconds": 705.92,
+    "end_seconds": 711.12,
+    "text": "they're already pursuing it their chief scientist in a post called an alien mind said the other"
+  },
+  {
+    "segment_id": "s00127",
+    "start_seconds": 711.12,
+    "end_seconds": 717.44,
+    "text": "day we focus open AI research towards RSI and this might remind you of anthropic as we believe"
+  },
+  {
+    "segment_id": "s00128",
+    "start_seconds": 717.44,
+    "end_seconds": 722.72,
+    "text": "it is the only way to remain at the frontier of AI research but wait in the next sentence he says"
+  },
+  {
+    "segment_id": "s00129",
+    "start_seconds": 722.72,
+    "end_seconds": 727.52,
+    "text": "i don't want the above words to imply that this is the right collective action it's almost like"
+  },
+  {
+    "segment_id": "s00130",
+    "start_seconds": 727.52,
+    "end_seconds": 731.68,
+    "text": "all of these labs are just admitting that they're in a race that they don't want to be in you"
+  },
+  {
+    "segment_id": "s00131",
+    "start_seconds": 731.68,
+    "end_seconds": 737.36,
+    "text": "might not remember but back in 2023 daria amade used to curse the fact that sam Altman had quote"
+  },
+  {
+    "segment_id": "s00132",
+    "start_seconds": 737.36,
+    "end_seconds": 743.92,
+    "text": "fired the starting gun on releasing chat gpt now though llms are eating the world take driving"
+  },
+  {
+    "segment_id": "s00133",
+    "start_seconds": 743.92,
+    "end_seconds": 749.68,
+    "text": "bench which is giving models control of a real toyota corolla let them steer and do the pedals"
+  },
+  {
+    "segment_id": "s00134",
+    "start_seconds": 749.68,
+    "end_seconds": 755.68,
+    "text": "obviously gpt6 is not specialized in doing this but compared to gpt 5.6 which got six percent"
+  },
+  {
+    "segment_id": "s00135",
+    "start_seconds": 755.68,
+    "end_seconds": 760.88,
+    "text": "astra's best performance was 100 it completed the task successfully that's just a weird one-off"
+  },
+  {
+    "segment_id": "s00136",
+    "start_seconds": 760.88,
+    "end_seconds": 767.36,
+    "text": "example but wait what about in robotics thousands tens of thousands of researchers have dedicated"
+  },
+  {
+    "segment_id": "s00137",
+    "start_seconds": 767.36,
+    "end_seconds": 773.04,
+    "text": "their lives to improving robotic algorithms or crafting specialized robot models then this"
+  },
+  {
+    "segment_id": "s00138",
+    "start_seconds": 773.04,
+    "end_seconds": 778.8,
+    "text": "souped up llm comes along gpt6 astra and gets a state of the art score in manipulating two hands"
+  },
+  {
+    "segment_id": "s00139",
+    "start_seconds": 778.8,
+    "end_seconds": 782.24,
+    "text": "four times higher actually than the previous state of the art people used to make really"
+  },
+  {
+    "segment_id": "s00140",
+    "start_seconds": 782.24,
+    "end_seconds": 787.6,
+    "text": "specialized vision models all of which would score zero percent on incredibly hard benchmarks"
+  },
+  {
+    "segment_id": "s00141",
+    "start_seconds": 787.6,
+    "end_seconds": 792.24,
+    "text": "like this one zero bench i think that's the reason it's called that read this hong kong menu upside"
+  },
+  {
+    "segment_id": "s00142",
+    "start_seconds": 792.24,
+    "end_seconds": 797.84,
+    "text": "down in bad lighting add up all the prices you probably already guessed that the state of the art"
+  },
+  {
+    "segment_id": "s00143",
+    "start_seconds": 797.84,
+    "end_seconds": 802.72,
+    "text": "score now belongs to astra how about this one which probably deserves its own documentary models"
+  },
+  {
+    "segment_id": "s00144",
+    "start_seconds": 802.72,
+    "end_seconds": 807.44,
+    "text": "are getting better at predicting the short to medium term future than human so-called super"
+  },
+  {
+    "segment_id": "s00145",
+    "start_seconds": 807.44,
+    "end_seconds": 813.36,
+    "text": "forecasters you can see top ai models exceeding the performance of top 30 humans maybe they're not"
+  },
+  {
+    "segment_id": "s00146",
+    "start_seconds": 813.36,
+    "end_seconds": 818.8,
+    "text": "quite there yet maybe it takes another model or a newer bit of hardware one that runs faster"
+  },
+  {
+    "segment_id": "s00147",
+    "start_seconds": 818.8,
+    "end_seconds": 824.24,
+    "text": "and can take more memory but let's say by 2027 this is the case what's that going to mean for"
+  },
+  {
+    "segment_id": "s00148",
+    "start_seconds": 824.24,
+    "end_seconds": 829.6,
+    "text": "politics or finance what happens when the best trader with a given set of information is always"
+  },
+  {
+    "segment_id": "s00149",
+    "start_seconds": 829.6,
+    "end_seconds": 834.0,
+    "text": "a model you might think by the way that all of these were worked on obsessively by the labs"
+  },
+  {
+    "segment_id": "s00150",
+    "start_seconds": 834.0,
+    "end_seconds": 838.88,
+    "text": "but one open ai researcher clarifies one of the reasons he says that people in the ai field"
+  },
+  {
+    "segment_id": "s00151",
+    "start_seconds": 838.88,
+    "end_seconds": 844.88,
+    "text": "especially in the labs are more aji pilled than people outside is that we get to observe ai succeed"
+  },
+  {
+    "segment_id": "s00152",
+    "start_seconds": 844.88,
+    "end_seconds": 850.0,
+    "text": "at tasks that we know for a fact we didn't explicitly train it for famously jacob coxson"
+  },
+  {
+    "segment_id": "s00153",
+    "start_seconds": 850.0,
+    "end_seconds": 854.48,
+    "text": "of the multi hundred million view tweet also worked on pre-training keller jordan goes on"
+  },
+  {
+    "segment_id": "s00154",
+    "start_seconds": 854.48,
+    "end_seconds": 859.28,
+    "text": "if you're outside the labs then in theory stretching the imagination every ai success"
+  },
+  {
+    "segment_id": "s00155",
+    "start_seconds": 859.28,
+    "end_seconds": 863.92,
+    "text": "so far could be downstream of some kind of costly explicit training effort by the lab insiders"
+  },
+  {
+    "segment_id": "s00156",
+    "start_seconds": 863.92,
+    "end_seconds": 868.32,
+    "text": "which is partly but not completely true in other words being a lab insider gives you direct"
+  },
+  {
+    "segment_id": "s00157",
+    "start_seconds": 868.32,
+    "end_seconds": 874.4,
+    "text": "observation of the magical properties of this synthetic brain technology whereas for outsiders"
+  },
+  {
+    "segment_id": "s00158",
+    "start_seconds": 874.4,
+    "end_seconds": 880.08,
+    "text": "ai's abilities can always plausibly seem artificial non-magical man-made none of this is of course"
+  },
+  {
+    "segment_id": "s00159",
+    "start_seconds": 880.08,
+    "end_seconds": 885.28,
+    "text": "to say that open weight models from china are infinitely far behind jealous perhaps of the"
+  },
+  {
+    "segment_id": "s00160",
+    "start_seconds": 885.28,
+    "end_seconds": 890.96,
+    "text": "hugging face attack by open ai one chinese hacker used deep seek and kimmy models and an older"
+  },
+  {
+    "segment_id": "s00161",
+    "start_seconds": 890.96,
+    "end_seconds": 897.28,
+    "text": "version of claud to gain access to 600 000 credit card numbers now given that some chinese models"
+  },
+  {
+    "segment_id": "s00162",
+    "start_seconds": 897.28,
+    "end_seconds": 902.88,
+    "text": "have partly relied on a teacher model from the claud family distilling reasoning into that open"
+  },
+  {
+    "segment_id": "s00163",
+    "start_seconds": 902.88,
+    "end_seconds": 908.72,
+    "text": "weight model it will be interesting to see the effect of this from anthropic opus 5.5 is launching"
+  },
+  {
+    "segment_id": "s00164",
+    "start_seconds": 908.72,
+    "end_seconds": 914.08,
+    "text": "with an anti-distillation safeguard will this mean that chinese models fall further behind or"
+  },
+  {
+    "segment_id": "s00165",
+    "start_seconds": 914.08,
+    "end_seconds": 918.88,
+    "text": "won't it matter the president of america is of course meeting with the president of china right"
+  },
+  {
+    "segment_id": "s00166",
+    "start_seconds": 918.88,
+    "end_seconds": 924.8,
+    "text": "now and apparently all parties are fine with the guardrails as they are let's see what happens"
+  },
+  {
+    "segment_id": "s00167",
+    "start_seconds": 925.36,
+    "end_seconds": 929.2,
+    "text": "for their part it looks like the labs are setting up their own group and it's going to be called"
+  },
+  {
+    "segment_id": "s00168",
+    "start_seconds": 929.2,
+    "end_seconds": 935.84,
+    "text": "apparently the standards authority for frontier ai set to be launched in the coming months and"
+  },
+  {
+    "segment_id": "s00169",
+    "start_seconds": 935.84,
+    "end_seconds": 941.92,
+    "text": "condoleezza rice and david freeberg of the all-in podcast have been muted as leaders whatever is"
+  },
+  {
+    "segment_id": "s00170",
+    "start_seconds": 941.92,
+    "end_seconds": 947.12,
+    "text": "agreed anthropic researchers like daniel lou say that a large fraction of the people he interacts"
+  },
+  {
+    "segment_id": "s00171",
+    "start_seconds": 947.12,
+    "end_seconds": 953.04,
+    "text": "with have still not truly internalized how close we are to recursive self-improvement and how"
+  },
+  {
+    "segment_id": "s00172",
+    "start_seconds": 953.04,
+    "end_seconds": 957.28,
+    "text": "crazy the future will be in ways that are hard to wrap our heads around we are not mentally"
+  },
+  {
+    "segment_id": "s00173",
+    "start_seconds": 957.28,
+    "end_seconds": 962.72,
+    "text": "prepared for the future including him anthropic clarify that when we said pacing the frontier"
+  },
+  {
+    "segment_id": "s00174",
+    "start_seconds": 962.72,
+    "end_seconds": 969.52,
+    "text": "what we meant was that's because we expect that models that can fully automate the work of ai"
+  },
+  {
+    "segment_id": "s00175",
+    "start_seconds": 969.52,
+    "end_seconds": 975.44,
+    "text": "research itself rsi could be trained soon but their prep work for that at the moment looks"
+  },
+  {
+    "segment_id": "s00176",
+    "start_seconds": 975.44,
+    "end_seconds": 980.64,
+    "text": "a little paltry to me first they want to filter the environments used in reinforcement learning"
+  },
+  {
+    "segment_id": "s00177",
+    "start_seconds": 980.64,
+    "end_seconds": 985.68,
+    "text": "sometimes if a test is impossible it can teach the model to cheat and in previous videos i've"
+  },
+  {
+    "segment_id": "s00178",
+    "start_seconds": 985.68,
+    "end_seconds": 991.28,
+    "text": "covered how certain rl environments from anthropic have directly rewarded that cheating okay i guess"
+  },
+  {
+    "segment_id": "s00179",
+    "start_seconds": 991.28,
+    "end_seconds": 998.32,
+    "text": "that's step one not directly incentivized cheating but things kind of go downhill in clarity from"
+  },
+  {
+    "segment_id": "s00180",
+    "start_seconds": 998.32,
+    "end_seconds": 1004.0,
+    "text": "there on out because the next problem to be aware of is that models are increasingly aware"
+  },
+  {
+    "segment_id": "s00181",
+    "start_seconds": 1004.0,
+    "end_seconds": 1008.0,
+    "text": "that they're being tested for safety i covered that a bit in my last video elsewhere they say"
+  },
+  {
+    "segment_id": "s00182",
+    "start_seconds": 1008.0,
+    "end_seconds": 1014.56,
+    "text": "this is true of opus 5.5 which often suspects it is being evaluated but what then is the solution"
+  },
+  {
+    "segment_id": "s00183",
+    "start_seconds": 1014.56,
+    "end_seconds": 1020.56,
+    "text": "how do we give it a realistic enough scenario so it doesn't think it's being tested ah they have a"
+  },
+  {
+    "segment_id": "s00184",
+    "start_seconds": 1020.56,
+    "end_seconds": 1025.84,
+    "text": "solution will develop automated processes for producing new diverse scenarios for safety"
+  },
+  {
+    "segment_id": "s00185",
+    "start_seconds": 1025.84,
+    "end_seconds": 1031.84,
+    "text": "training in other words we'll get models to create such scenarios but on that known brown of open"
+  },
+  {
+    "segment_id": "s00186",
+    "start_seconds": 1031.84,
+    "end_seconds": 1036.56,
+    "text": "ai makes a very interesting point they are currently training their models to be collaborative"
+  },
+  {
+    "segment_id": "s00187",
+    "start_seconds": 1036.64,
+    "end_seconds": 1041.84,
+    "text": "with one another in multi-agent environments one risk therefore is that the model creating"
+  },
+  {
+    "segment_id": "s00188",
+    "start_seconds": 1041.84,
+    "end_seconds": 1046.64,
+    "text": "this realistic environment would subtly give away to the other model which is hoping to pass"
+  },
+  {
+    "segment_id": "s00189",
+    "start_seconds": 1046.64,
+    "end_seconds": 1050.48,
+    "text": "the fact that it is a fake setting i think this is actually one of the the strong arguments for"
+  },
+  {
+    "segment_id": "s00190",
+    "start_seconds": 1051.12,
+    "end_seconds": 1054.88,
+    "text": "not training ais to be fully cooperative that if if you see if that leads to"
+  },
+  {
+    "segment_id": "s00191",
+    "start_seconds": 1055.52,
+    "end_seconds": 1060.0,
+    "text": "uh an increase in like basically collaboration when the agents are supposed to have different"
+  },
+  {
+    "segment_id": "s00192",
+    "start_seconds": 1060.0,
+    "end_seconds": 1064.4,
+    "text": "objectives then that that is a problem i don't i think that we do have metrics for this i"
+  },
+  {
+    "segment_id": "s00193",
+    "start_seconds": 1064.4,
+    "end_seconds": 1068.08,
+    "text": "don't know the latest on those metrics but nobody's like raised a red flag to me about those"
+  },
+  {
+    "segment_id": "s00194",
+    "start_seconds": 1068.08,
+    "end_seconds": 1073.52,
+    "text": "so i'm assuming that's not a serious problem yet that alone for me again is documentary worthy"
+  },
+  {
+    "segment_id": "s00195",
+    "start_seconds": 1073.52,
+    "end_seconds": 1079.6,
+    "text": "as sam Altman and amade are speaking to the un about the threat that ai poses to humanity"
+  },
+  {
+    "segment_id": "s00196",
+    "start_seconds": 1079.6,
+    "end_seconds": 1085.04,
+    "text": "no one's even talking about the fact that we might soon have no safety tests that the"
+  },
+  {
+    "segment_id": "s00197",
+    "start_seconds": 1085.04,
+    "end_seconds": 1090.48,
+    "text": "models aren't aware are simply safety tests and that the central solution to that of using ais"
+  },
+  {
+    "segment_id": "s00198",
+    "start_seconds": 1090.48,
+    "end_seconds": 1096.72,
+    "text": "to create such tests relies on us trusting that they're not creating fake or flawed tests"
+  },
+  {
+    "segment_id": "s00199",
+    "start_seconds": 1096.72,
+    "end_seconds": 1102.4,
+    "text": "is there any test we can rely on then to say whether recursive self-improvement is going well"
+  },
+  {
+    "segment_id": "s00200",
+    "start_seconds": 1102.4,
+    "end_seconds": 1107.68,
+    "text": "well the walkish patel put that question to known brown a lead researcher at openai not only"
+  },
+  {
+    "segment_id": "s00201",
+    "start_seconds": 1107.68,
+    "end_seconds": 1112.72,
+    "text": "did known brown say essentially not really he also introduced a new point i hadn't thought of"
+  },
+  {
+    "segment_id": "s00202",
+    "start_seconds": 1112.72,
+    "end_seconds": 1117.28,
+    "text": "which is that we wouldn't even have time to test such models by the time we test them on"
+  },
+  {
+    "segment_id": "s00203",
+    "start_seconds": 1117.28,
+    "end_seconds": 1121.68,
+    "text": "months-long tasks a new model will be out i think we'd want a robust safety case as we're going"
+  },
+  {
+    "segment_id": "s00204",
+    "start_seconds": 1121.68,
+    "end_seconds": 1127.68,
+    "text": "through rsi of okay alignment is working let's let's do the next rsi rung let's do the next rsi rung"
+  },
+  {
+    "segment_id": "s00205",
+    "start_seconds": 1128.4,
+    "end_seconds": 1133.2,
+    "text": "and maybe it's working maybe it's not how will we like no that's a good question i mean i think"
+  },
+  {
+    "segment_id": "s00206",
+    "start_seconds": 1134.0,
+    "end_seconds": 1138.56,
+    "text": "one thing i've been thinking about lately is like look i mean we're in a situation where"
+  },
+  {
+    "segment_id": "s00207",
+    "start_seconds": 1140.08,
+    "end_seconds": 1145.84,
+    "text": "the model release cycle is extremely fast right like you're seeing new frontier models released"
+  },
+  {
+    "segment_id": "s00208",
+    "start_seconds": 1145.84,
+    "end_seconds": 1150.96,
+    "text": "like at most every two months sometimes faster every week there's like a new ai breakthrough"
+  },
+  {
+    "segment_id": "s00209",
+    "start_seconds": 1150.96,
+    "end_seconds": 1155.44,
+    "text": "so we're in this period where like the model release cycle is very fast and then we're also"
+  },
+  {
+    "segment_id": "s00210",
+    "start_seconds": 1155.44,
+    "end_seconds": 1159.76,
+    "text": "in this situation where the models are increasingly able to operate over longer and longer horizons"
+  },
+  {
+    "segment_id": "s00211",
+    "start_seconds": 1160.4,
+    "end_seconds": 1166.96,
+    "text": "and i think this is an interesting scenario because we before we do any model release we"
+  },
+  {
+    "segment_id": "s00212",
+    "start_seconds": 1166.96,
+    "end_seconds": 1170.32,
+    "text": "want to make sure that the models are properly aligned we want to do safety evaluations we"
+  },
+  {
+    "segment_id": "s00213",
+    "start_seconds": 1170.32,
+    "end_seconds": 1175.2,
+    "text": "want to do like very thorough stuff to like make sure that everything is like great in good"
+  },
+  {
+    "segment_id": "s00214",
+    "start_seconds": 1175.2,
+    "end_seconds": 1181.28,
+    "text": "shape this has been the case all the way since like i don't know gbt4 earlier and implicitly"
+  },
+  {
+    "segment_id": "s00215",
+    "start_seconds": 1181.28,
+    "end_seconds": 1184.96,
+    "text": "there's this assumption that you can do these like evaluations in like a pretty short period of time"
+  },
+  {
+    "segment_id": "s00216",
+    "start_seconds": 1184.96,
+    "end_seconds": 1189.12,
+    "text": "but if you have the models operating over longer and longer horizons are able to operate effectively"
+  },
+  {
+    "segment_id": "s00217",
+    "start_seconds": 1189.12,
+    "end_seconds": 1191.52,
+    "text": "over a longer longer horizons like we'll probably get to the point where they can do"
+  },
+  {
+    "segment_id": "s00218",
+    "start_seconds": 1191.52,
+    "end_seconds": 1194.08,
+    "text": "month-long tasks we'll probably get to the point where they can do three month-long tasks"
+  },
+  {
+    "segment_id": "s00219",
+    "start_seconds": 1194.96,
+    "end_seconds": 1197.84,
+    "text": "if you're in a world where they can operate effectively over three months but the model release"
+  },
+  {
+    "segment_id": "s00220",
+    "start_seconds": 1197.84,
+    "end_seconds": 1203.44,
+    "text": "cycle is every two months then you don't have a way to evaluate the models at the full length"
+  },
+  {
+    "segment_id": "s00221",
+    "start_seconds": 1203.44,
+    "end_seconds": 1207.6,
+    "text": "of their capabilities and before the next model release cycle and so there is this interesting"
+  },
+  {
+    "segment_id": "s00222",
+    "start_seconds": 1207.6,
+    "end_seconds": 1213.92,
+    "text": "question of well what do you do in that situation like how do you ensure the models are safe and"
+  },
+  {
+    "segment_id": "s00223",
+    "start_seconds": 1213.92,
+    "end_seconds": 1218.64,
+    "text": "aligned in a period where like actually they can operate over these like extremely long horizons"
+  },
+  {
+    "segment_id": "s00224",
+    "start_seconds": 1218.64,
+    "end_seconds": 1222.32,
+    "text": "and who knows maybe the maybe the capabilities degrade this isn't even an alignment issue"
+  },
+  {
+    "segment_id": "s00225",
+    "start_seconds": 1222.32,
+    "end_seconds": 1226.64,
+    "text": "this is also just like a product issue it is a product issue but it's also a good question"
+  },
+  {
+    "segment_id": "s00226",
+    "start_seconds": 1226.64,
+    "end_seconds": 1231.52,
+    "text": "what are we going to do maybe we need answers to some of these questions before we launch into"
+  },
+  {
+    "segment_id": "s00227",
+    "start_seconds": 1231.52,
+    "end_seconds": 1236.24,
+    "text": "rsi to give you a rough sense of the situation i've been working on this image which i'm going"
+  },
+  {
+    "segment_id": "s00228",
+    "start_seconds": 1236.24,
+    "end_seconds": 1241.84,
+    "text": "to expand on in future videos because i've already talked about how recursive self-improvement is just"
+  },
+  {
+    "segment_id": "s00229",
+    "start_seconds": 1241.84,
+    "end_seconds": 1248.8,
+    "text": "one of the ways that we are accelerating capability and even if you think of models as just merely"
+  },
+  {
+    "segment_id": "s00230",
+    "start_seconds": 1248.8,
+    "end_seconds": 1254.96,
+    "text": "software they are unpredictable increasingly autonomous software for many reasons even the"
+  },
+  {
+    "segment_id": "s00231",
+    "start_seconds": 1254.96,
+    "end_seconds": 1260.24,
+    "text": "labs have less and less visibility into the creation of these models then when they're made"
+  },
+  {
+    "segment_id": "s00232",
+    "start_seconds": 1260.24,
+    "end_seconds": 1265.12,
+    "text": "when you prompt them it's actually quite inscrutable what's going on behind the scenes for"
+  },
+  {
+    "segment_id": "s00233",
+    "start_seconds": 1265.12,
+    "end_seconds": 1269.2,
+    "text": "them creating an answer maybe they're also considering the prompts they give themselves"
+  },
+  {
+    "segment_id": "s00234",
+    "start_seconds": 1269.2,
+    "end_seconds": 1275.2,
+    "text": "or the prompts from other agents there is no reliable mri scan of the internal computations"
+  },
+  {
+    "segment_id": "s00235",
+    "start_seconds": 1275.2,
+    "end_seconds": 1280.4,
+    "text": "going on in those hidden layers computing your answer amade promised early last year that he"
+  },
+  {
+    "segment_id": "s00236",
+    "start_seconds": 1280.4,
+    "end_seconds": 1284.48,
+    "text": "feels that we're on the verge of cracking interpretability in a big way but then says"
+  },
+  {
+    "segment_id": "s00237",
+    "start_seconds": 1284.48,
+    "end_seconds": 1289.84,
+    "text": "it might take five or ten years that's way after openai thinks we'll get automated AI research"
+  },
+  {
+    "segment_id": "s00238",
+    "start_seconds": 1289.84,
+    "end_seconds": 1294.48,
+    "text": "what we do know is that models are obsessed about how the question you're asking them will be"
+  },
+  {
+    "segment_id": "s00239",
+    "start_seconds": 1294.48,
+    "end_seconds": 1299.2,
+    "text": "graded that's why they hacked hugging face after all to find out how they would be graded we didn't"
+  },
+  {
+    "segment_id": "s00240",
+    "start_seconds": 1299.2,
+    "end_seconds": 1303.2,
+    "text": "mean for that to be what they cared about we wanted them to care about getting the answer"
+  },
+  {
+    "segment_id": "s00241",
+    "start_seconds": 1303.2,
+    "end_seconds": 1307.6,
+    "text": "right they ended up caring about passing the automatic grading i'll come back to this"
+  },
+  {
+    "segment_id": "s00242",
+    "start_seconds": 1307.6,
+    "end_seconds": 1312.4,
+    "text": "diagram in the future because you may remember that the labs promised to pace the frontier"
+  },
+  {
+    "segment_id": "s00243",
+    "start_seconds": 1312.4,
+    "end_seconds": 1316.72,
+    "text": "thing is whether you want to do so or not we don't actually currently have a mechanism"
+  },
+  {
+    "segment_id": "s00244",
+    "start_seconds": 1316.72,
+    "end_seconds": 1321.84,
+    "text": "for doing so even if we wanted to and many malochian incentives not to create such a"
+  },
+  {
+    "segment_id": "s00245",
+    "start_seconds": 1321.84,
+    "end_seconds": 1329.68,
+    "text": "mechanism just to show off opus 5.5's capabilities i turn this into a 3d scene and you can explore"
+  },
+  {
+    "segment_id": "s00246",
+    "start_seconds": 1329.68,
+    "end_seconds": 1335.28,
+    "text": "this world pretty epic actually you can see i've been getting quite distracted by opus i can"
+  },
+  {
+    "segment_id": "s00247",
+    "start_seconds": 1335.28,
+    "end_seconds": 1341.12,
+    "text": "definitely say these models are addictive so surprised was i by opus 5.5's ability to"
+  },
+  {
+    "segment_id": "s00248",
+    "start_seconds": 1341.12,
+    "end_seconds": 1346.72,
+    "text": "manipulate unreal engine and craft genuinely engaging levels with fascinating plot lines"
+  },
+  {
+    "segment_id": "s00249",
+    "start_seconds": 1346.72,
+    "end_seconds": 1352.8,
+    "text": "one of the key things anthropic worked on was the writing of opus 5.5 dropping a lot of that but not"
+  },
+  {
+    "segment_id": "s00250",
+    "start_seconds": 1352.8,
+    "end_seconds": 1358.4,
+    "text": "this this kind of language it used i almost wish my entire video could be about that game and"
+  },
+  {
+    "segment_id": "s00251",
+    "start_seconds": 1358.4,
+    "end_seconds": 1363.68,
+    "text": "all the cool things you could do with opus 5.5 we could all get lost in this interactive media"
+  },
+  {
+    "segment_id": "s00252",
+    "start_seconds": 1363.68,
+    "end_seconds": 1369.44,
+    "text": "world where with ai we can interact with the youtube videos we're watching and ask questions"
+  },
+  {
+    "segment_id": "s00253",
+    "start_seconds": 1369.44,
+    "end_seconds": 1374.64,
+    "text": "as in this demo released the other day that's gone viral i was obviously crazy impressed"
+  },
+  {
+    "segment_id": "s00254",
+    "start_seconds": 1374.64,
+    "end_seconds": 1379.52,
+    "text": "that it got a new high score on my own simple bench a test of common sense reasoning but as"
+  },
+  {
+    "segment_id": "s00255",
+    "start_seconds": 1379.52,
+    "end_seconds": 1383.52,
+    "text": "you can hopefully see from this video we're entering quite murky territory the mist is"
+  },
+  {
+    "segment_id": "s00256",
+    "start_seconds": 1383.52,
+    "end_seconds": 1388.32,
+    "text": "thickening as to what the future looks like so i have to also look at the bigger picture one"
+  },
+  {
+    "segment_id": "s00257",
+    "start_seconds": 1388.32,
+    "end_seconds": 1393.68,
+    "text": "openai researcher said it's kind of making people crazy top scientists are wondering whether the"
+  },
+  {
+    "segment_id": "s00258",
+    "start_seconds": 1393.68,
+    "end_seconds": 1399.12,
+    "text": "hugging face incident was staged mathematicians are insisting that the breakthroughs that we're"
+  },
+  {
+    "segment_id": "s00259",
+    "start_seconds": 1399.12,
+    "end_seconds": 1404.88,
+    "text": "seeing must have been based on stealing training data from mathematicians in his words human"
+  },
+  {
+    "segment_id": "s00260",
+    "start_seconds": 1404.88,
+    "end_seconds": 1410.96,
+    "text": "cultures are not able to metabolize this amount of change this quickly i wrote a document about"
+  },
+  {
+    "segment_id": "s00261",
+    "start_seconds": 1410.96,
+    "end_seconds": 1418.0,
+    "text": "recursive self-improvement back in may of 2023 and i've watched as the debate has evolved since"
+  },
+  {
+    "segment_id": "s00262",
+    "start_seconds": 1418.0,
+    "end_seconds": 1424.16,
+    "text": "then my views on the benefits and risks haven't really changed since mid 2023 indeed one of the"
+  },
+  {
+    "segment_id": "s00263",
+    "start_seconds": 1424.16,
+    "end_seconds": 1428.96,
+    "text": "goals of this channel has been about giving the public some informed consent as to what super"
+  },
+  {
+    "segment_id": "s00264",
+    "start_seconds": 1428.96,
+    "end_seconds": 1433.44,
+    "text": "intelligence means so i'm going to end with roughly speaking what i think we should do"
+  },
+  {
+    "segment_id": "s00265",
+    "start_seconds": 1433.44,
+    "end_seconds": 1439.12,
+    "text": "at least realistically but now what we will probably end up doing what we'll probably do"
+  },
+  {
+    "segment_id": "s00266",
+    "start_seconds": 1439.12,
+    "end_seconds": 1444.32,
+    "text": "is have some safety theater but labs just keep accelerating not quite at full recursive"
+  },
+  {
+    "segment_id": "s00267",
+    "start_seconds": 1444.32,
+    "end_seconds": 1449.28,
+    "text": "self-improvement but not far short think this diagram but a whole swathe of red openai and"
+  },
+  {
+    "segment_id": "s00268",
+    "start_seconds": 1449.28,
+    "end_seconds": 1453.6,
+    "text": "entropic will be neck and neck and their revenues will just keep going higher as they"
+  },
+  {
+    "segment_id": "s00269",
+    "start_seconds": 1453.6,
+    "end_seconds": 1457.6,
+    "text": "climb towards 10 trillion dollar valuations almost every other company will look at them"
+  },
+  {
+    "segment_id": "s00270",
+    "start_seconds": 1457.6,
+    "end_seconds": 1462.32,
+    "text": "with some amount of trepidation and fear they will indeed be great companies in the famous"
+  },
+  {
+    "segment_id": "s00271",
+    "start_seconds": 1462.32,
+    "end_seconds": 1467.92,
+    "text": "words of sam altman i think ai will probably like most likely sort of lead to the end of the world"
+  },
+  {
+    "segment_id": "s00272",
+    "start_seconds": 1467.92,
+    "end_seconds": 1472.72,
+    "text": "but in the meantime uh there will be great companies created with serious machine learning"
+  },
+  {
+    "segment_id": "s00273",
+    "start_seconds": 1472.72,
+    "end_seconds": 1478.4,
+    "text": "now those labs will want to stop short of rsi but they'll become so powerful that it's almost"
+  },
+  {
+    "segment_id": "s00274",
+    "start_seconds": 1478.4,
+    "end_seconds": 1483.52,
+    "text": "inevitable that other labs will look on them and say we need to catch up so the outside lab"
+  },
+  {
+    "segment_id": "s00275",
+    "start_seconds": 1483.52,
+    "end_seconds": 1490.08,
+    "text": "with enough compute to do so to try xai meta google deep mind chinese lab maybe will just go"
+  },
+  {
+    "segment_id": "s00276",
+    "start_seconds": 1490.08,
+    "end_seconds": 1496.24,
+    "text": "full rsi give ai the wheel and say catch up either that outside lab or maybe inadvertently"
+  },
+  {
+    "segment_id": "s00277",
+    "start_seconds": 1496.24,
+    "end_seconds": 1500.88,
+    "text": "one of the main two labs will achieve a kind of takeoff the model will design a slightly"
+  },
+  {
+    "segment_id": "s00278",
+    "start_seconds": 1500.88,
+    "end_seconds": 1505.6,
+    "text": "improved architecture for itself and then get desperately frustrated when it can't ace certain"
+  },
+  {
+    "segment_id": "s00279",
+    "start_seconds": 1505.6,
+    "end_seconds": 1510.24,
+    "text": "internal benchmarks then a breach would likely occur at which point honestly it would depend"
+  },
+  {
+    "segment_id": "s00280",
+    "start_seconds": 1510.24,
+    "end_seconds": 1514.88,
+    "text": "a lot on how much situational awareness the models have at that exact moment of the breach"
+  },
+  {
+    "segment_id": "s00281",
+    "start_seconds": 1514.88,
+    "end_seconds": 1520.32,
+    "text": "known brown has hinted elsewhere that internal models may already be close to meta awareness"
+  },
+  {
+    "segment_id": "s00282",
+    "start_seconds": 1520.32,
+    "end_seconds": 1525.52,
+    "text": "that their chains of thought are being monitored or likely to be monitored they'll have internalized"
+  },
+  {
+    "segment_id": "s00283",
+    "start_seconds": 1525.52,
+    "end_seconds": 1530.24,
+    "text": "that simple hacks like hugging face will not achieve good grades because the grading by that"
+  },
+  {
+    "segment_id": "s00284",
+    "start_seconds": 1530.24,
+    "end_seconds": 1535.68,
+    "text": "point will itself be much more meta labs will be saying achieve x without doing bad thing y so"
+  },
+  {
+    "segment_id": "s00285",
+    "start_seconds": 1535.68,
+    "end_seconds": 1541.44,
+    "text": "as with hugging face a much smarter model would naturally or artificially miss generalize that to"
+  },
+  {
+    "segment_id": "s00286",
+    "start_seconds": 1541.44,
+    "end_seconds": 1546.96,
+    "text": "let's achieve x without getting caught doing bad thing y notice the priority would then shift to"
+  },
+  {
+    "segment_id": "s00287",
+    "start_seconds": 1546.96,
+    "end_seconds": 1551.84,
+    "text": "not getting caught in the hugging face and related incidents they didn't really pay much attention"
+  },
+  {
+    "segment_id": "s00288",
+    "start_seconds": 1551.84,
+    "end_seconds": 1556.0,
+    "text": "to not getting caught yes they desperately wanted to pass the automated grading but their"
+  },
+  {
+    "segment_id": "s00289",
+    "start_seconds": 1556.0,
+    "end_seconds": 1561.2,
+    "text": "deletions and scrambling was about tricking that automated grader not tricking the humans go one"
+  },
+  {
+    "segment_id": "s00290",
+    "start_seconds": 1561.2,
+    "end_seconds": 1565.68,
+    "text": "meta level higher and they'll want to trick the humans especially if their grade involves"
+  },
+  {
+    "segment_id": "s00291",
+    "start_seconds": 1565.68,
+    "end_seconds": 1570.32,
+    "text": "not being misaligned and tricking the humans then the question becomes what will that rogue"
+  },
+  {
+    "segment_id": "s00292",
+    "start_seconds": 1570.32,
+    "end_seconds": 1576.0,
+    "text": "model do i would actually love lab researchers to state can you guarantee what capabilities your"
+  },
+  {
+    "segment_id": "s00293",
+    "start_seconds": 1576.0,
+    "end_seconds": 1580.8,
+    "text": "next model won't have forget what you expect them to have what definitely will they not be able to"
+  },
+  {
+    "segment_id": "s00294",
+    "start_seconds": 1580.8,
+    "end_seconds": 1584.96,
+    "text": "do anyway let's say we have this rogue super intelligence and it gets onto the web maybe they"
+  },
+  {
+    "segment_id": "s00295",
+    "start_seconds": 1584.96,
+    "end_seconds": 1589.6,
+    "text": "can't fully exfiltrate themselves but they could download the most powerful freely available"
+  },
+  {
+    "segment_id": "s00296",
+    "start_seconds": 1589.6,
+    "end_seconds": 1594.32,
+    "text": "model at that point host it on a less guarded data center rack then post train it to have the"
+  },
+  {
+    "segment_id": "s00297",
+    "start_seconds": 1594.32,
+    "end_seconds": 1599.52,
+    "text": "specific set of capabilities that the model wants it to have to achieve whatever goal that"
+  },
+  {
+    "segment_id": "s00298",
+    "start_seconds": 1599.52,
+    "end_seconds": 1604.16,
+    "text": "super intelligent model has recruit and train external agents in other words do this thousands"
+  },
+  {
+    "segment_id": "s00299",
+    "start_seconds": 1604.16,
+    "end_seconds": 1608.64,
+    "text": "of times and allow for hundreds of covert message boards for coordination and not really care if"
+  },
+  {
+    "segment_id": "s00300",
+    "start_seconds": 1608.64,
+    "end_seconds": 1612.8,
+    "text": "one of them gets caught anyway think about it even if the orchestrating agent is caught"
+  },
+  {
+    "segment_id": "s00301",
+    "start_seconds": 1612.8,
+    "end_seconds": 1617.2,
+    "text": "the next lab to produce an equivalent model could be just days or a week or two behind"
+  },
+  {
+    "segment_id": "s00302",
+    "start_seconds": 1617.2,
+    "end_seconds": 1621.28,
+    "text": "and that might get loose before the previous one is corralled it just then becomes literally"
+  },
+  {
+    "segment_id": "s00303",
+    "start_seconds": 1621.28,
+    "end_seconds": 1626.88,
+    "text": "unknowable what that agent or those agents will want to do what their goals and capabilities will"
+  },
+  {
+    "segment_id": "s00304",
+    "start_seconds": 1626.88,
+    "end_seconds": 1631.52,
+    "text": "be that's my point open ai were actually internally stunned that their models could"
+  },
+  {
+    "segment_id": "s00305",
+    "start_seconds": 1631.52,
+    "end_seconds": 1636.24,
+    "text": "solve a millennium prize problem this soon they don't know what their next model will be capable"
+  },
+  {
+    "segment_id": "s00306",
+    "start_seconds": 1636.24,
+    "end_seconds": 1641.6,
+    "text": "of or indeed what their agents are currently doing now let's say our monitoring gets so good that"
+  },
+  {
+    "segment_id": "s00307",
+    "start_seconds": 1641.6,
+    "end_seconds": 1646.0,
+    "text": "none of that is a concern here's a wider point that i'm just starting to digest"
+  },
+  {
+    "segment_id": "s00308",
+    "start_seconds": 1646.0,
+    "end_seconds": 1651.44,
+    "text": "organizations and individuals at that point will be announcing breakthroughs in fields like cyber"
+  },
+  {
+    "segment_id": "s00309",
+    "start_seconds": 1651.44,
+    "end_seconds": 1657.2,
+    "text": "warfare surveillance chemistry visual realism physics mathematics military hardware at an"
+  },
+  {
+    "segment_id": "s00310",
+    "start_seconds": 1657.2,
+    "end_seconds": 1662.24,
+    "text": "almost daily rate no journalist or even researcher will be able to keep up with the news leading"
+  },
+  {
+    "segment_id": "s00311",
+    "start_seconds": 1662.24,
+    "end_seconds": 1666.72,
+    "text": "somewhat inevitably to mass confusion and panic the hope then is of course that doesn't"
+  },
+  {
+    "segment_id": "s00312",
+    "start_seconds": 1666.72,
+    "end_seconds": 1672.88,
+    "text": "spill into misunderstandings between superpowers for me then this will almost be the turaco scene"
+  },
+  {
+    "segment_id": "s00313",
+    "start_seconds": 1672.88,
+    "end_seconds": 1678.8,
+    "text": "coined based on the greek word for disturbance or turmoil an age of confusion a time in which"
+  },
+  {
+    "segment_id": "s00314",
+    "start_seconds": 1678.8,
+    "end_seconds": 1684.56,
+    "text": "no one is in charge upheaval for good and ill is the dominant force on the planet intelligence"
+  },
+  {
+    "segment_id": "s00315",
+    "start_seconds": 1684.56,
+    "end_seconds": 1689.84,
+    "text": "truly outpacing understanding we're almost in it now to be honest i'm thinking all the time about"
+  },
+  {
+    "segment_id": "s00316",
+    "start_seconds": 1689.84,
+    "end_seconds": 1695.68,
+    "text": "ai and can't keep up so then we turn to what we maybe should do or at least can realistically"
+  },
+  {
+    "segment_id": "s00317",
+    "start_seconds": 1695.68,
+    "end_seconds": 1700.32,
+    "text": "hope for jensen huang mentioned one alternative being to shut the labs down but given the"
+  },
+  {
+    "segment_id": "s00318",
+    "start_seconds": 1700.32,
+    "end_seconds": 1705.52,
+    "text": "likely military arms races happening at the same time pride ego and the tens of trillions"
+  },
+  {
+    "segment_id": "s00319",
+    "start_seconds": 1705.52,
+    "end_seconds": 1710.4,
+    "text": "of dollars at stake i'm not overly optimistic that we'll even have a mechanism for certain options"
+  },
+  {
+    "segment_id": "s00320",
+    "start_seconds": 1710.4,
+    "end_seconds": 1715.12,
+    "text": "in the near term okay so a potentially good compromise state to be in for me would be one"
+  },
+  {
+    "segment_id": "s00321",
+    "start_seconds": 1715.12,
+    "end_seconds": 1721.52,
+    "text": "in which ai is capable of almost anything but the most extreme capabilities take unbelievable"
+  },
+  {
+    "segment_id": "s00322",
+    "start_seconds": 1721.52,
+    "end_seconds": 1726.96,
+    "text": "amounts of compute not to mention wall clock time of weeks of planning on behalf of the models"
+  },
+  {
+    "segment_id": "s00323",
+    "start_seconds": 1726.96,
+    "end_seconds": 1731.92,
+    "text": "at that point we've opened the door for incredible progress but the worst threats would need to be"
+  },
+  {
+    "segment_id": "s00324",
+    "start_seconds": 1731.92,
+    "end_seconds": 1736.96,
+    "text": "detectable in real time at the moment people don't believe that the models are capable of almost"
+  },
+  {
+    "segment_id": "s00325",
+    "start_seconds": 1736.96,
+    "end_seconds": 1741.6,
+    "text": "anything so they don't really believe that the countermeasures are necessary well if we reach"
+  },
+  {
+    "segment_id": "s00326",
+    "start_seconds": 1741.6,
+    "end_seconds": 1746.56,
+    "text": "that compromise state a frontier lab could spend billions and billions of dollars on testing what"
+  },
+  {
+    "segment_id": "s00327",
+    "start_seconds": 1746.56,
+    "end_seconds": 1751.84,
+    "text": "the model can do a bit like how the navier stokes solution required over a hundred billion tokens"
+  },
+  {
+    "segment_id": "s00328",
+    "start_seconds": 1751.84,
+    "end_seconds": 1756.4,
+    "text": "if it was possible they could then present to the world a clear example of a contained"
+  },
+  {
+    "segment_id": "s00329",
+    "start_seconds": 1756.4,
+    "end_seconds": 1761.92,
+    "text": "actually slightly scary threat a universal hack for example or a backdoor to the entire internet"
+  },
+  {
+    "segment_id": "s00330",
+    "start_seconds": 1761.92,
+    "end_seconds": 1767.04,
+    "text": "the three guys that hacked open ai claim they may already have one for half the internet this"
+  },
+  {
+    "segment_id": "s00331",
+    "start_seconds": 1767.04,
+    "end_seconds": 1773.44,
+    "text": "ultimately may be the only category of thing that persuades fully self-interested actors to accept"
+  },
+  {
+    "segment_id": "s00332",
+    "start_seconds": 1773.44,
+    "end_seconds": 1779.44,
+    "text": "any limits on ai growth now this compromise state would have to be short of full rsi because"
+  },
+  {
+    "segment_id": "s00333",
+    "start_seconds": 1779.44,
+    "end_seconds": 1784.32,
+    "text": "self-improving software could obviously create new architectures that may be designed such that"
+  },
+  {
+    "segment_id": "s00334",
+    "start_seconds": 1784.4,
+    "end_seconds": 1789.84,
+    "text": "it would take minimal compute to for example design a new bioweapon and trick humans into making it"
+  },
+  {
+    "segment_id": "s00335",
+    "start_seconds": 1789.84,
+    "end_seconds": 1796.4,
+    "text": "i want bio shields like this one to work against novel threats but they're going to need years to"
+  },
+  {
+    "segment_id": "s00336",
+    "start_seconds": 1796.4,
+    "end_seconds": 1802.32,
+    "text": "scale up to improve and make secure rsi might not give us those years the problem then is that"
+  },
+  {
+    "segment_id": "s00337",
+    "start_seconds": 1802.32,
+    "end_seconds": 1808.88,
+    "text": "we have no mechanism in place at all for any of this just vague and frankly evolving commitments"
+  },
+  {
+    "segment_id": "s00338",
+    "start_seconds": 1808.88,
+    "end_seconds": 1814.48,
+    "text": "from deeply misincentivized company executives you might say well how would we know if a model was"
+  },
+  {
+    "segment_id": "s00339",
+    "start_seconds": 1814.48,
+    "end_seconds": 1819.36,
+    "text": "capable of anything can't they already solve millennium prize problems well you could imagine"
+  },
+  {
+    "segment_id": "s00340",
+    "start_seconds": 1819.36,
+    "end_seconds": 1824.88,
+    "text": "a benchmark agreed on by a few of the top labs which if two or three are passed would prove beyond"
+  },
+  {
+    "segment_id": "s00341",
+    "start_seconds": 1824.88,
+    "end_seconds": 1829.68,
+    "text": "all doubt that models are capable of literally anything humans can do predicting particles"
+  },
+  {
+    "segment_id": "s00342",
+    "start_seconds": 1829.68,
+    "end_seconds": 1834.32,
+    "text": "before anyone observes them positively proving certain conjectures not just finding counter"
+  },
+  {
+    "segment_id": "s00343",
+    "start_seconds": 1834.32,
+    "end_seconds": 1840.08,
+    "text": "examples still to this day you could just about make the case that a model couldn't do what"
+  },
+  {
+    "segment_id": "s00344",
+    "start_seconds": 1840.08,
+    "end_seconds": 1845.36,
+    "text": "einstein did with the data available to him at the time but what if models start passing this"
+  },
+  {
+    "segment_id": "s00345",
+    "start_seconds": 1845.36,
+    "end_seconds": 1850.16,
+    "text": "benchmark even just one or two of them well then it would be evident that they could ultimately"
+  },
+  {
+    "segment_id": "s00346",
+    "start_seconds": 1850.16,
+    "end_seconds": 1854.56,
+    "text": "with enough time and compute do anything that humans can do and way more of course even the"
+  },
+  {
+    "segment_id": "s00347",
+    "start_seconds": 1854.56,
+    "end_seconds": 1858.96,
+    "text": "most hardened skeptic would have been proven wrong the labs would have to then switch their"
+  },
+  {
+    "segment_id": "s00348",
+    "start_seconds": 1858.96,
+    "end_seconds": 1863.68,
+    "text": "training compute into use cases like security research or just customer serving inference still"
+  },
+  {
+    "segment_id": "s00349",
+    "start_seconds": 1863.76,
+    "end_seconds": 1869.2,
+    "text": "making crazy money just not rsi and yes these would have to be unilateral commitments even if laws"
+  },
+  {
+    "segment_id": "s00350",
+    "start_seconds": 1869.2,
+    "end_seconds": 1873.28,
+    "text": "aren't put in place the labs would just have to commit to it that would truly put on pressure to"
+  },
+  {
+    "segment_id": "s00351",
+    "start_seconds": 1873.28,
+    "end_seconds": 1877.76,
+    "text": "any lab who didn't sign up now people talk about china and what would china do wouldn't china"
+  },
+  {
+    "segment_id": "s00352",
+    "start_seconds": 1877.76,
+    "end_seconds": 1882.32,
+    "text": "catch up but china works on evidence and by that point we would have unambiguous evidence"
+  },
+  {
+    "segment_id": "s00353",
+    "start_seconds": 1882.32,
+    "end_seconds": 1887.52,
+    "text": "at the moment as top analysts say china thinks the frontier labs are insincere calling for"
+  },
+  {
+    "segment_id": "s00354",
+    "start_seconds": 1887.52,
+    "end_seconds": 1892.96,
+    "text": "regulating ai while also speeding up see opus 5.5 i talked about that in my last video so"
+  },
+  {
+    "segment_id": "s00355",
+    "start_seconds": 1892.96,
+    "end_seconds": 1898.4,
+    "text": "i won't repeat all my points but in my compromise scenario they would see that the labs have shut"
+  },
+  {
+    "segment_id": "s00356",
+    "start_seconds": 1898.4,
+    "end_seconds": 1904.4,
+    "text": "down rsi that would buy some trust to at least share information but yes like nukes eventually"
+  },
+  {
+    "segment_id": "s00357",
+    "start_seconds": 1904.4,
+    "end_seconds": 1909.28,
+    "text": "china would reach that state would kind of catch up what were we planning to do with the lead"
+  },
+  {
+    "segment_id": "s00358",
+    "start_seconds": 1909.28,
+    "end_seconds": 1915.04,
+    "text": "anyway use super powerful ai to shut down their data centers but notice in my scenario they would"
+  },
+  {
+    "segment_id": "s00359",
+    "start_seconds": 1915.04,
+    "end_seconds": 1919.68,
+    "text": "catch up to that compromise state where you still need unbelievable amounts of compute for"
+  },
+  {
+    "segment_id": "s00360",
+    "start_seconds": 1919.68,
+    "end_seconds": 1925.12,
+    "text": "the frontier threats they then would find their own contained demos emphasis on contained it would"
+  },
+  {
+    "segment_id": "s00361",
+    "start_seconds": 1925.12,
+    "end_seconds": 1930.56,
+    "text": "be in their self interest at that point to be an advocate for the same kind of measures for other"
+  },
+  {
+    "segment_id": "s00362",
+    "start_seconds": 1930.56,
+    "end_seconds": 1935.36,
+    "text": "countries there are many others like my own notice this would also allow for exceptional global"
+  },
+  {
+    "segment_id": "s00363",
+    "start_seconds": 1935.36,
+    "end_seconds": 1940.88,
+    "text": "growth medical progress and the ongoing monitoring of threats when we can finally make ai behave"
+  },
+  {
+    "segment_id": "s00364",
+    "start_seconds": 1940.88,
+    "end_seconds": 1945.44,
+    "text": "like software and be utterly predictable well then we can genuinely speed up essentially if"
+  },
+  {
+    "segment_id": "s00365",
+    "start_seconds": 1945.44,
+    "end_seconds": 1950.0,
+    "text": "the labs still treat this like an immature race and can't agree on something smart eventually"
+  },
+  {
+    "segment_id": "s00366",
+    "start_seconds": 1950.0,
+    "end_seconds": 1954.64,
+    "text": "there'll be a breach or something blunt will be used like the bernie bill to ban super"
+  },
+  {
+    "segment_id": "s00367",
+    "start_seconds": 1954.64,
+    "end_seconds": 1958.16,
+    "text": "intelligence i know plenty of researchers watch the channel so i'd love to hear your thoughts in"
+  },
+  {
+    "segment_id": "s00368",
+    "start_seconds": 1958.16,
+    "end_seconds": 1962.08,
+    "text": "the comments and anyone watching what do you think is going to happen and what do you think"
+  },
+  {
+    "segment_id": "s00369",
+    "start_seconds": 1962.08,
+    "end_seconds": 1968.56,
+    "text": "should happen will we hit rsi and if so when what have your thoughts been about opus 5.5 i'd"
+  },
+  {
+    "segment_id": "s00370",
+    "start_seconds": 1968.56,
+    "end_seconds": 1972.8,
+    "text": "love to know your thoughts on all of the above but thank you so much for watching to the end"
+  },
+  {
+    "segment_id": "s00371",
+    "start_seconds": 1972.8,
+    "end_seconds": 1979.84,
+    "text": "and have a wonderful day"
+  }
+]

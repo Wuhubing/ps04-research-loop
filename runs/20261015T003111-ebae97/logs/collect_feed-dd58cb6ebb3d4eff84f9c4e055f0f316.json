@@ -1,0 +1,15 @@
+{
+  "stage": "collect_feed",
+  "status": "completed",
+  "input_count": 4,
+  "output_count": 21,
+  "started_at": "2026-10-15T00:31:11.752536Z",
+  "tools_or_models": [
+    "requests",
+    "feedparser"
+  ],
+  "cost_usd": null,
+  "cost_estimated": false,
+  "errors": [],
+  "finished_at": "2026-10-15T00:31:12.747466Z"
+}

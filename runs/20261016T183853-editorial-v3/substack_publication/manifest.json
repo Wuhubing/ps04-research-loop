@@ -1,0 +1,47 @@
+[
+  {
+    "piece": "01",
+    "title": "Research Loop: Delegate the Experiment Loop, Keep the Scientific Judgment",
+    "html_file": "runs/20261016T183853-editorial-v3/substack_publication/01.html",
+    "video_url": "https://youtu.be/GpkQYzDhcTs",
+    "original_article_sha256": "39a983d771063fa6a1d3c263b589b8ee67a9ce3da63d82c913e5b46f29f240b6",
+    "publication_body_sha256": "2981fc0fb5c05ffa1c34cf00afac92b4b4add2400d6b0e9e515fe0a93047f9c5",
+    "access": "free",
+    "send_email": false,
+    "published": true,
+    "url": "https://researchloopweibing.substack.com/p/research-loop-delegate-the-experiment",
+    "verified_at": "2026-10-16T20:04:51.908879+00:00",
+    "video_link_verified": true,
+    "audience": "Everyone"
+  },
+  {
+    "piece": "02",
+    "title": "Research Loop: A Better Score Is Only the Beginning",
+    "html_file": "runs/20261016T183853-editorial-v3/substack_publication/02.html",
+    "video_url": "https://youtu.be/dYsUBNhOEtA",
+    "original_article_sha256": "09e89307d4eddb3ca69f280d1b36946d93871b4498992ae59fac35d55a07ca1b",
+    "publication_body_sha256": "a0c9d0ad65b3754c4c31e3f0ad2eff3be377daf67dd151064ba37d169b5cdf82",
+    "access": "free",
+    "send_email": false,
+    "published": true,
+    "url": "https://researchloopweibing.substack.com/p/research-loop-a-better-score-is-only",
+    "verified_at": "2026-10-16T20:04:51.908879+00:00",
+    "video_link_verified": true,
+    "audience": "Everyone"
+  },
+  {
+    "piece": "03",
+    "title": "Research Loop: Build an Experiment Another Person Can Check",
+    "html_file": "runs/20261016T183853-editorial-v3/substack_publication/03.html",
+    "video_url": "https://youtu.be/l2P54o1BgG8",
+    "original_article_sha256": "f658cd4128ce7042f49e390ba5a30e3c0c295e3abae50db304282cd7e20c8e14",
+    "publication_body_sha256": "a66168a1aba33846d3a7803fe06a4a6558051e7b849e4d486bd14bd03701191b",
+    "access": "free",
+    "send_email": false,
+    "published": true,
+    "url": "https://researchloopweibing.substack.com/p/research-loop-build-an-experiment",
+    "verified_at": "2026-10-16T20:04:51.908879+00:00",
+    "video_link_verified": true,
+    "audience": "Everyone"
+  }
+]

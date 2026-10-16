@@ -1,0 +1,14 @@
+{
+  "review_id": "00379d8b48333c5a6f390d20ea48117847e1b453e7044536ca88b5f2d3138be9",
+  "decision": "approve",
+  "reviewer": "Weibing Wang",
+  "reviewed_at": "2026-10-16T19:56:51.284857+00:00",
+  "recorded_at": "2026-10-16T20:11:00.617011+00:00",
+  "recorded_by": "Codex transcribing explicit student publication authorization",
+  "notes": "Student explicitly authorized publication of the current articles and finished videos. This records that actual decision; it does not assert original-source listening, independent scientific verification, or student authorship of this JSON file.",
+  "authorization_records": [
+    "substack_publication/authorization.json",
+    "video_publication_authorization.json"
+  ],
+  "student_statement": "\u90a3\u7ee7\u7eed\u5e2e\u6211\u628a\u4e09\u7bc7\u6587\u7ae0\u53d1\u5e03\u5230 Substack\uff0c\u8bbe\u6210\u514d\u8d39\u53ef\u8bbf\u95ee\uff0c\u518d\u628a\u6587\u7ae0\u548c\u89c6\u9891\u7684\u94fe\u63a5\u4e92\u76f8\u8865\u4e0a\u3002"
+}

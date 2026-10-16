@@ -1,0 +1,44 @@
+TL;DR
+Chatbots can identify gaps in your knowledge, so have them tailor flashcards to your blind spots.
+The friction
+The moment ChatGPT came out, someone looked at it and said: “I’m gonna use this thing to cheat on exams learn new stuff!”
+And AI companies ran with the idea, positioning chatbots as tutors and note takers.
+I [even did a fun test](https://www.whytryai.com/p/ai-study-modes) of three dedicated AI study modes last year.
+One obvious use case for AI chatbots is to create flashcards for your study topics. Claude can code up polished flashcard decks, ChatGPT [launched interactive flashcards](https://help.openai.com/en/articles/20001533-flashcards-in-chatgpt) about a week ago, and Gemini Notebook has had flashcards as an output choice ever since its [early NotebookLM days](https://www.whytryai.com/p/notebooklm-guide):
+But flashcards are only useful if they focus on things you don’t already know, while chatbots tend to generate decks that cover the entire broad topic by default.
+Fortunately, chatbots are also good at figuring out what you don’t know.
+The fix
+The next time you’re asking [an AI agent or chatbot](https://www.whytryai.com/p/ai-agent-vs-chatbot) for flashcards, try this:
+Prompt: I want to fully understand [topic / URL / attached material]. Help me find and fill the gaps in what I know.
+1. Ask me around 10 questions, one at a time, to gauge my understanding. Have me explain things in my own words, and adapt each question to my previous answer. Don’t tell me if I’m right or wrong yet.
+2. Group my answers into topic areas and show me a table: each topic with a score out of 5, and a one-line note on what I’m missing. End with a concise verdict on what you see as my biggest gaps and ask me to confirm.
+3. Make a flashcard deck that covers just those gaps, with as many cards as each gap needs.
+This lets the chatbot establish your current level of knowledge and also helps you reflect on your own weak spots.
+And when you’re done, you’ll know exactly where your gaps are and have a ready-made flashcard deck to practice those.
+As a test, I had Claude grill me on my knowledge of puppy training, and here was the verdict:
+I now have an interactive deck of 37 flashcards specifically about my gaps:
+So Ozzy is in good hands, even if his board game skills aren’t quite up to scratch yet:
+And it’s not just for classic student stuff, either. You can use this for:
+- Understanding an online article, research paper, etc.
+- Brushing up on your knowledge of a client, company, product, and more.
+- Completing certifications or online courses
+- …and anything else that requires you to know stuff
+Whether you’re brand-new to a topic or a near-expert, AI will figure out your baseline and see where you still need help.
+Do this now
+- Pick something you’d like to brush up on (ideally a topic you actually know reasonably well)
+- Paste the prompt into your chatbot/agent of choice
+- Go through the process to identify your gaps and create “gap cards”
+- Flip through the resulting deck
+Did you get a deck of relevant cards that helps you practice your weak points?
+Know someone who could use this? Share it!
+Dig deeper
+The above prompt is great for one-off flashcard decks.
+But I also built a self-installing “Gap Cards” skill for your AI agent.
+It remembers your past gaps, can re-test you on them later, exports your decks to flashcard apps like Anki or Quizlet, and charts your progress as you go:
+Paid subscribers can grab the skill below:
+Thanks for reading!
+If you enjoy my work, here’s how you can help:
+- ❤️Like this post if it resonates with you.
+- 🔄Share it to help others discover this newsletter.
+- 🗣️Comment below. I love hearing from my readers.
+- 🔓Support me and [unlock cool perks](https://www.whytryai.com/p/paid-subscriber-bonuses) by going paid:

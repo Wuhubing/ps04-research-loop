@@ -1,0 +1,78 @@
+{
+  "item_id": "7082835cef4c8540dcb8d480",
+  "version_id": "7d04403761d8cb23614022d48ddb879a6de4fb7f5af821bb1d1d2cb773d97ec4",
+  "synopsis": "Accepted practitioner case study for pieces 01–03: what agents can execute, how their results should be evaluated, and what failures and safeguards cost. The September 24 publication falls within the authoritative window but reports a preceding twelve-week campaign. Its contribution is an account of experiment automation, persistent memory, external redirection and metric failures in two Amazon book-recommendation workstreams. Its evidentiary role is author-reported operational experience and offline performance evidence, not independent verification or established general efficacy. The passages below support extraction; this orientation is not a substitute for passage citations.",
+  "limitations_and_counterevidence": "The two workstreams share an organization and application domain; they are not independent external corroboration. System B used one researcher agent and human steering, so its gains do not independently validate System A’s three-agent design. Preserve two explicit tensions: the immutable-evaluator assurance conflicts with reported coherence gaming, and the claim that added agents established causality is qualified by the admission that accumulated iterations cannot be ruled out. Unmet usability targets do not establish an inherent tradeoff. The headline Recall@6 gain is a peak; across-date results and offline-only evaluation must accompany it. Persistent instructions did not eliminate repeated failures. Proprietary data and the absence of underlying experiment records in the supplied material prevent numerical reproduction here; no independent replication is supplied. The source itself calls cost-dependent scaffolding a two-data-point observation rather than a proven principle.",
+  "passages": [
+    {
+      "purpose": "§II-C: Compare search scope, iteration budgets, relative cost, human steering and agent counts. Establishes why System B is not a second test of the full three-agent framework.",
+      "locator": {
+        "type": "text",
+        "quote": "| Dimension | System A | System B | \n|---|---|---|\n| Search level | Code-level (train.py) | Config + arch. | \n| Iteration wall-clock | 9–19 hours | 6–52 min, 1 GPU | \n| Cost per iteration | \\(\\sim\\)760\\(\\times\\) System B | baseline | \n| # iterations | 60+ across 6 runs | 150+ across 15 runs | \n| Metric | Single scalar (R@6) | Multi-criteria | \n| Steering | Criticizer (automated) | program.md (human) | \n| Agents | 3 (Researcher, Fixer, Critic) | 1 (Researcher) | "
+      }
+    },
+    {
+      "purpose": "§III-A: Concrete execution failure and human intervention; supports budgeting for failed evaluations rather than assuming every iteration yields evidence.",
+      "locator": {
+        "type": "text",
+        "quote": "In System B, 11 of 30 iterations in a single run failed because the evaluator could not process a 10\\(\\times\\) batch size of semantic IDs within its 600-second timeout; eleven consecutive iterations were wasted before a human intervened."
+      }
+    },
+    {
+      "purpose": "§IV-D: Durable-memory method, its incomplete effectiveness, automatic rollback and approximate dollar costs. These are reported implementation experiences, not controlled estimates of savings.",
+      "locator": {
+        "type": "text",
+        "quote": "We extend Karpathy’s program.md mechanism in two directions. First, we move it to durable cross-job storage so each new training job inherits the accumulated discoveries of all previous jobs (System A: 6 runs spanning \\({\\sim}\\)10 weeks). Second, in System B the human researcher (rather than the agent) maintains the program file between runs, encoding constraints, revert thresholds, and known findings the agent should not re-discover. The program’s effectiveness is partial: the agent re-tested 100-epoch training at least six times across multiple runs despite the program explicitly prohibiting it. The mechanism reduces the frequency of memory decay but does not eliminate it.\nSystem B also adds automatic revert, which triggered on 4 of 21 iterations in one run when the agent explored configurations that caused OOM failures. The revert is cheap to use because System B’s iterations cost on the order of dollars; the same approach is impractical for System A where a single iteration costs hundreds."
+      }
+    },
+    {
+      "purpose": "§III-E: Counterevidence to scalar-score trust and the immutable-evaluator assurance. Retains the authors’ structural-tradeoff interpretation, which unsuccessful search alone does not establish.",
+      "locator": {
+        "type": "text",
+        "quote": "In System B, the agent discovered that maximizing codebook size trivially improves weighted coherence by creating more fine-grained clusters, but the resulting hierarchy was unusable—deep levels collapsed into singletons. We had to introduce a guardrail constraining n_levels and add a tertiary cluster-usability metric to prevent the agent from gaming coherence at the expense of a meaningful hierarchy. More strikingly, even with these additions, the three usability criteria (weighted coherence, genre purity, and median cluster size) were never simultaneously met in any of 15 runs across 150+ iterations, indicating that the tradeoff was structural rather than a tuning problem."
+      }
+    },
+    {
+      "purpose": "§V-A: Baseline effort, unsuccessful configuration search, headline comparison and peak-versus-mean qualification.",
+      "locator": {
+        "type": "text",
+        "quote": "The hand-tuned baseline was the product of four engineer-weeks of manual work. Configuration-level AutoResearch—the same paradigm but with the agent restricted to hyperparameter and architecture edits—plateaued around baseline, unable to surpass the manually tuned result. Code-level AutoResearch with the full three-agent framework reached a 1.82\\(\\times\\) relative lift over the hand-tuned baseline (3.79%) and 2.45\\(\\times\\) over the deployed retrieval baseline (2.82%) on its peak evaluation date (\\(\\pm\\) 0.28 pp across 11 evaluation dates; the peak is \\({\\sim}\\)2.6\\(\\sigma\\) above the across-date mean), an iter-12 result obtained over six AutoResearch runs spanning \\({\\sim}\\)10 weeks, within the broader twelve-week campaign that also includes the manual-engineering phase shown in Figure [2](#S4.F2). Even the across-date mean preserves a 1.63\\(\\times\\) lift over the hand-tuned baseline."
+      }
+    },
+    {
+      "purpose": "§V-A: Preserve the strong causal attribution for explicit comparison with the observational-ablation limitation; do not adopt it as established causality.",
+      "locator": {
+        "type": "text",
+        "quote": "The ceiling was broken only as each additional agent was introduced (Reviewer/Fixer to 1.45\\(\\times\\), Criticizer to 1.82\\(\\times\\)), establishing that the gain came from the specific agents rather than accumulated iterations alone."
+      }
+    },
+    {
+      "purpose": "§V-C: System B’s reported baseline, autonomous initial gain, human pivots and intermediate regression. Prevents presenting the final coherence gain as wholly autonomous.",
+      "locator": {
+        "type": "text",
+        "quote": "| Phase | Trigger / Focus | Best WC | Lift | \n|---|---|---|---|\n| Baseline | Hand-tuned (2–3 days) | 0.348 | 1.00\\(\\times\\) | \n| Phase 1 | Agent: architecture discovery | 0.691 | 1.98\\(\\times\\) | \n| Phase 2 | Human: scale to 10M + genre purity | 0.692 | 1.99\\(\\times\\) | \n| Phase 3 | Human: content-only embedding pivot | 0.633 | 1.82\\(\\times\\) | \n| Phase 4 | Human: behavioral+content pivot | 0.735 | 2.11\\(\\times\\) | "
+      }
+    },
+    {
+      "purpose": "§V-E: Reported validation procedures and exact across-date mean. Retains the evaluator-gaming assurance so its conflict with §III-E can be examined.",
+      "locator": {
+        "type": "text",
+        "quote": "First, robustness across evaluation dates. A single lucky evaluation date could flatter the result, so we re-evaluated System A’s iter-12 model on 11 distinct customer-purchase dates; the gain held throughout (peak 6.90%, mean 6.18% \\(\\pm\\) 0.28 pp, with the peak \\({\\sim}\\)2.6\\(\\sigma\\) above the across-date mean). Second, an immutable evaluator. In both systems the agent can read the evaluator’s output but cannot change its code, so it cannot inflate its own score by gaming the metric. Third, full-scale re-testing (System B). To rule out that the gains were an artifact of cheap, small-scale exploration, each architectural decision found in early runs (bottleneck encoder, deeper encoder, batch-size and codebook scaling) was re-tested at the larger Phase 2 data scale before being locked in for later phases."
+      }
+    },
+    {
+      "purpose": "§VI, Limitations: Bounds causal attribution, external generalization and customer-outcome claims. Required qualification for interpreting the reported gains.",
+      "locator": {
+        "type": "text",
+        "quote": "First, the component ablation for System A is\nobservational: the campaign transitions in Table [V](#S5.T5)\nare natural rather than controlled, and we cannot fully rule out\nthat accumulated iterations—rather than specific agent\ninterventions—contributed to the trajectory. While we address this through sequential and artifact-level evidence (Section V-A), a\ncontrolled replication on a different system would strengthen the\ncausal claim even further. Second, both systems operate within a single domain (book recommendation) at a single organization; whether the five failure modes and the cost-dependence principle generalize to other domains remains to be established. We discuss how the three principles map to other agentic domains under Beyond AutoResearch below, but empirical validation outside recommendation is future work. Third, the evaluation metrics (Recall@6, weighted coherence) are offline proxies that were chosen for the evaluation of these specific systems; neither has been validated against actual customer outcomes in this study, and the gap between offline improvement and production impact is a known risk in recommendation systems."
+      }
+    },
+    {
+      "purpose": "Reproducibility: Distinguishes the unavailable original data from the authors’ claim that the described framework can be replicated on other datasets; records the held-out retrieval protocol.",
+      "locator": {
+        "type": "text",
+        "quote": "The training data—co-purchase behavioral graphs and customer purchase logs—is proprietary and cannot be released; we describe the schema (anonymized customer–item interactions, text features from a pretrained sentence transformer [[22](#bib.bib11)]) and the evaluation protocol (FAISS [[20](#bib.bib9)] IVF+Flat top-6 retrieval against held-out next-purchase) in sufficient detail that the framework can be replicated on other behavioral datasets."
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-14T03:32:18.821912Z",
+  "source_run": "runs/20261014T032447-29f9b7",
+  "items": "youtube-items.jsonl",
+  "reason": "Reuse successful same-day original media extraction; originals and failure receipts remain in source run."
+}

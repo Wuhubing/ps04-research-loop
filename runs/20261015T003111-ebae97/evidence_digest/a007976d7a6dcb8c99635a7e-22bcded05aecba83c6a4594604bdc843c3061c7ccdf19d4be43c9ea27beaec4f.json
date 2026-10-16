@@ -1,0 +1,78 @@
+{
+  "item_id": "a007976d7a6dcb8c99635a7e",
+  "version_id": "22bcded05aecba83c6a4594604bdc843c3061c7ccdf19d4be43c9ea27beaec4f",
+  "synopsis": "Accepted computational case study for pieces 01–03, published October 7 within the authoritative September 16–October 15 UTC window. Its contribution is a reported experiment in bounded delegation: coding agents modify segmentation training programs while the architecture, split and evaluator remain fixed. The authors report improvements across three 24-experiment campaigns, divergent retained changes across configurations, and one held-out test evaluation. Its evidentiary role is preprint evidence about an experimental procedure and its reported outcomes, not independent verification or general superiority. The passages support discussion of what to delegate, how to evaluate results, and how budgets and reproducibility constrain interpretation.",
+  "limitations_and_counterevidence": "Only Loop B receives held-out testing. Trials use one seed, small retained gains lack estimated run variance, coding model and GPU class are confounded, and the reference comparison uses unmatched compute. Changes that help one campaign can hurt another. Table 3 displays test IoUs of 0.836 and 0.833, whose difference is 0.003, while the prose reports 0.002; this discrepancy remains unresolved. The one-hour limit applies to each trial, with 24 logged experiments per campaign including the baseline; the supplied text does not establish total elapsed search cost, coding-model overhead, energy use or monetary cost. A declared-space tuner comparison remains future work. A repository is linked, but its execution artifacts are not supplied or inspected here. Independent replication, external researcher assessment and a conflict disclosure are absent from the supplied material. These orientation statements do not replace passage citations for later substantive claims.",
+  "passages": [
+    {
+      "purpose": "Delegation boundaries, immutable evaluation, acceptance rule and per-trial versus campaign budget.",
+      "locator": {
+        "type": "text",
+        "quote": "The preparation program owns the canonical real split, GSD resampling, object-centric \\(512\\times 512\\) crops, ImageNet normalization, and the evaluation function (mean per-image IoU on the 256-image validation set). The F1 score is logged but is not the acceptance metric. The agent never trains on validation or test images and cannot edit the evaluator. Training is launched only through a wrapper that unloads the coding model, enforces the wall-clock budget, and prints a parseable footer.\nThe agent may edit only the training program (loss, optimizer, schedule, auxiliary head, gradient clipping, and train-time augmentation). The architecture remains DeepLabV3–ResNet-50. Let \\(c_{t}\\) denote the current retained training program and \\(m(c)\\) the validation IoU after 3600 s. A proposed edit \\(\\Delta_{t}\\) is committed if \\(m(c_{t}+\\Delta_{t})>m(c_{t})\\); otherwise the tree is reset to \\(c_{t}\\). Failed runs are treated as rejections. Each campaign is capped at 24 logged experiments, including the baseline. Under a frozen architecture and evaluator the loop is close to code-level hyperparameter search; its extra degree of freedom is that proposals need not lie in a pre-specified space."
+      }
+    },
+    {
+      "purpose": "Reported campaign results alongside coding models, hardware, memory requirements and held-out coverage.",
+      "locator": {
+        "type": "text",
+        "quote": "|  | Loop A | Loop B | Loop C | \n|---|---|---|---|\n| Coding model | Gemma 4 12B | Qwen3-8B | Qwen3-8B | \n| GPU | RTX 4070 12 GB | ASUS Ascent GX10 | ASUS Ascent GX10 | \n| Batch / peak VRAM | 2 / \\(\\approx\\)9 GB | 8 / 18–35 GB | 8\\(\\to\\)16 / 35–36 GB | \n| Baseline val. IoU | 0.616 | 0.723 | 0.737 | \n| Best val. IoU | 0.710 | 0.858 | 0.858 | \n| \\(\\Delta\\) val. IoU | \\(+0.094\\) | \\(+0.135\\) | \\(+0.120\\) | \n| Retained / rejected | 3 / 21 | 10 / 14 | 7 / 17 | \n| Best test IoU / F1 | — | 0.836 / 0.891 | — | "
+      }
+    },
+    {
+      "purpose": "Counterevidence to universal training defaults: changes reverse direction across campaigns and configurations.",
+      "locator": {
+        "type": "text",
+        "quote": "Changes retained in Loop B are often rejected in Loops A and C, or are not\nproposed.\nDice is the only large, repeated retention on GX10-class hardware; it\ndecreases IoU on the 4070 baseline.\nCosine decay is the only large retention under 12 GB and is rejected in both\nGX10 campaigns.\nHorizontal flipping, color jitter, and a lower peak learning rate change sign\ndepending on the configuration on which they are stacked.\nRotation, encoder freezing, and exponential moving averages of the weights are\nrejected in every campaign that tries them."
+      }
+    },
+    {
+      "purpose": "Qualification of small accepted gains and the missing estimate of run variation.",
+      "locator": {
+        "type": "text",
+        "quote": "Diminishing returns are visible in all three traces. After the first one or two retained changes, later accepted deltas are of the order of \\(10^{-3}\\) IoU, which is within single-run variation that the protocol does not estimate."
+      }
+    },
+    {
+      "purpose": "Reference comparison conditions, unmatched compute and the distinction between validation-only campaigns and testing.",
+      "locator": {
+        "type": "text",
+        "quote": "The comparison is not matched for compute: the reference trains for up to 100\nepochs with early stopping on an A100 (batch size 48) and, in gan60,\nadds 1228 synthetic images.\nLoop B trains for 3600 s on 2048 real images, without test-time flipping and\nwithout a change of backbone.\nLoops A and C are validation-only."
+      }
+    },
+    {
+      "purpose": "Authors’ comparison claim and its qualifications; preserve the reported 0.002 delta for examination against the table.",
+      "locator": {
+        "type": "text",
+        "quote": "On this protocol, the one-hour real-only configuration improves IoU by 0.034 and F1 by 0.038 relative to no_aug, and IoU by 0.002 and F1 by 0.011 relative to gan60. The gap between validation and test IoU is approximately 0.022, so neither GX10 validation figure of 0.858 should be read as a test result. The comparison is specific to this split, backbone, and GPU; it is not evidence that AutoResearch outperforms GAN augmentation in general."
+      }
+    },
+    {
+      "purpose": "Displayed comparison results and budgets, including the numerical inconsistency with the prose and the explicit validation warning.",
+      "locator": {
+        "type": "text",
+        "quote": "| Setup | Data | Budget | IoU | F1 | \n|---|---|---|---|---|\n| Paper no_aug | real | \\(\\leq\\)100 ep. (A100) | 0.801 | 0.853 | \n| Paper basic_aug | real | \\(\\leq\\)100 ep. (A100) | 0.813 | 0.865 | \n| Paper gan60 (paper best) | real + 60% GAN | \\(\\leq\\)100 ep. (A100) | 0.833 | 0.880 | \n| Loop C best (val.) | real | 3600 s (GX10) | 0.858† | — | \n| Loop B best (val.) | real | 3600 s (GX10) | 0.858† | 0.908† | \n| Loop B best (test) | real | 3600 s (GX10) | 0.836 | 0.891 | \n| †Validation split; not comparable to the paper’s test rows. |  |  |  |  | "
+      }
+    },
+    {
+      "purpose": "Explicit replication and attribution limits: single seed, incomplete test evaluation and model–hardware confounding.",
+      "locator": {
+        "type": "text",
+        "quote": "Each proposed change is evaluated with a single random seed (35). Loops A and C have no test evaluation. The coding model is confounded with GPU class, and the agent cannot change the backbone, the split, or the metric."
+      }
+    },
+    {
+      "purpose": "Authors’ conditional conclusion and missing declared-space tuner baseline.",
+      "locator": {
+        "type": "text",
+        "quote": "The protocol is effective under a declared budget if the evaluator remains frozen and retained modifications are not treated as universal defaults. A direct comparison with a declared-space tuner, and a less restricted loop that may edit architecture, preprocessing, or literature-derived ideas, are left to future work."
+      }
+    },
+    {
+      "purpose": "Reproducibility pointer only: establishes that the source links a repository, without establishing its contents or successful reproduction.",
+      "locator": {
+        "type": "text",
+        "quote": "Research repository [https://github.com/VU-AIML/automl4eo-autoresearch-segmentation](https://github.com/VU-AIML/automl4eo-autoresearch-segmentation)."
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "stage": "collect_youtube",
+  "status": "completed",
+  "input_count": 2,
+  "output_count": 2,
+  "started_at": "2026-10-14T03:20:55.555508Z",
+  "tools_or_models": [
+    "yt-dlp"
+  ],
+  "cost_usd": null,
+  "cost_estimated": false,
+  "errors": [],
+  "finished_at": "2026-10-14T03:21:00.424427Z"
+}

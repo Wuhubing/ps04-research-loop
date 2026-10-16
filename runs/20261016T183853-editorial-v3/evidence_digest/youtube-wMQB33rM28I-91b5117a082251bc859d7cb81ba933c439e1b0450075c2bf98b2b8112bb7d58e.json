@@ -1,0 +1,78 @@
+{
+  "item_id": "youtube-wMQB33rM28I",
+  "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+  "synopsis": "Operational tutorial contributing to pieces 02 and 03: a proposed experiment that delegates instruction revision and coding attempts while retaining fixed grading, held-out comparison and human review. Its evidence role is procedural guidance for small, inspectable experiments, not demonstrated performance improvement. The underlying model remains unchanged. The 48-trial figure describes a planned workload, not measured expenditure.",
+  "limitations_and_counterevidence": "The supplied transcript provides no inspectable execution logs, measured baseline-versus-candidate results, actual expenditure or independent replication. Its suggested outcomes are conditional, including unchanged or worse held-out performance; they must not be reported as observed findings. Instructions for displaying evidence do not supply that evidence. Human review and subsequent checking remain adoption gates. The automatic transcript's s00105 contains an apparent contradiction concerning rerunning until lucky, whereas adjacent s00103–s00106 prescribe a fixed attempt count. Defer that ambiguous passage pending audio review; neither repair its wording nor attribute cherry-picking advice to the speaker. These orientation notes do not substitute for passage citations.",
+  "passages": [
+    {
+      "purpose": "Establish that this is instruction optimization with an unchanged underlying model, qualifying the title's self-training framing.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00011"
+      }
+    },
+    {
+      "purpose": "Identify the proposed separation of editing authority: the optimizer changes instructions while grading rules remain fixed.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00056"
+      }
+    },
+    {
+      "purpose": "Expose the evidentiary gap: the speaker describes what they would show, rather than supplying an inspectable instruction comparison in this passage.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00124"
+      }
+    },
+    {
+      "purpose": "Support the proposed comparison on tasks excluded from the search, using fresh project copies.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00141"
+      }
+    },
+    {
+      "purpose": "Preserve the qualification against a universal coding upgrade and introduce the conditional case of development improvement with flat held-out performance; read with s00153.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00152"
+      }
+    },
+    {
+      "purpose": "Complete the adjacent conditional counterexample: flat or worse held-out results would not demonstrate transferable improvement. This is an interpretation rule, not a reported experimental failure.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00153"
+      }
+    },
+    {
+      "purpose": "Capture the planned total of 48 coding trials, including 12 held-out trials; retain s00164's adjacent qualification.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00163"
+      }
+    },
+    {
+      "purpose": "Qualify the workload count: it excludes the optimizer's own thinking, setup and rehearsals, so it is not a complete cost accounting.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00164"
+      }
+    },
+    {
+      "purpose": "Identify the human review gate and proposed removal of instructions tied to practice tasks; read with s00177.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00176"
+      }
+    },
+    {
+      "purpose": "Preserve the adjacent requirement that the human-edited instructions become a new candidate needing checking, rather than inheriting the previous candidate's evaluation.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00177"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "stage": "extract_content",
+  "status": "completed",
+  "input_count": 13,
+  "output_count": 13,
+  "started_at": "2026-10-14T03:28:57.928703Z",
+  "tools_or_models": [
+    "requests",
+    "trafilatura",
+    "yt-dlp",
+    "faster-whisper/small.en"
+  ],
+  "cost_usd": null,
+  "cost_estimated": false,
+  "errors": [],
+  "finished_at": "2026-10-14T03:29:00.950154Z"
+}

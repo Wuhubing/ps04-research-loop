@@ -1,0 +1,441 @@
+[
+  {
+    "item_id": "075b80e31faba3a92a3d7712",
+    "version_id": "6d392f0b897d89aba5f23830f5b954824cd8a50f3e5b222e12b93c42db9bf552",
+    "title": "The Best AI Benchmark Is Your Own Work",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [
+      "03"
+    ],
+    "claims": [
+      {
+        "piece_id": "03",
+        "claim_id": "03-c3"
+      }
+    ],
+    "usage_state": "cited"
+  },
+  {
+    "item_id": "084a91218ed6d51df5ab9f17",
+    "version_id": "2b0d8382c674620fd174f5c60697d5bdf4728371aa386ebba1986c60e1eef65b",
+    "title": "Hill-Climbing a Protein Language Model: A Taste of Autoresearch for Scientific Discovery",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "01",
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [
+      "01",
+      "02"
+    ],
+    "claims": [
+      {
+        "piece_id": "01",
+        "claim_id": "01-c1"
+      },
+      {
+        "piece_id": "01",
+        "claim_id": "01-c2"
+      },
+      {
+        "piece_id": "01",
+        "claim_id": "01-c7"
+      },
+      {
+        "piece_id": "02",
+        "claim_id": "02-c1"
+      },
+      {
+        "piece_id": "02",
+        "claim_id": "02-c6"
+      }
+    ],
+    "usage_state": "cited"
+  },
+  {
+    "item_id": "090f19610270f1b804a5bb8a",
+    "version_id": "bc44cd416a3cec196c5ff3ae89d1d7f5f529cfcb851b97b519470fc6baccac09",
+    "title": "Autoresearch in Mixed-Integer Linear and Nonlinear Programming",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [
+      "02"
+    ],
+    "claims": [
+      {
+        "piece_id": "02",
+        "claim_id": "02-c5"
+      }
+    ],
+    "usage_state": "cited"
+  },
+  {
+    "item_id": "0ff8643be07c7b70497b5caf",
+    "version_id": "b5c10a5a1f3bc0adb95fe7a8ee96127189a24131d2304c6d0f00b108ccee3a5f",
+    "title": "Kernel Autoresearch for Open-Ended Model Discovery",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "01",
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [],
+    "claims": [],
+    "usage_state": "accepted_not_cited"
+  },
+  {
+    "item_id": "235ddeb91911d80fff910262",
+    "version_id": "3c11fafcee8a531bb96d38ae9a2779c131ae2e2501195df7ae79cba7af4192b6",
+    "title": "Reward Hacking Challenges Oversight of Autonomous Research Agents",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "01",
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [
+      "02"
+    ],
+    "claims": [
+      {
+        "piece_id": "02",
+        "claim_id": "02-c4"
+      },
+      {
+        "piece_id": "02",
+        "claim_id": "02-c6"
+      }
+    ],
+    "usage_state": "cited"
+  },
+  {
+    "item_id": "27b20d8820941053973c26f4",
+    "version_id": "4126f2eebaafaa9fde65cc866a5d982ad2139e084a6753ba820a51c5aa797b72",
+    "title": "Optimizing the Optimizer: Language Models Discover Faster Molecular Relaxation Algorithms",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "01",
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [],
+    "claims": [],
+    "usage_state": "accepted_not_cited"
+  },
+  {
+    "item_id": "2c2f305856a15081f2fe9066",
+    "version_id": "2c18cdc1f7cd0b9f4f773d6fa5733d29d115f5752e8ad9fe28d99ad61680389e",
+    "title": "Learning What to Investigate Next: Meta-Reasoning for Long-Horizon Research Agents",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "01",
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [
+      "03"
+    ],
+    "claims": [
+      {
+        "piece_id": "03",
+        "claim_id": "03-c4"
+      },
+      {
+        "piece_id": "03",
+        "claim_id": "03-c7"
+      }
+    ],
+    "usage_state": "cited"
+  },
+  {
+    "item_id": "4eab969d8f8f58425aecc153",
+    "version_id": "7e321e65424e9a2edb24b698e1bca81a81aaeadd44ba001dab6237202ddb0ada",
+    "title": "Sunday Rundown #159: Cloud Agents & Juggling Costumes",
+    "decision": "reject",
+    "suggested_piece_ids": [],
+    "actual_piece_ids": [],
+    "claims": [],
+    "usage_state": "not_selected"
+  },
+  {
+    "item_id": "51fd6c05fff2f297f454f717",
+    "version_id": "9f5a3d8ad0d87cf4b75e0b27ee825183acc71c2811e8bb96e1a59f3c5dca2c35",
+    "title": "ResearchFlow-Eval: Tracing the Execution Gap in End-to-End Multi-Claim Autoresearch",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "01",
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [
+      "01"
+    ],
+    "claims": [
+      {
+        "piece_id": "01",
+        "claim_id": "01-c6"
+      },
+      {
+        "piece_id": "01",
+        "claim_id": "01-c7"
+      }
+    ],
+    "usage_state": "cited"
+  },
+  {
+    "item_id": "59b2cb8b434efeeb70a133bc",
+    "version_id": "66025228eaffdbf60602a9c3e085782385578f7304cce9751aff2a52b9936729",
+    "title": "Agora: Git as Shared Memory for Collective AutoResearch",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "01",
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [
+      "01"
+    ],
+    "claims": [
+      {
+        "piece_id": "01",
+        "claim_id": "01-c5"
+      }
+    ],
+    "usage_state": "cited"
+  },
+  {
+    "item_id": "7082835cef4c8540dcb8d480",
+    "version_id": "7d04403761d8cb23614022d48ddb879a6de4fb7f5af821bb1d1d2cb773d97ec4",
+    "title": "AutoResearch at Production Scale: Failure Modes and a Multi-Agent Framework",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "01",
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [
+      "02"
+    ],
+    "claims": [
+      {
+        "piece_id": "02",
+        "claim_id": "02-c2"
+      },
+      {
+        "piece_id": "02",
+        "claim_id": "02-c6"
+      }
+    ],
+    "usage_state": "cited"
+  },
+  {
+    "item_id": "78deb02bb43b9240c74487b3",
+    "version_id": "4c16684f04ac89de0cfd2e9942cde9c20a91e0d7aa7d934da6ede6eaa2463817",
+    "title": "Sunday Rundown #160: Meeting Summaries & One-Way Hellos",
+    "decision": "reject",
+    "suggested_piece_ids": [],
+    "actual_piece_ids": [],
+    "claims": [],
+    "usage_state": "not_selected"
+  },
+  {
+    "item_id": "7f0901064878a294934bd154",
+    "version_id": "6c598d9a3db4f487a0045a147e48bc3e4064e2b81bf388f4ac0947b9d96c78ec",
+    "title": "How Much of a Harness Does a Strong Agent Need for Autonomous ML Engineering?",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "01",
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [
+      "02"
+    ],
+    "claims": [
+      {
+        "piece_id": "02",
+        "claim_id": "02-c3"
+      }
+    ],
+    "usage_state": "cited"
+  },
+  {
+    "item_id": "7f93d63faaf11f733276a443",
+    "version_id": "1c8d31d1a52853a33abbf82a2909b64babf8ea03d6714eb54e2df4ed7128e44a",
+    "title": "IdeaScientist: Orchestrating Agents for Grounded Scientific Ideation",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "01",
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [],
+    "claims": [],
+    "usage_state": "accepted_not_cited"
+  },
+  {
+    "item_id": "810ca788d6580a6871563f4d",
+    "version_id": "2ec6998b1c53899734b6cb244fefc18311d1635c79e90220c4b2743ae1235252",
+    "title": "Flashcards Are Good. “Gap” Cards Are Better.",
+    "decision": "reject",
+    "suggested_piece_ids": [],
+    "actual_piece_ids": [],
+    "claims": [],
+    "usage_state": "not_selected"
+  },
+  {
+    "item_id": "813b9149789f0913c5bfb94d",
+    "version_id": "4e9fb103fdae9cf7e73a08394a425933da944a26fb69499d2c2935840571b3d8",
+    "title": "Language Models as AI Research World Models",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "01",
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [],
+    "claims": [],
+    "usage_state": "accepted_not_cited"
+  },
+  {
+    "item_id": "a007976d7a6dcb8c99635a7e",
+    "version_id": "22bcded05aecba83c6a4594604bdc843c3061c7ccdf19d4be43c9ea27beaec4f",
+    "title": "Insights from Autoresearch for Solar Panel Segmentation",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "01",
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [
+      "01"
+    ],
+    "claims": [
+      {
+        "piece_id": "01",
+        "claim_id": "01-c3"
+      },
+      {
+        "piece_id": "01",
+        "claim_id": "01-c4"
+      },
+      {
+        "piece_id": "01",
+        "claim_id": "01-c7"
+      }
+    ],
+    "usage_state": "cited"
+  },
+  {
+    "item_id": "ade5c65097bf35b3d1cb467e",
+    "version_id": "5a82503b8b0e7e873cc96ddaa5b89b9957e647009d50cff4f549b940594dfeef",
+    "title": "Periodic Labs: A chatbot walks into a laboratory",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [],
+    "claims": [],
+    "usage_state": "accepted_not_cited"
+  },
+  {
+    "item_id": "b1f8d59a9e19a86e11b1f913",
+    "version_id": "d65818cf27d705500dbc6ee16a00aa24ff79c55f10cb82e034d39e559cbc1994",
+    "title": "Fork-and-Flush: Escaping Idea Basins in Autoresearch Agents",
+    "decision": "defer",
+    "suggested_piece_ids": [],
+    "actual_piece_ids": [],
+    "claims": [],
+    "usage_state": "not_selected"
+  },
+  {
+    "item_id": "e351f88c9bbc63c033f1aab7",
+    "version_id": "de7f1e6f75069d6e82b0732ba9729ef01809dd0621fa585ccb3cb1690c97dcc9",
+    "title": "Campus Talks: How is AI affecting open research?",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "03"
+    ],
+    "actual_piece_ids": [
+      "03"
+    ],
+    "claims": [
+      {
+        "piece_id": "03",
+        "claim_id": "03-c5"
+      },
+      {
+        "piece_id": "03",
+        "claim_id": "03-c7"
+      }
+    ],
+    "usage_state": "cited"
+  },
+  {
+    "item_id": "ead4cdfb34d1b428c1cd760b",
+    "version_id": "2440cc1580de805fb537ea10d57c87f518177ce7fa5c4cf63e2260a65098b0dc",
+    "title": "Synthesis Superintelligence: from Semiconductors to Superconductors — Periodic Labs’ Liam Fedus and Ekin Dogus Cubuk",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [
+      "03"
+    ],
+    "claims": [
+      {
+        "piece_id": "03",
+        "claim_id": "03-c6"
+      }
+    ],
+    "usage_state": "cited"
+  },
+  {
+    "item_id": "youtube-R9momwXV9w4",
+    "version_id": "81ddd8b2230f42d36bc234d2235a06343303c4274511e44bb5cd8b1409bafab7",
+    "title": "Opus 5.5: How Close Are We to Automated AI Research?",
+    "decision": "defer",
+    "suggested_piece_ids": [],
+    "actual_piece_ids": [],
+    "claims": [],
+    "usage_state": "not_selected"
+  },
+  {
+    "item_id": "youtube-wMQB33rM28I",
+    "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+    "title": "My Self Training Claude Code Setup: I Made Claude Code TRAIN ITSELF!",
+    "decision": "accept",
+    "suggested_piece_ids": [
+      "02",
+      "03"
+    ],
+    "actual_piece_ids": [
+      "03"
+    ],
+    "claims": [
+      {
+        "piece_id": "03",
+        "claim_id": "03-c1"
+      },
+      {
+        "piece_id": "03",
+        "claim_id": "03-c2"
+      },
+      {
+        "piece_id": "03",
+        "claim_id": "03-c7"
+      }
+    ],
+    "usage_state": "cited"
+  }
+]

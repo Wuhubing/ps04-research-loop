@@ -1,0 +1,78 @@
+{
+  "item_id": "27b20d8820941053973c26f4",
+  "version_id": "4126f2eebaafaa9fde65cc866a5d982ad2139e084a6753ba820a51c5aa797b72",
+  "synopsis": "Developer preprint case study contributing to pieces 01–03: bounded delegation of optimizer edits, protected evaluation and admission gates, and the resources and failure analysis needed to assess reproducibility. The authors report searches starting from Sella, with held-out molecular and potential evaluations. Its evidentiary role is a concrete, human-designed computational experiment with author-reported outcomes, not independent replication or fully autonomous discovery. The supplied October 5 publication date falls within the frozen September 16–October 15 window; October 7 is an update. Passages below support methodological discussion and qualified reporting of results.",
+  "limitations_and_counterevidence": "Unresolved numeric inconsistencies prevent using this source to establish faster execution, lower cost or best-result claims: PyBerny dipeptide same-minimum agreement is 62.7% in prose but 62.0% in Table 6; the Cartesian BFGS and FIRE discussion also conflicts with the table. Force-call counts are not total runtime or monetary cost. The reported 66-hour searches used a 192-worker evaluation pool; the supplied text does not establish a student-scale reproduction budget or provide total financial expenditure. The code link and described artifacts are reproducibility aids, not verified reproducibility. Separate searches within this study do not constitute independent researcher replication. Mean energy recovery does not establish identical minima, held-out averages can exclude unsuccessful runs, AutoSella-A regresses on solvated systems, and the additional Grok run performs poorly enough to be excluded from DFT evaluation and main-text comparisons. Ablation effects are conditional and explicitly non-additive. Independent validation and financial-conflict disclosures are absent from the supplied evidence. This orientation is not a substitute for passage citations; only the PyBerny inconsistency is paired with both exact excerpts below.",
+  "passages": [
+    {
+      "purpose": "Delegation boundary and human-designed safeguards (Appendix C.2): identifies the editable artifact and protected evaluator, datasets and convergence rules.",
+      "locator": {
+        "type": "text",
+        "quote": "The following rules are an instruction for the agent, written in the program.md. The agent edits and commits only algo.py, containing the optimizer, while maintaining separate research notes and saved implementations. It is prohibited from modifying the evaluator, convergence criteria, evaluation clients, control scripts, molecule sets, or baseline metadata. The convergence thresholds are disclosed, but the evaluator alone determines whether they are met."
+      }
+    },
+    {
+      "purpose": "Acceptance method and its treatment of failures (§3.5): training and validation gates, numerical tolerance, energy requirement and inclusion of capped training/validation runs.",
+      "locator": {
+        "type": "text",
+        "quote": "A candidate \\(a^{t}\\) is evaluated on training first.\nIt must have \\(\\bar{r}^{t}\\geq 1\\), no evaluation errors such as optimizer exceptions, non-finite numerical values, malformed output, and a force-call cost below \\(C^{\\star}_{\\text{per-mol}}-\\delta\\), where \\(\\delta=10^{-4}\\) keeps numerical noise from counting as progress.\nNote that on training and validation, non-converged optimizations stopped by a force-call remain in the averages.\nWe call these conditions the validity gate.\nIf they are met, \\(a^{t}\\) is evaluated on the validation split and replaces the champion only if the same requirements hold there: no evaluation errors, \\(\\bar{r}^{t,V}\\geq 1\\), and \\(C^{t,V}_{\\text{per-mol}}<C^{\\star,V}_{\\text{per-mol}}-\\delta\\) – the generalization gate.\nIf either gate fails, the edit is discarded and the agent edits \\(a^{\\star}\\) again."
+      }
+    },
+    {
+      "purpose": "Search budget and author-reported execution counts (§4.3): supports discussion of experiment scale, not general model superiority or independent replication.",
+      "locator": {
+        "type": "text",
+        "quote": "Figure [2](#S4.F2) compares two LLMs over 66 active research hours.\nThis budget includes development and analysis in an isolated container as well as remote evaluation (see Section [C.1](#A3.SS1)).\nWithin this window, Fable commits 108 evaluated candidates and accepts 37 improvements, whereas Astra commits 672 candidates and accepts 29."
+      }
+    },
+    {
+      "purpose": "Hardware and reproducibility infrastructure (Appendix C.1): establishes evaluation scale and recorded diagnostics; does not establish financial cost.",
+      "locator": {
+        "type": "text",
+        "quote": "The pool is comprised of 192 single-thread workers across 4 remote evaluation hosts with Intel Xeon Gold 6348 CPU. Workers renew their task leases through periodic heartbeats and write force-call counts, energies, convergence status, and errors back to Redis. The gateway collects these results into a durable evaluation record and returns aggregate metrics and per-molecule diagnostics to the agent. Completed molecular results are retained when an evaluation is resumed; unresolved work leaves the evaluation pending rather than producing a score from a partial dataset."
+      }
+    },
+    {
+      "purpose": "Reported DFT comparison with adjacent counterevidence (§4.2): preserves the favorable AutoSella-F result and AutoSella-A regression together. Treat as authors' reported force-call and energy metrics, not an established runtime, monetary-cost or best-result claim.",
+      "locator": {
+        "type": "text",
+        "quote": "The largest saving under DFT occurs on Solvated PubChem, where AutoSella-F requires only \\(40.24\\%\\) of Sella’s force calls while achieving \\(1.27\\%\\) greater mean energy recovery. Its mean energy recovery exceeds the baseline on all four datasets.\nConsistent with the limited generalization to complex multi-fragment systems observed in Section [4.1](#S4.SS1), AutoSella-A uses \\(109.06\\%\\) of Sella’s force calls per molecule and recovers less energy (\\(\\bar{r}=0.993028\\)) on Solvated PubChem systems under DFT."
+      }
+    },
+    {
+      "purpose": "Outcome validity and limits of energy-based evaluation (Appendix E): supplies the same-minimum definition, its qualification and the sharp decline in structural agreement on fragment systems.",
+      "locator": {
+        "type": "text",
+        "quote": "The spectrum is summarized by the number of molecules with at least one frequency below each reported cutoff. A molecule satisfies our “same minimum” criterion when RMSD \\(<0.1\\) Å, \\(|\\Delta E|<0.1\\) kcal mol-1, and the candidate spectrum contains no frequency below \\(-50\\) cm-1. This cutoff provides a practical tolerance for the comparison rather than proof of a local minimum.\nAutoSella-F and AutoSella-A satisfy the same-minimum criterion on \\(97.2\\%\\) and \\(97.6\\%\\) of Test molecules, and \\(93.2\\%\\) and \\(95.7\\%\\) of Dipeptides, respectively.\nThe median RMSD over jointly converged pairs is \\(5\\times 10^{-4}\\) Å on Test and \\(8\\times 10^{-4}\\) Å on Dipeptides for both optimizers, more than two orders of magnitude below the \\(0.1\\) Å threshold.\nAgreement falls to \\(39.8\\%\\) and \\(69.5\\%\\) on AA–ligand pairs, and to \\(1.0\\%\\) and \\(18.0\\%\\) on Solvated PubChem."
+      }
+    },
+    {
+      "purpose": "Failure evidence and selective follow-up (Appendix H): retains the unsuccessful additional search, convergence-conditioned averages and decision to omit DFT evaluation; cannot establish a general ranking of models.",
+      "locator": {
+        "type": "text",
+        "quote": "On the held-out GFN2-xTB benchmarks, AutoSella-G provides little benefit on single-molecule systems and performs substantially worse on the intermolecular datasets (Table [7](#A8.T7)).\nIts mean per-molecule force-call cost is 99.27% of Sella on Test and 100.49% on Dipeptides, rising to 148.77% on amino acid–ligand pairs and 239.85% on Solvated PubChem (calculated on converged optimizations).\nFor Solvated PubChem, 64 optimizations do not converge within the budget and four encounter execution errors.\nGiven this poor GFN2-xTB performance, we did not evaluate AutoSella-G with DFT and excluded it from the main-text comparisons."
+      }
+    },
+    {
+      "purpose": "Unresolved numeric inconsistency, prose side (Appendix F.3): reports PyBerny dipeptide agreement as 62.7%; read with the following Table 6 row.",
+      "locator": {
+        "type": "text",
+        "quote": "It ties with Sella for fewest steps in Shajan et al. ([Shajan et al., 2023](#bib.bib17)), but under our tighter five-criterion test it costs \\(2.0\\times\\) on Test and \\(2.5\\times\\) on Dipeptides, and reaches the reference minimum on only \\(62.7\\%\\) of Dipeptides."
+      }
+    },
+    {
+      "purpose": "Unresolved numeric inconsistency, table side (Table 6): the Dipeptides same-minimum entry is 62.0%, conflicting with the preceding prose excerpt. Preserve both without choosing or repairing either.",
+      "locator": {
+        "type": "text",
+        "quote": "| PyBerny | \\(78.6\\) | \\(0.0010\\) | \\(11\\) | \\(62.0\\) | \\(0.0012\\) | \\(23\\) | \\(5.3\\) | \\(1.2918\\) | \\(1\\) | \\(0.0\\) | – | – |"
+      }
+    },
+    {
+      "purpose": "Ablation evidence and attribution limit (Appendix G.4): supports examining mechanisms while preventing additive causal interpretations of individual removal effects.",
+      "locator": {
+        "type": "text",
+        "quote": "We supplement all single block removals with joint removals: Fable C & E and Astra B & C, B & E, and B & G. These pairs probe the contact model and its step correction, and the physical prior’s connections to calibration, curvature treatment, and the surrogate. For all four tested pairs on validation, joint removal increases cost less than the sum of the individual removal penalties. Thus, the single-block effects cannot be treated as independent, additive contributions."
+      }
+    }
+  ]
+}

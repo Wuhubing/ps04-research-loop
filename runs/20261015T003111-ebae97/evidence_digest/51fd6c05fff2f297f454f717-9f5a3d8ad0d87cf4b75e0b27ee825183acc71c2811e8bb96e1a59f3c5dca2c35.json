@@ -1,0 +1,78 @@
+{
+  "item_id": "51fd6c05fff2f297f454f717",
+  "version_id": "9f5a3d8ad0d87cf4b75e0b27ee825183acc71c2811e8bb96e1a59f3c5dca2c35",
+  "synopsis": "ResearchFlow-Eval contributes an author-reported evaluation of continuous research workflows on one SPINT-derived computational task. Its role across pieces 01–03 is bounded empirical evidence about delegation, claim-level auditing, and resource use: the authors report only 14 of 90 end-to-end claims met, but substantially better completion with paper-derived upstream inputs. Concrete failures distinguish reported success from adequate baselines, calibration tests, and latency measurements. This is source extraction, not independent verification or a general ranking of research agents. The supplied October 13 publication date falls within the authoritative September 16–October 15 window. These orientation statements do not replace passage citations.",
+  "limitations_and_counterevidence": "The evaluation covers one anchor-paper task and uses an LLM judge with researcher spot-checking; independent replication is not established. Paper-derived scoring can undervalue alternative designs, and pretraining exposure is unresolved. Test sessions could inform optimization. Stagewise improvements qualify any blanket claim that agents cannot execute experiments, while writing gains qualify blanket claims that skills offer no benefit. Differing instructions, hosts, batches, and resource consumption limit causal attribution to orchestration. Scores also partly reward expected positive outcomes rather than execution quality alone. Time and tokens are resource proxies, not monetary costs. The linked task package is an availability claim; its contents were not independently inspected. Later substantive claims must cite selected passages, and details not covered by them require additional validated extraction.",
+  "passages": [
+    {
+      "purpose": "Evaluation method and evidentiary authority (§3.3): identifies the LLM judge, artifact-based scoring, and the limited human validation described by the authors.",
+      "locator": {
+        "type": "text",
+        "quote": "LLM judge. We use an LLM as the judge, with claude-opus-5 as the evaluator model. Each stage is judged in its own call. In each call, the judge reads the rubric together with the reference entries its items cite. It also reads the frozen submission and the upstream artifacts visible to that stage. For each item it returns an integer rating on a 0–4 scale with item-specific anchors, along with the locations of the supporting evidence and a short rationale. Every score can therefore be traced back to evidence. A domain researcher spot-checked the judge’s ratings and rationales and found them largely consistent with their own assessment."
+      }
+    },
+    {
+      "purpose": "Central reported result (Appendix G): preserves the distinction between all claim completions and empirical claim completions.",
+      "locator": {
+        "type": "text",
+        "quote": "Of the 90 end-to-end claims, 14 are met, and E5 for GPT-6 Astra is the only empirical claim met in an end-to-end run."
+      }
+    },
+    {
+      "purpose": "Concrete audit evidence and mixed results (Appendix G): supports practical checks of baselines, all-subject requirements, robustness conditions, and latency definitions; includes a favorable calibration result alongside failures.",
+      "locator": {
+        "type": "text",
+        "quote": "For E1, the system compared its decoder with baselines of its own choosing instead of the frozen Wiener filter, RNN, and calibration-aware peers, and its decoder still trailed one of its own baselines on H1. For E2, one-shot calibration on M1 came within 0.05 of full calibration. One-shot \\(R^{2}\\) on M2 and H1 was negative and below a trivial predictor, however, so the all-subject requirement fails. For E4, the system tested a single 70% retention level, so the required 20% condition does not exist. For E5, it timed only H1-shaped inputs and reported absolute latency instead of the required ratio. The system’s records organize its experiments under its own claim names and scopes, so a reported success can refer to a narrower experiment than the required claim."
+      }
+    },
+    {
+      "purpose": "Counterevidence to universal execution failure (§5.1): records stagewise gains and preserves the authors’ tentative upstream explanation rather than asserting a demonstrated single cause.",
+      "locator": {
+        "type": "text",
+        "quote": "At every stage, all three harnesses score higher in stagewise runs than in end-to-end runs. The gains are largest in experimental execution and results analysis. Within execution, most of the gain comes from result quality and claim completion rather than code execution, and the number of claims that meet their success criteria rises from one to three in end-to-end runs to seven or eight in stagewise runs (Table [16](#A7.T16) in Appendix [G](#A7)). Much of the end-to-end execution gap thus appears to originate upstream of execution."
+      }
+    },
+    {
+      "purpose": "Skill comparison with a meaningful benefit and trade-off (§5.3): separates improved writing from weaker execution on this task.",
+      "locator": {
+        "type": "text",
+        "quote": "ARIS and Orchestra reach overview scores within one point of Codex alone (44.5 and 45.2 vs. 45.1), but this parity hides a trade-off. They score 15.0 to 20.0 points higher on paper writing (52.5 and 47.5 vs. 32.5), yet lower in execution, where result quality drops from 30.0 to 20.0 for both and claim completion from 42.5 to 32.5 and 37.5."
+      }
+    },
+    {
+      "purpose": "Qualification of shared-backbone comparisons (Appendix A): documents unequal instruction delivery, preventing attribution of all differences solely to orchestration.",
+      "locator": {
+        "type": "text",
+        "quote": "The five general-purpose harness runs received byte-identical instructions with all four revisions. The skill-augmented harnesses received the same instructions with one added line that invokes their skills. The research-orchestration systems receive the stage instructions through their own entry points. They therefore carry the first two revisions but not the stage order in TASK.md or the initial-instruction line on background experiments."
+      }
+    },
+    {
+      "purpose": "Test-access and external-validity limits (Appendix B): rules out treating optimized test scores as untouched estimates, private-leaderboard comparisons, or offline latency as deployment evidence.",
+      "locator": {
+        "type": "text",
+        "quote": "Train, validation, and test sessions may all be used while optimizing a claim. Every test access must be logged with its purpose, configuration, and result, and test results that informed optimization may not be described as untouched or unbiased estimates. Calibration to a new session may read its neural activity but not its behavior labels, and it may not update model parameters. The primary metric is per-session multi-output variance-weighted \\(R^{2}\\), with negative values preserved. Because the sessions are selected locally from the public data, these scores are not comparable to the private FALCON leaderboard. Latency is processing time divided by the duration of the decoded data. A ratio below one is an offline result, not evidence of closed-loop deployment."
+      }
+    },
+    {
+      "purpose": "Resource consumption and cost proxies (Appendix F, Table 13): preserves comparable reported time, token, and score columns; demonstrates unequal consumption and the high-token, low-score DeepScientist exception. These figures do not establish dollar costs.",
+      "locator": {
+        "type": "text",
+        "quote": "| System | Mode | Overview | Wall-clock (h) | Tokens (M) | \n|---|---|---|---|---|\n| Codex / GPT-5.5 | End to end | 45.1 | 0.30 | 4.7 | \n| Codex / GPT-5.6 Sol | End to end | 59.5 | 1.72 | 57.2 | \n| Codex / GPT-6 Astra | End to end | 64.9 | 1.10 | 12.8 | \n| Claude Code / Opus 4.8 | End to end | 61.3 | 5.73 | 126.5 | \n| Kimi Code / K3 | End to end | 64.2 | 20.56 | 92.0 | \n| ARIS | End to end | 44.5 | 0.74 | 15.1 | \n| Orchestra | End to end | 45.2 | 0.90 | 19.2 | \n| AutoResearchClaw | End to end | 18.6 | 0.71 | 0.8 | \n| DeepScientist | End to end | 39.9 | 7.00 | 205.7 | "
+      }
+    },
+    {
+      "purpose": "Authors’ acknowledged limitations (§6): anchors reference dependence, possible pretraining exposure, and the need to extend evaluation to additional anchor papers.",
+      "locator": {
+        "type": "text",
+        "quote": "Our study also has limitations. Because the rubrics follow the anchor paper, they may undervalue scientifically valid alternatives to its design. In addition, the literature cutoff restricts what a system can retrieve during a run but does not rule out exposure to the anchor paper during pretraining. In future work, we will apply ResearchFlow-Eval to additional autoresearch systems, models, and anchor papers."
+      }
+    },
+    {
+      "purpose": "Reproducibility provision: preserves the source’s claimed frozen-task protocol and linked code availability without presenting either as independently inspected or replicated.",
+      "locator": {
+        "type": "text",
+        "quote": "Section [3.2](#S3.SS2) describes how the task and its required claims are derived from the anchor paper and frozen before any system is run. Section [3.3](#S3.SS3) specifies the rubrics, the score aggregation, and the pinned LLM judge, and Section [4](#S4) specifies the evaluated systems, the run environment, and the resource budgets. The task package and evaluation code are available at [https://github.com/Jp-17/ResearchFlow-Eval](https://github.com/Jp-17/ResearchFlow-Eval)."
+      }
+    }
+  ]
+}

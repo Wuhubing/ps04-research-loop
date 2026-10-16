@@ -1,0 +1,197 @@
+Hi, welcome to another video. Before starting the video, I have been posting many tutorials
+of open source projects that I like in members-only videos as well. I am posting more regularly,
+so if you want to support the channel, please hit the join button, and the videos are available
+on all tiers from Bronze and Up, so please go ahead and check them out. Now, back to
+the video. So we spend a lot of time telling Claude Code how to work, read the relevant
+files first, reproduce the bug, don't rewrite half the project, and please run the tests
+before telling me everything is done. But what if Claude could test different versions of
+those instructions and figure out which ones actually help it write better code? That's
+the idea we're exploring today with Auto Research and Claude Code. Can an automated experiment
+loop improve the workflow that Claude uses to solve coding tasks? We're going to set
+up a small bug-fixing experiment, give Claude one instruction file. It can improve and evaluate
+the changes on tasks it hasn't practiced on. The underlying Claude model stays the same.
+What changes is the workflow we put around it? And that distinction matters, because a
+longer instruction file doesn't automatically mean a smarter coding agent. So let's get
+right into it. First, what is Auto Research? Andre Carpathi's original project gives a coding
+agent a small model training setup. The agent changes the training code, runs an
+experiment, checks a fixed evaluation metric, and keeps or discards the change based on
+the result. Then it repeats that process. The experiment history tells it which ideas
+helped and which ones failed. The original repository is built around training on an NVIDIA
+GPU with a 5-minute training budget for each experiment. That isn't a promise that every
+experiment finishes in 5 minutes, because startup and evaluation add time as well.
+For this video, we're borrowing that experimental pattern and applying it to a coding workflow.
+We don't need to run the original model training setup or buy a GPU to experiment
+with Claude's instructions. We'll use Udit Goenka's Community Auto Research plugin for
+Claude code. It gives us a general loop where we specify a goal, an editable scope, a metric,
+and a command that verifies the result. The plugin can coordinate the experiments,
+but we still have to define what a good result means. That is probably the most
+important part of this entire setup. If I say make Claude better at coding, there
+is no clear finish line. If I say solve more of these frozen bug-fixing tasks under
+the same limits, now we have something we can check. For the experiment,
+we'll create a skill called bug-fix. The starting instructions are deliberately reasonable,
+understand the reported behavior, make a focused correction, run the relevant checks,
+and summarize the change. I'm not going to give the baseline terrible instructions
+just to make the optimized version look good. The interesting question is whether the loop can
+improve a workflow we might actually use. Now, let's set everything up. You'll need
+Claude code, Git, Python for the small evaluation helper, and Node.js for the plugin's hooks.
+Start in a separate experiment folder with a clean Git repository. Keep your real application's
+uncommitted work out of this experiment. Open Claude code, then type slash plugin marketplace
+ad followed by Yudit Guenka's auto research repository shown on screen. Next, type slash
+plugin install followed by auto research at auto research. Start a new Claude session after
+installation so the plugin and its reference files load properly. You can use slash auto
+research colon plan to work through the setup. For our actual experiment, we're going to provide
+the metric and verification command explicitly, so we use the classic experiment loop. Now,
+create the bug-fix skill folder inside dot Claude, then skills inside that folder,
+create skill dot md with the name, description, and the starting instructions from the recording
+notes. That is the file the optimizer can revise. Keep the skills identity and
+invocation fixed. We're experimenting with its instructions. We also need a copy of the starting
+version. Save that separately and record its Git commit before making any improvements. Otherwise,
+there's nothing reliable to compare the final version against, but installing the plugin
+doesn't give us a universal coding benchmark. We need to build that part for our experiment.
+I've included a setup prompt that asks Claude to create a small evaluation helper with separate
+task fixtures, fixed grading tests, and a results log. This helper is our own experiment code rather
+than a feature that comes bundled with auto research. Here's the basic job we're giving it.
+Start every trial with a clean copy of a broken project. Launch a fresh Claude session with
+one version of the workflow instructions. Let Claude attempt the repair, then grade the
+resulting files with tests controlled by the evaluator. The worker can change the disposable
+project. The optimizer can change the workflow instructions. The grading rules stay fixed. That
+separation is important. We want to discover better instructions for repairing code. If the
+loop can rewrite the answer key, a higher score tells us very little. For the development set,
+use three small Python bugs. With behavior, we can describe precisely. One can involve removing
+duplicates while preserving order. Another can involve incorrectly treating zero as a missing
+value. And another can involve accidentally changing the caller's input list. These are
+small enough to inspect on screen, but they still let us test whether Claude considers
+behavior beyond the first happy path example. For the duplicate removal task, for example,
+returning a set might remove repeated values, but it could violate the required output
+type or ordering. Our tests should check the actual contract, including an empty input
+and repeated values in different positions. Keep a couple of different tasks for the
+final evaluation. Don't include those tasks or their answers in the optimizer's development
+feedback. And before we pay for a pile of Claude runs, test the evaluator itself. Give
+it the known broken implementation and confirm that it fails. Give it a reviewed correct
+patch and confirm that it passes. Then try a patch that deletes a grading test or modifies
+a forbidden file and make sure the evaluator rejects it. Also check what happens when
+a run times out or authentication fails. An incomplete trial cannot quietly become
+a passing result. Those checks tell us whether the measuring tool works. They don't tell
+us that Claude's workflow has improved yet. Now, let's talk about how we launched the
+trial sessions, because there's a detail here that can otherwise ruin the comparison.
+If every run inherits different memories, plugins, or an old conversation, we aren't only comparing
+the instruction files anymore. For the controlled version of this experiment, the helper uses
+Claude's print mode with the dash dash bear flag. Bear mode skips the usual automatic
+discovery of skills, plugins, memory, and Claude.md files. Then we explicitly supply
+the workflow instructions using dash dash append system prompt file. The helper extracts
+the instruction body from our skill file, so both versions are injected in the same way.
+That means this experiment measures the instruction content. It doesn't measure whether Claude
+automatically chooses the right skill from a long list. There's also a pricing catch.
+Bear mode doesn't use your normal Claude subscription login. You need an API key or
+the appropriate provider credentials, and those trial calls use that billing path. So,
+if you only want to use your subscription, you can rehearse the process manually in fresh
+sessions with the same skill invoked each time. Just describe that as a less controlled
+comparison rather than presenting it as identical to this setup.
+The exact command is in the notes. We fix the model and effort level, use the same
+tools, set the same turn and time limits, and save the response metadata along with the
+resulting code. Now we're ready to check the baseline setup.
+First run one unscored smoke trial with the original instructions to check that a real
+worker launches and its patch gets graded. The full baseline will be auto-researches iteration
+zero before it changes the skill that avoids paying for the same full baseline twice. For
+the scored trials, check whether the repaired code passes the frozen tests, stays within
+the allowed files, and finishes within the limits. Our main score is the percentage of
+all scheduled attempts that pass every required check. Ordinary failures and timeouts still
+count as unsolved attempts. An infrastructure problem should halt the evaluation rather
+than quietly shrink the denominator, a patch that fixes the reported example, but breaks
+an existing behavior doesn't count as a solved task. We're also recording elapsed time and
+estimated model cost. Those are useful supporting numbers, but a fast incorrect answer doesn't
+beat a slower correct one. Repeat the trials because the same model can
+make different decisions on the same task. For this small experiment, we'll use three
+fresh attempts per development task and keep that count unchanged for every candidate.
+Keep rerunning one version until it gets lucky. Decide the number of attempts before looking
+at the results. Once the smoke test works and the evaluator
+is frozen, we can give auto-research its instructions. The goal is to improve bug-fixing
+success under the existing limits. The scope is only our bug-fix skill file. The metric
+is the development pass percentage, with higher being better, and the verify command
+runs our evaluation helper against that file. I'm setting iterations to three for the first
+real search. That means three candidate revisions after the baseline rather than an unlimited
+overnight run. I'm also telling it to make one focused instruction change per candidate,
+preserve the skill's name, and discard candidates that don't improve the score.
+Any problem with the evaluator should stop the experiment rather than trigger a convenient
+rewrite of the grading rules. The plugin's scope and iteration settings are instructions
+to the agent. They aren't a file system sandbox or a guaranteed spending limit, so
+the evaluation controller still needs its own restrictions and stopping conditions.
+Now, let's send it and see what hypothesis it proposes.
+One possible idea is to require a concrete reproduction before editing. Another is to
+inspect the function's callers before changing its return value. A third might be to check
+one boundary case related to the reported bug before declaring the task complete.
+Those are examples of candidates, not results we're assuming in advance. The actual change
+should come from the development failures and be visible in the instruction diff. This
+is the part I would show closely in the video. Open the old instructions next to the candidate
+and read the change. Then show a trial transcript where that instruction has a chance to affect
+the worker's behavior. If the candidate says reproduce the issue first, look for the reproduction.
+If it says preserve the input, look at the patch in the external test that checks
+for mutation. We're connecting an instruction change to observable behavior rather than treating
+a paragraph of confident advice as an improvement by itself. After verification, the loop records
+the score and whether the candidate was kept or discarded. If it performs worse, the experiment
+should return to the previous best instructions instead of building the next change on top
+of a regression. Keep the unsuccessful attempts in the log.
+They're useful evidence of what the search tried, and hiding them would make the process
+look more reliable than it is. Also, inspect the git history and the actual files. A
+summary saying improved is helpful, but the recorded trial results need to support it.
+Now, there's an easy way to get fooled at this point. The development score can improve because
+the instructions have become extremely specific to the three examples. Maybe they mention a
+particular function name or quietly encode the expected fix. That could make the next
+run look amazing while doing nothing useful for tomorrow's coding problem. So, after the
+three candidate revisions, freeze the best version. Now compare the original and optimized
+instructions on the tasks we kept out of the search. Use fresh project copies and fresh
+Claude sessions again. Run each version three times per task with the same limits and alternate
+the order so one version doesn't always get the first run. Don't let the optimizer see
+a failure on this final set, revise its instructions, and then call the next attempt
+an unseen test. Once you use that feedback to tune the workflow, those tasks have become
+part of development. For the results screen, show both development and held-out performance.
+Include the number of trials, complete passes, timeouts, estimated cost, and the time spent
+on successful attempts. There are a few possible outcomes, and the interpretation should follow
+what actually happens. If the candidate improves on development and also solves more fresh
+tasks, that's evidence that these instructions helped this model on this particular task
+set. It's a useful result, although a handful of small tasks still doesn't establish a
+universal coding upgrade. If development improves, but the held-out results stay flat
+or get worse, we haven't demonstrated a transferable improvement. The search may have fitted the
+examples too closely, or the apparent gain may have been noised. And if both versions
+solve every task, we've hit the ceiling of this little benchmark. Then we can compare
+cost and successful completion time, or design a harder future evaluation. We shouldn't claim
+a quality improvement that the test couldn't measure. That is why I wouldn't promise that
+leaving this running overnight automatically produces a better, clawed setup. A loop can
+explore a bad metric just as enthusiastically as a good one. Now, let's come to the cost.
+Because three iterations sounds much cheaper than it can actually be, with three development
+tasks and three attempts each, one evaluation contains nine clawed trials. The baseline plus
+three candidate evaluations gives us 36 trial runs. Then comparing two versions on two held-out
+tasks three times each adds another 12. That's 48 coding trials, before counting the optimizer's
+own thinking, setup, or any rehearsals. So, the auto-research plugin is open source,
+but the experiment isn't free. Just because the loop is written in a skill, start with
+a one-task smoke test to check the machinery. Once it works, decide what the full comparison
+is worth to you and set limits before running it. Claude's print mode supports a maximum
+dollar budget and a maximum number of turns per run. Use those alongside an external
+timeout and a controller that stops launching more trials when the overall experiment reaches
+its limit. Treat the reported dollar amounts as estimates and leave room around the budget.
+Also account for the optimizer separately. Limiting a trial worker doesn't limit every
+other Claude session. The value depends on how often you'll reuse the workflow. Spending
+time and money improving a process you use every day can make sense. Running a large
+search to shave a few seconds off a one-off task probably doesn't, and after the experiment
+don't immediately replace your entire Claude configuration.
+Review the winning instruction diff. Remove anything tied to the practice tasks. Then
+treat that edited version as a new candidate that needs checking. Even a well-intended
+cleanup changes what you've evaluated. If the instructions still help on fresh work,
+adopt them for that specific workflow and keep the original version available. Leave
+unrelated skills and global preferences alone. You can apply the same idea to other repeated
+tasks as well. A test writing skill could be evaluated by whether its tests catch known
+defects. A migration workflow could be checked against fixed compatibility requirements. A
+code review skill could be measured on real defects found and false positives introduced.
+The metric should reflect the outcome you actually want. More tests, longer reviews,
+or fewer tool calls aren't automatically better outcomes. So, can auto-research and
+Claude code improve Claude's own coding workflow? They can set up a useful feedback loop around
+the instructions Claude follows. Whether a particular revision is better has to come
+from the fresh task results rather than the optimizer's description of its own work.
+Personally, I think this is worth exploring for a narrow workflow you repeat often and
+can evaluate reliably. Start small, keep the greater fixed, and look for gains that survive
+beyond the examples used during the search. That gives you a much more useful answer than
+simply asking Claude to rewrite your instructions and hoping the new version is better. Overall,
+it's pretty cool. Anyway, let me know your thoughts in the comments. If you liked this
+video, consider donating through the Super Thanks option or becoming a member by clicking
+the join button. Also, give this video a thumbs up and subscribe to my channel. I'll see you
+in the next one. Until then, bye.

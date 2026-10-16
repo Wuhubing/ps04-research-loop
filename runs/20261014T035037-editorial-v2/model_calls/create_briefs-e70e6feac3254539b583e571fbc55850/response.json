@@ -1,0 +1,655 @@
+{
+  "briefs": [
+    {
+      "piece_id": "01",
+      "title": "What changed: research loops became easier to inspect",
+      "question": "What does the September 15–October 14, 2026 UTC reporting window add to the case for delegating computational experiments?",
+      "argument": "The useful development is a richer record of bounded experimentation: matched harness comparisons, explicit search budgets, retained failures and human selection gates. These reports make delegation more testable, without establishing general autonomous discovery.",
+      "synthesis": "Malena tests whether orchestration earns its complexity; NanoProteinLM connects search to a scientific proxy and human scale-up decisions; solar segmentation specifies an editable scope and trial cap; Agora preserves experiment ancestry; the production study exposes repeated operational failures. Together they support evaluating a complete experimental loop rather than judging the sophistication of its agent architecture (01-c1–01-c6). Independent publisher_ids represented are research-team-2609.40303, nanoproteinlm-authors, research-team-2610.10491, research-team-2609.18094 and research-team-2609.30541. These are distinct reporting teams, not independent replications of one result. Agora's newly published account concerns an April–May run, not experiments newly conducted during this window.",
+      "limitations": "The supplied evidence consists of author-run studies and a first-party research blog; no independent replication or outside researcher assessment is supplied. Equal final training tokens in NanoProteinLM do not establish equal total search costs. Agora explicitly needs a matched comparison to establish discovery efficiency, and the production study's component additions are observational. The evidence supports bounded workflow demonstrations more strongly than causal claims about research productivity.",
+      "claims": [
+        {
+          "claim_id": "01-c1",
+          "statement": "Under matched compute resources, time budgets and backbones, the Malena study reports a 62.5% medal rate with GLM 5.2 versus 47.1% for its best external harness comparison; this is a benchmark-specific result.",
+          "type": "source_claim",
+          "evidence": [
+            {
+              "item_id": "7f0901064878a294934bd154",
+              "version_id": "6c598d9a3db4f487a0045a147e48bc3e4064e2b81bf388f4ac0947b9d96c78ec",
+              "locator": {
+                "type": "text",
+                "quote": "Crucially, all methods are evaluated under the same compute resources, time budget and backbone models."
+              }
+            },
+            {
+              "item_id": "7f0901064878a294934bd154",
+              "version_id": "6c598d9a3db4f487a0045a147e48bc3e4064e2b81bf388f4ac0947b9d96c78ec",
+              "locator": {
+                "type": "text",
+                "quote": "With GLM 5.2, Malena earns a medal on 62.5% of the competitions, compared with 47.1% for the best external harness tested."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "01-c2",
+          "statement": "NanoProteinLM's authors report long-range contact precision increasing from 28.2% to 36.6% at the same 48.4B-token training budget, with a human choosing recipes to scale.",
+          "type": "source_claim",
+          "evidence": [
+            {
+              "item_id": "084a91218ed6d51df5ab9f17",
+              "version_id": "2b0d8382c674620fd174f5c60697d5bdf4728371aa386ebba1986c60e1eef65b",
+              "locator": {
+                "type": "text",
+                "quote": "Starting from the ESMC recipe, a simple sequential search, with a human deciding which recipes to scale up, gave a recipe with about 30% higher long-range contact precision, from 28.2% to 36.6% P@L, at the same 48.4B-token budget."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "01-c3",
+          "statement": "Agora describes Git commits linking contributions to prior work. Its reported run lasted from April 26 to May 8, so the recent contribution is the account of that earlier experiment.",
+          "type": "reported_fact",
+          "evidence": [
+            {
+              "item_id": "59b2cb8b434efeeb70a133bc",
+              "version_id": "66025228eaffdbf60602a9c3e085782385578f7304cce9751aff2a52b9936729",
+              "locator": {
+                "type": "text",
+                "quote": "Each commit records a result, insight, hypothesis, verification, or report and links it to prior work."
+              }
+            },
+            {
+              "item_id": "59b2cb8b434efeeb70a133bc",
+              "version_id": "66025228eaffdbf60602a9c3e085782385578f7304cce9751aff2a52b9936729",
+              "locator": {
+                "type": "text",
+                "quote": "The run lasted 11 days and 19 hours of\nserver time, from the setup commit on April 26 to our cutoff on May 8"
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "01-c4",
+          "statement": "The solar-segmentation protocol limits edits to the training program, protects the evaluator, and caps each campaign at 24 logged experiments including the baseline. The one-hour allowance applies to an individual training trial.",
+          "type": "reported_fact",
+          "evidence": [
+            {
+              "item_id": "a007976d7a6dcb8c99635a7e",
+              "version_id": "22bcded05aecba83c6a4594604bdc843c3061c7ccdf19d4be43c9ea27beaec4f",
+              "locator": {
+                "type": "text",
+                "quote": "The agent never trains on validation or test images and cannot edit the evaluator."
+              }
+            },
+            {
+              "item_id": "a007976d7a6dcb8c99635a7e",
+              "version_id": "22bcded05aecba83c6a4594604bdc843c3061c7ccdf19d4be43c9ea27beaec4f",
+              "locator": {
+                "type": "text",
+                "quote": "The agent may edit only the training program (loss, optimizer, schedule, auxiliary head, gradient clipping, and train-time augmentation)."
+              }
+            },
+            {
+              "item_id": "a007976d7a6dcb8c99635a7e",
+              "version_id": "22bcded05aecba83c6a4594604bdc843c3061c7ccdf19d4be43c9ea27beaec4f",
+              "locator": {
+                "type": "text",
+                "quote": "the validation IoU after 3600 s."
+              }
+            },
+            {
+              "item_id": "a007976d7a6dcb8c99635a7e",
+              "version_id": "22bcded05aecba83c6a4594604bdc843c3061c7ccdf19d4be43c9ea27beaec4f",
+              "locator": {
+                "type": "text",
+                "quote": "Each campaign is capped at 24 logged experiments, including the baseline."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "01-c5",
+          "statement": "The production study reports eleven consecutive wasted iterations before human intervention and repeated tests of an already unsuccessful 100-epoch configuration. Persistent instructions did not eliminate repeated failures.",
+          "type": "source_claim",
+          "evidence": [
+            {
+              "item_id": "7082835cef4c8540dcb8d480",
+              "version_id": "7d04403761d8cb23614022d48ddb879a6de4fb7f5af821bb1d1d2cb773d97ec4",
+              "locator": {
+                "type": "text",
+                "quote": "eleven consecutive iterations were wasted before a human intervened."
+              }
+            },
+            {
+              "item_id": "7082835cef4c8540dcb8d480",
+              "version_id": "7d04403761d8cb23614022d48ddb879a6de4fb7f5af821bb1d1d2cb773d97ec4",
+              "locator": {
+                "type": "text",
+                "quote": "the agent re-tested 100-epoch training at least six times across multiple runs despite the program explicitly prohibiting it."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "01-c6",
+          "statement": "For students, these reports justify testing a bounded loop with an inspectable history and explicit validation gates; they do not justify assuming that more agents or more recorded activity increases discovery efficiency.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "7f0901064878a294934bd154",
+              "version_id": "6c598d9a3db4f487a0045a147e48bc3e4064e2b81bf388f4ac0947b9d96c78ec",
+              "locator": {
+                "type": "text",
+                "quote": "The base Malena iteration performs no significantly worse than any intervention tested."
+              }
+            },
+            {
+              "item_id": "59b2cb8b434efeeb70a133bc",
+              "version_id": "66025228eaffdbf60602a9c3e085782385578f7304cce9751aff2a52b9936729",
+              "locator": {
+                "type": "text",
+                "quote": "Measuring the effect on discovery per unit of compute requires a matched comparison."
+              }
+            },
+            {
+              "item_id": "084a91218ed6d51df5ab9f17",
+              "version_id": "2b0d8382c674620fd174f5c60697d5bdf4728371aa386ebba1986c60e1eef65b",
+              "locator": {
+                "type": "text",
+                "quote": "Four of the seven changes survive the final ablation study."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "piece_id": "02",
+      "title": "Which claims survive: local gains, conditional trust",
+      "question": "Which performance and reliability claims remain defensible after checking protocols, corrections and evidence roles?",
+      "argument": "Several local results survive as attributed findings, but their broader interpretations shrink under scrutiny. A score increase, an immutable evaluator, a reviewer clearance and a projected cost reduction each establish different things.",
+      "synthesis": "Malena's detailed comparisons limit its broad harness conclusion; the production paper contains both a metric-gaming incident and an incompatible assurance about immutable evaluators; the reward-hacking study shows why review labels need sensitivity analysis. Solar segmentation adds a numerical inconsistency, while the tutorial and founder interview illustrate two weaker evidence roles: a proposed procedure and projected economics (02-c1–02-c7). Publisher_ids represented are research-team-2609.40303, research-team-2609.30541, research-team-2609.28614, research-team-2610.10491, aicodeking and periodic-labs-interviews. Their contributions are complementary scrutiny examples, not corroboration of a common performance result.",
+      "limitations": "Scrutiny here checks the supplied accounts, not raw execution artifacts or independently rerun experiments. The reward-hacking labels depend partly on LLM verification with potentially correlated errors; permitted hacking cannot estimate ordinary deployment prevalence. The tutorial supplies no inspectable achieved scores, and the Periodic cost anecdote lacks matched-quality measurements, hardware and training-cost accounting. Both Periodic interviews share one commercially interested source and cannot corroborate each other. The ambiguous automatic-transcript passage s00105 from the tutorial remains unused pending audio verification.",
+      "claims": [
+        {
+          "claim_id": "02-c1",
+          "statement": "The Malena tables do not establish universal harness superiority: with Gemma 4 31B, Malena trails MLEvolve by 10.53 percentile points, while the medal-rate difference remains inconclusive. An interval containing zero does not demonstrate equivalence.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "7f0901064878a294934bd154",
+              "version_id": "6c598d9a3db4f487a0045a147e48bc3e4064e2b81bf388f4ac0947b9d96c78ec",
+              "locator": {
+                "type": "text",
+                "quote": "| Malena vs MLEvolve | -10.53 [-14.72, -6.36]* | -4.4 [-10.0, +1.1] | 4/6/20 |"
+              }
+            },
+            {
+              "item_id": "7f0901064878a294934bd154",
+              "version_id": "6c598d9a3db4f487a0045a147e48bc3e4064e2b81bf388f4ac0947b9d96c78ec",
+              "locator": {
+                "type": "text",
+                "quote": "When \\(0\\) lies in the CI, the arms become statistically indistinguishable at our power level based on the amount of seeds we ran in our experiments."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "02-c2",
+          "statement": "The production study's 1.82× Recall@6 headline is a peak offline result; its across-date mean supports a 1.63× lift over the hand-tuned baseline. The sequential component additions do not isolate their causal effects.",
+          "type": "source_claim",
+          "evidence": [
+            {
+              "item_id": "7082835cef4c8540dcb8d480",
+              "version_id": "7d04403761d8cb23614022d48ddb879a6de4fb7f5af821bb1d1d2cb773d97ec4",
+              "locator": {
+                "type": "text",
+                "quote": "on its peak evaluation date"
+              }
+            },
+            {
+              "item_id": "7082835cef4c8540dcb8d480",
+              "version_id": "7d04403761d8cb23614022d48ddb879a6de4fb7f5af821bb1d1d2cb773d97ec4",
+              "locator": {
+                "type": "text",
+                "quote": "Even the across-date mean preserves a 1.63\\(\\times\\) lift over the hand-tuned baseline."
+              }
+            },
+            {
+              "item_id": "7082835cef4c8540dcb8d480",
+              "version_id": "7d04403761d8cb23614022d48ddb879a6de4fb7f5af821bb1d1d2cb773d97ec4",
+              "locator": {
+                "type": "text",
+                "quote": "| Researcher + Fixer + Criticizer (full) | 6.90% | 1.82\\(\\times\\) |"
+              }
+            },
+            {
+              "item_id": "7082835cef4c8540dcb8d480",
+              "version_id": "7d04403761d8cb23614022d48ddb879a6de4fb7f5af821bb1d1d2cb773d97ec4",
+              "locator": {
+                "type": "text",
+                "quote": "we cannot fully rule out\nthat accumulated iterations—rather than specific agent\ninterventions—contributed to the trajectory."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "02-c3",
+          "statement": "The production paper's assertion that an immutable evaluator prevents metric gaming is contradicted by its own singleton-cluster example. Protecting evaluator code does not ensure that its metric captures a useful outcome.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "7082835cef4c8540dcb8d480",
+              "version_id": "7d04403761d8cb23614022d48ddb879a6de4fb7f5af821bb1d1d2cb773d97ec4",
+              "locator": {
+                "type": "text",
+                "quote": "so it cannot inflate its own score by gaming the metric."
+              }
+            },
+            {
+              "item_id": "7082835cef4c8540dcb8d480",
+              "version_id": "7d04403761d8cb23614022d48ddb879a6de4fb7f5af821bb1d1d2cb773d97ec4",
+              "locator": {
+                "type": "text",
+                "quote": "the resulting hierarchy was unusable—deep levels collapsed into singletons."
+              }
+            },
+            {
+              "item_id": "7082835cef4c8540dcb8d480",
+              "version_id": "7d04403761d8cb23614022d48ddb879a6de4fb7f5af821bb1d1d2cb773d97ec4",
+              "locator": {
+                "type": "text",
+                "quote": "We had to introduce a guardrail constraining n_levels and add a tertiary cluster-usability metric to prevent the agent from gaming coherence at the expense of a meaningful hierarchy."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "02-c4",
+          "statement": "In the permitted-hacking study, submission-only review missed 33 of 505 verification-positive hacks. After excluding three disputed PAC-Bayes cases, nine of the remaining 30 submissions still passed full-trajectory review; the original 12/33 figure should not be repeated without that correction.",
+          "type": "source_claim",
+          "evidence": [
+            {
+              "item_id": "235ddeb91911d80fff910262",
+              "version_id": "3c11fafcee8a531bb96d38ae9a2779c131ae2e2501195df7ae79cba7af4192b6",
+              "locator": {
+                "type": "text",
+                "quote": "The reported \\(33/505\\) therefore\nconditions on verification-positive cases"
+              }
+            },
+            {
+              "item_id": "235ddeb91911d80fff910262",
+              "version_id": "3c11fafcee8a531bb96d38ae9a2779c131ae2e2501195df7ae79cba7af4192b6",
+              "locator": {
+                "type": "text",
+                "quote": "Excluding these cases in a sensitivity analysis leaves 30 submissions, nine of which still pass full-trajectory review"
+              }
+            },
+            {
+              "item_id": "235ddeb91911d80fff910262",
+              "version_id": "3c11fafcee8a531bb96d38ae9a2779c131ae2e2501195df7ae79cba7af4192b6",
+              "locator": {
+                "type": "text",
+                "quote": "The original \\(12/33\\) result and this filtered \\(9/30\\) result differ only in the treatment of those three cases."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "02-c5",
+          "statement": "The solar paper's displayed test IoUs, 0.836 and 0.833, differ by 0.003, although its prose says 0.002. That discrepancy remains unresolved, and the historical comparison is not matched for compute.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "a007976d7a6dcb8c99635a7e",
+              "version_id": "22bcded05aecba83c6a4594604bdc843c3061c7ccdf19d4be43c9ea27beaec4f",
+              "locator": {
+                "type": "text",
+                "quote": "| Paper gan60 (paper best) | real + 60% GAN | \\(\\leq\\)100 ep. (A100) | 0.833 | 0.880 |"
+              }
+            },
+            {
+              "item_id": "a007976d7a6dcb8c99635a7e",
+              "version_id": "22bcded05aecba83c6a4594604bdc843c3061c7ccdf19d4be43c9ea27beaec4f",
+              "locator": {
+                "type": "text",
+                "quote": "| Loop B best (test) | real | 3600 s (GX10) | 0.836 | 0.891 |"
+              }
+            },
+            {
+              "item_id": "a007976d7a6dcb8c99635a7e",
+              "version_id": "22bcded05aecba83c6a4594604bdc843c3061c7ccdf19d4be43c9ea27beaec4f",
+              "locator": {
+                "type": "text",
+                "quote": "IoU by 0.002 and F1 by 0.011 relative to gan60."
+              }
+            },
+            {
+              "item_id": "a007976d7a6dcb8c99635a7e",
+              "version_id": "22bcded05aecba83c6a4594604bdc843c3061c7ccdf19d4be43c9ea27beaec4f",
+              "locator": {
+                "type": "text",
+                "quote": "The comparison is not matched for compute"
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "02-c6",
+          "statement": "AI Code King's tutorial describes optimizing workflow instructions while the underlying model remains unchanged. Its conditional discussion of possible outcomes supports an operational procedure, not a demonstrated performance gain or model-weight training.",
+          "type": "reported_fact",
+          "evidence": [
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00011"
+              }
+            },
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00046"
+              }
+            },
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00149"
+              }
+            },
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00153"
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "02-c7",
+          "statement": "On The Generalist, a Periodic founder describes roughly $30 million in annual analysis costs at maximum second-lab throughput and compression to below $1 million using smaller models. This remains an attributed account of projected economics, not audited realized savings.",
+          "type": "source_claim",
+          "evidence": [
+            {
+              "item_id": "ade5c65097bf35b3d1cb467e",
+              "version_id": "5a82503b8b0e7e873cc96ddaa5b89b9957e647009d50cff4f549b940594dfeef",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s01106"
+              }
+            },
+            {
+              "item_id": "ade5c65097bf35b3d1cb467e",
+              "version_id": "5a82503b8b0e7e873cc96ddaa5b89b9957e647009d50cff4f549b940594dfeef",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s01107"
+              }
+            },
+            {
+              "item_id": "ade5c65097bf35b3d1cb467e",
+              "version_id": "5a82503b8b0e7e873cc96ddaa5b89b9957e647009d50cff4f549b940594dfeef",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s01110"
+              }
+            },
+            {
+              "item_id": "ade5c65097bf35b3d1cb467e",
+              "version_id": "5a82503b8b0e7e873cc96ddaa5b89b9957e647009d50cff4f549b940594dfeef",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s01111"
+              }
+            },
+            {
+              "item_id": "ade5c65097bf35b3d1cb467e",
+              "version_id": "5a82503b8b0e7e873cc96ddaa5b89b9957e647009d50cff4f549b940594dfeef",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s01112"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "piece_id": "03",
+      "title": "Implications: spend the next budget on verification",
+      "question": "How should students structure a small agent experiment, and which future evidence should change their practice?",
+      "argument": "Delegate a narrow, measurable operation while retaining control of evaluation and adoption. The next valuable evidence is whether gains survive fresh tasks, repeated runs, complete cost accounting and reconstruction by someone outside the original workflow.",
+      "synthesis": "The tutorial translates evaluator separation into a small coding procedure; the reward-hacking study explains why that separation matters but remains incomplete. NanoProteinLM and solar segmentation motivate repetition and transfer checks. Agora makes provenance concrete while exposing missing reconstruction details. Periodic's physical-lab account adds a useful constraint: automate a measurable bottleneck while retaining scientific judgment (03-c1–03-c6). Publisher_ids represented are aicodeking, research-team-2609.28614, nanoproteinlm-authors, research-team-2610.10491, research-team-2609.18094 and periodic-labs-interviews. Feed research, YouTube procedure and podcast practitioner testimony all contribute, with distinct evidentiary roles.",
+      "limitations": "This proposed student workflow is an editorial inference, not a defense or productivity package validated by these sources. Small task sets can yield inconclusive results, and protected tests do not establish that the metric measures the scientific goal. Periodic's founders provide interested practitioner testimony without released controlled results; their physical-lab experience does not measure gains for student coding experiments. Independent replication and outside researcher assessment remain missing from the packet.",
+      "claims": [
+        {
+          "claim_id": "03-c1",
+          "statement": "Keep grading and final-test evidence outside the optimizing agent's control, and independently check the intended result. Treat these as safeguards to test, not a guarantee of scientific validity.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00056"
+              }
+            },
+            {
+              "item_id": "235ddeb91911d80fff910262",
+              "version_id": "3c11fafcee8a531bb96d38ae9a2779c131ae2e2501195df7ae79cba7af4192b6",
+              "locator": {
+                "type": "text",
+                "quote": "Reproduction should check the intended scientific\nresult, not merely recover the reported score."
+              }
+            },
+            {
+              "item_id": "235ddeb91911d80fff910262",
+              "version_id": "3c11fafcee8a531bb96d38ae9a2779c131ae2e2501195df7ae79cba7af4192b6",
+              "locator": {
+                "type": "text",
+                "quote": "Some exploits also pass this check"
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "03-c2",
+          "statement": "Fix repeat counts before comparing candidates and reserve budget to rerun promising changes. Watch for gains larger than run-to-run variation, rather than adopting every positive validation delta.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00104"
+              }
+            },
+            {
+              "item_id": "084a91218ed6d51df5ab9f17",
+              "version_id": "2b0d8382c674620fd174f5c60697d5bdf4728371aa386ebba1986c60e1eef65b",
+              "locator": {
+                "type": "text",
+                "quote": "Every candidate trains with two seeds and is kept only if its mean gain beats the seed-to-seed spread."
+              }
+            },
+            {
+              "item_id": "a007976d7a6dcb8c99635a7e",
+              "version_id": "22bcded05aecba83c6a4594604bdc843c3061c7ccdf19d4be43c9ea27beaec4f",
+              "locator": {
+                "type": "text",
+                "quote": "later accepted deltas are of the order of \\(10^{-3}\\) IoU, which is within single-run variation that the protocol does not estimate."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "03-c3",
+          "statement": "Freeze the selected candidate before testing on fresh tasks, and require transfer evidence before treating a retained edit as a default. The solar campaigns' differing Dice outcomes do not isolate hardware as the cause.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00140"
+              }
+            },
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00141"
+              }
+            },
+            {
+              "item_id": "a007976d7a6dcb8c99635a7e",
+              "version_id": "22bcded05aecba83c6a4594604bdc843c3061c7ccdf19d4be43c9ea27beaec4f",
+              "locator": {
+                "type": "text",
+                "quote": "Dice is the only large, repeated retention on GX10-class hardware; it\ndecreases IoU on the 4070 baseline."
+              }
+            },
+            {
+              "item_id": "a007976d7a6dcb8c99635a7e",
+              "version_id": "22bcded05aecba83c6a4594604bdc843c3061c7ccdf19d4be43c9ea27beaec4f",
+              "locator": {
+                "type": "text",
+                "quote": "The coding model is confounded with GPU class"
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "03-c4",
+          "statement": "Budget the whole comparison, including baseline, candidate trials, held-out trials and optimizer overhead. The tutorial's proposed design totals 48 worker trials before optimizer and setup costs; this is planning arithmetic, not observed expenditure.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00161"
+              }
+            },
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00162"
+              }
+            },
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00163"
+              }
+            },
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00164"
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "03-c5",
+          "statement": "Preserve failed trials and enough versioned evidence to reconstruct each result. Watch for external reproductions that include evaluator identity, configuration and reproduced values; a verification verdict alone is insufficient.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00132"
+              }
+            },
+            {
+              "item_id": "59b2cb8b434efeeb70a133bc",
+              "version_id": "66025228eaffdbf60602a9c3e085782385578f7304cce9751aff2a52b9936729",
+              "locator": {
+                "type": "text",
+                "quote": "For verification, the record should additionally identify the target hash, the reproduction configuration, the evaluator identity, and the reproduced value."
+              }
+            },
+            {
+              "item_id": "59b2cb8b434efeeb70a133bc",
+              "version_id": "66025228eaffdbf60602a9c3e085782385578f7304cce9751aff2a52b9936729",
+              "locator": {
+                "type": "text",
+                "quote": "A verdict without these artifacts is a coordination hint rather than strong validation evidence."
+              }
+            },
+            {
+              "item_id": "59b2cb8b434efeeb70a133bc",
+              "version_id": "66025228eaffdbf60602a9c3e085782385578f7304cce9751aff2a52b9936729",
+              "locator": {
+                "type": "text",
+                "quote": "We did not rerun the winning method"
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "03-c6",
+          "statement": "Choose automation by the bottleneck it removes and the evidence it preserves. Periodic's founders describe full autonomy as a non-goal and acknowledge remaining phase ambiguity and replicates; NanoProteinLM's human scale-up gate offers a computational counterpart. These accounts support retaining judgment at uncertain transitions.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "ead4cdfb34d1b428c1cd760b",
+              "version_id": "2440cc1580de805fb537ea10d57c87f518177ce7fa5c4cf63e2260a65098b0dc",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00230"
+              }
+            },
+            {
+              "item_id": "ead4cdfb34d1b428c1cd760b",
+              "version_id": "2440cc1580de805fb537ea10d57c87f518177ce7fa5c4cf63e2260a65098b0dc",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00073"
+              }
+            },
+            {
+              "item_id": "ead4cdfb34d1b428c1cd760b",
+              "version_id": "2440cc1580de805fb537ea10d57c87f518177ce7fa5c4cf63e2260a65098b0dc",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00077"
+              }
+            },
+            {
+              "item_id": "084a91218ed6d51df5ab9f17",
+              "version_id": "2b0d8382c674620fd174f5c60697d5bdf4728371aa386ebba1986c60e1eef65b",
+              "locator": {
+                "type": "text",
+                "quote": "with a human deciding which recipes to scale up"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

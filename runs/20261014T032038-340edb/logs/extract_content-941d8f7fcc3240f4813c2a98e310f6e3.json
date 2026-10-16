@@ -1,0 +1,21 @@
+{
+  "stage": "extract_content",
+  "status": "failed",
+  "input_count": 6,
+  "output_count": 2,
+  "started_at": "2026-10-14T03:21:02.183670Z",
+  "tools_or_models": [
+    "requests",
+    "trafilatura",
+    "yt-dlp",
+    "faster-whisper/small.en"
+  ],
+  "cost_usd": null,
+  "cost_estimated": false,
+  "errors": [
+    "youtube-wMQB33rM28I My Self Training Claude Code Setup: I Made Claude Code TRAIN ITSELF!: WARNING: [youtube] No supported JavaScript runtime could be found. Only deno is enabled by default; to use another runtime add  --js-runtimes RUNTIME[:PATH]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one\nWARNING: The extractor specified to use impersonation for this download, but no impersonate target is available. If you encounter errors, then see  https://github.com/yt-dlp/yt-dlp#impersonation  for information on installing the required dependencies\nERROR: Unable to download video subtitles for 'en': HTTP Error 429: Too Many Requests\n",
+    "youtube-R9momwXV9w4 Opus 5.5: How Close Are We to Automated AI Research?: WARNING: [youtube] No supported JavaScript runtime could be found. Only deno is enabled by default; to use another runtime add  --js-runtimes RUNTIME[:PATH]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one\nWARNING: The extractor specified to use impersonation for this download, but no impersonate target is available. If you encounter errors, then see  https://github.com/yt-dlp/yt-dlp#impersonation  for information on installing the required dependencies\nERROR: Unable to download video subtitles for 'en': HTTP Error 429: Too Many Requests\n",
+    ""
+  ],
+  "finished_at": "2026-10-14T03:29:30.372533Z"
+}

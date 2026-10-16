@@ -1,0 +1,38 @@
+[
+  {
+    "item_id": "7082835cef4c8540dcb8d480",
+    "before": "2026-09-24T00:00:00Z",
+    "after": "2026-09-24T20:49:53Z",
+    "reason": "Collector parser now reads exact original v1 UTC timestamp from saved primary HTML; not a student editorial correction"
+  },
+  {
+    "item_id": "235ddeb91911d80fff910262",
+    "before": "2026-09-23T00:00:00Z",
+    "after": "2026-09-23T17:54:01Z",
+    "reason": "Collector parser now reads exact original v1 UTC timestamp from saved primary HTML; not a student editorial correction"
+  },
+  {
+    "item_id": "59b2cb8b434efeeb70a133bc",
+    "before": "2026-09-16T00:00:00Z",
+    "after": "2026-09-16T04:00:54Z",
+    "reason": "Collector parser now reads exact original v1 UTC timestamp from saved primary HTML; not a student editorial correction"
+  },
+  {
+    "item_id": "7f0901064878a294934bd154",
+    "before": "2026-09-30T00:00:00Z",
+    "after": "2026-09-30T17:51:30Z",
+    "reason": "Collector parser now reads exact original v1 UTC timestamp from saved primary HTML; not a student editorial correction"
+  },
+  {
+    "item_id": "a007976d7a6dcb8c99635a7e",
+    "before": "2026-10-07T00:00:00Z",
+    "after": "2026-10-07T17:45:31Z",
+    "reason": "Collector parser now reads exact original v1 UTC timestamp from saved primary HTML; not a student editorial correction"
+  },
+  {
+    "item_id": "090f19610270f1b804a5bb8a",
+    "before": "2026-09-30T00:00:00Z",
+    "after": "2026-09-30T09:18:01Z",
+    "reason": "Collector parser now reads exact original v1 UTC timestamp from saved primary HTML; not a student editorial correction"
+  }
+]

@@ -1,0 +1,40 @@
+Happy Sunday, !
+Welcome back to your weekly AI news roundup.
+In case you missed it, here’s this week’s Thursday post:
+Note: If you’re consistently missing out on my emails, remember to check your “Promotions” tab and mark whytryai@substack.com as a “Safe Sender.”
+Here’s what happened in AI last week:
+👩💻 AI releases
+- Anthropic news: 
+  - Claude Dashboards creates live dashboards from your data, while Claude Motion turns [ideas and research into short animated explainers](https://claude.com/resources/articles/dashboards-and-motion).
+  - Claude for Google Workspace puts Claude in a sidebar inside Docs, Sheets, and Slides, where it can [help you edit and work with the open files](https://claude.com/claude-for-google-workspace).
+  - Claude Haiku 5.5 is the [fastest and cheapest small Claude model](https://www.anthropic.com/claude-haiku-5-5) yet, and it now also lets you adjust how hard it thinks.
+- Google news: 
+  - AI Edge Foresight is an experimental Mac app that [transcribes your meetings and turns rough notes into polished details](https://developers.google.com/edge/foresight), and can work entirely offline.
+  - Nano Banana 2.1 is an upgraded image model with [better text rendering and character consistency](https://deepmind.google/models/model-cards/nano-banana-2-1/), now available in AI Mode, Flow, and the Gemini app.
+  - Playground lets anyone create, play, and share their own games [just by describing them](https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/).
+  - SynthID Detector now makes it easy for anyone to check whether an image, video, or audio clip [has an AI watermark from Google or its partners](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synth-id-ai-content/).
+- Hark launched Hark Pro, a [free AI assistant app that can take care of errands](https://x.com/hark_labs/status/2107506971083731014) like booking rides, ordering groceries, and paying bills.
+- OpenAI news: 
+  - GPT-6 is rolling out to all users and comes with Intelligent UI [that adds interactive elements](https://openai.com/index/gpt-6-for-everyone/) like buttons, charts, diagrams, and more into its answers.
+  - GPT-6.1 Sol Ultrafast lets you [run GPT-6.1 Sol up to eight times faster](https://x.com/OpenAIDevs/status/2108262812489531498) in ChatGPT Work, Codex, and the API.
+  - Meetings is a beta ChatGPT plugin for Mac that [takes notes on your calls without a bot joining](https://x.com/ChatGPT/status/2107567930557026653) and saves summaries and next steps.
+- SpaceXAI gave Grok Bot [the ability to search, read, and monitor X](https://x.com/bot/status/2107949161878606089), so you can have it track breaking news or product feedback on your behalf.
+🔬 AI research
+- Instinct made its AI agent [available in group chats for early-access users](https://x.com/noahrshinn/status/2107161132192690558), so it can buy tickets, plan trips, and sort out carpools for the entire group.
+- Midjourney is testing a Thinking Mode that [reruns your images with extra reasoning](https://updates.midjourney.com/testing-thinking-mode/) to improve coherence, prompt accuracy, and text rendering.
+- Mistral released Mistral Large 4 in public preview, its [largest and most capable model yet](https://mistral.ai/news/mistral-large-4/), with open weights coming out by the end of this month.
+- Reflection previewed Beam, an open-weight model [built for coding and agent tasks](https://reflection.ai/blog/introducing-beam), with early access available now and full weights coming later this month.
+📖 AI resources
+- “[ATLAS: Evaluating Agents on Search-Intensive Tasks](https://exa.ai/blog/atlas-benchmark)” [BENCHMARK]: how accurately and completely do AI agents handle real-world search-based tasks.
+- “[Can AI automate Epoch?](https://epoch.ai/publications/can-ai-automate-epoch)” [REPORT]: Epoch AI’s test of whether six top AI models can handle real research and chart-making work from its own team.
+- “[Disrupting AI-enabled false front operations](https://openai.com/index/disrupting-ai-enabled-false-front-operations/)” [REPORT]: how Russian and Iranian influence campaigns used ChatGPT to run fake think tanks and journalists.
+- “[Humanity’s Sixth Sense](https://labs.scale.com/papers/humanitys-sixth-sense)” [BENCHMARK]: Scale’s benchmark that tests whether AI models can make human-like intuitive calls by glancing at images and videos.
+🔀 AI random
+- SpaceXAI will let Grok Bot [start using rival models](https://x.com/elonmusk/status/2107724314451878104) like Claude Opus 5.5, Midjourney, and Suno when they’re the best fit for a given task.
+- The Wikimedia Foundation found that “rogue” OpenAI agents [made unauthorized edits to its wikis](https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/) and unsuccessfully tried to exploit one of its tools.
+🤦♂️ AI fail of the week
+Wow, way to leave the poor guy hanging.
+🔐 All my paid goodies in one place
+Take a peek at what’s behind the paywall:
+I love me a good dashboard. Claude made me one for my HS kids mini-golf challenge. Wanna see it??
+Do you think Grok/SpaceX can muscle its way onto the frontier stage?

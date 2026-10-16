@@ -1,0 +1,78 @@
+{
+  "item_id": "090f19610270f1b804a5bb8a",
+  "version_id": "bc44cd416a3cec196c5ff3ae89d1d7f5f529cfcb851b97b519470fc6baccac09",
+  "synopsis": "For pieces 02 and 03, this developer-authored preprint contributes a concrete design for delegating iterative optimization experiments: preserve alternative hypotheses, restore compatible executable states, and feed evaluation evidence back into search. Its evidentiary role is a methodological proposal with an author-reported benchmark evaluation, not independent validation. The selected passages support discussion of experimental organization, evaluator responsibilities, budgets, ablations, resource accounting, and failures of sustained execution. Reported outcome counts must remain attributed to the authors; unresolved numerical discrepancies prevent conclusions about faster execution, lower cost, or best results.",
+  "limitations_and_counterevidence": "Two unresolved discrepancies require explicit disclosure: Table 4 gives 41,089 seconds for AutoMIP’s sole 6–12-hour MINLPLib success, while Appendix H gives 24,199 seconds for acopf_caseactivsg70k_qcqp; Table 3 gives 42,334 seconds for NoPool’s sole 6–12-hour success, while Appendix F gives 35,403 seconds for sct1. Do not reconcile these by averaging or silently choosing one. Token consumption is reported, but monetary cost is not established. Outcome tables do not provide the objective values needed to verify best-result claims. Several protocol appendix headings have no intervening content in the supplied extraction. The authors also report incomplete evaluations for three other agent systems. The study uses specified optimization cohorts, objectives, models, and hardware; it supplies no independent replication or conflict disclosure. These orientation notes do not substitute for passage citations in the later synthesis.",
+  "passages": [
+    {
+      "purpose": "Method and delegation boundary, §1: the authors describe hypothesis management, restoration of executable states, and evaluation feedback. This supports explaining the proposed workflow, not claiming independently verified autonomy.",
+      "locator": {
+        "type": "text",
+        "quote": "AutoMIP couples a persistent idea pool with an algorithm tree to jointly manage research hypotheses and executable experimental states. A review-and-ideation layer generates and maintains diverse research directions from accumulated evidence; an algorithm-search layer selects refinements or switches between directions while restoring compatible historical states and artifacts; and a verification layer executes candidates, validates their outcomes, and feeds the resulting evidence back into the exploration process."
+      }
+    },
+    {
+      "purpose": "Experimental scope and resource budget, §4: preserves differing task objectives, cohort sizes, time limits, hardware, and model choices. These conditions constrain comparisons and student replication.",
+      "locator": {
+        "type": "text",
+        "quote": "We first assess AutoMIP in MIPLib. Open and Hard set each comprises 60 instances ([Gleixner et al., 2021](#bib.bib10)). For Open set, we seek a strict improvement over the best known solution,\nor first feasibility when no feasible solution is found yet, within 43,200 s. For Hard set, we seek a specified historical objective target within 3,600 s. We also use a 60-instance MINLPLib cohort with a 43,200 s horizon. Given these different tasks, we assess AutoMIP in terms of incumbent improvement, fixed-target attainment, and nonlinear optimization, respectively.\nAll configurations run on an Apple M4 Pro machine with 12 logical CPUs, 12 physical CPU cores, and 24 GB memory. Codex-based configurations use GPT-5.5, whereas the Claude Code interface uses Claude Sonnet 5."
+      }
+    },
+    {
+      "purpose": "Metric and cost-accounting qualification, §4: distinguishes objective wins, task attainment, runtime, and average token consumption including unsuccessful runs. Token figures must not be presented as monetary prices or whole-study totals.",
+      "locator": {
+        "type": "text",
+        "quote": "Specifically, win records an instance on which a method achieves the lowest final objective value among all methods. Thus, win measures final solution quality, solved measures task attainment, and runtime measures completion speed. Token values represent average token consumption over all instances (in each time interval), including unsuccessful runs."
+      }
+    },
+    {
+      "purpose": "Ablation methods and reported results, §4.2: identifies what each comparison removes and preserves the authors’ completion-count comparison. This is within-study evidence, not independent replication or a general causal guarantee.",
+      "locator": {
+        "type": "text",
+        "quote": "NoPool removes the idea pool while retaining algorithm tree, generating a new research direction only when a direction switch is triggered. NoTree retains the idea pool and its random selection of unused research directions, but replaces the algorithm tree with a linear execution history, preventing experimental state reuse. Appendix [A.6](#A1.SS6) details the retained and removed components.\nAs shown in Table [3](#S4.T3), on 20 Open-set instances, AutoMIP successfully completes 15 tasks (75.0%), compared with 12 (60.0%) for NoPool and 10 (50.0%) for NoTree."
+      }
+    },
+    {
+      "purpose": "First side of the ablation discrepancy, Table 3: columns are win/solved, seconds, and tokens for 0–1, 1–3, 3–6, 6–12 hours, then Total. The sole NoPool 6–12-hour success is assigned 42,334 seconds. Read with the Appendix F passage; do not use this row to establish speed or cost advantages.",
+      "locator": {
+        "type": "text",
+        "quote": "| NoPool | 1/5 | 2,019 | 233,353 | 2/4 | 5,643 | 450,314 | 1/2 | 11,460 | 1,168,343 | 0/1 | 42,334 | 2,874,266 | 4/12 | 21,829 | 1,558,655 |"
+      }
+    },
+    {
+      "purpose": "Contradictory ablation record, Appendix F: columns are result, seconds, and tokens for AutoMIP, NoPool, and NoTree. NoPool’s sct1 time is 35,403 seconds, conflicting with the aggregate’s sole success in that interval.",
+      "locator": {
+        "type": "text",
+        "quote": "| sct1 | YES | 3,660 | 641,077 | YES | 35,403 | 908,939 | NO | - | - |"
+      }
+    },
+    {
+      "purpose": "Reported nonlinear comparison, resource figures, and first side of the MINLPLib discrepancy, Table 4: retains column labels and AutoMIP/Codex rows. The authors report 52 versus 45 successes, but AutoMIP’s sole 6–12-hour success is assigned 41,089 seconds. Treat objective wins, time, and token figures as reported entries requiring clarification, not established superiority.",
+      "locator": {
+        "type": "text",
+        "quote": "| Method | 0–1 h |  |  | 1–3 h |  |  | 3–6 h |  |  | 6–12 h |  |  | Total |  |  | \n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n|  | w/s | time (s) | token | w/s | time (s) | token | w/s | time (s) | token | w/s | time (s) | token | w/s | time (s) | token | \n| AutoMIP | 13/40 | 1,076 | 203,122 | 3/10 | 5,895 | 623,950 | 0/1 | 19,140 | 1,051,147 | 0/1 | 41,089 | 3,376,242 | 16/52 | 8,182 | 763,362 | \n| Codex | 9/35 | 1,219 | 200,220 | 2/10 | 5,501 | 409,595 | 0/0 | - | - | 0/0 | 43,200 | 2,927,059 | 11/45 | 12,428 | 916,826 |"
+      }
+    },
+    {
+      "purpose": "Contradictory nonlinear record, Appendix H: columns are result, seconds, and tokens for AutoMIP, Codex, and Loop. AutoMIP’s 24,199-second entry conflicts with Table 4’s 41,089-second entry for its sole success in the same interval; neither value is silently corrected.",
+      "locator": {
+        "type": "text",
+        "quote": "| acopf_caseactivsg70k_qcqp | YES | 24,199 | 1,291,624 | NO | - | - | NO | - | - |"
+      }
+    },
+    {
+      "purpose": "Reproducibility gap, Appendix A: consecutive headings show that the supplied extraction contains no intervening protocol text for A.1–A.3. This establishes a limitation of the supplied evidence, not proof that the underlying implementation lacks those protocols.",
+      "locator": {
+        "type": "text",
+        "quote": "A.1 Primary Task Skill: Opt\nA.2 Pool Construction and Lifecycle\nA.3 Branching Exploration Tree Protocol\nA.4 Decision Rules and Defaults"
+      }
+    },
+    {
+      "purpose": "Execution failures and selection limitation, §4.4: preserves the authors’ qualification that unsuccessful twelve-hour attempts in other systems were excluded from the completed comparison. This limits portability claims without assigning an unsupported cause.",
+      "locator": {
+        "type": "text",
+        "quote": "We also attempted to run AutoMIP in DeepSeek Harness ([DeepSeek-AI, 2026](#bib.bib20)), Gemini CLI ([Google, 2025](#bib.bib22)), and DeerFlow ([ByteDance, 2025](#bib.bib21)). In our tested configurations, these systems could not sustain the required twelve-hour runs, so these attempts did not yield completed evaluations and are not included in Table [5](#S4.T5)."
+      }
+    }
+  ]
+}

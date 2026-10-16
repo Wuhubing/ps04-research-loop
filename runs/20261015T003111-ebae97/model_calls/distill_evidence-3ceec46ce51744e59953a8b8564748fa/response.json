@@ -1,0 +1,78 @@
+{
+  "item_id": "2c2f305856a15081f2fe9066",
+  "version_id": "2c18cdc1f7cd0b9f4f773d6fa5733d29d115f5752e8ad9fe28d99ad61680389e",
+  "synopsis": "This accepted October 1 preprint contributes primary, author-reported experimental evidence for pieces 01–03: separating research allocation from execution, preserving experiment records, and learning allocation policies through actual LoRA updates. It supplies practical procedures, comparative results, and unusually consequential qualifications about evaluation, transfer, causal attribution, and compute. Its evidentiary role is one team's experimental report, not independent replication or proof of generally affordable autonomous research. The passages below support later synthesis; this orientation does not substitute for passage citations.",
+  "limitations_and_counterevidence": "Output-token matching recovers most of the theorem-proving advantage. Policy gains vary by configuration: environment-specific proxy MIRA-AC solves 48 BNLearn tasks against untrained MIRA's 76, whereas the cross-environment policy solves 84; BNLearn was included in critic pretraining. Scientific-task training and evaluation reuse task identities and seeds, and only one policy is trained per configuration. Actor–critic comparisons also change initialization and adapter targets. Behavioral evidence depends on LLM judgments, with unequal forced continuation in symbolic regression, and does not establish causal benefits of individual research habits. General-policy training uses 32 H200s; context-cost comparisons are projections with omitted costs. Independent replication and practitioner assessment are not supplied.",
+  "passages": [
+    {
+      "purpose": "Operational contribution: bounded work orders, explicit acceptance and stopping criteria, fresh execution, and persistent failures and contradictory evidence (Appendix C.1–C.2).",
+      "locator": {
+        "type": "text",
+        "quote": "The policy is instructed to select a bounded objective or coherent experiment set while considering its information value, cost, remaining time, and risk to the current solution. Its work order states the objective, relevant evidence, resource guidance, acceptance criteria, and stopping condition. The same structure is used for theorem proving, with experiments replaced by proof construction and verification.\nC.2 Decision and Execution\nA fresh executor in the Codex harness receives the work order, its selected repository references, and the stable environment instructions. It may inspect and modify the workspace, run tests and authorized tools, and evaluate candidates. It validates substantive work, commits useful artifacts and evidence, and leaves a concise handover. Recorded failures and contradictory results remain available to later decisions through the repository."
+      }
+    },
+    {
+      "purpose": "Frozen-weight comparison, reported theorem-proving gain, and essential counterevidence: matching output tokens recovers most of the gap (§6.1).",
+      "locator": {
+        "type": "text",
+        "quote": "All comparisons in this subsection use frozen model weights. We compare GPT-5.5,\nCodex, and MIRA.\nGPT-5.5 uses the task interface directly; Codex operates as one persistent\ntool-using session; and MIRA assigns each investigation to a fresh Codex inner\nloop. The Codex and MIRA conditions use the same underlying\nGPT-5.5 model, Codex harness, and tools, while MIRA adds explicit meta-reasoning\nand curated context resets.\nWe test the three conditions on IMOProofBench ([Luong et al., 2025](#bib.bib66))\nand HillClimbBench-RMT, and compare MIRA with\nCodex on HillClimbBench-Loop. For theorem\nproving, we also include output-token-matched\ncontinuation controls.\nTheorem proving.\nOn IMOProofBench Advanced, we count a problem as solved only when the grader\nawards full credit. Using GPT-5.5, MIRA raises the\nmean normalized grader score from 67.1% under direct inference\nto 100%, solving all 30 problems in\neach of three trials. With Qwen3.6-27B ([Qwen Team, 2026](#bib.bib73)),\nMIRA also more than doubles\nthe model’s score\n(Fig. [4](#S6.F4)(a)).\nAll conditions receive the same runtime budget, but MIRA makes better use of\nits inference budget to iterate on its solution, while the baselines submit\nmuch earlier. To determine whether its gains come from this allocation or\nsimply from generating more tokens, we force the baselines to continue until\nthey match MIRA’s output-token count on each problem. This recovers\nmost of the performance gap, but the residual gap\nis concentrated on four problems."
+      }
+    },
+    {
+      "purpose": "Reported gold-evaluation outcomes across configurations, including negative results and the precise BNLearn transfer qualification; preserve table headers to interpret counts and metrics (§6.3).",
+      "locator": {
+        "type": "text",
+        "quote": "Gold binary and Proxy marginal denote training feedback, not evaluation. Italics mark Gold-binary group bests, bold marks Proxy-marginal group bests, and boxes mark the best overall counts. The final row trains one MIRA-AC policy across all environments except BNLearn, which is held out from actor training but included in critic pretraining.\n|  |  | Symbolic Regression |  | Physics Discovery |  | HillClimbBench-CPU |  | BNLearn |  | \n|---|---|---|---|---|---|---|---|---|---|\n|  | Training variant | Solved | \\(R^{2}\\) | Solved | Law qual. | Wins | Arch. qual. | Solved | SHD gain | \n|  | MIRA (untrained) | 50 | 0.9864 | 8 | 0.2118 | — | 0.7624 | 76 | 0.9672 | \n| Gold binary | Token regression | 55 | 0.9957 | 9 | 0.2327 | 49 | 0.7594 | 79 | 0.9567 | \n|  | Step generative | 58 | 0.9993 | 9 | 0.2733 | 43 | 0.7518 | 82 | 0.9804 | \n|  | MIRA-AC | 65 | 0.9879 | 6 | 0.1846 | 49 | 0.7481 | 56 | 0.9261 | \n| Proxy marginal | Token regression | 55 | 0.9860 | 6 | 0.2463 | 49 | 0.7618 | 63 | 0.9002 | \n|  | Step regression | 50 | 0.9980 | 6 | 0.3043 | 46 | 0.7578 | 84 | 0.9733 | \n|  | Step generative | 59 | 0.9990 | 8 | 0.2463 | 53 | 0.7693 | 76 | 0.9106 | \n|  | MIRA-AC | 60 | 0.9994 | 10 | 0.2955 | 58 | 0.8054 | 48 | 0.9059 | \n|  | Online actor training across all environments except BNLearn |  |  |  |  |  |  |  |  | \n|  | MIRA-AC | 63 | 0.9869 | 10 | 0.3028 | 55 | 0.7853 | 84 | 0.9869 | "
+      }
+    },
+    {
+      "purpose": "Actual weight-training method and comparison confounds: shared versus separate adapters also differ in targeted projections and initialization (Appendix H).",
+      "locator": {
+        "type": "text",
+        "quote": "All policy-training runs use Qwen3.6-27B ([Qwen Team, 2026](#bib.bib73))\n(Qwen-27B) with LoRA adapters. In separate actor–critic configurations, actor\nadapters target the standard attention and MLP projections,\nmixture-of-experts (MoE) experts, and latent fully connected projections. MIRA-AC targets the\nstandard attention and MLP projections together with the model’s recurrent\ninput and output projections. Separate-critic variants use distinct policy and\ncritic adapters. In MIRA-AC, one shared adapter serves both roles, with separate\noptimizer states for actor and critic updates; online critic updates modify only\nthe shared adapter’s MLP LoRA parameters. Each critic is initialized from a pretrained checkpoint\nmatched to its critic parameterization and target environment.\nSeparate actors start from the untrained MIRA policy. For each single-environment\nexperiment, MIRA-AC initializes its shared adapter from a generative critic\npretrained on trajectories from that environment under the matching supervision\ntarget."
+      }
+    },
+    {
+      "purpose": "Generalization limitation: independently initialized evaluation trajectories still reuse scientific-task identities and seeds (Appendix B.1).",
+      "locator": {
+        "type": "text",
+        "quote": "For the three scientific environments, policy training and reported evaluation use independently initialized trajectories on the same fixed task identities and seeds. They therefore test new research trajectories and held-out evaluations within the same tasks, not generalization to unseen task identities."
+      }
+    },
+    {
+      "purpose": "Compute requirement, training budget, reproducibility details, and absence of repeated policy training per configuration (Appendix H).",
+      "locator": {
+        "type": "text",
+        "quote": "| Compute | 16 H200s for actor–critic inference and optimization, plus 16 H200s serving frozen executors | \nWe train one policy per configuration. Each environment-specific run makes one pass over a fixed ordered set of 100 episodes. The cross-environment run uses 300 episodes: 100 from each of its three actor-training environments. The scientific environments use 100 tasks with one rollout each; HillClimbBench-CPU uses 50 tasks with two rollouts each. Within each environment, the task order is deterministically shuffled from run seed 42; environments are interleaved by equal-weight deficit round robin, and generation seeds are tied to logical decision identifiers."
+      }
+    },
+    {
+      "purpose": "Cost-evidence boundary: fixed-trajectory replay projections, imputed inputs, and omitted costs cannot establish measured end-to-end savings (Appendix H).",
+      "locator": {
+        "type": "text",
+        "quote": "The context-cost analysis in Fig. [11](#S6.F11) compares\nMIRA-AC with fixed-trajectory replays that preserve the recorded work orders,\nexecutor actions, and tool interactions. The MIRA-AC baseline counts policy\ninput together with exact or imputed executor input. The no-compaction replay\ncarries all prior cross-iteration history into each later model call, while the auto-compaction\nprojection caps that history at 200k tokens. The displayed range captures how\noften the carried history is reread. Its lower endpoint adds the history once\nduring each active stage—curation, work-order selection, and execution. Its\nupper endpoint follows a sequential tool loop in which the updated context is\nread after each recorded curation request and executor turn. Frozen-curator\nbase prompts and outputs, critic inputs, compaction-summary costs, and\nbehavioral changes are not modeled. The comparison therefore concerns\nrollout-generation cost, not optimization cost or sample efficiency."
+      }
+    },
+    {
+      "purpose": "Evaluation design and qualification: hidden final scoring uses separate data or conditions except for BNLearn's shared hidden target (Appendix B.2).",
+      "locator": {
+        "type": "text",
+        "quote": "After\nselection, a hidden gold evaluation produces the score reported in the results\ntable. It uses the same hidden target as the proxy for BNLearn and separate\nheld-out data or conditions for the other environments. A task is solved when\nthis gold evaluation meets the environment-specific success criterion."
+      }
+    },
+    {
+      "purpose": "Concrete causal-comparison weakness: symbolic-regression policies had unequal opportunities for later decisions (Appendix K.4).",
+      "locator": {
+        "type": "text",
+        "quote": "Forced continuation appeared in 57 MIRA-AC trajectories and 17 untrained MIRA trajectories in this environment. The attribution analysis excludes harness-only contributions, but forced continuation gave the policies unequal opportunities to make later decisions. This weakens a causal interpretation of the aggregate difference."
+      }
+    },
+    {
+      "purpose": "Limits on trustworthy delegation: proxy–gold alignment remains unresolved, and LLM-judged behavioral changes do not establish causal benefits of particular research strategies (§7).",
+      "locator": {
+        "type": "text",
+        "quote": "Our learning experiments also depend on proxy feedback. Dense proxy signals make repeated autoresearch training feasible, but a proxy need not rank research directions in the same way as the final gold evaluation. Our results show that proxy-trained policies can improve gold-evaluated outcomes in the environments studied here, but they do not establish when such transfer should be expected or how robust learning is to systematically misaligned proxies. Future work should characterize the degree of proxy–gold alignment required for stable policy improvement and develop methods that can learn from sparse gold feedback without giving up the sample efficiency of intermediate signals.\nThe behavioral analysis should likewise be interpreted as descriptive. Its conclusions rely on an LLM judge assigning process labels and comparing matched trajectories. These annotations provide evidence that training changes observable research behavior, but they do not establish that any individual behavior—such as testing competing hypotheses, abandoning stalled directions, or making larger pivots—causes the associated performance difference. More direct interventions on research strategy, together with human or task-specific behavioral evaluation, would be needed to identify which learned behaviors are causally useful and under which research regimes."
+      }
+    }
+  ]
+}

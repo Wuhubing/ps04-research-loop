@@ -1,0 +1,12 @@
+{
+  "stage": "create_briefs",
+  "status": "completed",
+  "input_count": 15,
+  "output_count": 3,
+  "started_at": "2026-10-14T03:52:42.227119Z",
+  "tools_or_models": [],
+  "cost_usd": null,
+  "cost_estimated": false,
+  "errors": [],
+  "finished_at": "2026-10-14T03:56:03.160158Z"
+}

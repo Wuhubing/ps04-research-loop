@@ -1,0 +1,12 @@
+{
+  "stage": "select_items",
+  "status": "completed",
+  "input_count": 23,
+  "output_count": 23,
+  "started_at": "2026-10-15T00:36:11.618084Z",
+  "tools_or_models": [],
+  "cost_usd": null,
+  "cost_estimated": false,
+  "errors": [],
+  "finished_at": "2026-10-15T00:41:17.413077Z"
+}

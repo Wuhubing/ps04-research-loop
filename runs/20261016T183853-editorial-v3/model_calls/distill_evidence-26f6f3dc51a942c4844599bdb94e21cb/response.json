@@ -1,0 +1,71 @@
+{
+  "item_id": "a007976d7a6dcb8c99635a7e",
+  "version_id": "22bcded05aecba83c6a4594604bdc843c3061c7ccdf19d4be43c9ea27beaec4f",
+  "synopsis": "Author-reported preprint case study of constrained agent editing for photovoltaic segmentation. Its contribution to pieces 01–03 is a concrete example of delegable training-code search, researcher-defined evaluation gates, and hardware-dependent results under explicit trial budgets. It supplies methodological and experimental evidence from one research lineage, not independent replication or proof of general superiority. The 3,600-second limit applies to each trial; campaigns contain 24 logged experiments including the baseline. All substantive synthesis claims must cite the passages below.",
+  "limitations_and_counterevidence": "Single-seed evaluations, unestimated run variation, one tested campaign, model–hardware confounding, unmatched reference compute and augmentation, and no declared-space tuner comparison constrain conclusions. Retained changes can fail in other campaigns. Numeric inconsistencies remain unresolved: Table 3's 0.836 versus 0.833 and 0.801 implies differences of 0.003 and 0.035, whereas §3.2 reports 0.002 and 0.034; Table 1 reports Loop C's delta as 0.120 although its rounded endpoints imply 0.121. Do not use these comparisons to establish superiority, lower cost or faster execution. The source gives trial budgets and hardware, but no monetary accounting or complete campaign cost. A repository is linked, but its contents and independent replication are not supplied. These orientation notes do not replace passage citations.",
+  "passages": [
+    {
+      "purpose": "Reproducibility lead only: the authors link a repository; this does not establish its contents or successful replication.",
+      "locator": {
+        "type": "text",
+        "quote": "Research repository [https://github.com/VU-AIML/automl4eo-autoresearch-segmentation](https://github.com/VU-AIML/automl4eo-autoresearch-segmentation)."
+      }
+    },
+    {
+      "purpose": "Evaluation safeguards and researcher-defined boundaries: frozen preparation, validation metric, data separation and execution wrapper.",
+      "locator": {
+        "type": "text",
+        "quote": "The preparation program owns the canonical real split, GSD resampling, object-centric \\(512\\times 512\\) crops, ImageNet normalization, and the evaluation function (mean per-image IoU on the 256-image validation set). The F1 score is logged but is not the acceptance metric. The agent never trains on validation or test images and cannot edit the evaluator. Training is launched only through a wrapper that unloads the coding model, enforces the wall-clock budget, and prints a parseable footer."
+      }
+    },
+    {
+      "purpose": "Delegable work, acceptance rule and compute budget: free-form training-code edits within a fixed architecture, 3,600 seconds per evaluation, and 24 experiments per campaign.",
+      "locator": {
+        "type": "text",
+        "quote": "The agent may edit only the training program (loss, optimizer, schedule, auxiliary head, gradient clipping, and train-time augmentation). The architecture remains DeepLabV3–ResNet-50. Let \\(c_{t}\\) denote the current retained training program and \\(m(c)\\) the validation IoU after 3600 s. A proposed edit \\(\\Delta_{t}\\) is committed if \\(m(c_{t}+\\Delta_{t})>m(c_{t})\\); otherwise the tree is reset to \\(c_{t}\\). Failed runs are treated as rejections. Each campaign is capped at 24 logged experiments, including the baseline. Under a frozen architecture and evaluator the loop is close to code-level hyperparameter search; its extra degree of freedom is that proposals need not lie in a pre-specified space."
+      }
+    },
+    {
+      "purpose": "Reported campaign results and hardware requirements; preserve Loop C's unresolved delta discrepancy and the single held-out test evaluation.",
+      "locator": {
+        "type": "text",
+        "quote": "|  | Loop A | Loop B | Loop C | \n|---|---|---|---|\n| Coding model | Gemma 4 12B | Qwen3-8B | Qwen3-8B | \n| GPU | RTX 4070 12 GB | ASUS Ascent GX10 | ASUS Ascent GX10 | \n| Batch / peak VRAM | 2 / \\(\\approx\\)9 GB | 8 / 18–35 GB | 8\\(\\to\\)16 / 35–36 GB | \n| Baseline val. IoU | 0.616 | 0.723 | 0.737 | \n| Best val. IoU | 0.710 | 0.858 | 0.858 | \n| \\(\\Delta\\) val. IoU | \\(+0.094\\) | \\(+0.135\\) | \\(+0.120\\) | \n| Retained / rejected | 3 / 21 | 10 / 14 | 7 / 17 | \n| Best test IoU / F1 | — | 0.836 / 0.891 | — | \nLoop A is executed under a 12 GB memory constraint (batch size 2). Loops B and C use a cached \\(512\\times 512\\) loader on GX10-class hardware (Loop C later retains batch sizes 12 and 16). Disk caching of the resampled pairs is a harness constant, not an agent proposal. The test split is scored once, after Loop B, on the best validation checkpoint."
+      }
+    },
+    {
+      "purpose": "Counterevidence to universal training defaults: modification effects reverse across hardware and accumulated configurations.",
+      "locator": {
+        "type": "text",
+        "quote": "Changes retained in Loop B are often rejected in Loops A and C, or are not\nproposed.\nDice is the only large, repeated retention on GX10-class hardware; it\ndecreases IoU on the 4070 baseline.\nCosine decay is the only large retention under 12 GB and is rejected in both\nGX10 campaigns.\nHorizontal flipping, color jitter, and a lower peak learning rate change sign\ndepending on the configuration on which they are stacked.\nRotation, encoder freezing, and exponential moving averages of the weights are\nrejected in every campaign that tries them."
+      }
+    },
+    {
+      "purpose": "Uncertainty in small accepted improvements: the protocol does not estimate run variation.",
+      "locator": {
+        "type": "text",
+        "quote": "Diminishing returns are visible in all three traces. After the first one or two retained changes, later accepted deltas are of the order of \\(10^{-3}\\) IoU, which is within single-run variation that the protocol does not estimate."
+      }
+    },
+    {
+      "purpose": "Reference-comparison qualifications and inconsistent reported differences; retain the authors' explicit restriction against general superiority claims.",
+      "locator": {
+        "type": "text",
+        "quote": "The comparison is not matched for compute: the reference trains for up to 100\nepochs with early stopping on an A100 (batch size 48) and, in gan60,\nadds 1228 synthetic images.\nLoop B trains for 3600 s on 2048 real images, without test-time flipping and\nwithout a change of backbone.\nLoops A and C are validation-only.\nOn this protocol, the one-hour real-only configuration improves IoU by 0.034 and F1 by 0.038 relative to no_aug, and IoU by 0.002 and F1 by 0.011 relative to gan60. The gap between validation and test IoU is approximately 0.022, so neither GX10 validation figure of 0.858 should be read as a test result. The comparison is specific to this split, backbone, and GPU; it is not evidence that AutoResearch outperforms GAN augmentation in general."
+      }
+    },
+    {
+      "purpose": "Exact comparison values for checking the prose discrepancies, validation/test separation, single-seed limitation and model–hardware confounding.",
+      "locator": {
+        "type": "text",
+        "quote": "| Setup | Data | Budget | IoU | F1 | \n|---|---|---|---|---|\n| Paper no_aug | real | \\(\\leq\\)100 ep. (A100) | 0.801 | 0.853 | \n| Paper basic_aug | real | \\(\\leq\\)100 ep. (A100) | 0.813 | 0.865 | \n| Paper gan60 (paper best) | real + 60% GAN | \\(\\leq\\)100 ep. (A100) | 0.833 | 0.880 | \n| Loop C best (val.) | real | 3600 s (GX10) | 0.858† | — | \n| Loop B best (val.) | real | 3600 s (GX10) | 0.858† | 0.908† | \n| Loop B best (test) | real | 3600 s (GX10) | 0.836 | 0.891 | \n| †Validation split; not comparable to the paper’s test rows. |  |  |  |  | \nEach proposed change is evaluated with a single random seed (35). Loops A and C have no test evaluation. The coding model is confounded with GPU class, and the agent cannot change the backbone, the split, or the metric."
+      }
+    },
+    {
+      "purpose": "Missing baseline and restricted autonomy: direct tuner comparison and broader agent control remain future work.",
+      "locator": {
+        "type": "text",
+        "quote": "A direct comparison with a declared-space tuner, and a less restricted loop that may edit architecture, preprocessing, or literature-derived ideas, are left to future work."
+      }
+    }
+  ]
+}

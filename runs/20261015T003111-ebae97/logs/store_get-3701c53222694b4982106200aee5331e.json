@@ -1,0 +1,14 @@
+{
+  "stage": "store_get",
+  "status": "failed",
+  "input_count": 0,
+  "output_count": 0,
+  "started_at": "2026-10-15T00:31:23.878135Z",
+  "tools_or_models": [],
+  "cost_usd": null,
+  "cost_estimated": false,
+  "errors": [
+    "Evidence item not found"
+  ],
+  "finished_at": "2026-10-15T00:31:23.878601Z"
+}

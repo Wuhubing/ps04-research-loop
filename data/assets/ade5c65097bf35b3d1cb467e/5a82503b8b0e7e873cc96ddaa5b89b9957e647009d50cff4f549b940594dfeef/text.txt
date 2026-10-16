@@ -1,0 +1,1530 @@
+LLMs, if you talk to them, they're incredibly intelligent, their performance is insane,
+but then you haven't seen that kind of impact on the physical world.
+Why is that?
+Our goal is to build a system that can intentionally synthesize matter.
+This isn't going to emerge just from reading textbooks.
+It's really necessary to use simulations, model the physical world,
+but then actually carry out the experiment.
+If we are successful with periodic,
+it will actually increase the number of scientists in the world.
+Maybe let's get really granular to understand how this all comes together.
+Anyone could go into a lab and mix a bunch of powders and say they ran a lot of experiments.
+However, if you're not seeing what you're doing, there's no error correction loop,
+there's no intentionality to it, and so those are some of the first AI systems we had to build.
+What we're targeting now are areas where the frontier is just not sufficient
+or we can do it vastly cheaper.
+A system that can literally engineer matter is going to be of key importance to everybody.
+If you had unlimited resources and no operational constraints,
+what is an experiment you'd really like to run?
+I would love to see...
+a startup building infrastructure to create what they call synthetic superintelligence.
+Liam previously led post-training at OpenAI
+and was one of the creators of ChatGPT,
+while Doge was a research scientist at Google DeepMind.
+They've brought their experience together to build what might be described as an AI scientist,
+capable of conducting thousands of experiments a day and learning from each one of them.
+In this episode, we discuss the limits of LLMs,
+why science is so hard, and what Liam learned from launching ChatGPT.
+I'm Mario, and this is The Generalist.
+I'm really excited to have you both here.
+I've been really looking forward to this conversation.
+I think you're building such a fascinating company.
+So maybe we just start there.
+Tell me a little bit about Periodic.
+What are you trying to do?
+Our goal is to build a system that can intentionally synthesize matter.
+So we're calling this a synthesis superintelligence.
+Our core belief is in order to do this,
+you need to make connection with the real world.
+So a system like this isn't going to emerge just from reading textbooks, reading papers.
+It's really necessary to use simulations, model the physical world,
+but then actually carry out the experiments.
+We kind of talk about like thinkism is not enough.
+It's really necessary to get the new information from the world to conjecture
+how it might be, get the experiments back, and do this end-to-end loop.
+By doing this end-to-end training against the physical world,
+new types of intelligence and AI systems will emerge.
+So rather than a system that has just been trained on the body of final scientific literature,
+it's been trained on the scientific process itself,
+rather than knowing the state of science and knows how to do science.
+I've heard one way that you've maybe described the mission in the past is almost to build an AI scientist, right?
+And decomposing the different pieces of that puzzle through that sort of lens.
+How do you think about, fundamentally, what does a scientist do and what do you need to replicate?
+The traditional way to look at science is to say you come up with a hypothesis,
+and then based on the hypothesis you do some experiments,
+and the experiments either validate the hypothesis or invalidate it,
+and then you update your hypothesis.
+And I think what's really critical here for us is this observation that
+science always tries to change the boundary of our understanding,
+which by definition means it cannot just rely on what we already know,
+because science is trying to figure out what we don't yet know.
+And this is almost at odds with the traditional description of machine learning,
+where machine learning trains on a training set and does well on a test set
+that has the same distribution as the training set.
+So there's like a clear tension between what we call machine learning and what we call science.
+And that's where we're basically trying to make progress.
+And how have humans gotten around this problem, right?
+Because at the end of the humans are also machine learning algorithms,
+and they often have figured out things that they didn't know before,
+and they had to iterate.
+Like they had to run experiments, or they had to write down a theory,
+get yelled at by reviewers, and then update it.
+You know, Einstein had to do this, Bardin had to do this,
+so we feel like LLM will have to do it too.
+So we've been trying to spend a lot of time and focus on building labs
+that can have an LLM and simulation iterate with it.
+That's kind of our goal, yeah.
+Liam, you mentioned sort of this idea of thinkism.
+For folks that maybe don't know what that really means,
+maybe you can tell us a little bit about it and, you know,
+parse the differentiation a bit there.
+Yeah, I mean, I think it's this concept that an AI that just thinks for a very long time.
+Maybe if you extrapolate out the inference tokens well beyond anything we've seen,
+it can just do anything.
+One of our deep scientific goals is to discover new high-temp superconductors.
+Yes.
+And we don't think that a system trained in the way that they're trained today
+will think for a billion or a trillion tokens and suddenly intuit,
+here's a new high-temp superconductor.
+We think that's just not in line with how we've pushed knowledge forward
+and science forward traditionally.
+And so I think that's kind of core to our belief.
+It's like you need to connect it to the physical world and iterate.
+The data simply just doesn't exist,
+and that's how you're going to actually build new knowledge,
+not just rehash the existing knowledge.
+High-temperature superconductors,
+how did you land on that as sort of the right first step for this company?
+There are a couple of reasons.
+Let me talk through a bunch of them.
+So as Liam said, our goal is synthesis superintelligence.
+And if we can synthesize anything in the lab,
+we might as well synthesize the most impactful thing,
+which is superconductors.
+So that's one reason.
+Another reason is,
+imagine all the different sci-fi features you want to think of.
+They often involve superconductivity,
+like quantum computing, fusion, lossless transmission of energy.
+These all have superconductors somewhere in there.
+And the other thing is,
+there's a sense in which superconductors are the most macroscale quantum mechanical phenomenon.
+There's something very fascinating about it.
+And if you think about the history of condensed matter physics,
+it goes through these seven-year or so cycles of what's very popular and then falls out.
+Like there was topological insulators, heavy fermion physics,
+like it kind of roughly matches the length of a PhD that like these topics come up and down.
+Superconductivity is one topic that never went out of the road.
+You know, like since its discovery by Onnes back in 1910,
+people have been fascinated by it since and we're still fascinated by it.
+And it's also in the pursuit of this,
+you have to build up such sophisticated simulation infrastructure,
+AI infrastructure, and this has a huge amount of generality.
+So it sort of gives you the right stair steps and also is this massively impactful?
+Exactly. In the pursuit of this super ambitious goal,
+you build up a huge amount of incredibly impactful technology.
+Doge, I've heard you mentioned Onnes before.
+For folks who don't know, you know, that history, what they achieved,
+can you tell us a little bit about why they're an inspiration?
+Yeah, absolutely.
+Because Onnes is an inspiration to us in many ways.
+So this is a good thing to talk about.
+So in the 1800s, there was a big rush to liquefy as many of the gases as possible.
+So I think around 1850, they liquefied oxygen, for example,
+and ended up playing a big role in industry.
+So they were trying to kind of go down in the periodic table
+and liquefy as many of the gases as possible.
+As you can imagine, you have to lower the temperature more and more.
+Helium was the hardest one because, you know, it's a noble gas.
+So it doesn't really interact with other atoms very strongly,
+which means this liquification temperature will be low.
+And a helium, especially among the noble gases, is the smallest one.
+So that was the last one to be tackled.
+And Onnes built a lab to go after this.
+And one of his very interesting ideas was that science should be done
+at an industrial scale by professionals.
+So he would hire professional technicians, professional engineers
+to work in a science lab, which was, I think, a bit like funny at the time to people.
+And he succeeded.
+So, you know, after a lot of hard work and he had a large team doing it,
+he was able to liquefy helium.
+And interestingly, you know, he got the Nobel Prize for liquefying helium.
+He didn't get it for discovering superconductivity.
+So he just like basically created a new capability,
+which is lowering the temperature to below 4 Kelvin.
+As you know, 0 Kelvin is the absolute zero.
+Like we don't expect to go any below that.
+And 4 Kelvin is really cold.
+But he reached that amount.
+He reached 4 Kelvin.
+He could go down a bit more to 1.8.
+And then after he was able to do that,
+he knew that some people were wondering what would happen to metals
+if it got really cold.
+And some really smart people like Lord Kelvin thought that
+if you could go such low temperatures, electrons would basically freeze.
+And it's kind of intuitive, right?
+It's so cold, electrons don't want to move anymore.
+Yes.
+So he wanted to try it.
+And I think one of his scientists there tried putting different metals
+into liquefied helium, or like very cold temperature.
+And one of the things they tried was mercury.
+And it turns out mercury is a superconductor at such low temperatures.
+And then once you observed that it was a big deal,
+and they kind of opened up this whole area around superconductivity.
+Thank you for that history.
+That's very interesting.
+You've both mentioned this phrase, synthesis superintelligence.
+I'm sure folks have an understanding of what synthesis is.
+But you know, why that word?
+Like, why is that the right wrapper or the right description?
+There's something sort of, I imagine, quite deep there
+and why you've chosen to frame it that way.
+Yeah, I mean, there are historical reasons and scientific reasons.
+So one historical reason is US used to be really good at synthesis.
+And especially during Bell Labs time.
+But after Bell Labs stopped doing research as much,
+US kind of lost its power and strength in synthesis
+and it's kind of moved on to some other countries.
+Like synthesis, when you say Bell Labs was great at synthesis,
+like what is an example of that?
+Good question.
+So like, let's say there's a new compound, new material that is interesting.
+And I come to you and say, Mario, can you make this?
+Yes.
+It can be very hard.
+So if it's been made before,
+then you can just follow the previous recipe.
+It's kind of like baking.
+But it's never been done before.
+It's actually hard to figure out because you're basically like at a high level
+trying to get the atoms in the right shape.
+And it's pretty difficult thing, right?
+Because you're not actually seeing the atoms.
+You're not able to move the atoms individually.
+Today, US academia has focused a lot more on functional properties,
+like finding a new battery, finding a new solar cell.
+But there's this fundamental capability that's still very important,
+which is being able to synthesize things.
+Okay, so this one is another reason is in materials discovery,
+you might have heard of this like 20 year bottleneck,
+where you might discover a material in the lab,
+but it usually takes 10 to 20 years before it impacts the technology.
+And one of the main reasons for that is you can make it in the lab.
+But when you need to figure out how to scale up the manufacturing,
+so we can make it at industrial scale, so we can sell it,
+there's usually a huge issue.
+And a lot of the things you see in the lab don't transfer to large scale.
+So the second and the third is to be honest,
+you know, sometimes people think of materials discovery,
+the hardest part being like discovering the material.
+But if you go in the lab,
+usually the hardest part is making the thing you discovered.
+Because it's kind of relatively easy to figure out
+what could be a interesting material.
+What's usually hard is making it.
+Let me give you a quick example.
+So when Alex Mueller wanted to study transition metal oxides
+for new superconductors,
+and you know, he succeeded at the end towards 1985,
+and he discovered cuprates,
+which were the forced unconventional superconductors
+and got a Nobel Prize for it.
+These were the high temperature superconductors.
+They were actually originally trying nickelates instead of cuprates.
+But if you look at the periodic table,
+nickel is right next to copper.
+So instead of copper oxygen, it's nickel oxygen.
+So he tried that, it didn't work,
+so gave up and went to cuprate.
+But then, you know, 40 years later,
+our neighbors at Stanford, Harold Huang,
+discovered that nickelates are also superconductors,
+once he could figure out how to make it.
+I guess what we're trying to say is,
+even for materials discovery as the main goal,
+being able to synthesize materials efficiently
+is the biggest bottleneck.
+So we're spending a lot of our time on figuring out
+how to make things that we want to make.
+For someone who last conducted a scientific experiment
+probably in 10th grade and, you know,
+nothing serious, certainly,
+when you say it's hard to make things,
+like, what are the ways that that is difficult precisely?
+Like, is it a question of precision?
+Is it a question of consistency?
+Like, you know, pick any example, I suppose.
+What are the sort of most common ways that process fails?
+I mean, like, even if you know
+how you want to configure those atoms,
+to like, okay, if the atoms were arranged
+in this particular way, it would be stable,
+it would have the properties we care about.
+There's all of the processes you need to do to lead up to it.
+So what elemental precursors do you use?
+And what proportions?
+What temperature profile?
+What pressures?
+What are all the processing conditions?
+There's a huge amount of challenges associated
+with all these things, and it's necessary
+to actually produce a new material.
+It's insufficient to just bring some of the precursors
+together at ambient pressure, ambient temperature.
+You have to sort of bring it into new regimes.
+And this is extremely difficult,
+but once you have a system that can do this,
+it can intentionally and efficiently start designing matter,
+which you think is extremely foundational.
+Another sort of naive question, but once you have,
+you know, the recipe, so to speak,
+for one of these things,
+how easily can you make that recipe consistently?
+You know, it sounds like, you know,
+once you have the idea, okay,
+hard to then do it the first time and get it right,
+but once you've sort of dialed that in,
+is that quite replicable?
+Is it very replicable?
+Is it actually surprisingly hard?
+It can really depend.
+So some reasons, it's hard to replicate.
+Let us just like tell you some examples.
+So it kind of like, I could give some like reality to it.
+Furnaces, for example, you know, like,
+if you think of very simple synthesis
+that I'm like solid state synthesis,
+you just mix precursor powders,
+put it in an oven for furnace for some time,
+at some temperature, and then take it out.
+Like, that's the simplest thing you can do probably.
+Even there, there are a lot of issues.
+So one issue is the precursors
+might have different amount of impurities.
+So, you know, you buy this precursor,
+it's 99.1% pure, but then there is other impurities,
+and impurities can lead to other results.
+Another thing is furnaces
+change their temperature stability over time.
+Like, one thing we realized in our lab,
+there was definitely a pain,
+is the furnace was working pretty well
+for the first three runs.
+But then afterwards, this temperature stability
+was going haywire.
+And, you know, it's stuff like this
+that can make replicability difficult,
+but humans have definitely gotten better at it
+as they got experienced.
+Like, another example from cuprates is,
+I think when cuprates were first discovered
+to be superconductors, actually some people
+wondered if it was even real
+because they had trouble replicating in the lab.
+And it was a difficult synthesis procedure.
+Today, I think people have dialed it in so much,
+it's in textbooks.
+Like, if you open up a solid-state chemistry textbook,
+some of the synthesis examples will include cuprates,
+like YBCO.
+So it's one of those things, again,
+where at the beginning it might seem
+not very replicable, hard to figure out,
+but as we gain experience from it,
+we kind of get better at it.
+Yeah, and one key piece to what we do at Periodic
+is we think about the hardware engineering
+associated with all these things, too.
+So, something that used to be a hidden variable,
+where it's like, oh, the oven is actually
+degrading slightly over time,
+or there's asymmetries within the furnace.
+If you can get better telemetry on these things,
+then that allows you to pipe
+that information back to the system,
+and it can have a better sense of this.
+I imagine, you know, one of the things
+I think about when we think about
+the sort of state of modern science,
+modern knowledge, is the replication crisis.
+You know, it's hard to reproduce the results
+that we think we know.
+We don't necessarily know some things
+that might not be true,
+or we don't know them with full confidence.
+It sounds like, because of that telemetry
+and the way that you can sort of engineer
+this system with a different level of fidelity,
+you can hopefully start to really figure out
+why these things fail and maybe have
+better replication, better reproducibility.
+Yeah, I mean, we also run replicates as well, right?
+So we have to understand what is the variance
+of different systems and really teach a system
+to do a better job of, like, decision-making
+under uncertainty.
+So, for example, if there's some aberrant,
+some noise in one pattern,
+don't have it, like, over-indexed on that
+and say, actually, no, this should just be rerun.
+This looks like noise.
+Having that type of scientific intuition
+is the thing we want to build into these systems.
+I want to go so much deeper into what you've built,
+but maybe to, you know, take a step back in time,
+I think you guys have said before that you met
+at the gym flipping a tire.
+How did you both get to that point?
+Maybe, Doge, we can start with you.
+You were telling me, you know, before we started
+that you grew up in Western Turkey, I believe.
+Yeah, that's right.
+Yeah, so, like, growing up as a kid,
+I always knew I wanted to be a physicist,
+but what I didn't know at the time,
+but looking back kind of makes more sense,
+is it seemed like I always enjoyed
+simulating physics and math.
+Like, I don't know, when I first,
+if I say QBasic, well, you know what this means.
+I will not.
+Okay, so some of the listeners will.
+Yeah, QBasic was this language
+that was available when I was a kid.
+And I remember, as soon as I got my hands on it,
+once I figured out how to program,
+I was just doing simulations on applied math, physics.
+But at the time, it didn't make sense to me.
+At the time, I was just thinking of theoretical physics.
+Like, heroes were like Einstein, Feynman.
+And then in high school, again,
+I was just learning more languages, like Java.
+And again, it was just all those simulating stuff.
+And then when I started my PhD,
+I kind of realized this issue that physicists were using tools
+from like 70s, 60s for analyzing data.
+But the amount of data has increased exponentially.
+And the reason for it is more slow, right?
+Like, people in the 90s had exponentially more compute power
+than people in the 70s.
+So physicists were producing so much data,
+but they were analyzing it by hand
+or by like simple analytic models.
+So this was back in 2010.
+I felt like we should see how machine learning can do physics.
+And back then, there was all the pushback
+because, you know, machine learning is probabilistic.
+It's biased.
+It's not always calibrated.
+And physicists, especially Platonist physicists,
+I guess physicists have different philosophical leanings.
+But the Platonist ones tend to think there's one reality,
+one theory, the beautiful ones, of course.
+So there was all the pushback at the time.
+But in 2012, when the ImageNet moment happened
+and then deep learning got more and more prominence,
+by the time I finished my PhD, machine learning was everywhere.
+And actually, physics departments had to put machine learning
+somewhere in the grant proposal,
+especially in condensed matter physics, to even get a grant.
+So huge change in like five years.
+And during that time, Google Brain had this residency program.
+And I think it was like partially an idea by Ilya,
+it's a brilliant idea.
+They want to bring in people who have some machine learning
+background, some interest, but expertise in other fields
+to learn deep learning and contribute to deep learning
+at Google Brain.
+So that's how I joined.
+I was part of the residency program.
+And Liam also joined in a similar way.
+He explained himself.
+And yeah, so we were both doing deep learning research.
+I was at the gym trying to fill a petite.
+It was difficult, so I picked him as the strongest person
+I could find.
+Yeah, you saw the arms, and this guy's going to help me.
+And it succeeded.
+We managed.
+And so I was continuing to do like regular deep learning
+research.
+So you might remember, this was an exciting time
+where we just published at NeurIPS, iClear, ICML.
+Like deep learning was advancing with these conference publications.
+Yes.
+There was a lot of fun to that.
+And then I was still doing my kind of passion from before,
+which is simulating solid state physics.
+And then at some point, Liam and our other friends Barrett,
+Luke, have left and then started chat GPT.
+And I ended up staying and like really focusing on physics.
+So by the time, like before we left, before I left,
+I was running this large team of chemistry and material
+scientists at Google DeepMind.
+And we were doing a bunch of simulations and machine learning.
+Liam and I often connected and talked about physics
+and other things, and we felt like the technology had reached
+a place where we could really impact the market, the industry.
+So we left our respective roles to start the company.
+Amazing.
+OK.
+What is your origin story?
+Yeah, origin.
+So I grew up in Maine and also had like a really, really
+love for physics.
+And so in college, I was actually a bit between physics,
+chemistry, economics, and I was part of a dark matter
+detection program.
+And one of the key pieces for that
+was reconstructing the particle tracks,
+which became like a physics model.
+But it's really a physics-informed machine
+learning model.
+And so I started doing machine learning and physics
+in a very early stage of still an undergrad.
+And then again, in graduate school,
+reconstructing particles this time at CERN.
+Through this, we were pushing the amount of computation
+we're putting into this and some of the algorithms
+for machine learning.
+But after a while, it became clear.
+If I really wanted to push machine learning,
+I should be doing it in industry.
+And so I was actually at Google, part
+of the Google Accelerated Sciences team,
+and then later Google Brain.
+So that's where Doge and I were meeting.
+I was working on a mix of some things in the science program,
+but then switched over to generative models,
+reinforcement learning.
+And really was just in this scaling mentality.
+It wasn't necessarily applying to physics,
+but just saw how impactful language models were becoming
+and was building some of the architecture
+necessary to scale those up.
+So this is using sparsity.
+So switch transformers, mixture of experts.
+This became an important architecture
+for serving today's models.
+And continue to scale that up,
+did some of the first trillion parameter models.
+But at some point, it became very evident
+that there was a huge possible impact
+for this in the broader world, in a product.
+And that's what led me and a few others to open AI.
+We felt it was gonna be really a great time
+to start productionizing some of these things.
+And so at the time when we arrived,
+there was GPT 3.5 out as an API,
+GPT 4 was internally available
+and we had some period to develop it.
+So we're working on that.
+And then at some point we realized,
+let's just do a quick sprint using GPT 3.5.
+And it was a two week sprint
+and then we turned this into chat GPT.
+And did that product do well?
+Yeah, it was okay.
+They exceeded some of our expectations.
+We had internal polls as to how many people use it
+and people were guessing numbers like 10,000, 50,000.
+Someone, yeah, like a high bar was like a million.
+No way.
+It was a low key,
+it was genuinely a low key research preview.
+Your mental model must have then sort of like
+totally shifted, right?
+I mean, I guess that happened to literally all of us,
+but you were-
+Well, I mean, I think the context before that too
+was Meta had just released Galactica
+and had to withdraw it within a few days of release.
+I didn't remember that.
+That was only a couple of weeks before.
+And there had been no successful chatbot
+up until that point.
+So the prior that this is going to be
+a valuable technology was quite low.
+It was further surprising because we had GPT 4 internally
+and it wasn't this hugely viral product within the company.
+So, putting out a weaker model to the public,
+it was really just part of this iterative deployment.
+And yeah, obviously it worked better than our predictions.
+What was the period after the release like for you?
+Was that just like-
+Just totally frenetic.
+Yeah, chaos at all times.
+Yeah, I mean, like servers couldn't keep up
+and you just trying to like rapidly improve it.
+The early model couldn't do math,
+couldn't write very well,
+had many deep flaws,
+very different than the things we have today.
+But just a series of getting feedback,
+improving the task distribution,
+improving the data quality,
+just all these kind of boring details
+is what led to the system as of today.
+Very few people ever will have an experience like that,
+I suspect, but I imagine it serves you
+in very good stead as a founder today.
+What do you think it taught you?
+What did it give you?
+Question everything.
+I mean, so it's really interesting.
+So people would come in years after the initial creation
+and it's very easy to anchor on a random decision made.
+A year, year and a half ago,
+not necessarily like an optimal decision,
+but you sort of take that as sort of the assumptions
+that you're building upon.
+But I can recall back to,
+no, that was just one conversation,
+like one IC made that,
+feel free to change these things.
+And as we were sort of building that up
+and eventually I was running the full post-training team,
+that sits between research and product,
+we made incredible progress in the digital world.
+But Dosh and I were connecting,
+we felt that the impact of these systems
+in the physical world was always going to be constrained
+unless we actually connected it to the real world.
+We just felt, again, reading textbooks, reading papers,
+deriving questions from that
+is a great foundational technology, but insufficient.
+And I think ultimately the main objective
+for artificial intelligence that we're really excited about
+is new scientific discoveries, new technology,
+something like really tangible you can hold in your hand.
+And so that was sort of the motivation
+leading up to periodic.
+You both have worked with some of the very best builders
+and researchers in this space.
+Why did you pick each other?
+What was it about Doge that you were like,
+this is the guy I wanna spend the next chapter
+of my career with?
+I mean, just absolute brilliant thinker.
+There's no one better in the world to do this problem.
+The Doge has been at this intersection for 15 years more.
+Yeah, 15 years, yeah.
+Right, and yeah, I mean, we've known each other for a decade.
+And so I think it was just obvious
+there's no one better in the world to do it with.
+What about you, Doge?
+Why Liam?
+I mean, many reasons.
+So one of them is, I feel like with a co-founder,
+the most important thing is trust
+because you're trusting your own career
+but also the people you bring to the company.
+And there's some people in our company
+who I worked with for many years.
+Liam has worked with many years
+and I wouldn't do it with someone
+who I couldn't trust fully.
+Another one is Liam,
+he's been extremely successful on the LM side
+but he's always been very passionate about physics.
+Whenever we talked about just randomly catching up,
+he'd actually, his desire is about quantum physics,
+quantum computing.
+So I think it's really important for the person
+to really care about these things.
+And I could tell that Liam really cares about physics
+and when there's so many exciting things
+he could do with the LM side, he would do this.
+And then of course the other part is
+we needed deep expertise in RL and LLMs.
+And again, like Liam has done RL research
+and kind of contributed at the frontier for so long.
+So it was a very obvious, easy choice.
+You mentioned bringing people into the company.
+I think one of the things that,
+I mean, you can see it from the outside
+but also talking to some of your investors in preparation
+is the talent density you guys have created
+is extremely impressive,
+especially for a company this young
+and still in the very early innings
+of what you're up to.
+How have you convinced some of the very, very best folks
+in this industry who are being competed over ferociously
+to pick this as their mission?
+I think mission.
+Yeah.
+Like quite simply, it's like people see
+just the ambition of what we're trying to achieve
+and the possible impact of this.
+Like something that can actually design the physical world,
+something that understands physics, chemistry
+is even more foundational
+than a system that understands language.
+And I think that really appeals to people.
+I think it really appeals to people too
+in terms of how much leverage,
+how much of a diff on the world can you have
+in this position?
+Yes.
+And so while you might be a very successful contributor
+to a coding system, the coding system,
+there's always this counterfactual you can run
+which is like, okay, well, if I'm not
+the 500th contributor on this coding agent,
+what's the Delta?
+And I think people are looking at that like,
+well, okay, I think my skills
+could be better used elsewhere
+and I can have a larger impact on the world.
+So I think that appeals to a lot of people
+as well as some of the scientists just seeing
+how rapidly AI is advancing in the digital era.
+So math, theoretical physics, et cetera,
+and wondering what could this mean
+for physical sciences?
+And I think that that's a huge appeal.
+I imagine it doesn't hurt that when you look
+at the best researchers in AI,
+so many of them have physics backgrounds,
+like it really seems to have gotten a lot of that talent.
+So I imagine for a lot of these folks
+that you're talking to, it's sort of a chance
+for them to bridge their childhood love
+of what they were doing and their first passions
+with maybe where they've built some of their career.
+I don't know if that's how you've seen it.
+And definitely, I think there are two aspects to this.
+One, as you said, all these researchers
+really deeply care about science
+and this may be like a personal interesting,
+but on the other hand, they really want
+to have AI impact society in a positive way.
+And I think science is like such a good direction for AI
+because there's no end to it.
+For example, we expect that if we are successful
+with periodic, it will actually increase
+the number of scientists in the world.
+Whereas for certain roles, you know,
+AI, if it replaces the employee,
+it's kind of like a zero sum game between AI.
+But for science, it's the opposite.
+Like the more we can show that science
+can impact the world, especially South State physics,
+South State chemistry, the more people
+will go into that field.
+And there's no end to it as you know,
+like there's no end to science,
+there's no end to engineering.
+Like we can figure out more science,
+we can visit more planets.
+Maybe let's get really granular to understand
+how this all comes together.
+To the extent that you're able to share it,
+what does like one experimental loop look like
+with periodic?
+Like what are the different machines as part of that,
+the different processes as part of that?
+Yeah, so let's say we're doing powder synthesis.
+Let's say we're trying to make a superconductor.
+So the first decision is, you know,
+what precursors you want to mix?
+Because the thing you're trying to make
+probably doesn't exist on your shelf yet.
+So we have to first get the ingredients.
+And the ingredients can usually be like these binary
+powders that binary means two kinds of atoms are in it.
+It can be like the elemental precursor,
+which is the single element.
+But yeah, basically you figure out
+for the thing you're trying to make,
+what precursors to combine?
+Is that you figuring it out
+or is it the AI's figuring it out?
+Great question.
+So traditionally it would be the human figuring it out.
+For us, the AI can actually really speed up this process.
+And especially, you know, down the line,
+if you want to run thousands of experiments a day,
+we can't have a human do it one by one.
+So when it's speeding it up now,
+it's maybe saying, here are 30 good options for you?
+Is that sort of like narrowing the scope
+of what you might look at and introducing new ideas?
+That can happen.
+Or it can actually say, okay,
+for this goal you have, here is what you should mix.
+And we can try that.
+Okay, so you mix the precursors,
+now you need to react them.
+Because at room temperature,
+these materials won't react with each other.
+So they'll just stay as the precursor.
+So there are different options,
+but a very common standard option is what we talked about,
+which is you put it in a furnace
+with some temperature profile.
+And Liam has often brought up that,
+that temperature profile looks like a learning rate
+decay profile, right?
+Like in machine learning.
+And sorry, I'm just so interested in each of these steps,
+putting it into the furnace.
+Is a human doing that?
+Is a robot doing that?
+Is that like already automated?
+That has already been automated by others
+before we started periodic.
+So there's already been attempts at getting a robot
+or a robot arm to take the mixed precursor,
+pull it in that furnace.
+And we have both, like we can either do that
+or we can also do every human do it.
+But again, as you wanna scale these up to thousands a day,
+then you definitely need robots to do it.
+Yes, okay, so it's in the furnace.
+Then what happens?
+The very traditional path is you wait a certain amount
+of time you predetermined or the AI has predetermined,
+and then you take it out.
+And you hope that during that time duration
+and during the temperature profile,
+the reaction you hope happens happened
+and the reactions you don't hope happens didn't happen.
+So now you have it, you cool it down a bit
+to not burn your hand or something.
+And at some point you put it
+in a characterization instrument.
+For inorganic crystals, the method we use the most
+is an XRD, X-ray diffraction.
+It's the same X-ray as you get at the dentist.
+It just happens that X-ray wavelength
+is over comparable length scale
+as the distance between atoms.
+But then if you diffract X-rays through a solid,
+you can see what the atoms are doing
+and how they're positioned against each other.
+And then that tells you
+if your experiment succeeded or not.
+And that is one part actually we find
+that AI can play a big role
+because once you get the X-ray diffraction pattern,
+it's not always easy for a human to tell what you made,
+but AI can help you with that
+and then tell you, okay, this succeeded,
+or it didn't succeed
+and send it back to a new experiment.
+And then if it succeeded,
+maybe you wanna see if it's a superconductor,
+but then you put it in another instrument
+that can measure the diamagnetic response,
+which tells you if it's a superconductor
+at a given temperature.
+Yeah, I think the XRD is a really interesting example too,
+because the materials don't come out labeled.
+Yes.
+Here is what you've done.
+Exactly, that's right.
+So AI is allowing us to basically do the labeling
+and figure out what we're doing
+to see what we're doing at a much faster pace.
+Anyone could go into a lab and mix a bunch of powders
+and say they ran a lot of experiments.
+However, if you're not seeing what you're doing,
+there's no error correction loop,
+there's no intentionality to it.
+And so those were some of the first AI systems
+we had to build.
+And then that allows us to scale up the throughput
+of the lab significantly.
+Are you gathering sort of, I don't know,
+lots of ancillary data along the way?
+Is that useful?
+Is that not useful?
+I don't even really know what that would be,
+but I imagine a mechanized version of this process
+permits that in a way that,
+purely human version does not.
+I think like better telemetry is one aspect,
+but whether it's robots or humans,
+I think stitching the data together
+is one of the most important pieces.
+Interesting.
+So this is what I was alluding to at the beginning
+where most AI has been trained
+on the final artifacts of science.
+So like the final paper,
+the final recount in a textbook,
+that isn't often how the scientific process unfolded,
+sort of a retelling of the story.
+And what we do is we're very careful
+in collecting what were sort of the intentions,
+what was the hypothesis,
+what were the computational predictions,
+what was the execution through all of the machinery.
+And this data that fully stitched together,
+this full lineage is very, very unique.
+That's something that we've been spending
+a lot of time putting together.
+And then a system trained against that
+is learning not just what the final outcome was,
+but what was the process?
+What were the judgments made?
+What were the reruns done as new evidence came in?
+Basically, what was the process of doing science?
+In a way, maybe this is a bad analogy,
+you'll know better than I do,
+but it feels like it's sort of almost chain of thought
+for science where you're sort of starting to see-
+Yeah, interacting with the real world.
+Yeah, yes, exactly.
+As you've now started to run some of these experiments,
+what do you notice that having that trace
+actually gives you, is it like, I don't know,
+better suggestions on the next experiment
+that you would have ordinarily got?
+Is it the next whole set of experiments
+somehow leveled up versus what it would be
+if you started cold?
+Yeah, I mean, one thing is just being able
+to pay attention to detail when there's so much detail.
+We've seen that the LLM can actually
+detect major mistakes and debug it.
+One thing that happened in our lab is,
+turns out the sample, samples are put in
+this circular sample holder.
+And turns out, just we made a mistake
+and they were shifted by two.
+So now all the samples are mislabeled.
+We have no idea what happened.
+And the LLM was able to just go through it
+and then realize, oh, you just shifted counterclockwise
+by two, so if you do the inverse rotation,
+now all of them are labeled correctly.
+Like something that a human could do,
+but it just takes so much attention to detail
+and so much time.
+Now imagine doing these experiments thousands at a time.
+The other thing that's really, I think LLMs
+are really good at, which I'm really excited by,
+is they can be good at things
+that usually require different expertise
+and different PhDs.
+Like for example, our LLM can do simulations
+at the level of a PhD in simulations,
+but it can also do experimental data analysis
+at the level of a PhD in there.
+And this very unique, right?
+Because most people either get a PhD in simulation
+or a PhD in experiment.
+And some things fall through the cracks.
+So the fact that we have a platform now
+that is an expert on all of these different modalities
+and can reason at the same time.
+So something that happened for us is,
+the XRD result comes up and it's not what we tried to make.
+And it's also not a material that's in a database
+so we can't tell what we made.
+But then the LLM actually ran new simulations
+and then figured out what it must have been.
+And then we were able to validate it
+with the next experiment.
+Because I often say the people who should run simulations
+and the people who know how to run simulations
+are usually disjoint sets of people.
+And I think the LLMs will bring these together.
+And it's a fractal, right?
+So I'm just talking about one interface
+between simulation experts and non-simulation experts.
+But it's also true for chemists and physicists,
+inorganic chemists and organic chemists.
+The expertise of humankind is kind of like a fractal.
+And there are all these interfaces in the fractal.
+And LLM, they can speak the language
+of all these different groups.
+I think it's gonna be a qualitative change.
+I think another interesting thing to add too
+is as we build up this database of all the things run,
+all of the decisions,
+you can start constructing new types
+of machine learning tasks where you can envision
+snapshotting the state of the world.
+And you're like, okay, well, given the state of the world,
+computationally, experimentally,
+what did the scientists do next?
+And then what was the outcome of that?
+This is a very rich source of training
+and reinforcement learning.
+And one analog that's been talked about before
+is let's train an LLM up to general relativity.
+And then let's see if the system
+can produce such a thing.
+And we're kind of doing that in our scale,
+in our own experimental data,
+our own computational data.
+And so this is like a set of data
+that really confers like a huge advantage
+where that just doesn't exist anywhere.
+You mentioned this idea of sort of a snapshot in time,
+which I think is such an interesting idea
+to maybe go a level deeper without like
+what might be a snapshot periodic would take
+and what would you get out of looking at that?
+So let's just say hypothetically
+you had a hundred thousand experimental data points.
+What you can do is you can say,
+what was the state of experimental evidence at some date?
+So you can just literally say
+these were our computational predictions.
+These were the experiments we'd run up till that point.
+Here's some notes and thoughts on what we were thinking.
+And from that point,
+that becomes your new environment state.
+And you'd say, now, given this basket of data,
+what did the scientists do next?
+And given what they did,
+like what was the outcome of that?
+What were the new empirical measurements?
+This becomes a incredibly interesting source
+of reinforcement learning type tasks and data
+that is incredibly hard to construct outside of periodic.
+And this is really interesting
+because now you can build this synthesis super intelligence
+to begin to predict what are the outcomes
+based on all of this data.
+And it's easier for us to do this type of work
+because as we accrue more evidence and more data
+that doesn't exist in public literature,
+we know our model isn't contaminated.
+And there's a risk when your pre-trained model
+already knows the answer
+and you do reinforcement learning
+derived against an answer
+that was already in the pre-training corpus,
+that the system can basically fake some work,
+get to the right answer,
+and you reinforce those strategies.
+Strategies like that aren't gonna generalize
+and aren't gonna be particularly interesting.
+So we're able to circumvent that
+by having our basket of data
+that we know does not exist in literature.
+When I think about what you're doing,
+there's obviously so many different pieces
+to pull together.
+What does it not make sense for you to do?
+Like, do you need to develop
+every piece of hardware yourself
+or can you use someone else's robots?
+Will you create your own models ultimately
+or can you sort of just fine tune
+and do these different things as part of the process?
+What do you feel like you need to uniquely own?
+For the hardware things,
+like if there's an off the shelf component
+we can just buy and use,
+we're very happy to do that.
+We don't have to reinvent the wheel.
+So we usually do that.
+Turns out for certain scientific instruments,
+the throughput isn't there
+or the quality isn't there.
+So for those, we actually invest in hardware,
+engineering expertise to improve the throughput, et cetera.
+Like what's an example of something
+that just is not gonna hit it at your scale
+that you have to sort of reinvent in a way?
+I mean, the one that already kind of
+matches our needs is XRD.
+So there's already so much work
+into high throughput XRD
+that we have these instruments
+that we can put 40 samples at the same time
+and it will do XRD diffraction,
+all of them at the same time.
+But for things like there are more materials property
+oriented and it's like slower measurement takes longer.
+You might get like one sample per hour.
+That could be a big blocker for us.
+So then we invest into like new IP,
+new engineering to make it work.
+For simulations as well.
+So for simulations, for certain things,
+there's already a really good code base
+but we don't have to improve it.
+But for certain things, it's just not there yet
+or it's not scaled enough.
+And then we invest in the software engineering expertise
+to make it happen.
+And on the LM side as well, which yeah.
+Yeah, I mean, I think right now
+we spend very little time
+trying to improve software engineering, right?
+So we can use these systems to build up our code bases,
+help with these types of analyses.
+And we are absolutely beneficiaries
+of just how good codecs and other things have become.
+What we're targeting though are areas
+where the frontier is just not sufficient
+or we can do it vastly cheaper.
+This is where we're focusing our efforts.
+We deeply believe and I think I've seen very good evidence
+that when you actually start training against this data
+you can make the reasoning more efficient.
+You can kind of add in new types of capabilities
+and go beyond what inference time thinking can do.
+Compressing this knowledge into the weights,
+compressing new strategies into the weight
+is just fundamentally valuable.
+And that's why all the frontier labs continue to do this.
+And we didn't stop at GPT-4
+and then just do inference time from there.
+Compression really needs to happen
+and you get different types of patterns that emerge.
+So for example, think about tool use.
+There's declarative use of tools.
+Okay, this is how you use the tools.
+These are the specs, these are the inputs,
+these are the outputs you should expect.
+But there's a difference of that versus
+the procedural, the intuitive knowledge of like,
+oh, I should use this tool in this situation.
+One of my friends had used the example of,
+you could read a manual on how to play a saxophone
+versus learning how to play the saxophone.
+So really wanna build that into the weights.
+How interesting.
+But don't duplicate things where the frontier
+is already sufficiently capable or cheap enough.
+We've had a few instances where
+because we're pushing the throughput of the lab so much,
+there's some analysis that just would have been
+prohibitively expensive.
+At one point, one of our engineers was coming to us
+and said, to do this analysis,
+our max throughput of our second lab,
+it would cost roughly $30 million a year.
+And so that was a large chunk.
+So we were looking at how do we actually compress this
+into smaller models, make it vastly more efficient.
+So you take it from like $30 million
+down to like a sub-million dollar cost.
+And that allows you to re-infest that capital
+elsewhere into other machines or training
+or simulations.
+So this is the type of work that we've been doing.
+We realized that we could conduct
+very high throughput experiments
+and there are actually fairly low latency.
+In a lot of areas of science,
+there can be lower signal to noise.
+They can take days, weeks, sometimes months.
+This is a huge motivation
+for like some of our starting points.
+Wow, interesting.
+That allows us to build up this huge quantity of data
+and also maintain the quality and maintain the diversity.
+And that becomes this really incredible asset.
+Yeah, the diversity piece was something
+I was interested in maybe because I don't have enough
+understanding of superconductors,
+but how do you make sure you are doing
+these different modalities,
+like getting the data that is sufficiently diverse
+and not sort of overly specializing?
+Yeah, I'm sure there's definitely a trade-off, right?
+There is an obvious trade-off to consider,
+which is like, if you make it infinite,
+as diverse as possible,
+now these experiments don't learn from each other.
+You haven't really gone deep enough in any modality.
+Okay, if you make it really narrow,
+now there's a big problem
+because if that particular modality doesn't lead
+to a new superconductor, your host,
+no matter how well you do, right?
+So we're trying to kind of walk this trade-off correctly.
+And one of our guiding principles
+is actually pretty technical.
+We wanna make sure the different modalities
+we consider benefit each other
+because there are certain scientific experiments
+that are different attempts,
+like different synthesis methods,
+but actually getting good at one
+also have to get good at the other and vice versa.
+But then we can build our LLM training, simulations,
+kind of our hardware in such a way
+that they benefit from both of them.
+And that's been really good.
+I think that's how we kind of fueled
+our experimental diversity
+while also really synergistically benefiting
+from each experiment.
+Yeah, to use like ML parlance,
+we wanna have positive generalization.
+Yeah. Mm-hmm.
+Does that stem from your intuition
+and sort of knowledge, or is that also AI-assisted?
+Like where does the human have to play in there?
+So originally it was mostly human intuition,
+but we have seen indications of LLM
+actually contributing to this already.
+So sometimes they will say,
+oh, you've done this experiment, this synthesis method,
+but if you were to add this,
+now this is a new modality, but it could help.
+So it's not like a massive hop
+in the synthesis methodology space,
+but it's a small difference.
+And it will usually actually have
+a pretty good understanding of the literature.
+So like what kind of synthesis attempts
+have been done for this chemistry?
+And then it can also guide us
+that maybe you should try this next.
+What is the right way to monetize this sort of product?
+Like, does it become the case that you should develop,
+you know, these discoveries yourself and start selling them?
+Does it make sense that you're doing more contract work?
+What's the right model to start
+and what is the right model at maturity look like?
+Maybe an interesting analog would be
+what we're seeing in software engineering.
+So in software engineering,
+when we first produce chat GPT in these early models,
+we didn't promise full fledged output of like software.
+Okay, we're gonna produce a Kubernetes replacement for you
+and we're gonna monetize that directly.
+It was a co-pilot to accelerate a software engineer
+and get them to solutions more quickly.
+Now, fast forward a few years,
+we're starting to talk about monetization of outcomes.
+So they could have a new concept in AI.
+And I think a similar thing is going to unroll here.
+So the tools we've been building up
+in our own discovery loops are hugely valuable
+to many different folks in industry.
+And we're basically able to create custom systems
+for partners, for customers,
+to help them get to their solutions much more quickly.
+But in parallel, we also are kind of talking about
+these outcome-based pricing
+where then we retain the IP
+and the sort of the upside of the final output
+of our systems.
+There's also another interesting piece like,
+so for example, if the software has in its weights
+the recipe to a room temp superconductor,
+you don't wanna monetize it through say a software deal,
+you wanna retain the IP.
+So those are sort of the trade-offs
+that we have to balance.
+Are there analogies from other industries
+that you end up referring to?
+I imagine that some part
+of the current scientific apparatus is useful to learn from,
+but I could also imagine different forms of manufacturing
+have taken this much further,
+whether that's creating a computer or an iPhone
+or a car, whatever it might be.
+I mean, so one thing that's something very relevant to us
+is the drug discovery field.
+There was a time where if you discovered a drug,
+you couldn't make a lot of money from its IP,
+but that changed.
+Like today, you can discover a drug,
+maybe go through some clinical trials
+and then get paid billions of dollars
+just for the IP of that.
+So the field kind of changed
+and their capabilities changed for that market to exist.
+I think materials is kind of at that point now.
+Like you can make a lot of money by selling materials,
+but materials IP doesn't really capture
+the value it deserves,
+but it could go through this transition
+similar to drug discovery.
+And we feel like as predictions get better,
+IP will have more value.
+So that's why we're really trying to close the loop
+all the way from like the discovery to synthesis
+and scale a couple of synthesis.
+So that's one of the analogies, I think.
+Before we press the record button here,
+Doge, you were mentioning the sort of difference
+between LLM performance on mathematics versus science.
+Yeah, maybe you can tell us a little bit about that.
+Yeah, yeah, so this one we're very passionate about
+and something that we kind of like predicted
+and kind of one reason we started the company,
+which is that, you know, LLMs, if you talk to them,
+they're incredibly intelligent, right?
+You're blown away.
+And on certain things, their performance is insane,
+like coding, math, theoretical computer science, amazing.
+But then you haven't seen that kind of impact
+on the physical world.
+Why is that?
+And, you know, we feel like one of the reasons is
+with math, theoretical computer science, and coding,
+the reward is instantly verifiable.
+Like you write code, you can immediately do a unit test,
+you have a mathematical theorem, you can validate it.
+And another reason is all the context
+is available to LLM.
+Like if you're writing code, all the code LLM can see.
+If you're doing math, all the axioms
+and all the corollaries you can see,
+the physics is it will never be like that, right?
+Like for example, when I do an experiment,
+there are more than an Avogadro's number of atoms in there.
+There's no computer that can store
+all the positions of atoms.
+So we have to come to terms that in real life,
+LLMs will never have full context.
+But to be honest, like outside of math,
+almost everything that's interesting is of this type
+where the full context will never be available to you.
+Like think about politics, finance, literature.
+Like what makes life interesting is
+when you don't have all the context,
+but you have to make decision under uncertainty.
+Physics is very much like that.
+So if LLMs will actually play a big role
+in the real world and the physical space,
+it has to figure out how to deal with missing context
+or not instantly verifiable rewards, some noise.
+And we feel like that is a very exciting future
+to be part of.
+So that's why we're working on this.
+I love that.
+That's so interesting.
+And it's like the strategies that are optimal under math,
+the strategies under optimal, under software development
+may not be the ones with the sort of decision making
+under uncertainty.
+And so that's the vision we're pushing forward here.
+To what extent is periodic's fate sort of tethered
+to that of the foundation models?
+Like if we, this is clearly not gonna be the case,
+but if we didn't get another model from this point
+forward, like how far do you think you could push things?
+I mean, I think from the software engineering side,
+we could literally stop today and find
+every existing Nobel prize, at least from the physicals.
+I mean, a lot of the physical sciences
+are relying on simple analysis.
+It's not competitive programming.
+So I think from that perspective, it's very good.
+So I don't, I mean, we are huge beneficiaries of that
+and I hope they continue to improve rapidly
+and I expect they will.
+Yes.
+But I view that as like not a blocker for us anymore.
+Yeah, absolutely.
+I mean, there's so much to do on experimental analysis,
+simulations, scale up, data analysis,
+any current models and our models are already good enough.
+Let's say like AI is very popular today,
+but let's say tomorrow is not for some reason.
+There are certain things that happened in physics
+that will never go back.
+So one of them is force fields.
+Have you heard of this term before?
+No.
+So, you know, atoms are, like especially atoms
+that we deal with are governed
+under simple quantum mechanics.
+And you can do quantum mechanical calculation
+to calculate the forces on each atom,
+or you can have a empirical model
+that tells you how much force will be on each atom.
+And it's called a force field.
+It's a very old topic.
+We use it all the time to model materials, molecules,
+et cetera.
+Force fields change so much because of GNNs,
+like graph neural networks,
+that I don't think it will ever go back
+because now we can do very general
+across the periodic table models.
+In the past, you could only do like three
+to five elements, tough days.
+So I feel like machine learning has made such an impact today
+that it will never go back.
+And as Liam said, today's capability is already enough
+to really advance science and engineering.
+But of course, we suspect that they'll actually
+keep getting better and then we'll keep benefiting from it.
+You know, clearly I think we all agree
+that these models are just gonna keep getting better.
+So planning with that in mind, what changes for you?
+What do you expect to get unlocked
+that isn't unlocked for you now?
+Some things that we're really excited about
+is just really advanced software engineering.
+We do a lot of very advanced simulations
+and we're starting to do a lot more work
+where we construct more advanced simulations
+that we can control every like bit of code.
+And these are things that would have taken teams
+a year or two.
+Now it's like an engineer's weekend time.
+And so I think this is something
+that we're extremely excited about.
+And especially in an area where the AI system
+is able to write software,
+write simulations that are maximally consistent
+with like experimental evidence.
+It still feels like what you're trying to do
+feels very differentiated in this market.
+Like, you know, this is at the moment
+max mimicry in many cases, right?
+You know, someone comes up with one good idea
+and there's gonna be sort of five other folks
+and that's probably healthy in many respects.
+How long before you think that starts to happen to you
+and who enters the fray?
+Like do the big foundation model companies
+start to say, actually, this is like invaluable data
+and we need to be spinning this up ourselves.
+Like where does that competition come from in your view?
+I would suspect in the next couple of years,
+a system that can literally engineer matter
+is gonna be of key importance to everybody.
+And I think that's sort of the motivation
+for moving as quickly as possible,
+building out a huge network of labs, of infrastructure,
+building simulations and AI systems
+that can control and orchestrate this then.
+That's our belief, I'm curious here.
+I mean, I do think that like we're pretty unique
+in the team we gathered and the approach we're taking,
+but taking a step back, there are now actually
+a lot of people working on this.
+Like almost every week now I hear like a company
+in the AI for science space, which is great.
+Again, like if you really believe that science is endless,
+we really want just more and more smart people,
+dedicated people to work on this stuff, which is great.
+But yeah, I mean, like looking back, I mean,
+the maybe one thing is people are seeing
+how much LLMs can change the digital world.
+And they kind of wonder how much
+you could change the physical world.
+So it's not a surprise to us that a lot of people
+are getting into this field.
+You two are co-CEOs, right?
+Yeah.
+How do you sort of divide and conquer?
+What are the swim lanes that you naturally take?
+So, you know, very naturally based on our expertise,
+I spend a ton of time on the AI LLM systems.
+I think that's been like a really core piece
+of my thinking on a day-to-day basis,
+as well as thinking about like,
+okay, how do we monetize these AI systems
+in the real world?
+Yeah, there's sort of a natural division there, yes.
+I always like to wrap up with sort of
+some more abstract questions.
+Be curious what both of you would say to this,
+given what you do.
+If you had unlimited resources and no operational constraints,
+what is an experiment you'd really like to run?
+I would love to do reaction colorimetry.
+Like there's an experiment you can do
+that tells you the formation enthalpy of a crystal.
+So what that means, like how much change would it take
+to take this crystal and remove it,
+like remove the bonds and remove the connections.
+The reason that's really nice is that's a single number
+you can get like formation enthalpy at some temperature
+that you can directly compare against simulation.
+It's usually hard to find like an exact comparable
+between simulation experiment.
+It's usually like convoluted, narrative-based.
+But here it's direct.
+But it's just like a very complicated, expensive experiment.
+But we had infinite money.
+I would love to do that, like thousands of them.
+So there's some data from NIST,
+the Standards Institute in US.
+And they've done these experiments for hundreds of materials.
+And it's like invaluable for South State chemistry field.
+So if you had infinite resources,
+I'd love to just really scale that up
+and get so much formation enthalpy data
+that we can compare with simulation and machine learning.
+Amazing.
+What about you, Liam?
+I would love to see if we had access to a full fab,
+how quickly you could ramp up,
+say like a new generation of chips.
+So like how quickly could you overcome
+the materials engineering problems of like,
+of logic, of memory, of processing.
+And you say, okay, here's the new generation.
+How can we take the yield that would have taken
+like many, many months to ramp up
+and accelerate that significantly?
+So I think those would be incredibly interesting experiments.
+Fascinating.
+Okay, last one.
+If you could recommend a book to everyone on earth,
+what would you want to recommend to people?
+I would say probably a popular one in Silicon Valley,
+but The Beginning of Infinity by David Deutsch.
+That is a popular choice to this question.
+I still have not read it.
+I don't know what my mental resistance is to it.
+Oh, really?
+Yeah, really.
+Yeah, I think it's a very much like a spirit of optimism.
+You know, it kind of goes to,
+there's this point about like the unboundedness of science.
+So yeah, I really enjoyed that one.
+Yeah, I think I read part of it at some point.
+Yeah, anyway.
+I really like this book called, Subtle is the Lord.
+It's a biography of Albert Einstein
+by one of his friends who's also an exceptional physicist,
+Abraham Pace.
+And the reason this is unique is, you know,
+most biographies are written by people
+who are not an expert in the topic
+that they're writing the biography of.
+And there's usually like a mismatch
+in terms of like what they understand
+and what they should say.
+This book is incredible
+because it goes through Einstein's life,
+but with the very precise technical detail
+about what Einstein did.
+So it's like a incredible friendship book
+because they're friends.
+And like this guy wrote this incredible book
+for his friend, but it's also incredible physics book.
+So if you were interested in friendship or physics.
+That's a great combo.
+I love that.
+Amazing.
+Liam Doge, thank you so much.
+This was a real pleasure.
+Yeah, thank you so much for having us.
+It's a great time.
+Super fun, yeah.
+That's it.
+Thank you for listening to this episode
+of the Generalist Podcast.
+Please subscribe on Apple Podcasts, Spotify,
+or your preferred podcast app.
+Ratings and reviews help others discover these discussions.
+So if you enjoyed the conversation,
+I'd be grateful if you could take a moment to leave one.
+For all past episodes and more,
+visit us at thegeneralist.substack.com.
+See you next time as we continue to explore the future.

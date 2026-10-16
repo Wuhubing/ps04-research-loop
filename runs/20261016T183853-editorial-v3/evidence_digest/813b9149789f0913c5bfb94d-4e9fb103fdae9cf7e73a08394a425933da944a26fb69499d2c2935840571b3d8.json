@@ -1,0 +1,78 @@
+{
+  "item_id": "813b9149789f0913c5bfb94d",
+  "version_id": "4e9fb103fdae9cf7e73a08394a425933da944a26fb69499d2c2935840571b3d8",
+  "synopsis": "For pieces 01–03, this author-reported computational study contributes evidence about delegating experiment forecasting and selection, evaluating forecasts against held-out outcomes and simple baselines, and accounting for experimental history and prediction costs. Its evidentiary role is a controlled study within one research lineage, not independent replication or proof of unrestricted autonomous discovery. The authors report benefits from conditioning a fixed model on experimental records, alongside selection failures. The supplied publication date, October 8, falls within the frozen September 16–October 15 window. This orientation does not substitute for passage citations.",
+  "limitations_and_counterevidence": "Static evaluations use fixed splits; cross-environment evidence is limited to autoregressive pretraining. Some conditional bootstrap intervals include zero. Marin selection deteriorates with cross-environment records, and kNN and ridge achieve lower inference-optimization regret than the record-conditioned RWM. Multi-round evaluations use scheduled candidates and measured outcomes, with the selection budget beginning after initial records are available. The API-cost comparison does not establish end-to-end savings. Authors reviewed AI-assisted work and generated the experimental records themselves; no independent replication is supplied. Release remains prospective, and commercial API predictions are not bitwise reproducible. Affiliations and financial conflicts are not established by the supplied text.",
+  "passages": [
+    {
+      "purpose": "Pieces 01–02: information boundaries and fixed-model conditioning. Supports withholding target outcomes and cross-environment near-duplicates; prevents describing this intervention as weight training.",
+      "locator": {
+        "type": "text",
+        "quote": "In all three conditions, the model receives the target task \\(\\tau\\) and queried intervention \\(a\\). Gains in source records are measured against their own tasks’ references. For the cross-environment evaluation, source histories exclude each held-out intervention and its near-duplicate group (Section [3.2.2](#S3.SS2.SSS2)). The queried intervention’s outcome and post-execution metadata are withheld in every condition.\nWe vary the sources of records while holding \\(\\theta\\) and inference settings fixed to evaluate learning and transfer from experience."
+      }
+    },
+    {
+      "purpose": "Piece 02: comparison design, matched inputs, baseline tuning boundaries, and the single-fixed-split limitation.",
+      "locator": {
+        "type": "text",
+        "quote": "We compare \\(W_{0}\\), which receives no experimental records (\\(H=\\varnothing\\)), with \\(W_{\\mathrm{in-env}}\\), which receives records from the evaluated environment. The RWM backbone and inference settings are held fixed across knowledge conditions. We include \\(k\\)-nearest-neighbor regression (kNN) and ridge regression, which receive the same experimental records and candidate inputs as the record-conditioned RWM. Their hyperparameters are selected using only the permitted history. Each static prediction evaluation uses a single fixed split shared by all predictors."
+      }
+    },
+    {
+      "purpose": "Pieces 01–03: author-reported corpus scale, ranking improvements, selection results, and multi-round gains. These are reported outcomes from this study, not independently established performance.",
+      "locator": {
+        "type": "text",
+        "quote": "Our evaluation draws on 2,653 experimental records from nine research environments spanning pretraining, post-training, and inference, representing 171,862 H100 GPU-hours of real experimentation. We distinguish two prediction settings: in-environment prediction (in-env) uses experimental records from the same environment to predict unseen interventions, whereas cross-environment prediction (cross-env) uses records from other environments to predict unseen interventions in a target environment. Our experiment reveals that large language models can learn from real experimental experience: across five environments in the in-env setting, research knowledge raises mean Spearman correlation on unseen interventions from 0.506 to 0.774. This knowledge can also be reused across environments: without any target-environment records, knowledge from other environments raises mean Spearman correlation from 0.628 to 0.729 across five pretraining environments. These predictive gains translate into better experiment selection. When selecting three of sixteen candidates, in-env research knowledge raises mean normalized discounted cumulative gain at rank three (NDCG@3) from 0.599 to 0.785 across five environments, and cross-env knowledge reduces macro-average Regret@3 by 52.2% across five autoregressive pretraining environments. In multi-round Autoresearch on OLMo3-100M, initializing RWMs with in-env or cross-env research knowledge increases mean final best gain by 15.8% and 11.6%, respectively, relative to no initial research knowledge under the same budget of 24 experiment selections (Figure [2](#S3.F2))."
+      }
+    },
+    {
+      "purpose": "Pieces 02–03: preserve the Marin exception alongside the aggregate selection claim and the authors’ API-versus-compute cost comparison, including its pricing assumptions.",
+      "locator": {
+        "type": "text",
+        "quote": "In cross-env selection, \\(W_{\\mathrm{cross-env}}\\) reduces macro-average Regret@3 by 52.2% relative to \\(W_{0}\\), where each macro average weights the five target environments equally. Both Regret@3 and NDCG@3 improve in all targets except Marin (Table [5](#S3.T5)). Both feature-based baselines have higher macro-average Regret@3 than \\(W_{0}\\).\nPrediction cost.\nUsing the observed mean API cost of Claude Opus 5 (1M context, HIGH reasoning effort), scoring 16 candidates with one call each costs approximately $6.3. The median of the nine environments’ average compute costs per experiment is 42.3 H100 GPU-hours (Table [1](#S3.T1)), or approximately $127 at $3 per GPU-hour. Thus, scoring 16 candidates costs approximately 5% of one representative experiment."
+      }
+    },
+    {
+      "purpose": "Pieces 02–03: Table 4 counterevidence. The five Regret@3 columns, followed by five NDCG@3 columns, are Random, W0, kNN, ridge, and the in-environment RWM. kNN and ridge have lower regret than the RWM on inference optimization; ranking or aggregate gains do not guarantee the best allocation.",
+      "locator": {
+        "type": "text",
+        "quote": "| Inference optimization (tokens/s) | 4.31 | 3.60 | 1.62 | 2.09 | 2.53 | 0.69 | 0.86 | 0.93 | 0.92 | 0.93 | "
+      }
+    },
+    {
+      "purpose": "Piece 02: uncertainty calculation and a concrete interval crossing zero. The OLMo3-190M Spearman improvement over W0 is not separated from zero by this conditional interval.",
+      "locator": {
+        "type": "text",
+        "quote": "For each cross-environment target, we use 3,000 paired bootstrap resamples of the 69 semantic groups containing the 71 test interventions. Groups are sampled with replacement, retaining all interventions within each sampled group and using the same resample for every predictor. We recompute the Spearman difference in each resample and use its 2.5th and 97.5th percentiles as the confidence limits. These pointwise intervals are conditional on the fixed histories, predictions, and recorded outcomes.\n| Target | vs. \\(W_{0}\\) | vs. kNN | vs. ridge | \n|---|---|---|---|\n| OLMo3-100M | \\(+0.14\\) \\([+0.02,\\,+0.28]\\) | \\(+0.27\\) \\([+0.04,\\,+0.58]\\) | \\(+0.57\\) \\([+0.23,\\,+0.93]\\) | \n| OLMo3-190M | \\(+0.06\\) \\([-0.07,\\,+0.18]\\) | \\(+0.35\\) \\([+0.13,\\,+0.61]\\) | \\(+0.52\\) \\([+0.22,\\,+0.83]\\) | "
+      }
+    },
+    {
+      "purpose": "Pieces 01–03: bounds on the multi-round autonomy and budget claims—five evaluations, sampled unseen candidates, prescribed arrivals, accumulated measured feedback, and exclusion of initial history acquisition from the selection budget.",
+      "locator": {
+        "type": "text",
+        "quote": "We conduct five Autoresearch evaluations, each with eight rounds. Each evaluation samples 128 interventions from a pool of 231 unseen OLMo3-100M candidates, disjoint from the initial within-environment history. Candidate arrivals are organized by mechanism complexity, with 16 new candidates per round. Unselected candidates remain available. Within each evaluation, all methods share the candidate set and arrival schedule, and prediction ties are resolved by ascending fixed candidate ID.\nE.2 Experimental feedback\nWe construct each evaluation’s discovery curve from its per-round forecasts, selections, and measured outcomes. Each forecast is conditioned on the initial experimental records and all records accumulated through the method’s earlier selections. The selection budget starts after the initial experimental records are available."
+      }
+    },
+    {
+      "purpose": "Pieces 01–03: authors’ practical recommendation to retain unsuccessful experiments, explicit transfer boundary, distinction between demonstrated in-context learning and future training, and requirement to assess total costs.",
+      "locator": {
+        "type": "text",
+        "quote": "Our results suggest that experiments produce reusable knowledge beyond testing individual interventions. Experimental records can improve prediction and guide subsequent research, including across environments. This motivates preserving environment descriptions, interventions, and outcomes, including experiments that do not improve performance. The demonstrated benefits arise through in-context learning, with cross-environment evidence currently limited to autoregressive pretraining.\nA natural next step is to train RWMs on diverse experimental records and compare their generalization with in-context learning in unseen environments. Integrating RWMs into sustained research also raises the question of how to balance immediate improvement against acquiring knowledge for future decisions. Evaluating such systems requires measuring research progress and total costs, including data acquisition, inference, and execution, since better predictions alone do not guarantee more effective research."
+      }
+    },
+    {
+      "purpose": "Pieces 01–03: human review and decision gates, author ownership of the experimental lineage, substantial record-generation cost, and prospective release review. These are author statements about their process, not independent audit findings.",
+      "locator": {
+        "type": "text",
+        "quote": "We have reviewed all AI-assisted work: AI-generated code was inspected and tested by the authors, all reported numbers were recomputed from the raw experimental records, factual claims and citations were checked against source material, and the framing, methodology, and conclusions were decided by the authors. We take responsibility for the final content of this work, including text, claims, or artifacts produced with the aid of generative AI.\nEthics statement\nThis work studies whether prior experimental records can reduce unnecessary experimental runs, but constructing those records and evaluating research world models also consumes substantial compute; Table [1](#S3.T1) reports the H100 GPU-hours used to produce the experimental records so that efficiency claims can be weighed against this cost. The methods are dual use: better prediction and allocation could accelerate safety and efficiency research, but could equally accelerate capability development or concentrate advantages among organizations with large experimental archives. All experimental records were produced by the authors’ own experimental runs on public models and datasets; the study involves no human subjects and collects no personally identifiable information. Before release, we will review records, code, and prompts for licensing and security concerns and document their provenance and known limitations."
+      }
+    },
+    {
+      "purpose": "Pieces 02–03: explicit reproducibility gap and the authors’ stated controls; fixing API settings and averaging repeated evaluations does not make predictions bitwise reproducible.",
+      "locator": {
+        "type": "text",
+        "quote": "Language-model predictions depend on a commercial API and are not bitwise reproducible; we fix the model version, context window, and reasoning effort (Section [3.1](#S3.SS1)), and report averages over repeated evaluations where sampling is involved."
+      }
+    }
+  ]
+}

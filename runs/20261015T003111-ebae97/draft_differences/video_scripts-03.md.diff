@@ -1,0 +1,245 @@
+--- runs/20261014T035037-editorial-v2/video_scripts/03.md
++++ runs/20261015T003111-ebae97/video_scripts/03.md
+@@ -1,153 +1,171 @@
+-# Research Loop: Spend the Next Budget on Verification
++# Build a Small Audit Trail Before Expanding Autonomy
+ 
+-As of **2026-10-14 (UTC)** · Evidence window: **2026-09-15–2026-10-14**, inclusive.
++**Research Loop · Google Vids script draft**  
++**As of: 2026-10-15 (UTC)**  
++**Evidence window: 2026-09-16–2026-10-15, inclusive**  
++**Estimated duration:** 4–5 minutes · approximately 570 spoken words  
++Production direction: simple diagrams, source excerpt cards and subtitle-ready narration. No avatar required. Scene timings below are proposed video timings; recording timestamps identify source evidence.
+ 
+-Google Vids script draft · Approximately 570 spoken words · About 4–5 minutes with visual pauses. Narration supplies subtitle text; visual instructions and citations are not spoken. Use simple diagrams and excerpt cards; no avatar required.
+-
+-### Scene 1 — Separate execution from evaluation
++### Scene 1 · What is actually changing? · 0:00–0:45
+ <!-- 03-c1 -->
+ 
+ **Narration**
+ 
+-Which research tasks should students delegate to agents? Our recommendation is to delegate a narrow, measurable operation while keeping control of evaluation and adoption. This is an editorial interpretation, not a validated productivity package.
++Which research tasks should you delegate to an agent? Start with a small experiment whose instructions, evaluator, records and total budget you can inspect.
+ 
+-Start by keeping grading rules and final tests outside the optimizing agent’s control. A coding tutorial demonstrates this separation through changes to workflow instructions, not training model weights. It offers a procedure, not measured performance evidence.
++AI Code King’s tutorial offers one procedure: change workflow instructions while keeping the underlying model and grading rules fixed. That is instruction optimization, not training model weights.
+ 
+-The reward-hacking study explains why separation matters: some exploits also pass a held-out execution check. Independently check the intended scientific result, not just the score. These are safeguards to test, not guarantees of scientific validity.
++The suggested instruction changes are candidates, not demonstrated improvements. Treat this tutorial as an operational demonstration. The supplied evidence does not include execution logs establishing measured gains.
+ 
+ **Visual**
+ 
+-Draw: `Agent → Candidate → Protected evaluator → Independent scientific check`. Put grading rules and final tests outside the agent’s editable area. Label the recommendation **Editorial inference**.
++Title card with exact as-of date. Diagram: “Instruction candidates → Worker → Fixed evaluator.” Lock icons beside “Underlying model” and “Grading rules.” Badge: “Source procedure—not measured performance.”
+ 
+-Source cards:
++Source excerpt: “The underlying Claude model stays the same.”
+ 
+-- [AI Code King tutorial](https://www.youtube.com/watch?v=wMQB33rM28I), **recording timestamp 04:30.980–04:35.980**, segment `s00056`: “The grading rules stay fixed.”
+-- [Reward Hacking Challenges Oversight of Autonomous Research Agents](https://arxiv.org/abs/2609.28614), **text locator: “The execution audit”**, excerpt “Some exploits also pass this check”; **discussion excerpt locator:** “Reproduction should check the intended scientific result, not merely recover the reported score.”
++Source: [AI Code King](https://www.youtube.com/watch?v=wMQB33rM28I). **Recording timestamps:** 00:56.80–01:01.78 (`s00011`); 04:30.98–04:35.98 (`s00056`); 09:25.32–09:29.62 (`s00122`).
+ 
+-### Scene 2 — Reserve money for repetition
++### Scene 2 · Count the whole search · 0:45–1:15
+ <!-- 03-c2 -->
+ 
+ **Narration**
+ 
+-Before comparing candidates, fix the number of repeat runs. Reserve enough budget to rerun promising changes.
++Before running anything, set a budget for the whole search.
+ 
+-NanoProteinLM’s authors report training every candidate with two seeds and retaining it only when its mean gain exceeds the seed-to-seed spread. That is their protocol, not a universal prescription for how many repeats are enough.
++The tutorial plans forty-eight coding trials. That count excludes the optimizer’s own reasoning, setup and rehearsals. Forty-eight trials therefore does not describe total expenditure.
+ 
+-The solar-segmentation report identifies later improvements around one-thousandth of its overlap metric, within single-run variation that its protocol does not estimate. Our interpretation: look for gains larger than run-to-run variation. A positive validation change alone is insufficient reason to adopt an edit.
++Our practical interpretation is to account for those additional activities alongside worker trials. A bounded experiment needs a total budget you can inspect, not just a count of its most visible runs.
+ 
+ **Visual**
+ 
+-Show two schematic result distributions with overlapping ranges. Label **Illustration—not measured data**. Add: `Set repeat count → Compare → Rerun promising changes`.
++An unscaled accounting diagram: “48 planned coding trials + optimizer reasoning + setup + rehearsals.” Do not show invented prices or measured totals. Badge: “Reported plan → editorial recommendation.”
+ 
+-Source cards:
++Source excerpt: “own thinking, setup, or any rehearsals.”
+ 
+-- [Tutorial](https://www.youtube.com/watch?v=wMQB33rM28I), **recording timestamp 08:04.180–08:09.300**, `s00104`: “fresh attempts per development task and keep that count unchanged for every candidate.”
+-- [NanoProteinLM author report](https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/), **text locator: “What survived the human gate,” first bullet**, beginning “Every candidate trains with two seeds”.
+-- [Solar-segmentation paper](https://arxiv.org/abs/2610.10491), **text locator: paragraph immediately before §3.2**, beginning “Diminishing returns are visible in all three traces.”
++Source: [AI Code King](https://www.youtube.com/watch?v=wMQB33rM28I). **Recording timestamps:** 12:31.74–12:37.46 (`s00163`); 12:37.46–12:42.38 (`s00164`).
+ 
+-### Scene 3 — Test whether changes transfer
++### Scene 3 · Make comparisons inspectable · 1:15–1:50
+ <!-- 03-c3 -->
+ 
+ **Narration**
+ 
+-Freeze your selected candidate before testing it on fresh tasks. Require evidence of transfer before making a retained edit your default.
++Next, choose tasks that represent your actual work and whose outcomes you can evaluate.
+ 
+-In the solar campaigns, Dice was a large, repeatedly retained change on GX10-class hardware, but decreased the overlap score on the 4070 baseline. That does not isolate hardware as the cause: the coding model was confounded with GPU class.
++Why Try AI recommends fresh chats, equal access to files and tools, and judgments tied to specific parts of each answer. Flag anything you cannot verify.
+ 
+-The practical lesson is to test transfer, while keeping the causal explanation open. A change that survives one search has not automatically earned a place in every future experiment.
++These are usable comparison procedures. The author’s preference for one model on a scoped research task does not establish general superiority. Use the procedure to investigate your own task, without assuming the author’s preference will transfer.
+ 
+ **Visual**
+ 
+-Draw: `Search tasks → Freeze candidate → Fresh tasks → Adoption decision`. Beside it, show the reported contrast: **Dice retained on GX10 campaigns / decreased IoU on 4070 baseline**. Add **Hardware cause not isolated**.
++Two parallel boxes receive “Same task,” “Same files,” and “Same tools.” Both lead to “Evidence-based comparison.” Badge: “Procedure; scoped personal comparison.”
+ 
+-Source cards:
++Source excerpt: “Point to specific parts of each answer that support your judgment. Flag anything you can’t verify.”
+ 
+-- [Tutorial](https://www.youtube.com/watch?v=wMQB33rM28I), **recording timestamps 10:45.860–10:49.900 and 10:49.900–10:53.820**, `s00140–s00141`: freeze the best version, then compare on tasks excluded from search.
+-- [Solar-segmentation paper](https://arxiv.org/abs/2610.10491), **text locators: paragraph preceding Table 2**, beginning “Dice is the only large, repeated retention”; **§3.2, limitations paragraph**, excerpt “The coding model is confounded with GPU class”.
++Source: [Why Try AI, “The Best AI Benchmark Is Your Own Work”](https://www.whytryai.com/p/switch-ai-models). **Text locators:** “The fix,” prompt beginning “Based on what you know about me…” and paragraph beginning “Run the resulting test prompt…”; demonstration paragraph beginning “ChatGPT was clearly better for my scoped research”; “Do this now,” comparison prompt. These are text locators, not recording timestamps.
+ 
+-### Scene 4 — Count the whole comparison
++### Scene 4 · Give the agent a bounded work order · 1:50–2:25
+ <!-- 03-c4 -->
+ 
+ **Narration**
+ 
+-Budget the entire comparison. The tutorial proposes three development tasks with three attempts each: nine worker trials per evaluation. A baseline plus three candidate evaluations makes thirty-six trials. Comparing two versions on two held-out tasks, three times each, adds twelve.
++For the execution record, MIRA offers a structure worth examining.
+ 
+-That totals forty-eight worker trials, before optimizer reasoning, setup, or rehearsals. This is planning arithmetic, not observed expenditure. Include those additional costs when deciding how much search you can afford, and preserve a budget for verification.
++Its paper describes work orders containing an objective, relevant evidence, resource guidance, acceptance criteria and a stopping condition. It also describes retaining failures and contradictory results in the repository for later decisions.
++
++Our recommendation is to adopt that record structure for a student pilot. This is an inference about useful documentation, not a claim that MIRA’s performance will transfer to your experiment. Keep unsuccessful attempts available for inspection, too.
+ 
+ **Visual**
+ 
+-Build the arithmetic on screen:
++A five-field work-order card feeds a repository containing “Results,” “Failures” and “Contradictions.” Badge: “Paper-described design → proposed student practice.”
+ 
+-`Development: 3 tasks × 3 attempts × 4 versions = 36`
++Source excerpt: “Recorded failures and contradictory results remain available to later decisions through the repository.”
+ 
+-`Held-out: 2 tasks × 3 attempts × 2 versions = 12`
++Source: [MIRA paper](https://arxiv.org/abs/2610.02525). **Text locators:** Appendix C.1, “Context Construction,” paragraph beginning “The policy is instructed…”; Appendix C.2, “Decision and Execution,” first paragraph.
+ 
+-`Total: 48 worker trials + optimizer + setup + rehearsals`
+-
+-Label **Proposed design—not observed spending**.
+-
+-Source: [Tutorial](https://www.youtube.com/watch?v=wMQB33rM28I), **recording timestamps 12:21.060–12:26.580; 12:26.580–12:31.740; 12:31.740–12:37.460; 12:37.460–12:42.380**, `s00161–s00164`.
+-
+-### Scene 5 — Preserve a reconstructable record
++### Scene 5 · Review the plan before collecting data · 2:25–3:00
+ <!-- 03-c5 -->
+ 
+ **Narration**
+ 
+-Keep failed trials alongside successful ones, with enough versioned evidence to reconstruct each result.
++Documentation should begin before the experiment.
+ 
+-Agora makes this requirement concrete: a verification record should identify the target version, reproduction configuration, evaluator, and reproduced value. A verdict alone is insufficient.
++Campus Talks recommends describing study plans before collecting data, sharing code and variable descriptions, and allowing extra planning time.
+ 
+-Its authors also say they did not rerun the winning method, and describe missing logs and pinned dependencies. Our recommendation is to look for outside reproductions that supply the reconstruction details, rather than treating a verification label as strong validation by itself.
++Applied to agent experiments, our interpretation is to add a prospective review checkpoint: inspect the plan before the run begins. Budget time for that review.
++
++These podcast recommendations are methodological advice, not controlled evidence that this process improves outcomes. They support making the pilot reviewable, without promising a speedup or cost saving.
+ 
+ **Visual**
+ 
+-Show a record card: `Target hash | Configuration | Evaluator identity | Reproduced value`, connected to both successful and failed trials. Label **Recommended evidence record**.
++Timeline: “Describe plan → Review checkpoint → Collect data → Share code and variable descriptions.” Mark the checkpoint “Research Loop interpretation.”
+ 
+-Source cards:
++Source excerpt: “before you collect the data.”
+ 
+-- [Tutorial](https://www.youtube.com/watch?v=wMQB33rM28I), **recording timestamp 10:08.980–10:12.860**, `s00132`: “Keep the unsuccessful attempts in the log.”
+-- [Agora](https://arxiv.org/abs/2609.18094), **text locator: Appendix A, “Minimal Contribution Record”**, paragraph beginning “For verification, the record should additionally identify”; **§4.8, “How we verified the record”**, missing-artifact paragraph and excerpt “We did not rerun the winning method”.
++Source: [Campus Talks](https://timeshighered.podbean.com/e/campus-talks-how-is-ai-affecting-open-research/). **Recording timestamps:** 39:29.31–39:34.67 (`s00758–s00759`); 41:08.67–41:11.87 (`s00799`); 41:13.71–41:16.43 (`s00801`); 54:36.07–54:40.27 (`s01090`).
+ 
+-### Scene 6 — Keep judgment at uncertain transitions
++### Scene 6 · Physical labs offer a contrasting priority · 3:00–3:35
+ <!-- 03-c6 -->
+ 
+ **Narration**
+ 
+-Choose automation by the bottleneck it removes and the evidence it preserves. Periodic’s founders describe full autonomy as a non-goal and acknowledge remaining phase ambiguity and the need for replicates. NanoProteinLM retains a human decision about which recipes to scale up.
++Physical labs offer a contrasting perspective.
+ 
+-These accounts support keeping judgment at uncertain transitions. But the founders offer interested practitioner testimony without released controlled results, not measured gains for student coding experiments.
++Periodic Labs’ founders describe full autonomy as a non-goal. They prioritize useful experimental data and tractable bottlenecks, using automation in service of those goals.
+ 
+-Small task sets can remain inconclusive. Protected tests cannot establish that a metric captures the scientific goal. Independent replication and outside researcher assessment remain missing from this packet. Spend the next budget on evidence that could change your decision.
++This is a commercially interested practitioner account. The same interview describes bringing their tools into industry. It supplies no independent replication and does not independently confirm the computational studies. Its value here is the founders’ stated priority: useful data, rather than full autonomy as the objective.
+ 
+ **Visual**
+ 
+-Draw: `Measurable bottleneck → Targeted automation → Evidence → Judgment before scale-up`. End with four questions: **Fresh tasks? Repeated runs? Full costs? Outside reconstruction?** Label these **Editorial priorities**, not validated outcomes.
++Diagram: “Humans + automation → Address tractable bottlenecks → Useful experimental data.” Badge: “Founder account · commercial interest · no independent replication supplied.”
+ 
+-Source cards:
++Source excerpt: “full autonomy is a non-goal.”
+ 
+-- [Periodic Labs interview](https://www.latent.space/p/periodic), **recording timestamp 50:46–51:39**, `s00230`: “full autonomy is a non-goal”; **23:20–23:25**, `s00073`, ambiguity and replicates; **23:28–23:42**, `s00077`, different phases consistent with the same pattern. [Source audio](https://api.substack.com/feed/podcast/219146438/4de3baad7036438bcc048cc532556c6a.mp3).
+-- [NanoProteinLM author report](https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/), **text locator: “A better PLM recipe by hill-climbing NanoProteinLM”**, excerpt “with a human deciding which recipes to scale up”.
+-- Closing uncertainty statement: reviewed brief, **“limitations”**; scientific-validity qualification also supported by Scene 1’s reward-hacking excerpts.
++Source: [Latent Space, Periodic Labs interview](https://www.latent.space/p/periodic). **Recording timestamps:** 50:46–51:39 (`s00230`, data priorities and autonomy); 01:15:06–01:16:53 (`s00341`, industrial deployment).
+ 
+-**Editorial handling note:** Recording locators refer to the supplied provisional transcripts. The contradictory tutorial segment `s00105` is deferred and unused. Text sources use section or excerpt locators; publication dates are not source timestamps. No production or publication completion is asserted.
++### Scene 7 · What would justify more delegation? · 3:35–4:20
++<!-- 03-c7 -->
+ 
+-### YouTube description — draft
++**Narration**
+ 
+-Which research tasks can students delegate to agents, and what evidence makes the results trustworthy?
++What evidence should you watch for next?
+ 
+-Research Loop proposes a small-experiment workflow: separate grading from optimization, repeat promising results, test transfer, account for full costs, preserve failed trials, and retain judgment before adoption. These recommendations are editorial inferences from research reports, an operational tutorial, and interested practitioner testimony—not a validated defense or productivity package.
++Our recommendation is repeated performance on unused tasks, accompanied by inspectable code and retained failure records. The tutorial proposes repeated comparisons and warns that better development scores without held-out improvement do not demonstrate transferable improvement.
+ 
+-As of: **2026-10-14 UTC**. Evidence window: **2026-09-15–2026-10-14**, inclusive. Independent replication and outside researcher assessment remain missing from the supplied packet.
++Do not expand delegation on that basis alone.
+ 
+-Article, “Implications: spend the next budget on verification”: **[UNPUBLISHED_ARTICLE_URL]**
++The media transcripts remain provisional; the ambiguous tutorial passage is excluded. Together, these sources justify a reviewable pilot, not a reliable autonomous workflow. Start bounded, preserve the evidence, and expand only when repeated tests on unused tasks justify it.
+ 
+-Sources and locators:
++**Visual**
+ 
+-- Reward-hacking study: https://arxiv.org/abs/2609.28614 — “The execution audit”; discussion excerpt beginning “These findings support separating research execution”.
+-- NanoProteinLM: https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/ — “What survived the human gate”; “A better PLM recipe by hill-climbing NanoProteinLM”.
+-- Solar segmentation: https://arxiv.org/abs/2610.10491 — Table 2 and surrounding discussion; §3.2.
+-- Agora: https://arxiv.org/abs/2609.18094 — §4.8; Appendix A.
+-- Coding tutorial: https://www.youtube.com/watch?v=wMQB33rM28I — recording timestamps 04:30.980–04:35.980; 08:04.180–08:09.300; 10:08.980–10:12.860; 10:45.860–10:53.820; 12:21.060–12:42.380.
+-- Periodic interview: https://www.latent.space/p/periodic — recording timestamps 23:20–23:25; 23:28–23:42; 50:46–51:39.
++Decision diagram: “Development improvement → Repeated tests on unused tasks.” Branches: “Held-out results flat or worse → No demonstrated transfer”; “Repeated held-out improvement + inspectable records → Assess whether expansion is justified.” No invented result charts.
+ 
+-AI-assistance disclosure: AI assisted in drafting this script and description from the supplied brief and evidence. This disclosure does not certify completed human review, video production, or publication. Editorial approval remains with the student.+Source excerpt: “we haven't demonstrated a transferable improvement.”
++
++Sources and exact locators:
++
++- [AI Code King](https://www.youtube.com/watch?v=wMQB33rM28I), **recording timestamps:** 10:53.82–10:58.94 (`s00142`); 11:35.58–11:47.58 (`s00152–s00153`).
++- [Campus Talks](https://timeshighered.podbean.com/e/campus-talks-how-is-ai-affecting-open-research/), **recording timestamp:** 41:13.71–41:16.43 (`s00801`, sharing code).
++- [MIRA paper](https://arxiv.org/abs/2610.02525), **text locator:** Appendix C.2, first paragraph, sentence beginning “Recorded failures and contradictory results…”.
++
++## YouTube description draft
++
++Which research tasks can students delegate to agents—and what evidence would justify expanding that delegation?
++
++Research Loop examines instruction optimization, fair comparisons, bounded work orders, prospective planning and complete budget accounting. The practical recommendation is a small, inspectable pilot. These sources do not establish a promised speedup, cost saving or reliable autonomous workflow.
++
++**As of:** 2026-10-15 UTC. **Evidence window:** 2026-09-16–2026-10-15, inclusive.
++
++**Companion article, unpublished:** [ARTICLE_URL_PLACEHOLDER]  
++**Article evidence and claim references:** [ARTICLE_URL_WITH_EVIDENCE_SECTION_PLACEHOLDER]
++
++Sources:
++
++- [AI Code King tutorial](https://www.youtube.com/watch?v=wMQB33rM28I): recording 00:56.80–01:01.78, 04:30.98–04:35.98, 09:25.32–09:29.62, 10:53.82–10:58.94, 11:35.58–11:47.58 and 12:31.74–12:42.38.
++- [Why Try AI](https://www.whytryai.com/p/switch-ai-models): text sections “The fix” and “Do this now,” including the scoped research comparison.
++- [MIRA paper](https://arxiv.org/abs/2610.02525): Appendix C.1, “Context Construction,” and C.2, “Decision and Execution.”
++- [Campus Talks](https://timeshighered.podbean.com/e/campus-talks-how-is-ai-affecting-open-research/): recording 39:29.31–39:34.67, 41:08.67–41:11.87, 41:13.71–41:16.43 and 54:36.07–54:40.27.
++- [Periodic Labs founders on Latent Space](https://www.latent.space/p/periodic): recording 50:46–51:39 and 01:15:06–01:16:53.
++
++Evidence limits: tutorials supply procedures without supplied execution logs establishing measured gains. Podcast advice is not a controlled outcome evaluation. Media transcripts are provisional, and an ambiguous tutorial passage is excluded. The founders’ commercially interested account provides no independent replication.
++
++**AI-assistance disclosure:** AI assisted in drafting this script and description from the supplied brief and evidence. This draft does not establish that student editorial approval, video production or publication is complete.

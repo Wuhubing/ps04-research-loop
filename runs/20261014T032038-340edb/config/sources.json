@@ -1,0 +1,86 @@
+[
+  {
+    "source_id": "arxiv-2609.30541",
+    "publisher_id": "research-team-2609.30541",
+    "kind": "feed",
+    "url": "https://export.arxiv.org/api/query?id_list=2609.30541",
+    "limit": 1
+  },
+  {
+    "source_id": "arxiv-2609.28614",
+    "publisher_id": "research-team-2609.28614",
+    "kind": "feed",
+    "url": "https://export.arxiv.org/api/query?id_list=2609.28614",
+    "limit": 1
+  },
+  {
+    "source_id": "arxiv-2609.18094",
+    "publisher_id": "research-team-2609.18094",
+    "kind": "feed",
+    "url": "https://export.arxiv.org/api/query?id_list=2609.18094",
+    "limit": 1
+  },
+  {
+    "source_id": "arxiv-2609.40303",
+    "publisher_id": "research-team-2609.40303",
+    "kind": "feed",
+    "url": "https://export.arxiv.org/api/query?id_list=2609.40303",
+    "limit": 1
+  },
+  {
+    "source_id": "arxiv-2610.10491",
+    "publisher_id": "research-team-2610.10491",
+    "kind": "feed",
+    "url": "https://export.arxiv.org/api/query?id_list=2610.10491",
+    "limit": 1
+  },
+  {
+    "source_id": "arxiv-2609.39360",
+    "publisher_id": "research-team-2609.39360",
+    "kind": "feed",
+    "url": "https://export.arxiv.org/api/query?id_list=2609.39360",
+    "limit": 1
+  },
+  {
+    "source_id": "arxiv-discovery",
+    "publisher_id": "arxiv-unresolved-team",
+    "kind": "feed",
+    "url": "https://export.arxiv.org/api/query?search_query=all:autoresearch&sortBy=submittedDate&sortOrder=descending&max_results=8",
+    "limit": 8
+  },
+  {
+    "source_id": "nanoproteinlm",
+    "publisher_id": "nanoproteinlm-authors",
+    "kind": "feed",
+    "url": "https://jojoml.github.io/feed.xml",
+    "limit": 3
+  },
+  {
+    "source_id": "latent-space",
+    "publisher_id": "periodic-labs-interviews",
+    "kind": "podcast",
+    "url": "https://www.latent.space/feed",
+    "match": "Periodic|Synthesis Superintelligence",
+    "limit": 2
+  },
+  {
+    "source_id": "generalist",
+    "publisher_id": "periodic-labs-interviews",
+    "kind": "podcast",
+    "url": "https://www.generalist.com/feed",
+    "match": "chatbot walks into a laboratory",
+    "limit": 1
+  },
+  {
+    "source_id": "aicodeking",
+    "publisher_id": "aicodeking",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=wMQB33rM28I"
+  },
+  {
+    "source_id": "ai-explained",
+    "publisher_id": "ai-explained",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=R9momwXV9w4"
+  }
+]

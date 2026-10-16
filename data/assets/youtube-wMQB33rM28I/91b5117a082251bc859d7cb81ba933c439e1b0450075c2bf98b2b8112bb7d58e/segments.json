@@ -1,0 +1,1184 @@
+[
+  {
+    "segment_id": "s00000",
+    "start_seconds": 2.7,
+    "end_seconds": 8.66,
+    "text": "Hi, welcome to another video. Before starting the video, I have been posting many tutorials"
+  },
+  {
+    "segment_id": "s00001",
+    "start_seconds": 8.66,
+    "end_seconds": 14.6,
+    "text": "of open source projects that I like in members-only videos as well. I am posting more regularly,"
+  },
+  {
+    "segment_id": "s00002",
+    "start_seconds": 14.6,
+    "end_seconds": 19.06,
+    "text": "so if you want to support the channel, please hit the join button, and the videos are available"
+  },
+  {
+    "segment_id": "s00003",
+    "start_seconds": 19.06,
+    "end_seconds": 23.58,
+    "text": "on all tiers from Bronze and Up, so please go ahead and check them out. Now, back to"
+  },
+  {
+    "segment_id": "s00004",
+    "start_seconds": 23.58,
+    "end_seconds": 28.58,
+    "text": "the video. So we spend a lot of time telling Claude Code how to work, read the relevant"
+  },
+  {
+    "segment_id": "s00005",
+    "start_seconds": 28.58,
+    "end_seconds": 34.18,
+    "text": "files first, reproduce the bug, don't rewrite half the project, and please run the tests"
+  },
+  {
+    "segment_id": "s00006",
+    "start_seconds": 34.18,
+    "end_seconds": 38.46,
+    "text": "before telling me everything is done. But what if Claude could test different versions of"
+  },
+  {
+    "segment_id": "s00007",
+    "start_seconds": 38.46,
+    "end_seconds": 42.68,
+    "text": "those instructions and figure out which ones actually help it write better code? That's"
+  },
+  {
+    "segment_id": "s00008",
+    "start_seconds": 42.68,
+    "end_seconds": 47.3,
+    "text": "the idea we're exploring today with Auto Research and Claude Code. Can an automated experiment"
+  },
+  {
+    "segment_id": "s00009",
+    "start_seconds": 47.3,
+    "end_seconds": 51.34,
+    "text": "loop improve the workflow that Claude uses to solve coding tasks? We're going to set"
+  },
+  {
+    "segment_id": "s00010",
+    "start_seconds": 51.34,
+    "end_seconds": 56.8,
+    "text": "up a small bug-fixing experiment, give Claude one instruction file. It can improve and evaluate"
+  },
+  {
+    "segment_id": "s00011",
+    "start_seconds": 56.8,
+    "end_seconds": 61.78,
+    "text": "the changes on tasks it hasn't practiced on. The underlying Claude model stays the same."
+  },
+  {
+    "segment_id": "s00012",
+    "start_seconds": 61.78,
+    "end_seconds": 65.64,
+    "text": "What changes is the workflow we put around it? And that distinction matters, because a"
+  },
+  {
+    "segment_id": "s00013",
+    "start_seconds": 65.64,
+    "end_seconds": 69.6,
+    "text": "longer instruction file doesn't automatically mean a smarter coding agent. So let's get"
+  },
+  {
+    "segment_id": "s00014",
+    "start_seconds": 69.6,
+    "end_seconds": 74.36,
+    "text": "right into it. First, what is Auto Research? Andre Carpathi's original project gives a coding"
+  },
+  {
+    "segment_id": "s00015",
+    "start_seconds": 74.36,
+    "end_seconds": 79.36,
+    "text": "agent a small model training setup. The agent changes the training code, runs an"
+  },
+  {
+    "segment_id": "s00016",
+    "start_seconds": 79.36,
+    "end_seconds": 83.0,
+    "text": "experiment, checks a fixed evaluation metric, and keeps or discards the change based on"
+  },
+  {
+    "segment_id": "s00017",
+    "start_seconds": 83.0,
+    "end_seconds": 87.2,
+    "text": "the result. Then it repeats that process. The experiment history tells it which ideas"
+  },
+  {
+    "segment_id": "s00018",
+    "start_seconds": 87.2,
+    "end_seconds": 91.84,
+    "text": "helped and which ones failed. The original repository is built around training on an NVIDIA"
+  },
+  {
+    "segment_id": "s00019",
+    "start_seconds": 91.84,
+    "end_seconds": 97.4,
+    "text": "GPU with a 5-minute training budget for each experiment. That isn't a promise that every"
+  },
+  {
+    "segment_id": "s00020",
+    "start_seconds": 97.4,
+    "end_seconds": 102.1,
+    "text": "experiment finishes in 5 minutes, because startup and evaluation add time as well."
+  },
+  {
+    "segment_id": "s00021",
+    "start_seconds": 102.1,
+    "end_seconds": 106.56,
+    "text": "For this video, we're borrowing that experimental pattern and applying it to a coding workflow."
+  },
+  {
+    "segment_id": "s00022",
+    "start_seconds": 106.56,
+    "end_seconds": 110.56,
+    "text": "We don't need to run the original model training setup or buy a GPU to experiment"
+  },
+  {
+    "segment_id": "s00023",
+    "start_seconds": 110.56,
+    "end_seconds": 114.92,
+    "text": "with Claude's instructions. We'll use Udit Goenka's Community Auto Research plugin for"
+  },
+  {
+    "segment_id": "s00024",
+    "start_seconds": 114.92,
+    "end_seconds": 120.48,
+    "text": "Claude code. It gives us a general loop where we specify a goal, an editable scope, a metric,"
+  },
+  {
+    "segment_id": "s00025",
+    "start_seconds": 120.48,
+    "end_seconds": 124.64,
+    "text": "and a command that verifies the result. The plugin can coordinate the experiments,"
+  },
+  {
+    "segment_id": "s00026",
+    "start_seconds": 124.64,
+    "end_seconds": 128.44,
+    "text": "but we still have to define what a good result means. That is probably the most"
+  },
+  {
+    "segment_id": "s00027",
+    "start_seconds": 128.44,
+    "end_seconds": 133.48,
+    "text": "important part of this entire setup. If I say make Claude better at coding, there"
+  },
+  {
+    "segment_id": "s00028",
+    "start_seconds": 133.48,
+    "end_seconds": 138.38,
+    "text": "is no clear finish line. If I say solve more of these frozen bug-fixing tasks under"
+  },
+  {
+    "segment_id": "s00029",
+    "start_seconds": 138.42,
+    "end_seconds": 142.34,
+    "text": "the same limits, now we have something we can check. For the experiment,"
+  },
+  {
+    "segment_id": "s00030",
+    "start_seconds": 142.34,
+    "end_seconds": 147.02,
+    "text": "we'll create a skill called bug-fix. The starting instructions are deliberately reasonable,"
+  },
+  {
+    "segment_id": "s00031",
+    "start_seconds": 147.02,
+    "end_seconds": 151.74,
+    "text": "understand the reported behavior, make a focused correction, run the relevant checks,"
+  },
+  {
+    "segment_id": "s00032",
+    "start_seconds": 151.74,
+    "end_seconds": 155.7,
+    "text": "and summarize the change. I'm not going to give the baseline terrible instructions"
+  },
+  {
+    "segment_id": "s00033",
+    "start_seconds": 155.7,
+    "end_seconds": 160.46,
+    "text": "just to make the optimized version look good. The interesting question is whether the loop can"
+  },
+  {
+    "segment_id": "s00034",
+    "start_seconds": 160.46,
+    "end_seconds": 165.66,
+    "text": "improve a workflow we might actually use. Now, let's set everything up. You'll need"
+  },
+  {
+    "segment_id": "s00035",
+    "start_seconds": 165.66,
+    "end_seconds": 172.02,
+    "text": "Claude code, Git, Python for the small evaluation helper, and Node.js for the plugin's hooks."
+  },
+  {
+    "segment_id": "s00036",
+    "start_seconds": 172.02,
+    "end_seconds": 177.3,
+    "text": "Start in a separate experiment folder with a clean Git repository. Keep your real application's"
+  },
+  {
+    "segment_id": "s00037",
+    "start_seconds": 177.3,
+    "end_seconds": 182.7,
+    "text": "uncommitted work out of this experiment. Open Claude code, then type slash plugin marketplace"
+  },
+  {
+    "segment_id": "s00038",
+    "start_seconds": 182.7,
+    "end_seconds": 188.1,
+    "text": "ad followed by Yudit Guenka's auto research repository shown on screen. Next, type slash"
+  },
+  {
+    "segment_id": "s00039",
+    "start_seconds": 188.1,
+    "end_seconds": 193.5,
+    "text": "plugin install followed by auto research at auto research. Start a new Claude session after"
+  },
+  {
+    "segment_id": "s00040",
+    "start_seconds": 193.5,
+    "end_seconds": 197.54,
+    "text": "installation so the plugin and its reference files load properly. You can use slash auto"
+  },
+  {
+    "segment_id": "s00041",
+    "start_seconds": 197.54,
+    "end_seconds": 202.22,
+    "text": "research colon plan to work through the setup. For our actual experiment, we're going to provide"
+  },
+  {
+    "segment_id": "s00042",
+    "start_seconds": 202.22,
+    "end_seconds": 206.98,
+    "text": "the metric and verification command explicitly, so we use the classic experiment loop. Now,"
+  },
+  {
+    "segment_id": "s00043",
+    "start_seconds": 206.98,
+    "end_seconds": 212.1,
+    "text": "create the bug-fix skill folder inside dot Claude, then skills inside that folder,"
+  },
+  {
+    "segment_id": "s00044",
+    "start_seconds": 212.1,
+    "end_seconds": 217.3,
+    "text": "create skill dot md with the name, description, and the starting instructions from the recording"
+  },
+  {
+    "segment_id": "s00045",
+    "start_seconds": 217.3,
+    "end_seconds": 222.22,
+    "text": "notes. That is the file the optimizer can revise. Keep the skills identity and"
+  },
+  {
+    "segment_id": "s00046",
+    "start_seconds": 222.22,
+    "end_seconds": 226.86,
+    "text": "invocation fixed. We're experimenting with its instructions. We also need a copy of the starting"
+  },
+  {
+    "segment_id": "s00047",
+    "start_seconds": 226.86,
+    "end_seconds": 233.3,
+    "text": "version. Save that separately and record its Git commit before making any improvements. Otherwise,"
+  },
+  {
+    "segment_id": "s00048",
+    "start_seconds": 233.3,
+    "end_seconds": 237.86,
+    "text": "there's nothing reliable to compare the final version against, but installing the plugin"
+  },
+  {
+    "segment_id": "s00049",
+    "start_seconds": 237.86,
+    "end_seconds": 242.26,
+    "text": "doesn't give us a universal coding benchmark. We need to build that part for our experiment."
+  },
+  {
+    "segment_id": "s00050",
+    "start_seconds": 242.26,
+    "end_seconds": 247.74,
+    "text": "I've included a setup prompt that asks Claude to create a small evaluation helper with separate"
+  },
+  {
+    "segment_id": "s00051",
+    "start_seconds": 247.74,
+    "end_seconds": 253.66,
+    "text": "task fixtures, fixed grading tests, and a results log. This helper is our own experiment code rather"
+  },
+  {
+    "segment_id": "s00052",
+    "start_seconds": 253.66,
+    "end_seconds": 257.9,
+    "text": "than a feature that comes bundled with auto research. Here's the basic job we're giving it."
+  },
+  {
+    "segment_id": "s00053",
+    "start_seconds": 257.9,
+    "end_seconds": 262.62,
+    "text": "Start every trial with a clean copy of a broken project. Launch a fresh Claude session with"
+  },
+  {
+    "segment_id": "s00054",
+    "start_seconds": 262.62,
+    "end_seconds": 266.86,
+    "text": "one version of the workflow instructions. Let Claude attempt the repair, then grade the"
+  },
+  {
+    "segment_id": "s00055",
+    "start_seconds": 266.86,
+    "end_seconds": 270.98,
+    "text": "resulting files with tests controlled by the evaluator. The worker can change the disposable"
+  },
+  {
+    "segment_id": "s00056",
+    "start_seconds": 270.98,
+    "end_seconds": 275.98,
+    "text": "project. The optimizer can change the workflow instructions. The grading rules stay fixed. That"
+  },
+  {
+    "segment_id": "s00057",
+    "start_seconds": 275.98,
+    "end_seconds": 280.38,
+    "text": "separation is important. We want to discover better instructions for repairing code. If the"
+  },
+  {
+    "segment_id": "s00058",
+    "start_seconds": 280.38,
+    "end_seconds": 284.7,
+    "text": "loop can rewrite the answer key, a higher score tells us very little. For the development set,"
+  },
+  {
+    "segment_id": "s00059",
+    "start_seconds": 284.7,
+    "end_seconds": 289.78,
+    "text": "use three small Python bugs. With behavior, we can describe precisely. One can involve removing"
+  },
+  {
+    "segment_id": "s00060",
+    "start_seconds": 289.78,
+    "end_seconds": 293.94,
+    "text": "duplicates while preserving order. Another can involve incorrectly treating zero as a missing"
+  },
+  {
+    "segment_id": "s00061",
+    "start_seconds": 293.94,
+    "end_seconds": 298.06,
+    "text": "value. And another can involve accidentally changing the caller's input list. These are"
+  },
+  {
+    "segment_id": "s00062",
+    "start_seconds": 298.06,
+    "end_seconds": 301.7,
+    "text": "small enough to inspect on screen, but they still let us test whether Claude considers"
+  },
+  {
+    "segment_id": "s00063",
+    "start_seconds": 301.7,
+    "end_seconds": 305.98,
+    "text": "behavior beyond the first happy path example. For the duplicate removal task, for example,"
+  },
+  {
+    "segment_id": "s00064",
+    "start_seconds": 305.98,
+    "end_seconds": 310.46,
+    "text": "returning a set might remove repeated values, but it could violate the required output"
+  },
+  {
+    "segment_id": "s00065",
+    "start_seconds": 310.46,
+    "end_seconds": 314.9,
+    "text": "type or ordering. Our tests should check the actual contract, including an empty input"
+  },
+  {
+    "segment_id": "s00066",
+    "start_seconds": 314.9,
+    "end_seconds": 318.38,
+    "text": "and repeated values in different positions. Keep a couple of different tasks for the"
+  },
+  {
+    "segment_id": "s00067",
+    "start_seconds": 318.38,
+    "end_seconds": 322.42,
+    "text": "final evaluation. Don't include those tasks or their answers in the optimizer's development"
+  },
+  {
+    "segment_id": "s00068",
+    "start_seconds": 322.42,
+    "end_seconds": 327.94,
+    "text": "feedback. And before we pay for a pile of Claude runs, test the evaluator itself. Give"
+  },
+  {
+    "segment_id": "s00069",
+    "start_seconds": 327.94,
+    "end_seconds": 333.02,
+    "text": "it the known broken implementation and confirm that it fails. Give it a reviewed correct"
+  },
+  {
+    "segment_id": "s00070",
+    "start_seconds": 333.02,
+    "end_seconds": 338.86,
+    "text": "patch and confirm that it passes. Then try a patch that deletes a grading test or modifies"
+  },
+  {
+    "segment_id": "s00071",
+    "start_seconds": 338.86,
+    "end_seconds": 343.54,
+    "text": "a forbidden file and make sure the evaluator rejects it. Also check what happens when"
+  },
+  {
+    "segment_id": "s00072",
+    "start_seconds": 343.54,
+    "end_seconds": 348.66,
+    "text": "a run times out or authentication fails. An incomplete trial cannot quietly become"
+  },
+  {
+    "segment_id": "s00073",
+    "start_seconds": 348.66,
+    "end_seconds": 353.18,
+    "text": "a passing result. Those checks tell us whether the measuring tool works. They don't tell"
+  },
+  {
+    "segment_id": "s00074",
+    "start_seconds": 353.18,
+    "end_seconds": 357.26,
+    "text": "us that Claude's workflow has improved yet. Now, let's talk about how we launched the"
+  },
+  {
+    "segment_id": "s00075",
+    "start_seconds": 357.26,
+    "end_seconds": 361.38,
+    "text": "trial sessions, because there's a detail here that can otherwise ruin the comparison."
+  },
+  {
+    "segment_id": "s00076",
+    "start_seconds": 361.38,
+    "end_seconds": 366.3,
+    "text": "If every run inherits different memories, plugins, or an old conversation, we aren't only comparing"
+  },
+  {
+    "segment_id": "s00077",
+    "start_seconds": 366.3,
+    "end_seconds": 370.22,
+    "text": "the instruction files anymore. For the controlled version of this experiment, the helper uses"
+  },
+  {
+    "segment_id": "s00078",
+    "start_seconds": 370.22,
+    "end_seconds": 374.66,
+    "text": "Claude's print mode with the dash dash bear flag. Bear mode skips the usual automatic"
+  },
+  {
+    "segment_id": "s00079",
+    "start_seconds": 374.66,
+    "end_seconds": 379.74,
+    "text": "discovery of skills, plugins, memory, and Claude.md files. Then we explicitly supply"
+  },
+  {
+    "segment_id": "s00080",
+    "start_seconds": 379.74,
+    "end_seconds": 384.58,
+    "text": "the workflow instructions using dash dash append system prompt file. The helper extracts"
+  },
+  {
+    "segment_id": "s00081",
+    "start_seconds": 384.58,
+    "end_seconds": 388.86,
+    "text": "the instruction body from our skill file, so both versions are injected in the same way."
+  },
+  {
+    "segment_id": "s00082",
+    "start_seconds": 388.86,
+    "end_seconds": 392.38,
+    "text": "That means this experiment measures the instruction content. It doesn't measure whether Claude"
+  },
+  {
+    "segment_id": "s00083",
+    "start_seconds": 392.38,
+    "end_seconds": 396.5,
+    "text": "automatically chooses the right skill from a long list. There's also a pricing catch."
+  },
+  {
+    "segment_id": "s00084",
+    "start_seconds": 396.5,
+    "end_seconds": 400.5,
+    "text": "Bear mode doesn't use your normal Claude subscription login. You need an API key or"
+  },
+  {
+    "segment_id": "s00085",
+    "start_seconds": 400.5,
+    "end_seconds": 404.94,
+    "text": "the appropriate provider credentials, and those trial calls use that billing path. So,"
+  },
+  {
+    "segment_id": "s00086",
+    "start_seconds": 404.94,
+    "end_seconds": 408.5,
+    "text": "if you only want to use your subscription, you can rehearse the process manually in fresh"
+  },
+  {
+    "segment_id": "s00087",
+    "start_seconds": 408.5,
+    "end_seconds": 412.22,
+    "text": "sessions with the same skill invoked each time. Just describe that as a less controlled"
+  },
+  {
+    "segment_id": "s00088",
+    "start_seconds": 412.22,
+    "end_seconds": 415.62,
+    "text": "comparison rather than presenting it as identical to this setup."
+  },
+  {
+    "segment_id": "s00089",
+    "start_seconds": 415.62,
+    "end_seconds": 421.02,
+    "text": "The exact command is in the notes. We fix the model and effort level, use the same"
+  },
+  {
+    "segment_id": "s00090",
+    "start_seconds": 421.02,
+    "end_seconds": 426.1,
+    "text": "tools, set the same turn and time limits, and save the response metadata along with the"
+  },
+  {
+    "segment_id": "s00091",
+    "start_seconds": 426.1,
+    "end_seconds": 430.18,
+    "text": "resulting code. Now we're ready to check the baseline setup."
+  },
+  {
+    "segment_id": "s00092",
+    "start_seconds": 430.18,
+    "end_seconds": 434.42,
+    "text": "First run one unscored smoke trial with the original instructions to check that a real"
+  },
+  {
+    "segment_id": "s00093",
+    "start_seconds": 434.42,
+    "end_seconds": 439.06,
+    "text": "worker launches and its patch gets graded. The full baseline will be auto-researches iteration"
+  },
+  {
+    "segment_id": "s00094",
+    "start_seconds": 439.06,
+    "end_seconds": 443.7,
+    "text": "zero before it changes the skill that avoids paying for the same full baseline twice. For"
+  },
+  {
+    "segment_id": "s00095",
+    "start_seconds": 443.7,
+    "end_seconds": 448.02,
+    "text": "the scored trials, check whether the repaired code passes the frozen tests, stays within"
+  },
+  {
+    "segment_id": "s00096",
+    "start_seconds": 448.02,
+    "end_seconds": 452.36,
+    "text": "the allowed files, and finishes within the limits. Our main score is the percentage of"
+  },
+  {
+    "segment_id": "s00097",
+    "start_seconds": 452.36,
+    "end_seconds": 456.58,
+    "text": "all scheduled attempts that pass every required check. Ordinary failures and timeouts still"
+  },
+  {
+    "segment_id": "s00098",
+    "start_seconds": 456.58,
+    "end_seconds": 461.06,
+    "text": "count as unsolved attempts. An infrastructure problem should halt the evaluation rather"
+  },
+  {
+    "segment_id": "s00099",
+    "start_seconds": 461.06,
+    "end_seconds": 465.58,
+    "text": "than quietly shrink the denominator, a patch that fixes the reported example, but breaks"
+  },
+  {
+    "segment_id": "s00100",
+    "start_seconds": 465.58,
+    "end_seconds": 470.26,
+    "text": "an existing behavior doesn't count as a solved task. We're also recording elapsed time and"
+  },
+  {
+    "segment_id": "s00101",
+    "start_seconds": 470.26,
+    "end_seconds": 475.38,
+    "text": "estimated model cost. Those are useful supporting numbers, but a fast incorrect answer doesn't"
+  },
+  {
+    "segment_id": "s00102",
+    "start_seconds": 475.38,
+    "end_seconds": 479.06,
+    "text": "beat a slower correct one. Repeat the trials because the same model can"
+  },
+  {
+    "segment_id": "s00103",
+    "start_seconds": 479.06,
+    "end_seconds": 484.18,
+    "text": "make different decisions on the same task. For this small experiment, we'll use three"
+  },
+  {
+    "segment_id": "s00104",
+    "start_seconds": 484.18,
+    "end_seconds": 489.3,
+    "text": "fresh attempts per development task and keep that count unchanged for every candidate."
+  },
+  {
+    "segment_id": "s00105",
+    "start_seconds": 489.3,
+    "end_seconds": 493.54,
+    "text": "Keep rerunning one version until it gets lucky. Decide the number of attempts before looking"
+  },
+  {
+    "segment_id": "s00106",
+    "start_seconds": 493.54,
+    "end_seconds": 498.32,
+    "text": "at the results. Once the smoke test works and the evaluator"
+  },
+  {
+    "segment_id": "s00107",
+    "start_seconds": 498.32,
+    "end_seconds": 503.0,
+    "text": "is frozen, we can give auto-research its instructions. The goal is to improve bug-fixing"
+  },
+  {
+    "segment_id": "s00108",
+    "start_seconds": 503.0,
+    "end_seconds": 508.16,
+    "text": "success under the existing limits. The scope is only our bug-fix skill file. The metric"
+  },
+  {
+    "segment_id": "s00109",
+    "start_seconds": 508.16,
+    "end_seconds": 511.92,
+    "text": "is the development pass percentage, with higher being better, and the verify command"
+  },
+  {
+    "segment_id": "s00110",
+    "start_seconds": 511.92,
+    "end_seconds": 516.48,
+    "text": "runs our evaluation helper against that file. I'm setting iterations to three for the first"
+  },
+  {
+    "segment_id": "s00111",
+    "start_seconds": 516.48,
+    "end_seconds": 522.12,
+    "text": "real search. That means three candidate revisions after the baseline rather than an unlimited"
+  },
+  {
+    "segment_id": "s00112",
+    "start_seconds": 522.12,
+    "end_seconds": 527.64,
+    "text": "overnight run. I'm also telling it to make one focused instruction change per candidate,"
+  },
+  {
+    "segment_id": "s00113",
+    "start_seconds": 527.64,
+    "end_seconds": 531.8,
+    "text": "preserve the skill's name, and discard candidates that don't improve the score."
+  },
+  {
+    "segment_id": "s00114",
+    "start_seconds": 531.8,
+    "end_seconds": 536.0,
+    "text": "Any problem with the evaluator should stop the experiment rather than trigger a convenient"
+  },
+  {
+    "segment_id": "s00115",
+    "start_seconds": 536.0,
+    "end_seconds": 540.64,
+    "text": "rewrite of the grading rules. The plugin's scope and iteration settings are instructions"
+  },
+  {
+    "segment_id": "s00116",
+    "start_seconds": 540.64,
+    "end_seconds": 545.2,
+    "text": "to the agent. They aren't a file system sandbox or a guaranteed spending limit, so"
+  },
+  {
+    "segment_id": "s00117",
+    "start_seconds": 545.2,
+    "end_seconds": 549.24,
+    "text": "the evaluation controller still needs its own restrictions and stopping conditions."
+  },
+  {
+    "segment_id": "s00118",
+    "start_seconds": 549.24,
+    "end_seconds": 552.68,
+    "text": "Now, let's send it and see what hypothesis it proposes."
+  },
+  {
+    "segment_id": "s00119",
+    "start_seconds": 552.68,
+    "end_seconds": 557.16,
+    "text": "One possible idea is to require a concrete reproduction before editing. Another is to"
+  },
+  {
+    "segment_id": "s00120",
+    "start_seconds": 557.16,
+    "end_seconds": 561.12,
+    "text": "inspect the function's callers before changing its return value. A third might be to check"
+  },
+  {
+    "segment_id": "s00121",
+    "start_seconds": 561.12,
+    "end_seconds": 565.32,
+    "text": "one boundary case related to the reported bug before declaring the task complete."
+  },
+  {
+    "segment_id": "s00122",
+    "start_seconds": 565.32,
+    "end_seconds": 569.62,
+    "text": "Those are examples of candidates, not results we're assuming in advance. The actual change"
+  },
+  {
+    "segment_id": "s00123",
+    "start_seconds": 569.62,
+    "end_seconds": 573.24,
+    "text": "should come from the development failures and be visible in the instruction diff. This"
+  },
+  {
+    "segment_id": "s00124",
+    "start_seconds": 573.24,
+    "end_seconds": 577.72,
+    "text": "is the part I would show closely in the video. Open the old instructions next to the candidate"
+  },
+  {
+    "segment_id": "s00125",
+    "start_seconds": 577.72,
+    "end_seconds": 581.96,
+    "text": "and read the change. Then show a trial transcript where that instruction has a chance to affect"
+  },
+  {
+    "segment_id": "s00126",
+    "start_seconds": 581.96,
+    "end_seconds": 586.64,
+    "text": "the worker's behavior. If the candidate says reproduce the issue first, look for the reproduction."
+  },
+  {
+    "segment_id": "s00127",
+    "start_seconds": 586.64,
+    "end_seconds": 590.28,
+    "text": "If it says preserve the input, look at the patch in the external test that checks"
+  },
+  {
+    "segment_id": "s00128",
+    "start_seconds": 590.28,
+    "end_seconds": 595.0,
+    "text": "for mutation. We're connecting an instruction change to observable behavior rather than treating"
+  },
+  {
+    "segment_id": "s00129",
+    "start_seconds": 595.0,
+    "end_seconds": 600.18,
+    "text": "a paragraph of confident advice as an improvement by itself. After verification, the loop records"
+  },
+  {
+    "segment_id": "s00130",
+    "start_seconds": 600.18,
+    "end_seconds": 605.1,
+    "text": "the score and whether the candidate was kept or discarded. If it performs worse, the experiment"
+  },
+  {
+    "segment_id": "s00131",
+    "start_seconds": 605.1,
+    "end_seconds": 608.98,
+    "text": "should return to the previous best instructions instead of building the next change on top"
+  },
+  {
+    "segment_id": "s00132",
+    "start_seconds": 608.98,
+    "end_seconds": 612.86,
+    "text": "of a regression. Keep the unsuccessful attempts in the log."
+  },
+  {
+    "segment_id": "s00133",
+    "start_seconds": 612.86,
+    "end_seconds": 616.82,
+    "text": "They're useful evidence of what the search tried, and hiding them would make the process"
+  },
+  {
+    "segment_id": "s00134",
+    "start_seconds": 616.82,
+    "end_seconds": 622.46,
+    "text": "look more reliable than it is. Also, inspect the git history and the actual files. A"
+  },
+  {
+    "segment_id": "s00135",
+    "start_seconds": 622.46,
+    "end_seconds": 626.94,
+    "text": "summary saying improved is helpful, but the recorded trial results need to support it."
+  },
+  {
+    "segment_id": "s00136",
+    "start_seconds": 627.02,
+    "end_seconds": 631.98,
+    "text": "Now, there's an easy way to get fooled at this point. The development score can improve because"
+  },
+  {
+    "segment_id": "s00137",
+    "start_seconds": 631.98,
+    "end_seconds": 636.54,
+    "text": "the instructions have become extremely specific to the three examples. Maybe they mention a"
+  },
+  {
+    "segment_id": "s00138",
+    "start_seconds": 636.54,
+    "end_seconds": 641.42,
+    "text": "particular function name or quietly encode the expected fix. That could make the next"
+  },
+  {
+    "segment_id": "s00139",
+    "start_seconds": 641.42,
+    "end_seconds": 645.86,
+    "text": "run look amazing while doing nothing useful for tomorrow's coding problem. So, after the"
+  },
+  {
+    "segment_id": "s00140",
+    "start_seconds": 645.86,
+    "end_seconds": 649.9,
+    "text": "three candidate revisions, freeze the best version. Now compare the original and optimized"
+  },
+  {
+    "segment_id": "s00141",
+    "start_seconds": 649.9,
+    "end_seconds": 653.82,
+    "text": "instructions on the tasks we kept out of the search. Use fresh project copies and fresh"
+  },
+  {
+    "segment_id": "s00142",
+    "start_seconds": 653.82,
+    "end_seconds": 658.94,
+    "text": "Claude sessions again. Run each version three times per task with the same limits and alternate"
+  },
+  {
+    "segment_id": "s00143",
+    "start_seconds": 658.94,
+    "end_seconds": 662.58,
+    "text": "the order so one version doesn't always get the first run. Don't let the optimizer see"
+  },
+  {
+    "segment_id": "s00144",
+    "start_seconds": 662.58,
+    "end_seconds": 666.26,
+    "text": "a failure on this final set, revise its instructions, and then call the next attempt"
+  },
+  {
+    "segment_id": "s00145",
+    "start_seconds": 666.26,
+    "end_seconds": 670.02,
+    "text": "an unseen test. Once you use that feedback to tune the workflow, those tasks have become"
+  },
+  {
+    "segment_id": "s00146",
+    "start_seconds": 670.02,
+    "end_seconds": 674.34,
+    "text": "part of development. For the results screen, show both development and held-out performance."
+  },
+  {
+    "segment_id": "s00147",
+    "start_seconds": 674.34,
+    "end_seconds": 678.38,
+    "text": "Include the number of trials, complete passes, timeouts, estimated cost, and the time spent"
+  },
+  {
+    "segment_id": "s00148",
+    "start_seconds": 678.38,
+    "end_seconds": 682.74,
+    "text": "on successful attempts. There are a few possible outcomes, and the interpretation should follow"
+  },
+  {
+    "segment_id": "s00149",
+    "start_seconds": 682.74,
+    "end_seconds": 686.74,
+    "text": "what actually happens. If the candidate improves on development and also solves more fresh"
+  },
+  {
+    "segment_id": "s00150",
+    "start_seconds": 686.74,
+    "end_seconds": 690.9,
+    "text": "tasks, that's evidence that these instructions helped this model on this particular task"
+  },
+  {
+    "segment_id": "s00151",
+    "start_seconds": 690.9,
+    "end_seconds": 695.58,
+    "text": "set. It's a useful result, although a handful of small tasks still doesn't establish a"
+  },
+  {
+    "segment_id": "s00152",
+    "start_seconds": 695.58,
+    "end_seconds": 701.74,
+    "text": "universal coding upgrade. If development improves, but the held-out results stay flat"
+  },
+  {
+    "segment_id": "s00153",
+    "start_seconds": 701.74,
+    "end_seconds": 707.58,
+    "text": "or get worse, we haven't demonstrated a transferable improvement. The search may have fitted the"
+  },
+  {
+    "segment_id": "s00154",
+    "start_seconds": 707.58,
+    "end_seconds": 711.86,
+    "text": "examples too closely, or the apparent gain may have been noised. And if both versions"
+  },
+  {
+    "segment_id": "s00155",
+    "start_seconds": 711.86,
+    "end_seconds": 716.66,
+    "text": "solve every task, we've hit the ceiling of this little benchmark. Then we can compare"
+  },
+  {
+    "segment_id": "s00156",
+    "start_seconds": 716.66,
+    "end_seconds": 722.7,
+    "text": "cost and successful completion time, or design a harder future evaluation. We shouldn't claim"
+  },
+  {
+    "segment_id": "s00157",
+    "start_seconds": 722.7,
+    "end_seconds": 726.54,
+    "text": "a quality improvement that the test couldn't measure. That is why I wouldn't promise that"
+  },
+  {
+    "segment_id": "s00158",
+    "start_seconds": 726.54,
+    "end_seconds": 731.34,
+    "text": "leaving this running overnight automatically produces a better, clawed setup. A loop can"
+  },
+  {
+    "segment_id": "s00159",
+    "start_seconds": 731.34,
+    "end_seconds": 737.14,
+    "text": "explore a bad metric just as enthusiastically as a good one. Now, let's come to the cost."
+  },
+  {
+    "segment_id": "s00160",
+    "start_seconds": 737.14,
+    "end_seconds": 741.06,
+    "text": "Because three iterations sounds much cheaper than it can actually be, with three development"
+  },
+  {
+    "segment_id": "s00161",
+    "start_seconds": 741.06,
+    "end_seconds": 746.58,
+    "text": "tasks and three attempts each, one evaluation contains nine clawed trials. The baseline plus"
+  },
+  {
+    "segment_id": "s00162",
+    "start_seconds": 746.58,
+    "end_seconds": 751.74,
+    "text": "three candidate evaluations gives us 36 trial runs. Then comparing two versions on two held-out"
+  },
+  {
+    "segment_id": "s00163",
+    "start_seconds": 751.74,
+    "end_seconds": 757.46,
+    "text": "tasks three times each adds another 12. That's 48 coding trials, before counting the optimizer's"
+  },
+  {
+    "segment_id": "s00164",
+    "start_seconds": 757.46,
+    "end_seconds": 762.38,
+    "text": "own thinking, setup, or any rehearsals. So, the auto-research plugin is open source,"
+  },
+  {
+    "segment_id": "s00165",
+    "start_seconds": 762.38,
+    "end_seconds": 766.3,
+    "text": "but the experiment isn't free. Just because the loop is written in a skill, start with"
+  },
+  {
+    "segment_id": "s00166",
+    "start_seconds": 766.3,
+    "end_seconds": 771.3,
+    "text": "a one-task smoke test to check the machinery. Once it works, decide what the full comparison"
+  },
+  {
+    "segment_id": "s00167",
+    "start_seconds": 771.3,
+    "end_seconds": 775.74,
+    "text": "is worth to you and set limits before running it. Claude's print mode supports a maximum"
+  },
+  {
+    "segment_id": "s00168",
+    "start_seconds": 775.74,
+    "end_seconds": 780.54,
+    "text": "dollar budget and a maximum number of turns per run. Use those alongside an external"
+  },
+  {
+    "segment_id": "s00169",
+    "start_seconds": 780.54,
+    "end_seconds": 784.58,
+    "text": "timeout and a controller that stops launching more trials when the overall experiment reaches"
+  },
+  {
+    "segment_id": "s00170",
+    "start_seconds": 784.58,
+    "end_seconds": 789.02,
+    "text": "its limit. Treat the reported dollar amounts as estimates and leave room around the budget."
+  },
+  {
+    "segment_id": "s00171",
+    "start_seconds": 789.02,
+    "end_seconds": 793.1,
+    "text": "Also account for the optimizer separately. Limiting a trial worker doesn't limit every"
+  },
+  {
+    "segment_id": "s00172",
+    "start_seconds": 793.1,
+    "end_seconds": 798.02,
+    "text": "other Claude session. The value depends on how often you'll reuse the workflow. Spending"
+  },
+  {
+    "segment_id": "s00173",
+    "start_seconds": 798.02,
+    "end_seconds": 801.98,
+    "text": "time and money improving a process you use every day can make sense. Running a large"
+  },
+  {
+    "segment_id": "s00174",
+    "start_seconds": 801.98,
+    "end_seconds": 806.46,
+    "text": "search to shave a few seconds off a one-off task probably doesn't, and after the experiment"
+  },
+  {
+    "segment_id": "s00175",
+    "start_seconds": 806.46,
+    "end_seconds": 809.46,
+    "text": "don't immediately replace your entire Claude configuration."
+  },
+  {
+    "segment_id": "s00176",
+    "start_seconds": 809.46,
+    "end_seconds": 814.14,
+    "text": "Review the winning instruction diff. Remove anything tied to the practice tasks. Then"
+  },
+  {
+    "segment_id": "s00177",
+    "start_seconds": 814.14,
+    "end_seconds": 818.78,
+    "text": "treat that edited version as a new candidate that needs checking. Even a well-intended"
+  },
+  {
+    "segment_id": "s00178",
+    "start_seconds": 818.78,
+    "end_seconds": 823.74,
+    "text": "cleanup changes what you've evaluated. If the instructions still help on fresh work,"
+  },
+  {
+    "segment_id": "s00179",
+    "start_seconds": 823.74,
+    "end_seconds": 827.74,
+    "text": "adopt them for that specific workflow and keep the original version available. Leave"
+  },
+  {
+    "segment_id": "s00180",
+    "start_seconds": 827.74,
+    "end_seconds": 832.3,
+    "text": "unrelated skills and global preferences alone. You can apply the same idea to other repeated"
+  },
+  {
+    "segment_id": "s00181",
+    "start_seconds": 832.3,
+    "end_seconds": 837.54,
+    "text": "tasks as well. A test writing skill could be evaluated by whether its tests catch known"
+  },
+  {
+    "segment_id": "s00182",
+    "start_seconds": 837.54,
+    "end_seconds": 841.54,
+    "text": "defects. A migration workflow could be checked against fixed compatibility requirements. A"
+  },
+  {
+    "segment_id": "s00183",
+    "start_seconds": 841.54,
+    "end_seconds": 846.1,
+    "text": "code review skill could be measured on real defects found and false positives introduced."
+  },
+  {
+    "segment_id": "s00184",
+    "start_seconds": 846.1,
+    "end_seconds": 850.82,
+    "text": "The metric should reflect the outcome you actually want. More tests, longer reviews,"
+  },
+  {
+    "segment_id": "s00185",
+    "start_seconds": 850.82,
+    "end_seconds": 855.82,
+    "text": "or fewer tool calls aren't automatically better outcomes. So, can auto-research and"
+  },
+  {
+    "segment_id": "s00186",
+    "start_seconds": 855.82,
+    "end_seconds": 860.9,
+    "text": "Claude code improve Claude's own coding workflow? They can set up a useful feedback loop around"
+  },
+  {
+    "segment_id": "s00187",
+    "start_seconds": 860.9,
+    "end_seconds": 864.78,
+    "text": "the instructions Claude follows. Whether a particular revision is better has to come"
+  },
+  {
+    "segment_id": "s00188",
+    "start_seconds": 864.78,
+    "end_seconds": 868.98,
+    "text": "from the fresh task results rather than the optimizer's description of its own work."
+  },
+  {
+    "segment_id": "s00189",
+    "start_seconds": 868.98,
+    "end_seconds": 872.9,
+    "text": "Personally, I think this is worth exploring for a narrow workflow you repeat often and"
+  },
+  {
+    "segment_id": "s00190",
+    "start_seconds": 872.9,
+    "end_seconds": 877.18,
+    "text": "can evaluate reliably. Start small, keep the greater fixed, and look for gains that survive"
+  },
+  {
+    "segment_id": "s00191",
+    "start_seconds": 877.18,
+    "end_seconds": 880.82,
+    "text": "beyond the examples used during the search. That gives you a much more useful answer than"
+  },
+  {
+    "segment_id": "s00192",
+    "start_seconds": 880.82,
+    "end_seconds": 885.06,
+    "text": "simply asking Claude to rewrite your instructions and hoping the new version is better. Overall,"
+  },
+  {
+    "segment_id": "s00193",
+    "start_seconds": 885.06,
+    "end_seconds": 889.18,
+    "text": "it's pretty cool. Anyway, let me know your thoughts in the comments. If you liked this"
+  },
+  {
+    "segment_id": "s00194",
+    "start_seconds": 889.18,
+    "end_seconds": 893.54,
+    "text": "video, consider donating through the Super Thanks option or becoming a member by clicking"
+  },
+  {
+    "segment_id": "s00195",
+    "start_seconds": 893.54,
+    "end_seconds": 899.9,
+    "text": "the join button. Also, give this video a thumbs up and subscribe to my channel. I'll see you"
+  },
+  {
+    "segment_id": "s00196",
+    "start_seconds": 899.9,
+    "end_seconds": 901.62,
+    "text": "in the next one. Until then, bye."
+  }
+]

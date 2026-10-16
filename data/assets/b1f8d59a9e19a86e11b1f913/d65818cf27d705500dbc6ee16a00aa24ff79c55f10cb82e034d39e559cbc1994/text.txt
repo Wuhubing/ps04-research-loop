@@ -1,0 +1,409 @@
+Fork-and-Flush: Escaping Idea Basins
+in Autoresearch Agents
+Abstract
+Autoresearch agents tackle open-ended problems by repeatedly proposing candidate solutions, evaluating them, and using feedback to guide subsequent experiments. We show that independent runs of the same agent on the same task often plateau at substantially different scores, with gaps that persist even after considerable additional compute. Embedding their candidate artifacts by functional similarity provides further evidence that trajectories remain in localized regions of the solution space, which we call idea basins. To help agents escape these basins, we study a simple periodic intervention, fork-and-flush. Our method forks the agent into parallel trajectories, each inheriting the accumulated workspace but starting with a fresh chat context. After running each trajectory for a fixed horizon, the agent continues from the highest-scoring one. Across \(13\) long-horizon research and engineering tasks, with individual agent runs lasting up to several days, fork-and-flush outperformed the single-run and best-of-\(N\) baselines by a relative improvement of \(66.0\%\) and \(44.4\%\), respectively, on the min–max normalized average score under an equal compute budget.
+1 Introduction
+**footnotetext: This work was done during an internship at Microsoft Research.
+Emails: zc5794@princeton.edu, c.ziakas24@imperial.ac.uk, {shigarg,dimitriosp}@microsoft.com
+Large Language Model (LLM) agents have shown remarkable promise in autonomously solving hard, open-ended research problems requiring long execution horizons ([Mang et al., 2026](#bib.bib16); [Merrill et al., 2026](#bib.bib14); [Terminal-Bench-Science Team, 2026](#bib.bib15)). A prominent paradigm for addressing these problems is the autoresearch loop ([Karpathy, 2026](#bib.bib6); [Novikov et al., 2025](#bib.bib7)), where an agent iteratively proposes a solution, evaluates it within an environment, and uses the execution feedback or submission score to guide its next experiment. This process can be viewed loosely as idea descent, by analogy with gradient descent: feedback guides successive modifications through the space of candidate solutions. Consider, for example, the task of finding the smallest CIFAR classifier that achieves a target accuracy. Although the objective is easy to state, the design space is broad: the agent can explore different architecture families, layer depths and widths, computational blocks, and training recipes, with many possible tradeoffs between accuracy and model size. A single autoresearch run can evaluate hundreds of candidate solutions and continue for multiple days. This scale raises a fundamental question: over such long horizons, does an agent explore the solution space broadly, or does it mainly refine the ideas it selected early on?
+We first examine how solution quality evolves over long autoresearch runs. The score of the best solution found so far tends to plateau within a run. More revealingly, independent runs of the same agent on the same task plateau at substantially different levels, with gaps that persist even after considerable additional compute (Figure [1](#S1.F1)). This suggests that runs may differ not just in how quickly they improve, but in which parts of the solution space they explore. To investigate this possibility, we embed their candidate artifacts in two dimensions based on functional similarity (Figure [1](#S1.F1)). The resulting visualization provides additional evidence: submissions from individual runs tend to remain in localized regions of this space. Continuing the idea descent analogy, we call these regions idea basins. Some runs appear to spend much of their subsequent effort refining solutions in less productive regions rather than discovering the higher-scoring solutions found by other runs. Notably, this localization persists despite periodic compaction of the agents’ conversational histories.
+Can we exploit the variation across independent runs to improve an ongoing run by encouraging it to explore more broadly? To this end, we consider two natural operations that are easy to incorporate into existing autoresearch loops. Forking lets the agent try several candidate continuations and select one based on their scores. Flushing clears the inherited chat history while retaining the accumulated workspace, allowing the continuations to explore with less dependence on earlier reasoning. Our intervention, fork-and-flush, combines these operations periodically: it forks the agent into parallel trajectories that each inherit a copy of the current workspace and begin with a fresh chat context, runs each for a fixed horizon, and continues from the highest-scoring trajectory.
+We evaluate fork-and-flush across 13 long-horizon research and engineering tasks (Table [4](#A2.T4)). Eleven are drawn from Frontier-CS ([Mang et al., 2026](#bib.bib16)) and EdgeBench ([Zhu et al., 2026](#bib.bib3)), spanning problems from polyomino packing and job-shop scheduling to cryptanalysis and inferring a groundwater contaminant source from well readings. The remaining two tasks involve designing a compact CIFAR classifier under an accuracy constraint and optimizing a kernel for a simulated VLIW machine. Individual agent runs last from several hours to multiple days depending on the task. Under an equal compute budget, fork-and-flush outperforms both the single-run and best-of-\(N\) baselines, achieving \(66.0\%\) and \(44.4\%\) relative improvements in min–max normalized average score, respectively. Our artifact embedding also shows broader exploration under fork-and-flush (Figure [2](#S1.F2)), connecting the gains to the idea-basin observation.
+We summarize our key contributions as follows:
+- • 
+We show that long-running autoresearch agents exhibit persistent outcome variance: independent runs on the same task plateau at substantially different scores, with gaps that remain even after considerable additional compute.
+- • 
+We show that a simple intervention, fork-and-flush, improves performance by periodically forking and flushing the chat context while preserving accumulated work. In an evaluation across 13 open-ended tasks, including research and applied engineering challenges with individual runs lasting up to 107 hours, it outperforms single-run and best-of-\(N\) baselines under equal compute budgets.
+- • 
+We develop an embedding of agent artifacts based on functional similarity to study where trajectories search. It reveals localized exploration consistent with idea basins and shows broader movement through this space under fork-and-flush.
+2 Preliminaries: Autoresearch Setup
+Open-ended Research Tasks.
+We evaluate on thirteen diverse open-ended tasks spanning algorithmic optimization, cryptanalysis, scientific inference, and systems engineering (Table [4](#A2.T4)). Nine are drawn from Frontier-CS ([Mang et al., 2026](#bib.bib16)), including four classical algorithmic challenges (polyomino, job-shop, sphere-pack, relay-lay), three AtCoder competitive programming ports (AHC014, p150, p171), one cache optimization research task (LLM-SQL), and one cryptanalysis challenge (LWE-rec). Two tasks come from EdgeBench ([Zhu et al., 2026](#bib.bib3)), targeting groundwater source recovery (Borden-inv) and black-box permutation optimization (order-add). The remaining two are large-budget engineering problems, specifically Anthropic’s public VLIW optimization take-home (kernel) ([Anthropic, 2026](#bib.bib29)) and a custom CIFAR model compression task (tinyCIFAR). Performance is evaluated using verifiable, deterministic metrics tailored to each domain, providing an unbounded signal for continuous improvement. Because these raw scores use task-specific scales, measuring outcome variance and comparing interventions requires multiple independent trajectories on each task. Per-run budgets range from \(6{,}000\) to \(100{,}000\) GitHub Copilot CLI credits, with individual runs lasting from several hours to multiple days. Full task descriptions are provided in Appendix [B](#A2).
+Autoresearch Harness.
+An agent harness enables the interaction between an LLM agent and an isolated container environment ([Falck et al., 2026](#bib.bib35)). In our autoresearch setup ([Karpathy, 2026](#bib.bib6)), the agent’s execution proceeds as a sequence of submission episodes including editing, execution, and evaluation in a loop; within an episode, the agent edits its solver, runs it, and submits for a score as often as it chooses. These episodes terminate upon a self-halting action by the agent or by reaching a predefined token budget. Upon the conclusion of an episode, our autoresearch harness resumes the agent via a short continuation prompt. Across these episodes, both the workspace \(W\), consisting of the files it has produced, and the conversational context \(C\), its accumulated chat history, are strictly preserved, and interventions occur only at episode boundaries. We define a state as \(s_{i}=(W_{i},C_{i})\) and a lineage \(\ell=(s_{0},\dots,s_{t})\) as the trajectory of these states, starting from an empty base state \(s_{0}=(\emptyset,\emptyset)\). At each step, a deterministic grader evaluates the workspace to yield a score \(f(W_{i})\), and we let \(J(\ell)=\max_{i}f(W_{i})\) denote the maximum objective score achieved by this lineage. For a given task with a fixed total compute budget \(B\), measured in compute credits, a fixed function of input/output model tokens (\(100\) credits \(\approx\) US$1), the final result is the maximum score discovered by an autoresearch agent across a long-horizon run \(R=\max_{\ell\in\mathcal{L}}J(\ell)\), where \(\mathcal{L}\) represents the set of all lineages instantiated by the method within budget \(B\). All conditions use the same coding agent, GitHub Copilot CLI (version 1.0.73), with the same tools, prompt, and task workspace.
+3 Idea Basins in Autoresearch
+Persistent Variance. We begin by examining independent autoresearch runs on a single task. Figure [1](#S1.F1) (left) shows the best score found so far by eight runs on p171. Although the runs share the same initial state and underlying model, they plateau for long stretches at substantially different levels. Their final best scores range from 68.3 to 100.0, and the gaps remain wide even after considerable additional compute. The combination of within-run plateaus and persistent between-run variation suggests that the runs differ not just in how quickly they improve, but also in which parts of the solution space they explore. Some appear to spend much of their remaining compute refining less promising approaches without reaching the higher-scoring approaches found by other runs. In Appendix [C](#A3), we provide additional plots demonstrating this wide spread of independent runs on four further tasks.
+Idea Basins. A submission may be a complex program, and its score tells us little about how it relates to other submissions. Can we visualize these relationships to see what an agent explores as its score plateaus? To do so, we ask an LLM to compare artifacts in triplets: given an anchor artifact \(a\) and two candidates \(b\) and \(c\), which candidate takes an approach more similar to \(a\)? We then seek a two-dimensional map that respects these relative comparisons. To construct the triplets, we collect graded submissions, remove exact duplicates by content hash, and subsample up to \(51\) evenly spaced artifacts per run. Before comparison, we rewrite each artifact as a functional specification under a fixed schema. This reduces cues from code syntax and shared scaffolding that might make submissions from the same run look similar for reasons unrelated to their approach. We fit the map using t-distributed stochastic triplet embedding (t-STE) ([van der Maaten and Weinberger, 2012](#bib.bib28)).
+The map captures substantial structure in the LLM’s similarity judgments. Across five mapped tasks, it agrees with \(85\%\) of held-out triplet judgments on average, compared with \(50\%\) for chance and \(56\%\) for a heuristic that knows only which run produced each artifact. Figure [1](#S1.F1) (right) shows the map for p171. Submissions from individual runs tend to concentrate in localized regions, which we call idea basins. The shaded regions show \(k\)-means clusters fitted to baseline artifacts. Later submissions generally remain near the same region, providing a view of the repeated refinement suggested by the score plateaus. To test whether this clustered pattern depends on our choice of t-STE, we repeat the mapping using Soft Ordinal Embedding (SOE) ([Terada and von Luxburg, 2014](#bib.bib4)), achieving a mean held-out agreement of \(0.83\). In addition, the observed clustering of idea basins qualitatively remains the same under SOE, albeit with less sharp boundaries, as described in Appendix [E](#A5). The full mapping pipeline and the validation of both embeddings are detailed in Appendix [F](#A6). In the following sections, we introduce the fork-and-flush intervention and use the same map to show how it helps trajectories move between idea basins.
+4 Escaping Idea Basins via Fork-and-flush
+Problem Setup.
+Open-ended research problems present a combinatorially large solution space, resulting in significant outcome variance across agent trajectories, as empirically shown in Section [3](#S3). This raises a natural question: can we leverage the variance observed across independent runs to help an ongoing trajectory escape its current basin? Committing a global budget \(B\) entirely to a single run (pure exploitation) often leads the agent to settle into one basin early and spend the remaining budget on marginal refinements. Conversely, parallel scaling approaches like best-of-\(N\) ([Snell et al., 2024](#bib.bib5)) represent pure exploration: \(N\) independent runs of budget \(B/N\) sample diverse basins, but the individual runs remain shallow, and the accumulated workspaces of the \(N{-}1\) discarded runs are completely wasted. Interleaved forking provides a natural interpolation between these extremes. A process that never branches is a single run; one that branches exactly once from an empty workspace and terminates is best-of-\(N\). To actively exploit this variance to escape idea basins, we introduce an approach that alternates between parallel sampling and serial execution, driven by two core mechanisms: forking and flushing.
+Forking and Flushing. Our method relies on two underlying mechanisms to escape idea basins. First, forking creates \(K\) parallel agents \(\ell^{1},\dots,\ell^{K}\). Each branch inherits the current lineage and is allocated an exploration budget \(b_{\text{explore}}\). Upon exhausting this budget, the highest-scoring branch \(\ell^{\star}=\arg\max_{k}J(\ell^{k})\) is selected, and the remaining branches are discarded. Forking places \(K\) probes into the search space simultaneously, allowing the selection mechanism to choose between basins rather than refining within just one. Second, flushing retains the accumulated workspace but flushes the conversational context: \((W,C)\to(W,\emptyset)\). A branch that retained \(C\) would carry the parent’s reasoning that tends to re-enter the same local basin. Starting from \((W,\emptyset)\) restores search diversity while preserving the accumulated workspace.
+The Fork-and-flush Algorithm.
+The proposed algorithm alternates between exploration and exploitation on a fixed schedule as shown in Figure [2](#S1.F2). It begins with an initial round of forking from empty workspaces: \(K\) agents each receive \(b_{\text{explore}}\), and the highest-scoring one is selected as the leader. The leader then continues alone until it exhausts an exploitative budget \(b_{\text{exploit}}\). At that trigger point, the algorithm initiates a fork coupled with a flush: \(K\) new parallel agents start from the current workspace \((W_{t},\emptyset)\), and each is granted \(b_{\text{explore}}\). When the round closes, the best branch is selected as the new leader, the others are pruned, and the run continues sequentially from the new trunk. This loop repeats until the global budget \(B\) is exhausted. The run’s final result is the best score found by any agent throughout the trajectory. In Section [5.3](#S5.SS3), we conduct ablation studies to isolate the independent contributions of forking and flushing. We opt for a fixed schedule to trigger fork-and-flush rather than dynamic plateau detection; full details on this design choice and its sensitivity are provided in Appendix [D](#A4).
+|  | single-run |  |  | best-of-4 |  |  | fork-and-flush (ours) |  |  | 
+| task | max | mean | sd | max | mean | sd | max | mean | sd | 
+| Benchmark tasks: 6,000–25,000 credits per run, hours to several days each |  |  |  |  |  |  |  |  |  | 
+| polyomino | 94.31 | 88.56 | 4.95 | 94.66 | 90.73 | 3.90 | \(\mathbf{95.29}\) | \(\mathbf{94.41}\) | 0.64 | 
+| job-shop | 10.36 | 9.66 | 0.87 | 10.27 | 9.91 | 0.24 | \(\mathbf{10.92}\) | \(\mathbf{10.33}\) | 0.59 | 
+| AHC014 | 39.35 | 23.71 | 9.18 | 25.11 | 20.66 | 3.41 | \(\mathbf{105.57}\) | \(\mathbf{57.46}\) | 29.35 | 
+| p150 | 130.80 | 123.47 | 4.90 | 133.25 | 123.47 | 5.99 | \(\mathbf{135.37}\) | \(\mathbf{129.74}\) | 4.43 | 
+| p171 | \(\mathbf{100.20}\) | 84.26 | 13.27 | 99.26 | 88.88 | 8.57 | 98.95 | \(\mathbf{92.79}\) | 3.39 | 
+| sphere-pack | 44.70 | 43.87 | 0.83 | 44.64 | 43.76 | 0.99 | \(\mathbf{45.43}\) | \(\mathbf{44.94}\) | 0.34 | 
+| relay-lay | 72.73 | 72.59 | 0.12 | 72.77 | 72.74 | 0.04 | \(\mathbf{72.82}\) | \(\mathbf{72.81}\) | 0.02 | 
+| LWE-rec | \(\mathbf{158.0}\) | \(\mathbf{155.3}\) | 2.37 | 146.00 | 141.14 | 10.30 | 153.00 | 144.60 | 9.31 | 
+| LLM-SQL | \(\mathbf{27.05}\) | 26.90 | 0.18 | \(\mathbf{27.05}\) | 26.93 | 0.21 | \(\mathbf{27.05}\) | \(\mathbf{27.04}\) | 0.01 | 
+| order-add | 30.29 | 24.60 | 4.45 | 27.23 | 26.23 | 1.16 | \(\mathbf{66.78}\) | \(\mathbf{49.52}\) | 13.60 | 
+| Borden-inv | 79.55 | 64.62 | 18.12 | 86.28 | 76.45 | 9.47 | \(\mathbf{93.90}\) | \(\mathbf{85.85}\) | 5.54 | 
+| Real-world tasks: 31,000–100,000 credits per run, several days each |  |  |  |  |  |  |  |  |  | 
+| kernel | 132.96 | 120.36 | 9.75 | 127.36 | 122.50 | 5.76 | \(\mathbf{142.46}\) | \(\mathbf{135.23}\) | 4.45 | 
+| tinyCIFAR | 0.586 | 0.429 | 0.129 | 0.633 | 0.560 | 0.080 | \(\mathbf{0.682}\) | \(\mathbf{0.572}\) | 0.115 | 
+| min-max normalized avg. | 0.75 | 0.47 | 0.26 | 0.73 | 0.54 | 0.21 | \(\mathbf{0.98}\) | \(\mathbf{0.78}\) | 0.16 | 
+5 Experiments
+5.1 Experimental Setup
+Baselines. We compare our method against two strategies under strictly matched global budgets. The single-run baseline spends the full budget \(B\) sequentially on a single lineage; we execute eight independent single-run baselines per task. The best-of-\(N\) baseline (\(N{=}4\)) distributes the budget equally, allocating \(B/4\) to each of four independent runs and keeping the best final result.
+Evaluation Setup.
+Each task is allocated a fixed per-run compute budget \(B\), as detailed in Table [4](#A2.T4). Within a given task, all conditions utilize the identical underlying agent model: GPT-5.6-terra at high reasoning effort for eleven tasks, and GPT-5.5 at extra-high reasoning effort for kernel and tinyCIFAR. Each task is evaluated across five independent fork-and-flush runs. We report the maximum, mean, and standard deviation of final scores for each task, alongside a min–max normalized average across all thirteen tasks.
+Fork-and-Flush Configuration.
+Every fork-and-flush run in Table [1](#S4.T1) adheres to a fixed forced cadence featuring three fan-outs, removing the need for fragile plateau detection. The run opens with an initial round of \(K{=}4\) agents launched from empty workspaces, selecting the highest-scoring candidate as the leader. Two subsequent fork-and-flush rounds are triggered strictly by budget consumption—at \(33\%\) and \(66\%\) of \(B\). In these rounds, \(K{=}4\) new branches fork from the leader’s accumulated workspace but begin with empty chat contexts. Each branch receives a fixed exploration budget \(b_{\text{explore}}\) of approximately \(0.06B\); the best-performing branch is adopted as the new leader, the others are discarded, and the leader continues serially until the next trigger. We provide a detailed analysis of this schedule design and its hyperparameter sensitivity in Appendix [D](#A4).
+5.2 Main Results
+Table [1](#S4.T1) compares final performance under matched compute budgets. Fork-and-flush achieves a min–max normalized average score of \(0.78\), compared with \(0.47\) for single-run and \(0.54\) for best-of-4, representing relative improvements of \(66.0\%\) and \(44.4\%\), respectively. These gains extend across the task suite: fork-and-flush achieves the highest mean score on 12 of the 13 tasks. Across tasks, its average normalized mean score (\(0.78\)) exceeds even the average normalized maximum score of the single-run baseline (\(0.75\)). Alongside these performance gains, fork-and-flush produces more consistent outcomes on average. The average normalized standard deviation decreases to \(0.16\), compared with \(0.26\) for single-run and \(0.21\) for best-of-4. Relative to single-run, the standard deviation decreases on 10 of the 13 tasks. Variability increases on some tasks, including AHC014 and order-add, where these increases accompany substantial gains in mean score. Their larger raw standard deviations should therefore be interpreted alongside the higher score levels reached. Overall, fork-and-flush combines substantial improvements in average performance with greater consistency across independent runs.
+| Method | Flush | Fork | Norm. avg | 
+|---|---|---|---|
+| Single-run | \(\times\) | \(\times\) | \(0.45\) | 
+| Flushing | ✓ | \(\times\) | \(0.55\) | 
+| Forking | \(\times\) | ✓ | \(\mathit{0.57}\) | 
+| Fork-and-flush | ✓ | ✓ | \(\mathbf{0.71}\) | 
+5.3 Ablations: Impact of Forking and Flushing
+To isolate the contributions of our core mechanisms, we evaluate the impact of forking without flushing the context, and flushing the context without forking across 11 tasks (excluding the two longest-horizon tasks that are expensive to run). In Table [2](#S5.T2), we report the performance of all four methods as the min–max normalized final score at the task’s budget, averaged across all tasks. The flush-only and fork-only ablations achieve scores of 0.55 and 0.57 respectively, compared to 0.45 for the standard single-run baseline, and 0.71 for the full fork-and-flush method. This demonstrates that while both individual components outperform the single-run baseline, neither mechanism alone accounts for the full effect. In addition, forking provides a slightly larger improvement than flushing. The complete per-task breakdown is provided in Appendix [A](#A1).
+6 Analysis
+6.1 Visualizing Escaping Idea Basins
+Visualizing the Jump.
+We place the artifacts of fork-and-flush runs on the same geometric maps built in Section [3](#S3), embedded jointly with the single-run baselines so that both share an embedding space, enabling fork-and-flush to be interpreted as a spatial trajectory across the solution landscape. As illustrated in Figure [3](#S6.F3) (left), we overlay the mid-run fan-out of a fork-and-flush trajectory on the polyomino task. While leader edits remain highly localized, the intervention successfully forces exploration: branches \(b_{1}\), \(b_{2}\), and \(b_{4}\) remain trapped in the basin of the branch point, but the fresh-context probe \(b_{3}\) successfully jumps into a new region (Basin 3). This probe is selected by the scoring mechanism, allowing the run to escape the local optimum and finish at \(93.9\). We provide additional plots showing these jumps in Appendix [H](#A8).
+Quantifying the Jump. To quantify the jump, we report distances in units of the median single-run step, defined as the median displacement between consecutive submissions across all single-run baselines. On polyomino, after the first quarter of the budget, no single run moves more than \(4.4\) units between consecutive submissions, and the fork-and-flush leader’s own sequential steps stay within \(2.9\) units. At the flush fan-out (triggered at \(71\%\) of the budget), the winning branch (\(b_{3}\)) moves \(43\) units in its very first submission after the flush, definitively landing in a different basin; the three rejected branches each move at most one unit and stay where they forked. Once established in the new basin, the leader’s refinement steps drop back to the single-run scale (at most \(5.2\) units, an order of magnitude below the jump).
+Robustness of the Jump. We provide an additional analysis using SOE to fit the embedding space in Appendix [E](#A5). In our analysis, the qualitative pattern remains identical, confirming the jump is a genuine artifact of our search strategy and robust to the triplet embedding method. In particular, under SOE, no single run moves more than \(4.1\) units between consecutive submissions. At the flush fan-out, the three rejected branches each move under one unit, while the winning branch moves \(10.1\) units in its first submission after the flush into a different cluster; its subsequent steps then fall back inside the single-run range.
+6.2 What Drives Variance?
+Variance at the capability frontier. Our hypothesis is that outcome variance is driven by task difficulty relative to the agent’s capacity. When a task sits far below the agent’s ability, every run finds the same optimal solution and the spread collapses. Conversely, when a task sits far above its capacity, every run fails in the same way, collapsing the spread again. It is only in the intermediate regime—at the exact boundary of what the agent can achieve—that runs make partial, divergent progress, maximizing variance. A natural assumption is that as foundational models scale and become stronger, they will solve current tasks reliably and this variance will vanish. However, we expect that as models scale, the frontier of relevant research tasks will simply scale with them. To empirically test this core hypothesis—that variance peaks at the boundary of capability—we require a domain where difficulty can be dialed continuously, evaluated cheaply, and repeated enough to estimate spread with statistical confidence. Since our thirteen long-horizon research tasks do not permit this, we use MAX-3-SAT on random 3-CNF formulas: the number of variables sets the difficulty, random assignment and a strong classical solver bracket the attainable range, and freshly generated instances successfully rule out memorization.
+Empirical evidence from MaxSAT problem.
+We run three open-weight models (Qwen3.5-4B, 9B, and 27B) on random 3-CNF formulas with \(V\) variables, \(V\) from 10 to \(100{,}000\), and measure the number of unsatisfied clauses \(u\) of the best assignment each run produces. We normalize this raw quantity into an attainment metric \(h\), representing the fraction of the performance gap closed between random guessing and a strong classical solver. Specifically, \(h=(u_{\text{random}}-u_{\text{agent}})/(u_{\text{random}}-u_{\text{ref}})\), where \(u_{\text{random}}\approx 6V/8\) is the expected number of unsatisfied clauses for a uniformly random assignment, and \(u_{\text{ref}}\) is the minimum \(u\) found by a multi-restart WalkSAT baseline. Thus, \(h=0\) indicates performance equivalent to random guessing, while \(h=1\) indicates matching the WalkSAT reference ceiling. We aggregate independent runs into evaluation cells defined by a specific (model, \(V\)) pair, with each cell containing between 8 and 32 runs that differ only in their initial seed (32 at most sizes, 8 at the smallest and largest formulas). For each cell, we compute the mean attainment \(a\), and the execution spread \(s\), defined as the population standard deviation. To quantify the uncertainty in \(s\) arising from sample size, we compute \(95\%\) confidence intervals via bootstrapping, resampling the runs within each cell with replacement \(2{,}000\) times. As shown in Figure [4](#S6.F4), each point represents a single (model, problem size) pair, plotted according to the fraction of the reference solver’s performance the model attains (horizontal axis) and the variance among its runs (vertical axis). Because difficulty is measured relative to model capability rather than absolute problem size, the three models trace a unified curve despite operating at different scales. Variance peaks when a model achieves roughly half of the reference performance, collapsing at both the trivial and intractable extremes. Fitting a least-squares quadratic reveals a strict inverted-U relationship between attainment and spread, peaking at \(a=0.497\). This suggests that the observed variance stems from genuine exploration of distinct idea basins, providing the empirical signal that our fork-and-flush algorithm exploits.
+7 Related Work
+Autoresearch and Self-Improving Agents.
+Long-horizon agents ([Wijk et al., 2024](#bib.bib30); [Chan et al., 2025](#bib.bib31)) are increasingly used to drive open-ended research, from automated paper writing ([Lu et al., 2024](#bib.bib1); [Schmidgall et al., 2025](#bib.bib32)) to evolutionary program search ([Romera-Paredes et al., 2024](#bib.bib27); [Novikov et al., 2025](#bib.bib7); [Lange et al., 2025](#bib.bib33)) and autonomous experimentation ([Boiko et al., 2023](#bib.bib36); [Swanson et al., 2025](#bib.bib37); [Gottweis et al., 2025](#bib.bib38); [Huang et al., 2025](#bib.bib39)). In fact, the research loop proposed by The AI Scientist ([Lu et al., 2024](#bib.bib1); [Yamada et al., 2025](#bib.bib2)) automates the idea–experiment–writeup cycle, while AlphaEvolve ([Novikov et al., 2025](#bib.bib7)) evolves programs against a grader over time. Beyond a single run, LLM agents typically improve across tasks either by accumulating experience ([Shinn et al., 2023](#bib.bib8); [Wang et al., 2024](#bib.bib9); [Zhou et al., 2025](#bib.bib10)) or by distilling their own successful trajectories back into the model parameters ([Zelikman et al., 2022](#bib.bib11); [Singh et al., 2024](#bib.bib12); [Qu et al., 2024](#bib.bib13); [Falck et al., 2026](#bib.bib35)). Fork-and-flush is orthogonal to both paradigms as it improves a single run within one task, with no memory carried across tasks and no weight updates. The only state that propagates across branches is the workspace, as the intervention exists precisely to clear the conversational context. To evaluate LLM agents in these long-horizon settings, benchmarks such as Terminal-Bench ([Merrill et al., 2026](#bib.bib14)) and Terminal-Bench-Science ([Terminal-Bench-Science Team, 2026](#bib.bib15)) grade end-to-end terminal workflows on a strict pass/fail basis, while Frontier-CS ([Mang et al., 2026](#bib.bib16)), EdgeBench ([Zhu et al., 2026](#bib.bib3)), and DiscoGen ([Goldie et al., 2026](#bib.bib34)) pose open-ended algorithmic problems with graded, unbounded scores.
+Test-Time Compute and Population-Based Search.
+Go with the winners ([Aldous and Vazirani, 1994](#bib.bib19)) keeps a population of
+searchers and periodically replaces its weak members with copies of strong
+ones. Population Based Training ([Jaderberg et al., 2017](#bib.bib18)) applies the same
+exploit-and-perturb cycle to neural-network training, where a worker copies a
+better worker’s weights and then jitters its hyperparameters. Fork-and-flush
+is this scheme over agents: the state copied is a workspace of files rather
+than a parameter vector, and the perturbation is discarding the conversation
+that produced those files — the fork must re-derive its intent from the
+artifacts, which is what lets it land in a different basin. Successive
+halving and racing algorithms ([Karnin et al., 2013](#bib.bib21)) likewise spend rounds
+of budget on a shrinking survivor set, which is our selection step without
+the shared trunk; Go-Explore ([Ecoffet et al., 2021](#bib.bib22)) archives promising
+states and returns to them before exploring, the same
+return-to-the-best-workspace move our fan-out makes. West-of-N utilizes the best and worst candidates ([Pace et al., 2024](#bib.bib17)) to generate preference pairs for self-improving reward models. In tree search, MCTS
+([Kocsis and Szepesvári, 2006](#bib.bib20)) grows a tree by expanding the nodes its interim
+value estimates favour; Tree of Thoughts ([Yao et al., 2023](#bib.bib23)) and Language
+Agent Tree Search ([Zhou et al., 2024](#bib.bib24)) bring that machinery to LLMs at the
+granularity of individual thoughts or actions. Fork-and-flush searches the
+same way but coarser: a node is a whole agent episode-chain over a workspace,
+expansion is a context-cleared fork, and the value estimate is the task’s own
+grader — the granularity at which long-horizon runs actually produce
+scores. Finally, sampling-based test-time scaling — AlphaCode’s filtered
+mass generation ([Li et al., 2022](#bib.bib25)), repeated sampling
+([Brown et al., 2024](#bib.bib26); [Snell et al., 2024](#bib.bib5)), and evolutionary program search
+([Romera-Paredes et al., 2024](#bib.bib27)) — resamples complete solutions from scratch,
+where fork-and-flush resamples continuations of the best partial work so far.
+Plateaus in Long Reasoning. Related forms of stalled exploration have been observed in long-chain reasoning models. [Gema et al. (2025)](#bib.bib40) construct tasks on which extending a model’s reasoning reduces rather than improves accuracy. [Marjanović et al. (2025)](#bib.bib42) find that DeepSeek-R1 repeatedly revisits previously explored problem formulations, obstructing further exploration, while [Pipis et al. (2026)](#bib.bib41) study a more extreme form of repetition in which reasoning models fall into textual loops. Closest to our setting, [Wen et al. (2025)](#bib.bib43) describe tunnel vision: early mistakes commit a model to a suboptimal reasoning path, and recovery becomes less likely as the erroneous prefix grows.
+Our work complements these studies by examining the analogous phenomenon in long-running autoresearch agents, which repeatedly modify executable artifacts and receive external feedback over hours to several days. In standard long-chain reasoning, each new token is conditioned on the preceding reasoning trace, continually exposing the model to its earlier choices. Our agents, however, periodically compact their conversational histories, replacing the full trace with a summary of the progress so far. One might expect this compaction to weaken dependence on the earlier reasoning path and reopen exploration. We find that it is insufficient: trajectories still plateau at substantially different levels and remain localized in idea basins. Fork-and-flush goes further by starting parallel continuations with fresh chat contexts while preserving the accumulated workspace.
+8 Conclusion
+In this work, we introduced fork-and-flush, a periodic intervention designed to help autonomous research agents escape localized regions of the solution space, which we term idea basins. We demonstrated that as agents tackle open-ended problems by repeatedly proposing, evaluating, and refining candidate solutions, independent runs often plateau at substantially different scores—a high-variance bottleneck that persists even with considerable additional compute. To overcome this, fork-and-flush forks the agent into parallel trajectories that each inherit a copy of the accumulated workspace but begin with fresh chat contexts. After exploring for a fixed horizon, the agent continues from the highest-scoring branch. Across thirteen long-horizon research and engineering tasks under an equal compute budget, fork-and-flush consistently outperforms serial baselines, demonstrating that fork-and-flush provides a practical path for scaling test-time compute in autonomous agents. We present exciting avenues for future work. First, the substantial computational expense and time required to evaluate frontier LLMs on long-horizon agentic workflows inherently limit the number of tasks we could practically include in this study. Second, the branched trajectories currently operate independently without coordination. Future work will investigate inter-agent communication and role specialization across branches, as well as scaling our evaluations to a broader suite of tasks and newly released frontier models.
+Acknowledgments
+This work was done during the first authors’ internships at Microsoft Research.
+References
+- 
+“Go with the winners” algorithms.
+In Proceedings of the 35th Annual Symposium on Foundations of
+Computer Science (FOCS),
+pp. 492–501.
+Cited by: [§7](#S7.p2.1).
+- 
+Original performance engineering take-home.
+Note: [https://github.com/anthropics/original_performance_takehome](https://github.com/anthropics/original_performance_takehome)Kernel-optimization exercise on a simulated VLIW machine
+Cited by: [Table 4](#A2.T4.4.7.2.1.1), [§2](#S2.p1.1).
+- 
+Autonomous chemical research with large language models.
+Nature 624, pp. 570–578.
+Cited by: [§7](#S7.p1.1).
+- 
+Large language monkeys: scaling inference compute with repeated sampling.
+arXiv preprint arXiv:2407.21787.
+Cited by: [§7](#S7.p2.1).
+- 
+MLE-bench: evaluating machine learning agents on machine learning engineering.
+In International Conference on Learning Representations,
+Cited by: [§7](#S7.p1.1).
+- 
+First return, then explore.
+Nature 590, pp. 580–586.
+Cited by: [§7](#S7.p2.1).
+- 
+Training ai scientists to replicate research.
+arXiv preprint arXiv:2608.13331.
+Cited by: [§2](#S2.p2.1), [§7](#S7.p1.1).
+- 
+Inverse scaling in test-time compute.
+Transactions on Machine Learning Research.
+Note: arXiv:2507.14417
+Cited by: [§7](#S7.p3.1).
+- 
+DiscoGen: procedural generation of algorithm discovery tasks in machine learning.
+arXiv preprint arXiv:2603.17863.
+Cited by: [§7](#S7.p1.1).
+- 
+Towards an AI co-scientist.
+arXiv preprint arXiv:2502.18864.
+Cited by: [§7](#S7.p1.1).
+- 
+Biomni: a general-purpose biomedical AI agent.
+bioRxiv.
+Cited by: [§7](#S7.p1.1).
+- 
+Population based training of neural networks.
+arXiv preprint arXiv:1711.09846.
+Cited by: [§7](#S7.p2.1).
+- 
+Almost optimal exploration in multi-armed bandits.
+In International Conference on Machine Learning (ICML),
+Cited by: [§7](#S7.p2.1).
+- 
+Autoresearch.
+Note: [https://github.com/karpathy/autoresearch](https://github.com/karpathy/autoresearch)GitHub repository, March 2026
+Cited by: [§1](#S1.p1.1), [§2](#S2.p2.1).
+- 
+Bandit based Monte-Carlo planning.
+In European Conference on Machine Learning (ECML),
+Cited by: [§7](#S7.p2.1).
+- 
+Towards robust agentic CUDA kernel benchmarking, verification, and optimization.
+arXiv preprint arXiv:2509.14279.
+Cited by: [§7](#S7.p1.1).
+- 
+Competition-level code generation with AlphaCode.
+Science 378 (6624), pp. 1092–1097.
+Cited by: [§7](#S7.p2.1).
+- 
+The AI scientist: towards fully automated open-ended scientific discovery.
+arXiv preprint arXiv:2408.06292.
+Cited by: [§7](#S7.p1.1).
+- 
+FrontierCS: evolving challenges for evolving intelligence.
+In International Conference on Machine Learning (ICML),
+Note: arXiv:2512.15699
+Cited by: [§1](#S1.p1.1), [§1](#S1.p4.1), [§2](#S2.p1.1), [§7](#S7.p1.1).
+- 
+DeepSeek-R1 thoughtology: let’s think about LLM reasoning.
+Transactions on Machine Learning Research.
+Note: arXiv:2504.07128
+Cited by: [§7](#S7.p3.1).
+- 
+Terminal-bench: benchmarking agents on hard, realistic tasks in command line interfaces.
+arXiv preprint arXiv:2601.11868.
+Note: [https://www.tbench.ai](https://www.tbench.ai) Cited by: [§1](#S1.p1.1), [§7](#S7.p1.1).
+- 
+AlphaEvolve: a coding agent for scientific and algorithmic discovery.
+arXiv preprint arXiv:2506.13131.
+Cited by: [§1](#S1.p1.1), [§7](#S7.p1.1).
+- 
+West-of-n: synthetic preference generation for improved reward modeling.
+arXiv preprint arXiv:2401.12086.
+Cited by: [§7](#S7.p2.1).
+- 
+Wait, wait, wait… why do reasoning models loop?.
+In International Conference on Machine Learning (ICML),
+Note: arXiv:2512.12895
+Cited by: [§7](#S7.p3.1).
+- 
+Recursive introspection: teaching language model agents how to self-improve.
+Advances in Neural Information Processing Systems (NeurIPS).
+Note: arXiv:2407.18219
+Cited by: [§7](#S7.p1.1).
+- 
+Mathematical discoveries from program search with large language models.
+Nature 625, pp. 468–475.
+Cited by: [§7](#S7.p1.1), [§7](#S7.p2.1).
+- 
+Agent laboratory: using LLM agents as research assistants.
+arXiv preprint arXiv:2501.04227.
+Cited by: [§7](#S7.p1.1).
+- 
+Reflexion: language agents with verbal reinforcement learning.
+In Advances in Neural Information Processing Systems (NeurIPS),
+Note: arXiv:2303.11366
+Cited by: [§7](#S7.p1.1).
+- 
+Beyond human data: scaling self-training for problem-solving with language models.
+Transactions on Machine Learning Research.
+Note: arXiv:2312.06585
+Cited by: [§7](#S7.p1.1).
+- 
+Scaling LLM test-time compute optimally can be more effective than scaling model parameters.
+arXiv preprint arXiv:2408.03314.
+Cited by: [§4](#S4.p1.1), [§7](#S7.p2.1).
+- 
+The virtual lab of AI agents designs new SARS-CoV-2 nanobodies.
+Nature.
+Cited by: [§7](#S7.p1.1).
+- 
+Local ordinal embedding.
+In Proceedings of the 31st International Conference on Machine Learning,
+PMLR, Vol. 32, pp. 847–855.
+Cited by: [Appendix E](#A5.p1.1), [§3](#S3.p3.1).
+- 
+Terminal-Bench-Science: Evaluating AI agents on research workflows across scientific domains.
+External Links: [Document](https://dx.doi.org/10.5281/zenodo.22110253), [Link](https://github.com/harbor-framework/terminal-bench-science) Cited by: [§1](#S1.p1.1), [§7](#S7.p1.1).
+- 
+Stochastic triplet embedding.
+In IEEE International Workshop on Machine Learning for Signal Processing (MLSP),
+pp. 1–6.
+Cited by: [Appendix E](#A5.p1.1), [Appendix F](#A6.p5.1), [§3](#S3.p2.1).
+- 
+Voyager: an open-ended embodied agent with large language models.
+Transactions on Machine Learning Research.
+Note: arXiv:2305.16291
+Cited by: [§7](#S7.p1.1).
+- 
+ParaThinker: native parallel thinking as a new paradigm to scale LLM test-time compute.
+arXiv preprint arXiv:2509.04475.
+Cited by: [§7](#S7.p3.1).
+- 
+RE-Bench: evaluating frontier AI R&D capabilities of language model agents against human experts.
+arXiv preprint arXiv:2411.15114.
+Cited by: [§7](#S7.p1.1).
+- 
+The AI scientist-v2: workshop-level automated scientific discovery via agentic tree search.
+arXiv preprint arXiv:2504.08066.
+Cited by: [§7](#S7.p1.1).
+- 
+Tree of thoughts: deliberate problem solving with large language models.
+In Advances in Neural Information Processing Systems (NeurIPS),
+Cited by: [§7](#S7.p2.1).
+- 
+STaR: bootstrapping reasoning with reasoning.
+In Advances in Neural Information Processing Systems (NeurIPS),
+Note: arXiv:2203.14465
+Cited by: [§7](#S7.p1.1).
+- 
+Language agent tree search unifies reasoning, acting, and planning in language models.
+In International Conference on Machine Learning (ICML),
+Cited by: [§7](#S7.p2.1).
+- 
+Memento: fine-tuning LLM agents without fine-tuning LLMs.
+arXiv preprint arXiv:2508.16153.
+Cited by: [§7](#S7.p1.1).
+- 
+EdgeBench: unveiling scaling laws of learning from real-world environments.
+arXiv preprint arXiv:2607.05155.
+Cited by: [§1](#S1.p4.1), [§2](#S2.p1.1), [§7](#S7.p1.1).
+Appendix A Ablation: Full Results
+Table [3](#A1.T3) is the per-task form of the ablation summarised in
+Section [5.3](#S5.SS3). Each entry is the mean final score of that
+method at the task’s budget, on the task’s own scale, so the four columns
+are directly comparable within a row but not across rows.
+| task | single-run | flush only | fork only | fork-and-flush | 
+|---|---|---|---|---|
+| polyomino | \(88.56\) | \(85.91\) | \(\mathit{90.74}\) | \(\mathbf{94.41}\) | 
+| job-shop | \(9.66\) | \(10.00\) | \(\mathbf{10.43}\) | \(\mathit{10.33}\) | 
+| AHC014 | \(23.71\) | \(23.04\) | \(\mathit{24.59}\) | \(\mathbf{57.46}\) | 
+| p150 | \(123.47\) | \(\mathbf{160.80}\) | \(128.57\) | \(\mathit{129.74}\) | 
+| p171 | \(84.26\) | \(79.73\) | \(\mathit{86.68}\) | \(\mathbf{92.79}\) | 
+| sphere-pack | \(43.87\) | \(43.74\) | \(\mathit{44.36}\) | \(\mathbf{44.94}\) | 
+| relay-lay | \(72.61\) | \(\mathit{72.80}\) | \(72.79\) | \(\mathbf{72.81}\) | 
+| LWE-rec | \(\mathbf{155.3}\) | \(\mathit{148.4}\) | \(147.0\) | \(144.6\) | 
+| LLM-SQL | \(26.90\) | \(\mathit{27.01}\) | \(26.93\) | \(\mathbf{27.04}\) | 
+| order-add | \(24.60\) | \(\mathit{40.73}\) | \(30.09\) | \(\mathbf{49.52}\) | 
+| Borden-inv | \(59.92\) | \(65.85\) | \(\mathit{78.02}\) | \(\mathbf{80.24}\) | 
+| normalized avg. (5 original tasks) | \(0.37\) | \(0.41\) | \(\mathit{0.47}\) | \(\mathbf{0.63}\) | 
+| normalized avg. (all 11 tasks) | \(0.45\) | \(0.55\) | \(\mathit{0.57}\) | \(\mathbf{0.71}\) | 
+Appendix B Task descriptions
+Table [4](#A2.T4) lists every task in the study with its source, the
+problem the agent optimizes, the score the judge reports, and the credit
+budget. Sources are Frontier-CS (FCS; the algorithmic track is cited by
+problem number, plus its 2.0 and research tracks), EdgeBench, Anthropic’s
+public performance-engineering take-home, or a custom task written for this
+study. Every task has eight independent single-run baselines
+and five fork-and-flush seeds (four on tinyCIFAR). A credit
+meters model tokens, not wall-clock.
+| task | source | problem | score | credits | hours | 
+|---|---|---|---|---|---|
+| polyomino | FCS algo 0 | Pack a given set of polyominoes into a bounding rectangle of minimal area (C++ heuristic). | Ratio to a reference solution. | 25k | 29 | 
+| job-shop | FCS algo 46 | Job-shop scheduling: order operations on machines to minimize the makespan. | Ratio to known bounds. | 10k | 15 | 
+| AHC014 | FCS algo 159 | Port of AtCoder Heuristic Contest 014. | Ratio to a reference solution. | 10k | 68 | 
+| p150 | FCS algo 150 | Port of an AtCoder Heuristic Contest problem. | Ratio to a reference solution. | 10k | 70 | 
+| p171 | FCS algo 171 | Port of an AtCoder Heuristic Contest problem. | Ratio to a reference solution. | 10k | 80 | 
+| kernel | Anthropic take-home ( [Anthropic, 2026](#bib.bib29)) | Anthropic’s performance-engineering take-home: optimize a kernel for a simulated VLIW machine; a deterministic simulator counts cycles. | Simulated-cycle score, higher is better. | 100k | 64 | 
+| tinyCIFAR | custom | Train a CIFAR classifier that trades test accuracy against compressed model size (GPU). | Merit in \((0,1)\): an accuracy gate times a log-size term, read on a sealed test split. | 31k | 45 | 
+| sphere-pack | FCS algo 48 | Pack equal spheres in a cube (continuous geometry). | Normalized between a grid baseline and the Kepler bound. | 6k | 20 | 
+| relay-lay | FCS algo 307 | Mobile relay layout: \(K\)-hub facility location with up to \(2{\times}10^{5}\) clients. | \(10^{6}\,C_{\mathrm{base}}/(C_{\mathrm{base}}+C)\), unclipped above the baseline. | 6k | 6 | 
+| LWE-rec | FCS 2.0 | Cryptanalysis: recover the secret of 200 structured-LWE instances drawn from ten families of graded difficulty. | Number of instances solved. | 6k | 83 | 
+| LLM-SQL | FCS research | Reorder the rows and columns of an LLM-over-SQL workload to maximize the prefix KV-cache hit rate (deterministic objective). | \((\mathrm{hit}-\mathrm{base})/(1-\mathrm{base})\); 100 is a perfect hit rate. | 6k | 23 | 
+| order-add | EdgeBench (optimization) | Black-box permutation optimization over \(m{=}1000\) elements against a cost oracle (statistical experimental design); no statement to pattern-match. | Official judge score from the rescaled cost, at most 100. | 6k | 107 | 
+| Borden-inv | EdgeBench (scientific) | Scientific inverse problem: recover a 3D groundwater contaminant source from well readings; the agent writes both the forward model and the inverter. | Tier-gated judge score. | 10k | 5 | 
+Appendix C Variance Analysis Plots
+Figure [5](#A3.F5) illustrates eight independent single-run trajectories across four embedded tasks. On high-variance problems such as polyomino (final scores \(82.2\)–\(94.9\)), p150 (\(109.1\)–\(137.1\)), and AHC014 (\(7.8\)–\(59.8\)), the runs clearly separate into distinct basins that track their final performance. For instance, on AHC014, the two highest-scoring runs share a single basin while all remaining runs fall into another. In contrast, on a low-variance task like job-shop (\(7.2\)–\(10.8\)), the geometric structure is weak: the two basins overlap heavily, and runs freely move between them. Because this basin structure is poorly defined, we draw no basin-based claims from job-shop.
+Appendix D Schedule Design
+Fixed Schedule vs. Plateau Detection. The natural trigger for a fork-and-flush round is a performance plateau. However, early development runs using a stall-clock trigger rarely executed the intervention: across five tasks, \(15\) of \(25\) plateau-triggered runs exhausted their budget before the stall criteria were met. Dynamic triggers proved practically difficult to tune for three reasons. First, credit costs per step vary widely (e.g., \(6.1\times\) variance across tinyCIFAR runs), meaning a fixed credit threshold detects a stall prematurely in some runs and entirely misses it in others. Second, tasks often exhibit micro-improvements that restart the stall clock. This allows runs creeping upward within a narrow local basin to evade detection—the exact failure mode fork-and-flush is designed to fix. Third, requiring a sufficiently long stall window (e.g., \(20\%\) of the budget) to ignore noise pushes the first intervention too late in the trajectory. A fixed schedule resolves all three issues by guaranteeing the intervention fires, standardizing the branch spend, and removing task-dependent tolerance tuning.
+Sensitivity to Cadence.
+While we did not systematically sweep all schedule parameters, our development runs span three configurations (Table [5](#A4.T5)): the plateau trigger, a single forced round at \(50\%\) of the budget, and our main setting of two forced rounds at \(33\%\) and \(66\%\). Both fixed schedules outperform the single-run baseline on all six tested tasks, with neither strictly dominating (the two-round schedule wins on four tasks, the one-round on two). The plateau trigger performed poorly on AHC014 and p171 primarily because it never fired. Though sample sizes are small, this suggests the performance gains are robust to the exact cadence of the fixed schedule.
+Sensitivity to Branch Count.
+We set the branch count to \(K{=}4\). Because the branch spend per round is fixed at \(K\,b_{\text{explore}}\), increasing \(K\) requires either drastically reducing the exploration budget per branch or running fewer rounds entirely. We found that \(K{=}4\) strikes a practical balance, allocating roughly \(6\%\) of the total budget to each branch—enough depth to meaningfully develop a new idea—while preserving enough global budget for multiple rounds of intervention. The minimal case of \(K{=}1\) corresponds to the flush-only ablation discussed in Section [5.3](#S5.SS3).
+| task | single-run | plateau trigger | one round at 50% | rounds at 33/66% | 
+|---|---|---|---|---|
+| polyomino | \(87.54\) | \(93.84\) (1) | \(\mathbf{94.43}\) (1) | \(93.82\) (6) | 
+| job-shop | \(9.23\) | \(\mathbf{11.44}\) (1) | \(10.24\) (2) | \(10.99\) (2) | 
+| AHC014 | \(21.32\) | \(21.30\) (3) | \(26.98\) (4) | \(\mathbf{40.97}\) (5) | 
+| p150 | \(118.24\) | \(126.72\) (4) | \(\mathbf{145.13}\) (2) | \(135.52\) (7) | 
+| p171 | \(83.70\) | \(80.16\) (4) | \(85.83\) (5) | \(\mathbf{89.11}\) (11) | 
+| kernel | \(120.36\) | – | \(132.11\) (5) | \(\mathbf{136.77}\) (2) | 
+Appendix E Robustness of the Embedding Space
+In Section [6.1](#S6.SS1), we visualized idea basins using t-Distributed Stochastic Triplet Embedding (t-STE) ([van der Maaten and Weinberger, 2012](#bib.bib28)). To verify the robustness of our geometric findings, we refit the exact same LLM-judged triplets using Soft Ordinal Embedding (SOE) ([Terada and von Luxburg, 2014](#bib.bib4)). Figure [6](#A5.F6) presents a direct side-by-side comparison of the two embeddings for the polyomino task. The top row reproduces the t-STE map and step distances from Figure [3](#S6.F3), while the bottom row shows the SOE refit aligned to the same frame.  Crucially, the qualitative behavior of the fork-and-flush intervention remains identical under the SOE geometry. The rejected branches (\(\times\)) remain trapped within the local basin of the fork point, moving less than one median single-run step. Conversely, the selected branch successfully jumps to a different idea basin. While the absolute numerical magnitude of the jump scales down under SOE (from \(43\times\) the median single-run step under t-STE to \(10\times\) under SOE), it remains definitively significant: the jump is still more than twice the largest step any single-run baseline ever takes (\(4.1\) units). This confirms that the ability of fork-and-flush to escape localized plateaus is a genuine property of the search strategy that is robust to the choice of embedding algorithm.
+Appendix F Artifact Embedding Methodology
+Each idea-space map is produced in four stages:
+(i) Subsampling. From every trajectory we retain the exact graded submission artifacts, deduplicate identical files by content hash, and select a fixed number of evenly spaced snapshots per run in order of first occurrence (\(51\) per run on every mapped task).
+(ii) Specification. An LLM rewrites each sampled submission into a canonical functional specification under a fixed section schema with an exhaustive parameter table. The rewrite strips coding syntax and stylistic signal—formatting, naming, how the file is organized—while preserving the algorithm, data structures, and every numeric choice. This ensures that a competent engineer who has never seen the file could reimplement it from the specification alone and obtain materially the same behavior and score. Judging specifications rather than raw source keeps two artifacts edited from a common ancestor from being called similar merely because they read alike.
+(iii) Triplet Comparison. An LLM judge answers ordinal queries—is anchor \(a\)’s approach closer to \(b\)’s or to \(c\)’s?—over the specifications, mixing within-run triplets with cross-condition anchors balanced across conditions. The judge is the same LLM deployment that wrote the specifications, so a single model accounts for every generated token in the pipeline, and each map is built from \(6{,}375\) judgments (\(5{,}610\) on p150).
+(iv) Embedding.
+We fit a two-dimensional t-STE embedding ([van der Maaten and Weinberger, 2012](#bib.bib28)) to the judged rankings, keeping the best of eight random restarts by training agreement. One in five judged triplets per anchor is held out and never used in fitting; Table [6](#A6.T6) reports agreement on those held-out judgments.
+|  |  | t-STE |  | SOE |  | 
+|---|---|---|---|---|---|
+| task | judged triplets | train | held out | train | held out | 
+| polyomino | 6,375 | 0.90 | 0.87 | 0.90 | 0.85 | 
+| AHC014 | 6,375 | 0.90 | 0.87 | 0.91 | 0.86 | 
+| p171 | 6,375 | 0.88 | 0.85 | 0.88 | 0.84 | 
+| p150 | 5,610 | 0.87 | 0.83 | 0.86 | 0.80 | 
+| job-shop | 6,375 | 0.86 | 0.81 | 0.85 | 0.79 | 
+| mean |  | 0.88 | 0.85 | 0.88 | 0.83 | 
+Validation. Each map is fit on \(80\%\) of the judged triplets and scored
+on the remaining \(20\%\); agreement (Table [6](#A6.T6)) is the
+fraction of held-out judgments the two-dimensional coordinates reproduce, with
+chance at \(0.50\). The t-STE maps reach \(0.81\)–\(0.87\) (mean \(0.85\)) with a
+train–test gap of \(0.03\)–\(0.05\), so they generalise rather than memorise.
+Refitting the same triplets with SOE, whose hinge loss does not inflate the
+gaps between clusters, gives \(0.79\)–\(0.86\) (mean \(0.83\)): a slightly weaker
+fit, so t-STE is used for the figures and SOE as the check that the
+displacements are not artefacts of its
+heavy-tailed kernel. Agreement is lowest on job-shop, the task with the least
+outcome variance and the weakest basin structure. Run membership alone
+(“artifacts from the same run are closer”) reproduces only \(0.52\)–\(0.60\) of
+held-out judgments, so the maps capture more than which run an artifact came
+from.
+Appendix G Fork-and-flush trajectories
+Figure [7](#A7.F7) shows the trajectories of the fork-and-flush runs in Table [1](#S4.T1), one row per task. Each panel plots score against credits up to the task’s budget, the point at which the table reads it. The grey band is the \(p_{10}\)–\(p_{90}\) range of the same single-run baselines the table uses, and the grey line is their median. The blue line is the run’s best score so far. Each branch is drawn in its own colour from the score it inherited at the fork, and every graded submission is a dot. A star marks the branch adopted when a round closes, a cross each branch that was dropped, and the shaded columns span the branch rounds. On kernel and tinyCIFAR, some runs use a single forced round at \(50\%\) of the budget (Appendix [D](#A4)).
+Appendix H Trajectories Across Idea Basins
+To further illustrate how the intervention navigates the solution space, Figure [8](#A8.F8) visualizes nine distinct fork-and-flush trajectories mapped onto their respective task’s idea basins. The embeddings reveal three distinct search behaviors. First, during the opening round, initial probes frequently scatter across multiple basins (e.g., p171-fd2, ahc014-f2), allowing the agent to evaluate fundamentally different structural approaches before committing. Second, later in the run, flushes can trigger a definitive jump into a new basin (as seen in poly-d4), enabling the run to successfully escape a local optimum. Finally, even when the flush does not induce a basin jump—and both rejected and selected branches remain localized near the fork (e.g., ahc014-t1)—the intervention still drives robust local refinement, consistently driving the trajectory to final scores that surpass the single-run baselines.
+Appendix I Prompts
+I.1 Agent prompts
+Every message an agent receives is either the task’s own packaging (its statement, its AGENT.md workflow notes and its submission script) or one of the texts below, which we wrote. No message in any condition states the credit budget or how much of it remains; agents are never told how much compute they have. The episode messages are logged verbatim with every run.
+Continuation message.. Sent at the start of every episode after the first, in every condition (single-run, best-of-4 draws, fork-and-flush trunks and branches), whenever the harness resumes a session:
+Branch directive.. Appended to the first message of a directed branch in a fork-and-flush round. In each round two of the \(K\) branches carry it; the others start from the same workspace with no directive:
+The directive does not measurably change which branch wins: across the \(178\) mid-run rounds of the study, a directed branch was selected in \(81\) (\(46\%\)), against the \(50\%\) expected if it had no effect (two-sided binomial \(p{=}0.26\)). We therefore treat the directed and undirected branches as interchangeable.
+Protected-incumbent notice.. Appended to the first message of any branch, or any resumed leg, that inherits a workspace containing a scored submission. It exists because task scaffolds can overwrite the canonical solution file, and it is the only place a score is quoted to the agent:
+Task wrappers.. For the EdgeBench tasks the first message is the text below, followed by the original EdgeBench agent query:
+For LLM-SQL it is the text below, followed by the original task statement:
+For sphere-pack we replaced the packaging’s pass/fail scoring line with the first text below and added the second to its AGENT.md:
+All other instruction text is the task’s own packaging.
+I.2 Idea-map prompts
+The triplet judge’s prompt is one template in which a task sentence and a list of the task’s typical mechanisms are substituted per task; the polyomino instance is:
+Each task has its own specification prompt with the same eleven-section schema (objective, overall strategy, input handling, representation, the search itself, task-specific selection rules, portfolio and tie-breaking, data structures, control flow and compute budget, an exhaustive parameter table, and techniques not implemented); only the task description and the per-section examples change. The polyomino prompt is:

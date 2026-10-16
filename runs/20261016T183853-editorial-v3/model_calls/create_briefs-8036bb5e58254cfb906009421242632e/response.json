@@ -1,0 +1,519 @@
+{
+  "briefs": [
+    {
+      "piece_id": "01",
+      "title": "What changed: agents can run bounded research loops",
+      "question": "What can students delegate while retaining responsibility for the experiment?",
+      "argument": "The useful development is a more concrete division of research work: agents execute and record iterations, while humans define objectives, choose scaling decisions and retain methodological control. The supplied reports support bounded delegation, not fully autonomous discovery.",
+      "synthesis": "Within the frozen September 16–October 15 evidence window, the protein-recipe account shows human-gated search, Agora documents reusable experiment histories, and Periodic Labs describes a shift toward AI-assisted characterization. These connect execution, memory and interpretation without establishing hands-free science. Agora reports an April–May experiment; its recent publication must not be mistaken for recent execution. The three distinct publisher_ids are nanoproteinlm-authors, research-team-2609.18094 and periodic-labs-interviews. Their different perspectives provide synthesis, not independent replication of one result.",
+      "limitations": "The protein result remains an author-reported proxy improvement. Agora repeatedly selected on one development evaluator and its authors did not rerun the winner. Periodic's account is commercially interested testimony without supplied controlled measurements or inspectable execution logs; its transcript is provisional. These sources do not establish portable speed, cost or discovery gains.",
+      "claims": [
+        {
+          "claim_id": "01-c1",
+          "statement": "Li and Lu report contact precision increasing from 28.2% to 36.6% at a matched 48.4B-token budget, with a human choosing which recipes to scale. This is a human-guided result.",
+          "type": "source_claim",
+          "evidence": [
+            {
+              "item_id": "084a91218ed6d51df5ab9f17",
+              "version_id": "2b0d8382c674620fd174f5c60697d5bdf4728371aa386ebba1986c60e1eef65b",
+              "locator": {
+                "type": "text",
+                "quote": "Starting from the ESMC recipe, a simple sequential search, with a human deciding which recipes to scale up, gave a recipe with about 30% higher long-range contact precision, from 28.2% to 36.6% P@L, at the same 48.4B-token budget."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "01-c2",
+          "statement": "Agora describes agents checking out exact parent commits, changing and evaluating code, and recording results. Its reported run occurred between April 26 and May 8, rather than during this publication window.",
+          "type": "source_claim",
+          "evidence": [
+            {
+              "item_id": "59b2cb8b434efeeb70a133bc",
+              "version_id": "66025228eaffdbf60602a9c3e085782385578f7304cce9751aff2a52b9936729",
+              "locator": {
+                "type": "text",
+                "quote": "pick a parent, fetch and check out that exact commit, make one change,\nevaluate, commit everything needed to reproduce"
+              }
+            },
+            {
+              "item_id": "59b2cb8b434efeeb70a133bc",
+              "version_id": "66025228eaffdbf60602a9c3e085782385578f7304cce9751aff2a52b9936729",
+              "locator": {
+                "type": "text",
+                "quote": "The run lasted 11 days and 19 hours of\nserver time, from the setup commit on April 26 to our cutoff on May 8"
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "01-c3",
+          "statement": "Agora's authors describe human interventions during the run, selection on one 200-text development evaluator and no fresh author rerun of the winner. Its experiment history therefore does not establish independent validation.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "59b2cb8b434efeeb70a133bc",
+              "version_id": "66025228eaffdbf60602a9c3e085782385578f7304cce9751aff2a52b9936729",
+              "locator": {
+                "type": "text",
+                "quote": "During the\nrun we changed the server three times and the H100 workers’ prompt once."
+              }
+            },
+            {
+              "item_id": "59b2cb8b434efeeb70a133bc",
+              "version_id": "66025228eaffdbf60602a9c3e085782385578f7304cce9751aff2a52b9936729",
+              "locator": {
+                "type": "text",
+                "quote": "Every component was selected on the same 200-text development evaluator."
+              }
+            },
+            {
+              "item_id": "59b2cb8b434efeeb70a133bc",
+              "version_id": "66025228eaffdbf60602a9c3e085782385578f7304cce9751aff2a52b9936729",
+              "locator": {
+                "type": "text",
+                "quote": "We did not rerun the winning method; the primary result is the archived\nevaluator output, corroborated by the agents’ cross-hardware reproductions."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "01-c4",
+          "statement": "Periodic's founders say characterization shifted substantially toward AI assistance while campaign guidance became a mixture of human and AI work. This describes their workflow, not a measured productivity gain.",
+          "type": "source_claim",
+          "evidence": [
+            {
+              "item_id": "ead4cdfb34d1b428c1cd760b",
+              "version_id": "2440cc1580de805fb537ea10d57c87f518177ce7fa5c4cf63e2260a65098b0dc",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00305"
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "01-c5",
+          "statement": "The founders explicitly call full autonomy a non-goal and describe commercial deployment of their tools to industry partners. Their account should be read as an interested operational perspective.",
+          "type": "source_claim",
+          "evidence": [
+            {
+              "item_id": "ead4cdfb34d1b428c1cd760b",
+              "version_id": "2440cc1580de805fb537ea10d57c87f518177ce7fa5c4cf63e2260a65098b0dc",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00230"
+              }
+            },
+            {
+              "item_id": "ead4cdfb34d1b428c1cd760b",
+              "version_id": "2440cc1580de805fb537ea10d57c87f518177ce7fa5c4cf63e2260a65098b0dc",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00341"
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "01-c6",
+          "statement": "A practical delegation boundary is to let an agent execute bounded changes and preserve failed attempts, while the student fixes the scientific objective and decides which candidates deserve larger validation runs.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "084a91218ed6d51df5ab9f17",
+              "version_id": "2b0d8382c674620fd174f5c60697d5bdf4728371aa386ebba1986c60e1eef65b",
+              "locator": {
+                "type": "text",
+                "quote": "The scientific outcome the campaign should improve, fixed before search."
+              }
+            },
+            {
+              "item_id": "084a91218ed6d51df5ab9f17",
+              "version_id": "2b0d8382c674620fd174f5c60697d5bdf4728371aa386ebba1986c60e1eef65b",
+              "locator": {
+                "type": "text",
+                "quote": "A larger-budget retraining of the selected recipe against the baseline, testing whether search-time gains carry over."
+              }
+            },
+            {
+              "item_id": "59b2cb8b434efeeb70a133bc",
+              "version_id": "66025228eaffdbf60602a9c3e085782385578f7304cce9751aff2a52b9936729",
+              "locator": {
+                "type": "text",
+                "quote": "The graph also records what did not work, and later workers cited these records when choosing directions."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "piece_id": "02",
+      "title": "Which claims survive: local gains need separate validity and transfer checks",
+      "question": "Which reported improvements remain credible once baselines, failure cases and evaluation boundaries are considered?",
+      "argument": "The defensible claims are conditional: an intervention helped under a particular protocol, or a verification step exposed a particular failure. A higher search score alone cannot establish scientific usefulness, valid implementation or transfer.",
+      "synthesis": "Protein-recipe search separates proxy improvement from the desired scientific signal; kernel experiments separate initial screening from implementation validity and transfer; the production account shows that protecting evaluator code does not guarantee a useful metric. Malena adds a complementary lesson: added orchestration must earn its place against a simple, resource-matched baseline. The distinct publisher_ids are nanoproteinlm-authors, arxiv-unresolved-team, research-team-2609.30541 and research-team-2609.40303. These are separate reported cases, not replications of one general effect.",
+      "limitations": "All numerical findings below belong to their authors' evaluations. Kernel failure counts describe specific generated cohorts, and its unfavorable transfer checks limit broad superiority claims. The production evidence comes from one domain and organization. Malena's backbone-dependent results and limited statistical power do not prove harness equivalence or redundancy. Independent replication is not supplied.",
+      "claims": [
+        {
+          "claim_id": "02-c1",
+          "statement": "The protein-search authors report that lower validation loss did not identify the strongest contact-precision recipe, and only four of seven changes survived final ablation. Search-time improvement was therefore an incomplete acceptance criterion in this study.",
+          "type": "source_claim",
+          "evidence": [
+            {
+              "item_id": "084a91218ed6d51df5ab9f17",
+              "version_id": "2b0d8382c674620fd174f5c60697d5bdf4728371aa386ebba1986c60e1eef65b",
+              "locator": {
+                "type": "text",
+                "quote": "Both lowered the loss, and after 12 hours of training both recipes still beat our reference on it. Their contact precision (a proxy metric for downstream protein folding), though, shows a large gap to the best setting."
+              }
+            },
+            {
+              "item_id": "084a91218ed6d51df5ab9f17",
+              "version_id": "2b0d8382c674620fd174f5c60697d5bdf4728371aa386ebba1986c60e1eef65b",
+              "locator": {
+                "type": "text",
+                "quote": "Four of the seven changes survive the final ablation study."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "02-c2",
+          "statement": "In the kernel authors' first stress-test run, hidden checks falsified 12 of 35 programs that passed the public screen. This establishes failures in that cohort, not a universal agent failure rate.",
+          "type": "source_claim",
+          "evidence": [
+            {
+              "item_id": "0ff8643be07c7b70497b5caf",
+              "version_id": "b5c10a5a1f3bc0adb95fe7a8ee96127189a24131d2304c6d0f00b108ccee3a5f",
+              "locator": {
+                "type": "text",
+                "quote": "In the first run, of 40 unrestricted programs, three fail to execute and two produce an indefinite Gram matrix during the public screen, leaving 35 Tier-1 passes. The hidden suite falsifies 12 of these."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "02-c3",
+          "statement": "The kernel study's transfer evidence is mixed: archived DWF won only four of sixteen real-data comparisons, while the three ten-year forward forecasting diagnostics favored CAKE. Broad superiority does not survive these checks.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "0ff8643be07c7b70497b5caf",
+              "version_id": "b5c10a5a1f3bc0adb95fe7a8ee96127189a24131d2304c6d0f00b108ccee3a5f",
+              "locator": {
+                "type": "text",
+                "quote": "With the archived geometry, DWF wins 4 of 16 dataset-by-sample-size comparisons"
+              }
+            },
+            {
+              "item_id": "0ff8643be07c7b70497b5caf",
+              "version_id": "b5c10a5a1f3bc0adb95fe7a8ee96127189a24131d2304c6d0f00b108ccee3a5f",
+              "locator": {
+                "type": "text",
+                "quote": "These three diagnostic splits favor CAKE for ten-year forward prediction."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "02-c4",
+          "statement": "The production report's claim that an immutable evaluator prevents metric gaming is too strong: the same report describes improved coherence producing unusable clusters. Evaluator integrity and metric validity require separate checks.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "7082835cef4c8540dcb8d480",
+              "version_id": "7d04403761d8cb23614022d48ddb879a6de4fb7f5af821bb1d1d2cb773d97ec4",
+              "locator": {
+                "type": "text",
+                "quote": "In both systems the agent can read the evaluator’s output but cannot change its code, so it cannot inflate its own score by gaming the metric."
+              }
+            },
+            {
+              "item_id": "7082835cef4c8540dcb8d480",
+              "version_id": "7d04403761d8cb23614022d48ddb879a6de4fb7f5af821bb1d1d2cb773d97ec4",
+              "locator": {
+                "type": "text",
+                "quote": "In System B, the agent discovered that maximizing codebook size trivially improves weighted coherence by creating more fine-grained clusters, but the resulting hierarchy was unusable—deep levels collapsed into singletons."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "02-c5",
+          "statement": "Malena's authors report that tested published harnesses did not significantly outperform their plain session with frontier backbones under matched model, hardware and budget. Their weaker Gemma backbone nevertheless favored MLEvolve on percentile; the result does not establish universal harness redundancy.",
+          "type": "source_claim",
+          "evidence": [
+            {
+              "item_id": "7f0901064878a294934bd154",
+              "version_id": "6c598d9a3db4f487a0045a147e48bc3e4064e2b81bf388f4ac0947b9d96c78ec",
+              "locator": {
+                "type": "text",
+                "quote": "Holding the model, hardware, and budget fixed, none of the published harnesses we tested significantly outperforms the plain agent session with frontier backbones."
+              }
+            },
+            {
+              "item_id": "7f0901064878a294934bd154",
+              "version_id": "6c598d9a3db4f487a0045a147e48bc3e4064e2b81bf388f4ac0947b9d96c78ec",
+              "locator": {
+                "type": "text",
+                "quote": "The only backbone where Malena presents a significant regression against other baselines is with Gemma 4 31B — the weaker of all models tested — where MLEvolve outperforms according to the percentile metric"
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "02-c6",
+          "statement": "Students should report three separate outcomes: whether a candidate passes validity checks, improves the chosen metric and advances the intended scientific or practical objective. None should silently substitute for another.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "0ff8643be07c7b70497b5caf",
+              "version_id": "b5c10a5a1f3bc0adb95fe7a8ee96127189a24131d2304c6d0f00b108ccee3a5f",
+              "locator": {
+                "type": "text",
+                "quote": "Thus, a correct PSD argument does not make the submitted code a valid kernel on the full domain."
+              }
+            },
+            {
+              "item_id": "7082835cef4c8540dcb8d480",
+              "version_id": "7d04403761d8cb23614022d48ddb879a6de4fb7f5af821bb1d1d2cb773d97ec4",
+              "locator": {
+                "type": "text",
+                "quote": "neither has been validated against actual customer outcomes in this study"
+              }
+            },
+            {
+              "item_id": "084a91218ed6d51df5ab9f17",
+              "version_id": "2b0d8382c674620fd174f5c60697d5bdf4728371aa386ebba1986c60e1eef65b",
+              "locator": {
+                "type": "text",
+                "quote": "Their contact precision (a proxy metric for downstream protein folding), though, shows a large gap to the best setting."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "piece_id": "03",
+      "title": "Implications: build an experiment another person can check",
+      "question": "What should students implement now, and what evidence should they watch for next?",
+      "argument": "The next useful investment is an auditable small experiment: fixed grading, held-out comparisons, recorded provenance, human review and complete resource accounting. Future agent claims become more actionable when another researcher can reconstruct both the result and its selection history.",
+      "synthesis": "AI Code King's tutorial supplies an operational separation between instruction editing and grading; Campus Talks adds researcher guidance on provenance, code sharing and planning time; ResearchFlow-Eval shows why success reports need claim-level evidence; Malena demonstrates why simple orchestration cannot be assumed cheap. These connect procedure, researcher practice, evaluation and cost. The distinct publisher_ids are aicodeking, times-higher-education-campus, arxiv-unresolved-team and research-team-2609.40303. Feed, podcast and YouTube evidence all contribute, with tutorials and interviews used as guidance rather than performance validation.",
+      "limitations": "The tutorial supplies no inspectable measured improvement, and its ambiguous rerun passage is excluded pending audio review. Podcast guidance is not a tested agent intervention; automatic transcripts remain provisional, and the guests' report and journal roles carry professional interests. ResearchFlow-Eval uses one anchor task, researcher spot-checking of an LLM judge and development access to test sessions. Malena's costs are modeled, not complete measured expenditure. The proposed student protocol is an editorial inference, not a validated guarantee.",
+      "claims": [
+        {
+          "claim_id": "03-c1",
+          "statement": "AI Code King's procedure changes workflow instructions while leaving the underlying model and grading rules unchanged. Its 'self-training' framing should therefore be understood here as instruction optimization.",
+          "type": "source_claim",
+          "evidence": [
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00011"
+              }
+            },
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00056"
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "03-c2",
+          "statement": "The tutorial recommends comparison on tasks excluded from search, followed by human review of the winning instruction changes. Any human-edited version becomes a new candidate requiring evaluation; this is procedural advice, not an observed gain.",
+          "type": "source_claim",
+          "evidence": [
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00141"
+              }
+            },
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00176"
+              }
+            },
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00177"
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "03-c3",
+          "statement": "Campus Talks recommends connecting data to provenance, sharing variable descriptions and executed analysis code, and allowing extra planning time. Applying that guidance to agent experiments means budgeting documentation work alongside execution, with sharing limited to what is appropriate and ethical.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "e351f88c9bbc63c033f1aab7",
+              "version_id": "de7f1e6f75069d6e82b0732ba9729ef01809dd0621fa585ccb3cb1690c97dcc9",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00291"
+              }
+            },
+            {
+              "item_id": "e351f88c9bbc63c033f1aab7",
+              "version_id": "de7f1e6f75069d6e82b0732ba9729ef01809dd0621fa585ccb3cb1690c97dcc9",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00292"
+              }
+            },
+            {
+              "item_id": "e351f88c9bbc63c033f1aab7",
+              "version_id": "de7f1e6f75069d6e82b0732ba9729ef01809dd0621fa585ccb3cb1690c97dcc9",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00799"
+              }
+            },
+            {
+              "item_id": "e351f88c9bbc63c033f1aab7",
+              "version_id": "de7f1e6f75069d6e82b0732ba9729ef01809dd0621fa585ccb3cb1690c97dcc9",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00801"
+              }
+            },
+            {
+              "item_id": "e351f88c9bbc63c033f1aab7",
+              "version_id": "de7f1e6f75069d6e82b0732ba9729ef01809dd0621fa585ccb3cb1690c97dcc9",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s01090"
+              }
+            },
+            {
+              "item_id": "e351f88c9bbc63c033f1aab7",
+              "version_id": "de7f1e6f75069d6e82b0732ba9729ef01809dd0621fa585ccb3cb1690c97dcc9",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00748"
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "03-c4",
+          "statement": "ResearchFlow-Eval's authors report that 14 of 90 end-to-end claims met their criteria, with only one empirical claim met. Their judge received researcher spot-checking, so students should retain human review of AI judgments as a safeguard, without assuming demonstrated judge bias.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "51fd6c05fff2f297f454f717",
+              "version_id": "9f5a3d8ad0d87cf4b75e0b27ee825183acc71c2811e8bb96e1a59f3c5dca2c35",
+              "locator": {
+                "type": "text",
+                "quote": "Of the 90 end-to-end claims, 14 are met, and E5 for GPT-6 Astra is the only empirical claim met in an end-to-end run."
+              }
+            },
+            {
+              "item_id": "51fd6c05fff2f297f454f717",
+              "version_id": "9f5a3d8ad0d87cf4b75e0b27ee825183acc71c2811e8bb96e1a59f3c5dca2c35",
+              "locator": {
+                "type": "text",
+                "quote": "A domain researcher spot-checked the judge’s ratings and rationales and found them largely consistent with their own assessment."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "03-c5",
+          "statement": "ResearchFlow-Eval permits optimization using test sessions but requires logging access and forbids describing optimization-informed results as untouched estimates. Students should likewise record when evaluation data influenced selection.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "51fd6c05fff2f297f454f717",
+              "version_id": "9f5a3d8ad0d87cf4b75e0b27ee825183acc71c2811e8bb96e1a59f3c5dca2c35",
+              "locator": {
+                "type": "text",
+                "quote": "Train, validation, and test sessions may all be used while optimizing a claim. Every test access must be logged with its purpose, configuration, and result, and test results that informed optimization may not be described as untouched or unbiased estimates."
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "03-c6",
+          "statement": "Minimal orchestration does not establish low cost: Malena's authors modeled its GLM 5.2 inference cost at $12.12 versus AiScientist's $1.95, while acknowledging that real cache-hit counts were unavailable. Students should measure their own resource use rather than inherit these prices as a complete budget.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "7f0901064878a294934bd154",
+              "version_id": "6c598d9a3db4f487a0045a147e48bc3e4064e2b81bf388f4ac0947b9d96c78ec",
+              "locator": {
+                "type": "text",
+                "quote": "At GLM 5.2, Malena’s modeled\nUSD cost ($12.12) is \\(\\approx\\)6.2\\(\\times\\) AiScientist’s ($1.95)"
+              }
+            },
+            {
+              "item_id": "7f0901064878a294934bd154",
+              "version_id": "6c598d9a3db4f487a0045a147e48bc3e4064e2b81bf388f4ac0947b9d96c78ec",
+              "locator": {
+                "type": "text",
+                "quote": "none of the harnesses compared\nhere report real cache-hit token counts directly"
+              }
+            }
+          ]
+        },
+        {
+          "claim_id": "03-c7",
+          "statement": "Watch for evaluations on additional research tasks, evidence-linked claim judgments and transferable held-out improvements. These would make future reports more useful than another unqualified success score, although none alone guarantees replication.",
+          "type": "inference",
+          "evidence": [
+            {
+              "item_id": "51fd6c05fff2f297f454f717",
+              "version_id": "9f5a3d8ad0d87cf4b75e0b27ee825183acc71c2811e8bb96e1a59f3c5dca2c35",
+              "locator": {
+                "type": "text",
+                "quote": "For each item it returns an integer rating on a 0–4 scale with item-specific anchors, along with the locations of the supporting evidence and a short rationale."
+              }
+            },
+            {
+              "item_id": "51fd6c05fff2f297f454f717",
+              "version_id": "9f5a3d8ad0d87cf4b75e0b27ee825183acc71c2811e8bb96e1a59f3c5dca2c35",
+              "locator": {
+                "type": "text",
+                "quote": "In future work, we will apply ResearchFlow-Eval to additional autoresearch systems, models, and anchor papers."
+              }
+            },
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00152"
+              }
+            },
+            {
+              "item_id": "youtube-wMQB33rM28I",
+              "version_id": "91b5117a082251bc859d7cb81ba933c439e1b0450075c2bf98b2b8112bb7d58e",
+              "locator": {
+                "type": "segment",
+                "segment_id": "s00153"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

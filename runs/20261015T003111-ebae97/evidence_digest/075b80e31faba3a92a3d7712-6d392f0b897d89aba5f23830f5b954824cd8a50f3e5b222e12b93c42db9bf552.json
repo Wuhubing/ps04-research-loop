@@ -1,0 +1,78 @@
+{
+  "item_id": "075b80e31faba3a92a3d7712",
+  "version_id": "6d392f0b897d89aba5f23830f5b954824cd8a50f3e5b222e12b93c42db9bf552",
+  "synopsis": "Accepted practitioner tutorial contributing to pieces 02 and 03: an operational procedure for delegating test-prompt and evaluation-criteria design, comparing models on representative work, and requesting evidence-based judgments. Its evidentiary role is procedural demonstration. The author's preference for ChatGPT is a self-reported outcome of one illustrated comparison, not evidence of general model superiority or autonomous research gains. Published October 8, 2026, within the authoritative September 16–October 15 window. These summaries are orientation only; later substantive claims require the exact passages below.",
+  "limitations_and_counterevidence": "The supplied text does not contain the linked model responses, complete generated test prompt, execution logs, repeated trials, held-out tests, independent replication, or measured runtime and cost. It identifies different account tiers but supplies no monetary comparison. ChatGPT judges a comparison involving ChatGPT, creating potential evaluator bias; the author also reports inconsistent judge scores. The separate Fun Bench is explicitly called unscientific, and access to its results is promoted as a paid-subscriber benefit. Those results cannot establish performance here. Recommendations to use fresh chats and equal tool access support a procedure, not proof that all experimental conditions were controlled.",
+  "passages": [
+    {
+      "purpose": "Delegable task design, representative task selection, explicit evaluation criteria, and human approval of the proposed test.",
+      "locator": {
+        "type": "text",
+        "quote": "Based on what you know about me, suggest a few tasks that represent something I do often, and where I can easily evaluate the outcome. If you don’t know enough, ask me a few questions first.\nOnce I pick a representative task, give me:\n1. A self-contained test prompt that gets the model to perform that task.\n2. A set of simple criteria I can use to evaluate and compare the result.\nCheck with me that both feel right."
+      }
+    },
+    {
+      "purpose": "Recommended comparison controls and coverage across tasks; the assertion that this establishes improvement is the author's methodological claim.",
+      "locator": {
+        "type": "text",
+        "quote": "Run the resulting test prompt in fresh chats in both models with access to the same files and tools (e.g. web search). That’ll tell you whether the new model is an improvement.\nRepeat for all your important tasks, and you’ll have a much better idea as to whether you should switch!"
+      }
+    },
+    {
+      "purpose": "Named model comparison and its reported, personally scoped outcome.",
+      "locator": {
+        "type": "text",
+        "quote": "I ran the proposed prompt in [GPT-5.6 Sol](https://chatgpt.com/share/6ac63a62-9a14-83eb-9816-ebaaefd498b3)[3](#footnote-3) and [Gemini 3.6 Flash Extended Thinking](https://share.gemini.google/nLJRG9KRLGfU)[4](#footnote-4).\nChatGPT was clearly better for my scoped research, especially in terms of relevant story selection,[5](#footnote-5) so I wouldn’t be switching to Gemini in this hypothetical scenario."
+      }
+    },
+    {
+      "purpose": "Judge instructions allowing a tie, requiring specific supporting evidence, and flagging unverifiable content.",
+      "locator": {
+        "type": "text",
+        "quote": "Which one is better, and why? A tie is a fine answer. Point to specific parts of each answer that support your judgment. Flag anything you can’t verify."
+      }
+    },
+    {
+      "purpose": "Evaluator identity and proposed blind review; supports identifying potential evaluator bias without asserting that bias was measured.",
+      "locator": {
+        "type": "text",
+        "quote": "Here’s ChatGPT’s unsurprising verdict[6](#footnote-6) on my demo case:\nPro tip: You can [spin up a blind subagent](https://www.whytryai.com/p/ai-agent-blind-review) to do this in e.g. Codex or Claude Code."
+      }
+    },
+    {
+      "purpose": "Counterevidence to unqualified confidence in the judge: inconsistent numerical scores and the author's qualification.",
+      "locator": {
+        "type": "text",
+        "quote": "The judge gave two separate scores (92 and 93 out of 100), but I’m letting it slide due to its “around” qualifier."
+      }
+    },
+    {
+      "purpose": "Account-tier context relevant to access and cost; this provides no measured price or per-experiment budget.",
+      "locator": {
+        "type": "text",
+        "quote": "[3](#footnote-anchor-3)\nDefault chat model in ChatGPT Plus at the time of writing\n[4](#footnote-anchor-4)\nDefault model for free Gemini accounts at the time of writing"
+      }
+    },
+    {
+      "purpose": "Reproducibility boundary: full responses are referred to external links rather than included in the supplied text.",
+      "locator": {
+        "type": "text",
+        "quote": "Click the model links to see their full responses"
+      }
+    },
+    {
+      "purpose": "Explicit limitation and initial scope of the separate Fun Bench project; do not conflate it with validated benchmarking evidence.",
+      "locator": {
+        "type": "text",
+        "quote": "So Claude and I built “Fun Bench”: a totally unscientific but delightful way to pit models against each other.\nI kicked it off with three starter models and five starter tests, but I’ll be expanding the roster over time."
+      }
+    },
+    {
+      "purpose": "Subscription interest and access restriction on Fun Bench results, limiting their evidentiary use here.",
+      "locator": {
+        "type": "text",
+        "quote": "Paid subscribers can see the score breakdowns, explore the actual results from every model, and submit suggestions (like models or tests to add) directly on the page."
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+LATEST UPDATE: October 12, 2026
+I first published this round-up on October 17, 2024. But things in AI move fast, so I release regular updates. Check out [this archive page](https://www.whytryai.com/p/ai-tools-archive) with the past versions (fun for tracing how AI and my preferences evolved).
+I often get asked about AI tools that I personally use.
+While I regularly test and review [all sorts of AI models and sites](https://www.whytryai.com/p/start-here), most don’t end up a part of my routine.
+Here are those that did.
+🗣️ 1. Large language models
+These are the chatbots and LLMs I turn to.
+- 🎁Free: 
+  - [Claude Sonnet 5.5](https://www.anthropic.com/claude-sonnet-5-5) [UPDATED - replaced 5] for day-to-day work. It’s almost on par with its bigger Opus 5.5 cousin, but doesn’t require a paid account to try. The only downside is the strict message limit for free accounts.
+  - [GPT 6 Luna](https://openai.com/index/introducing-gpt-6-sol-and-luna/) [UPDATED - replaced GPT 5.5 Instant] it’s the newest “small” model from OpenAI, available to free accounts for unlimited messages. Holds up nicely for regular chats and low-stakes research.
+- 💵Paid: 
+  - [Claude 5.5 Opus](https://www.anthropic.com/claude-opus-5-5) [UPDATED - replaced Opus 4.6] is now my primary daily driver for [everything I do with Claude Code](https://www.whytryai.com/p/claude-code-obsidian). It runs most of my projects and tasks and I use it a lot. (It unseated my long-time favorite Opus 4.6 after [my last vibe check](https://www.whytryai.com/p/opus-5-5-vs-opus-4-6-vibe-check).)
+  - [GPT-6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol/) [UPDATED - replaced GPT 5.5 High] is my go-to for most projects I run with Codex/ChatGPT Work and does well with thorough research tasks. I use it in a tag team with Claude 5.5 Opus on many projects [in my shared workspace](https://www.whytryai.com/p/claude-code-codex-shared-brain).
+🖼️ 2. AI images
+Here are my favorite image models.
+- 🎁Free: 
+  - [GPT Image 2.5](https://openai.com/index/introducing-chatgpt-images-2-5/) [UPDATED - replaced GPT Image 2]: for [leaderboard-topping](https://arena.ai/leaderboard/text-to-image) image generation. It understands context and can [render entire pages of text](https://www.whytryai.com/p/dall-e-2-vs-gpt-image-2) within an image. (I made [a swipe file](https://www.whytryai.com/perks/4a24013f-9782-45dc-8ad7-0da62f0ac4d5) for GPT Image with 100 use cases and prompts.)
+  - [Nano Banana 2.1](https://deepmind.google/models/model-cards/nano-banana-2-1/) [UPDATED - replaced Nano Banana 2] from Google for image editing. Excellent at detail-preserving image edits from natural-language requests.
+- 💵Paid: 
+  - [Midjourney](https://www.midjourney.com/): I’ve [written dozens of posts](https://www.whytryai.com/t/midjourney) about Midjourney over the years. I have honestly not used it much lately, but it remains excellent for artistic exploration and [photographic images](https://www.whytryai.com/p/midjourney-photography-terms).
+📽️ 3. AI video
+The AI video space is making the biggest leaps lately. Here’s my take on AI video models based on thorough tests of both [text-to-video](https://www.whytryai.com/p/text-to-video-sites) and [image-to-video](https://www.whytryai.com/p/free-ai-image-to-video-tools-tested).
+- 🎁Free: 
+  - [Gemini Omni Flash 1.1](https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/) [UPDATED - replaced Omni Flash] is a [top-ranked model](https://arena.ai/leaderboard/text-to-video) for context-aware videos with native audio. It’s also great for natural-language video edits. The [Flow platform](https://labs.google/fx/tools/flow) gives you free daily credits to try it.
+- 💵 Paid: 
+  - [Seedance 2.5](https://seed.bytedance.com/en/seedance2_0) [UPDATED - replaced Seedance 2.0]: one of [the top video models](https://artificialanalysis.ai/video/leaderboard/text-to-video) if you want the cutting-edge stuff. (I get to use it on Genspark with my credits.)
+🎵 4. AI music
+This space is surprisingly steady. I rarely use AI music tools, but when I do…
+- 🎁Free:
+Both give you a generous amount of free credits, so take them for a spin to see which one you prefer. These two came out on top in my [most recent head-to-head test](https://www.whytryai.com/p/free-ai-song-music-makers) (sorry, Udio and Sonauto).
+Note: For a more skeptical perspective from a professional, [see this comment thread](https://www.whytryai.com/p/my-go-to-ai-tools/comment/266492249).
+- 💵 Paid: 
+  - Any of the above: Once you’ve picked your favorite, you can always upgrade for additional features.
+🔬 5. Research
+- 🎁Free: 
+  - [Gemini Notebook](https://notebook.google.com/) (formerly NotebookLM) remains a super easy recommendation. I’ve been a fan [since March 2024](https://www.whytryai.com/p/notebooklm-guide). (I covered everything in my recent [live video walkthrough](https://www.whytryai.com/p/live-video-notebooklm).)
+  - [Learn About](https://learning.google.com/experiments/learn-about/signup) is another Google product that complements NotebookLM nicely. While NotebookLM is grounded in your preselected sources and synthesizes info across them, Learn About can browse the web and is built for [open-ended exploration](https://www.whytryai.com/i/152913685/learn-about) of any topic.
+  - [Perplexity](https://www.perplexity.ai/) I don’t use Perplexity very often, but its “Pro” search is a good midway point between simple web browsing and the time-intensive [“Deep Research” tools](https://www.whytryai.com/p/openai-deep-research).
+- 💵 Paid: 
+  - [Perplexity Deep Research](https://www.perplexity.ai/help-center/en/articles/13600190-what-s-new-in-advanced-deep-research) was recently upgraded with the latest Claude models to reach [SOTA performance on deep research benchmarks](https://www.reddit.com/r/perplexity_ai/comments/1qvxx6s/weve_upgraded_deep_research_in_perplexity/).
+📈 6. Agents & productivity
+- 🎁Free: 
+  - [Codex](https://openai.com/codex/) [NEW]: OpenAI desktop agent that I now [use in tandem with Claude Code](https://www.whytryai.com/p/claude-code-codex-shared-brain). Codex is the most user-friendly way to try local agents without paying (free ChatGPT users get a limited weekly Codex / ChatGPT Work quota).
+  - [Google AI Studio](https://aistudio.google.com/): Google still offers a whole lot for free here. You can try its latest frontier models, voice generation, coding tools, and live calls with screen or camera sharing. It’s a great way to sample most of what Google has to offer at no charge.
+- 💵 Paid: 
+  - [Claude Code](https://www.whytryai.com/p/claude-code-beginner-guide): My primary daily driver for actually building and doing stuff with AI. (Here’s just some of [what Claude Code can do for you](https://www.whytryai.com/p/what-can-you-do-claude-code).)
+  - [Genspark Super Agent](https://www.genspark.ai/): A robust agent that [can orchestrate dozens of tools](https://www.whytryai.com/p/genspark-super-agent) to complete complex, multi-step tasks. You get free monthly credits to try it, but you’ll likely need the paid plan for bigger tasks.
+🫵 Over to you…
+What AI tools do you use the most? What would you add to the above list?
+Thanks for reading!
+If you enjoy my stuff, here’s how you can help:
+- ❤️Like this post if it resonates with you.
+- 🔄Share it to help others discover this newsletter.
+- 🗣️Comment below. I love hearing from my readers.
+- 🔓Support me and [unlock cool perks](https://www.whytryai.com/p/paid-subscriber-bonuses) by going paid:
+I always appreciate these personal approaches and descriptions. It's good to know that you've been around the block several times, and you've settled on these particular tools. I myself have centered most of my research around ChatGPT Plus, and as a bonus, I get really good image generation. I use Gemini (or Google's Experimental Model) to read and "grade" my work - ChatGPT is still better at reviewing writing, but Gemini will notice some errors ChatGPT will not.
+Perplexity has become a favorite too. It's amazing for quick research, probably better than the other 2 I mentioned. I've used the paid versions of GPT and Gemini, but only the free Perplexity model, and it is nearly as good as the paid models for my needs.
+I've started using Napkin ai for ai based dynamic graphic images. It's kind of hard to explain, but it's my new go to for creating dynamic colourful images using prompts. Amazing

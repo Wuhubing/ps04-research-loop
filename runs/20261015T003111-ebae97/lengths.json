@@ -1,0 +1,32 @@
+[
+  {
+    "kind": "articles",
+    "piece_id": "01",
+    "words": 756
+  },
+  {
+    "kind": "articles",
+    "piece_id": "02",
+    "words": 756
+  },
+  {
+    "kind": "articles",
+    "piece_id": "03",
+    "words": 774
+  },
+  {
+    "kind": "video_scripts",
+    "piece_id": "01",
+    "words": 492
+  },
+  {
+    "kind": "video_scripts",
+    "piece_id": "02",
+    "words": 530
+  },
+  {
+    "kind": "video_scripts",
+    "piece_id": "03",
+    "words": 546
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "type": "engineering correction, not student editorial review",
+  "item_id": "419feb0137451bb2ed3c150d",
+  "original_date": "2024-10-17",
+  "original_timestamp": null,
+  "evidence": "I first published this round-up on October 17, 2024",
+  "previous_artifacts": "runs/20261014T032814-a43e45/history/original-publication-date-correction",
+  "effect": "Exclude updated old article from freshness coverage; it had already been rejected editorially."
+}

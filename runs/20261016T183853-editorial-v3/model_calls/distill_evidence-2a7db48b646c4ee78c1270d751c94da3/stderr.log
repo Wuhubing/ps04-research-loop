@@ -1,0 +1,5 @@
+2026-10-16T18:51:41.911783Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-16T18:51:41.911854Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-16T18:51:41.922848Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-10-16T18:51:41.924344Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-10-16T18:52:30.385275Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at AbsolutePathBuf("/Users/ww/.codex/shell_snapshots/01a1460e-41bc-7fb0-978e-81794d088902.1792176701915842000.sh"): Os { code: 2, kind: NotFound, message: "No such file or directory" }

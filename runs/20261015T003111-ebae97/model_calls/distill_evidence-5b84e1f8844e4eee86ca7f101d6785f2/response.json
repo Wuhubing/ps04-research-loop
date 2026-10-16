@@ -1,0 +1,78 @@
+{
+  "item_id": "ade5c65097bf35b3d1cb467e",
+  "version_id": "5a82503b8b0e7e873cc96ddaa5b89b9957e647009d50cff4f549b940594dfeef",
+  "synopsis": "Accepted narrowly for pieces 02 and 03 as a physical-laboratory practitioner contrast. This September 29, 2026 founder interview falls within the September 16–October 15 window. It contributes accounts of instrumentation failures, telemetry, replicates, experiment lineage, debugging and analysis costs. Its evidentiary role is attributed practitioner testimony and methodological illustration, not measured proof of autonomous research reliability. The recent development is the published account; the experiments described are undated. Orientation here does not replace passage citations.",
+  "limitations_and_counterevidence": "The supplied interview provides no inspectable execution logs, controlled evaluations, accuracy measurements, ablations or independent replication for its reported successes. Cost comparisons lack specified workloads, models, hardware and quality equivalence. The introduction presents thousands of experiments per day as a capability, while the later discussion frames that scale as a future goal. Founders share a commercial interest; their statements and other founder interviews cannot independently corroborate one another. Transcript wording remains provisional, with no audio verification performed. Adjacent segments identified below must accompany anchors when needed to preserve context; no uncertain ASR has been repaired.",
+  "passages": [
+    {
+      "purpose": "Counterevidence: introductory throughput claim. Read with preceding s00023, which identifies the purported AI scientist. Pair with the future-oriented qualification in s00748–s00750; do not present thousands per day as demonstrated throughput.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00024"
+      }
+    },
+    {
+      "purpose": "Essential qualification to the introduction: s00748 supplies 'down the line,' s00749 describes the desired experimental scale, and s00750 explains the human bottleneck. Preserve all three adjacent segments when discussing present versus planned autonomy.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00748"
+      }
+    },
+    {
+      "purpose": "Reported failure and reproducibility limitation: use the contiguous account s00308–s00317. The founders describe furnace temperature stability deteriorating after three runs. This is a concrete practitioner anecdote, not a quantified failure-rate study.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00308"
+      }
+    },
+    {
+      "purpose": "Instrumentation method: retain s00339–s00346 for hidden furnace degradation or asymmetry, better telemetry and feeding measurements back into the system. This supports an attributed rationale for monitoring execution conditions, not a measured reproducibility improvement.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00343"
+      }
+    },
+    {
+      "purpose": "Evaluation method and qualification: retain s00362–s00373. Running replicates is described as current practice; variance-aware decisions and rerunning apparent noise culminate in an aspiration about what they want to build. No replicate counts or variance estimates are supplied.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00362"
+      }
+    },
+    {
+      "purpose": "Execution lineage: retain s00861–s00869 for the reported collection of intentions, hypotheses, computational predictions and machinery execution. Useful for discussing what students might record; the interview does not expose the records or establish their claimed uniqueness.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00861"
+      }
+    },
+    {
+      "purpose": "Reported debugging result and human comparison: retain s00894–s00907. The founders recount samples shifted by two positions, an LLM identifying an inverse rotation, and a claimed correction; adjacent s00905–s00907 explicitly say a human could do this. This is an undated anecdote without logs, controls or measured time savings.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00901"
+      }
+    },
+    {
+      "purpose": "Cost comparison with its necessary scope: retain s01104–s01112. The roughly $30 million annual figure is an estimate for analysis at maximum throughput of a second lab; compression into smaller models is associated with a claimed sub-million-dollar cost. Do not describe this as audited realized savings or assume equal accuracy.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s01107"
+      }
+    },
+    {
+      "purpose": "Commercial interest and evidence dependence: retain s01206–s01216 for customer systems and discussion of outcome-based pricing with retained IP. Establishes the commercial perspective behind these claims; it does not independently establish that all experimental data are withheld.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s01209"
+      }
+    },
+    {
+      "purpose": "Comparison and boundary on delegation: retain s01295–s01298 for the founders' conditional argument that physical-world systems must handle missing context, delayed verification and noise. This is methodological framing, not an empirical comparison demonstrating superiority over computational agents.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s01297"
+      }
+    }
+  ]
+}

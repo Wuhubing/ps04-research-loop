@@ -1,0 +1,78 @@
+{
+  "item_id": "084a91218ed6d51df5ab9f17",
+  "version_id": "2b0d8382c674620fd174f5c60697d5bdf4728371aa386ebba1986c60e1eef65b",
+  "synopsis": "An original researcher account of NanoProteinLM, contributing to pieces 01–03 through a concrete example of delegated recipe search, human selection for scaling, and evaluation safeguards. Its evidentiary role is an author-reported computational campaign, not independent verification: the authors report improved contact precision at a fixed token budget, describe noise-aware selection and scaled-up ablation, and present searches whose validation-loss improvements did not match the best contact precision. The practical contribution is evidence about designing and checking an experimental loop, rather than establishing fully autonomous scientific discovery.",
+  "limitations_and_counterevidence": "The reported change from 28.2% to 36.6% P@L is about 30% relative improvement, or 8.4 percentage points. Equal token budgets do not establish equal compute cost. Contact precision is itself described as a proxy; two 72-round searches improved validation loss while falling short of the best contact-precision setting. One-hour P@L was too noisy for initial steering, and only four of seven changes survived final ablation. The supplied account does not include numerical ablation tables, hardware specifications, total campaign cost, execution logs or independent replication. Reproducibility provisions are described but not demonstrated here through a reproduced run. The referenced paper concerns the same project; workshop acceptance is not independent validation. These observations orient later synthesis; substantive claims still require the selected passages, and claims about missing evidence require inspection of the complete supplied source.",
+  "passages": [
+    {
+      "purpose": "Establish the experimental environment and the authors’ claim that search retained a human gate.",
+      "locator": {
+        "type": "text",
+        "quote": "In the spirit of NanoGPT, we made protein language model research hill-climbable, with an open 666M-protein corpus, a readable trainer, frozen evaluations and an explicit protocol, and we show that a plain sequential search with a human gate already produces a much better training recipe than the ESMC baseline."
+      }
+    },
+    {
+      "purpose": "Anchor the reported result, baseline, token budget and human role; distinguish relative improvement from percentage-point improvement.",
+      "locator": {
+        "type": "text",
+        "quote": "Starting from the ESMC recipe, a simple sequential search, with a human deciding which recipes to scale up, gave a recipe with about 30% higher long-range contact precision, from 28.2% to 36.6% P@L, at the same 48.4B-token budget."
+      }
+    },
+    {
+      "purpose": "Capture the authors’ qualification about expensive experimental feedback, including the physical-lab contrast; this is conceptual guidance, not measured speedup evidence.",
+      "locator": {
+        "type": "text",
+        "quote": "When the smallest loop that returns a useful signal is itself slow or expensive, such as a week of growing cells, automation buys little and the quality of each decision matters more."
+      }
+    },
+    {
+      "purpose": "Document the proposed budget, held-out reward and larger-budget validation protocol without treating these design principles as execution logs.",
+      "locator": {
+        "type": "text",
+        "quote": "| Round budget | The resources each candidate may spend, identical for the baseline and every candidate so rewards compare across rounds. | \n| Round reward | A scalar measured on held-out validation data after each round, which the loop compares with the incumbent’s to keep or discard the candidate. | \n| Validation | A larger-budget retraining of the selected recipe against the baseline, testing whether search-time gains carry over. |"
+      }
+    },
+    {
+      "purpose": "Preserve counterevidence: two agents improved validation loss without attaining the best contact precision, which is itself a downstream proxy.",
+      "locator": {
+        "type": "text",
+        "quote": "To see how agents behave in this environment, we let Codex Astra and Claude Opus 5.5 each run 72 rounds of search against validation loss. Both lowered the loss, and after 12 hours of training both recipes still beat our reference on it. Their contact precision (a proxy metric for downstream protein folding), though, shows a large gap to the best setting."
+      }
+    },
+    {
+      "purpose": "Record the authors’ interpretation of reward–objective mismatch, separately from the measured comparison.",
+      "locator": {
+        "type": "text",
+        "quote": "The agent optimizes the reward as written, and any gap between that reward and the scientific goal is open to it."
+      }
+    },
+    {
+      "purpose": "Document seed-based retention and the noisy-metric qualification that motivated a staged search.",
+      "locator": {
+        "type": "text",
+        "quote": "- Every candidate trains with two seeds and is kept only if its mean gain beats the seed-to-seed spread.\n- P@L is too noisy to steer by at one hour, so we climbed validation loss while watching P@L, then ran a second search on P@L itself."
+      }
+    },
+    {
+      "purpose": "Capture scaled-up ablation and attrition among candidate improvements, including the kinds of changes that survived.",
+      "locator": {
+        "type": "text",
+        "quote": "- A final scaled-up ablation of the confirmed improvements.\nFour of the seven changes survive the final ablation study. All four change the optimizer, the loss weighting or how batches are split across GPUs."
+      }
+    },
+    {
+      "purpose": "Anchor the stated reproducibility controls and scope of delegated actions; these claims do not supply logs, hardware details or a total cost accounting.",
+      "locator": {
+        "type": "text",
+        "quote": "Deterministic data selection, fixed seeds, explicit compute budgets and frozen evaluation protocols make recipe changes measurable. An agent can modify the training recipe, train, evaluate and improve it; the choice of agent and search strategy remains yours."
+      }
+    },
+    {
+      "purpose": "Identify the researcher perspective and the relationship to the authors’ paper, preventing that paper or its workshop status from being counted as independent corroboration.",
+      "locator": {
+        "type": "text",
+        "quote": "For more details, please refer to our paper, accepted as a spotlight presentation at the AgenticLS workshop (Agentic AI for Biological Discovery) at NeurIPS 2026.\nMuchen Li (University of British Columbia) and Chixiang Lu (The University of Hong Kong)"
+      }
+    }
+  ]
+}

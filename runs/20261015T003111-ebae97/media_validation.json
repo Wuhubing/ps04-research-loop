@@ -1,0 +1,12 @@
+{
+  "source_id": "campus-talks",
+  "item_id": "e351f88c9bbc63c033f1aab7",
+  "downloaded_bytes": 84390683,
+  "rss_enclosure_bytes": 84390683,
+  "audio_duration_seconds": 3516.107792,
+  "transcript_segments": 1175,
+  "first_segment_start_seconds": 0.69,
+  "last_segment_end_seconds": 3511.78,
+  "checks": "Downloaded size matches RSS; transcript reaches closing station identification near audio end.",
+  "human_listening_completed": false
+}

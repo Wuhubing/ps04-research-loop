@@ -1,0 +1,78 @@
+{
+  "item_id": "ead4cdfb34d1b428c1cd760b",
+  "version_id": "2440cc1580de805fb537ea10d57c87f518177ce7fa5c4cf63e2260a65098b0dc",
+  "synopsis": "A founder interview providing a physical-lab contrast for pieces 02 and 03: which experimental tasks to automate, how to assess noisy results, and what provenance and resources trustworthy work requires. Its contribution is a practitioner account of task-specific reinforcement learning, characterization, anomaly diagnosis and experimental lineage. The reported loading-error diagnosis is an illustrative incident, not a benchmark of autonomous discovery. Supplied publication metadata dates the interview to October 8, 2026, within the run window; it does not date the experiments. Student-facing applications are inferences from this account. Every substantive synthesis claim still requires a validated passage.",
+  "limitations_and_counterevidence": "The supplied interview provides no inspectable execution logs, matched baseline, held-out evaluation results, ablations, quantified budget, hardware configuration sufficient for reproduction or independent replication of the claimed gains. Cost and frontier-model comparisons are qualitative founder claims. The guests explicitly retain measurement ambiguity and describe full autonomy as a non-goal. Their commercial deployment interests limit independence; another interview with these founders would not independently corroborate the account. Reported open-source contributions do not establish release of the experimental data, trained systems or evaluation artifacts discussed here. Independent researcher assessment remains missing. Transcript wording is provisional: no uncertain ASR or possible missing negation is used to establish a speaker error. These orientation fields are not substitutes for passage citations.",
+  "passages": [
+    {
+      "purpose": "Method and physical-lab constraint: describes slow, noisy experimental rollouts and task-specific RL for identifying phases, including penalties for spurious or chemically implausible assignments. Supports an account of the proposed workflow, not a measured speed gain.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00023"
+      }
+    },
+    {
+      "purpose": "Evaluation design and contamination risk: proposes timestamped experimental evidence and explains how memorized answers could reward reasoning that fails to generalize. This is methodological rationale, not a reported held-out evaluation.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00025"
+      }
+    },
+    {
+      "purpose": "Qualification of the host's unambiguous-measurement premise: the guest explicitly says ambiguity remains and introduces replicates. Preserve this correction when discussing trustworthy observations.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00073"
+      }
+    },
+    {
+      "purpose": "Complementary measurements and comparison: explains using electrical, magnetic and morphological measurements to distinguish phases that look similar in XRD. The accompanying human-versus-AI comparison is an unquantified practitioner claim.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00082"
+      }
+    },
+    {
+      "purpose": "Delegation boundary and opportunity cost: recommends addressing routine bottlenecks while retaining human dexterity where automation would take months; explicitly identifies full autonomy as a non-goal.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00230"
+      }
+    },
+    {
+      "purpose": "Reported result and failure evidence: recounts an AI identifying a cyclic permutation in inconsistent measurements, followed by checking physical infrastructure and finding a loading mistake. This is a self-reported diagnostic incident without supplied logs, denominator or controlled comparison.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00232"
+      }
+    },
+    {
+      "purpose": "Models, cost and comparative claims: describes mixed open and closed models and asserts that proprietary data can improve compute efficiency and exceed frontier capabilities. No numerical costs, named evaluation baseline or reproducible comparison accompanies these assertions.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00235"
+      }
+    },
+    {
+      "purpose": "Provenance method: identifies conversations, intuitions, lab execution, computations and code as parts of experimental lineage to preserve. Supports a student-facing inference about logging the process; does not establish that these records are publicly inspectable.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00267"
+      }
+    },
+    {
+      "purpose": "Commercial interest and evidence dependency: describes deploying the company's tools into semiconductor partners' environments, including local inference and training on partner data. Establishes the founders' stake in the capabilities being discussed.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00341"
+      }
+    },
+    {
+      "purpose": "Openness qualification: reports contributions to existing open-source projects. Preserve this evidence against implying complete closure, while distinguishing contributions from release of the specific experimental datasets, models and evaluation artifacts needed to reproduce the interview's claims.",
+      "locator": {
+        "type": "segment",
+        "segment_id": "s00353"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "stage": "collect_feed",
+  "status": "failed",
+  "input_count": 8,
+  "output_count": 2,
+  "started_at": "2026-10-14T03:20:38.923275Z",
+  "tools_or_models": [
+    "requests",
+    "feedparser"
+  ],
+  "cost_usd": null,
+  "cost_estimated": false,
+  "errors": [
+    "arxiv-2609.30541: 429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?id_list=2609.30541",
+    "arxiv-2609.28614: 429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?id_list=2609.28614",
+    "arxiv-2609.18094: 429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?id_list=2609.18094",
+    "arxiv-2609.40303: 429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?id_list=2609.40303",
+    "arxiv-2610.10491: 429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?id_list=2610.10491",
+    "arxiv-2609.39360: 429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?id_list=2609.39360",
+    "arxiv-discovery: 429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:autoresearch&sortBy=submittedDate&sortOrder=descending&max_results=8"
+  ],
+  "finished_at": "2026-10-14T03:20:55.512422Z"
+}

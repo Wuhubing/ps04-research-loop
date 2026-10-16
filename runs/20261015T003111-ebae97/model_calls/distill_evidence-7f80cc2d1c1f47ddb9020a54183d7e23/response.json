@@ -1,0 +1,78 @@
+{
+  "item_id": "7f93d63faaf11f733276a443",
+  "version_id": "1c8d31d1a52853a33abbf82a2909b64babf8ea03d6714eb54e2df4ed7128e44a",
+  "synopsis": "IdeaScientist contributes a staged research-proposal workflow, separate LoRA/GRPO training for three roles, and an author-run evaluation of generated proposals. Its evidentiary role across pieces 01–03 is to illustrate delegable planning tasks, scrutinize proposal-quality proxies, and supply an inspectable evaluation checklist alongside substantial reproduction costs. It supports claims about reported ideation scores and proposed experimental designs, not successful execution of those experiments. Supplied publication metadata places October 2 within the September 16–October 15 UTC window; October 9 is an update. This card extracts the supplied source without independent verification.",
+  "limitations_and_counterevidence": "The 14,977 targets include 14,500 training papers and only 277 test papers. Table 1 implies a 14.0-score-point advantage over DeepScientist and only 1.1 points over the base harness; specificity decreases after training. Human comparisons on 50 papers do not significantly favor Trained over Base or DeepScientist. In-domain novelty explicitly measures cross-setting transfer, so it partly rewards the workflow’s intended behavior. External systems lack matched caps, and training requires substantial H100 resources; the selected evidence does not establish a monetary reproduction cost. E.1’s final-evaluation-only statement and F.4’s full-test checkpoint comparison leave selection independence unresolved rather than proving test leakage. Retrieval restrictions do not rule out model-memory contamination. This is one author-run study, not independent replication; linked code and data completeness remain unverified. These orientation fields cannot substitute for passage citations in later synthesis.",
+  "passages": [
+    {
+      "purpose": "Method and delegation: §3.2 describes separate training of gap finding, innovation and report writing, including actual adapter optimization rather than instruction revision.",
+      "locator": {
+        "type": "text",
+        "quote": "We train the gap finder, innovator, and report writer separately before recomposing them in the shared harness, while preserving the same inputs, outputs, information access, and actions during training and deployment. Per-role training is possible because each agent has a clearly defined input and output, while human-authored papers provide valuable information from which corresponding reference artifacts can be reconstructed. This decomposition turns a sparse proposal-level outcome into stage-specific learning signals without prescribing a single tool-use trajectory. We optimize a separate LoRA adapter for each role using asynchronous Group Relative Policy Optimization (GRPO)"
+      }
+    },
+    {
+      "purpose": "Practical proposal checklist and evidence boundary: Appendix A.2 requires baselines, ablations, falsification conditions and limitations, explicitly as plans without measured results.",
+      "locator": {
+        "type": "text",
+        "quote": "| Proposed evaluation | The evaluation setting, benchmarks, baselines, metrics, and ablations the method would use, stated as a plan without measured results. | \n| Falsifiable predictions | Empirical claims the method implies, each paired with the observation that would falsify it. | \n| Limitations | Three to five concise limitations, acknowledged or apparent from the method. | "
+      }
+    },
+    {
+      "purpose": "Evaluation denominator and reference construction: §4.2 distinguishes training, validation and test targets and explains model-produced, results-masked references.",
+      "locator": {
+        "type": "text",
+        "quote": "These filters yielded \\(14{,}977\\) target papers. We randomly partitioned them into \\(14{,}500\\) training papers, \\(200\\) validation papers, and \\(277\\) held-out test papers, and used the same partition for all three agents. Qwen3.6-27B converts each human-authored target paper into the required proposal schema, preserving the research problem, proposed method, model design, related work, and limitations, while removing all measured experimental outcomes. This results-masked representation records directions that human researchers have pursued without exposing their experimental success."
+      }
+    },
+    {
+      "purpose": "Reported results and comparison correction: Table 1’s Qwen3.6-27B rows give overall scores of 60.6, 73.5 and 74.6, supporting calculated differences of 14.0 and 1.1 score points. Columns are All, Cutoff, In-domain, novelty average, relevance, clarity, specificity, actionability, soundness, impact, quality average and overall; specificity falls from 80.6 to 77.9.",
+      "locator": {
+        "type": "text",
+        "quote": "| DeepScientist | 57.6 | 58.5 | 15.2 | 43.8 | 94.0 | 85.8 | 77.8 | 74.9 | 61.9 | 70.6 | 77.5 | 60.6 | \n| IdeaScientist-Base | 66.0 | 67.1 | 67.5 | 66.9 | 96.2 | 89.9 | 80.6 | 77.3 | 62.8 | 73.4 | 80.0 | 73.5 | \n| IdeaScientist-Trained | 67.3 | 68.3 | 70.9 | 68.8 | 98.2 | 90.3 | 77.9 | 77.8 | 64.5 | 73.5 | 80.4 | 74.6 | "
+      }
+    },
+    {
+      "purpose": "Human evaluation and counterevidence: §5.2 preserves the small sample, blinded comparison and exceptions to statistically significant superiority.",
+      "locator": {
+        "type": "text",
+        "quote": "We ran a blind pairwise human evaluation on 50 randomly selected papers from the held-out test split. For each paper, two annotators compared the proposal from IdeaScientist-Trained with proposals from other systems on the same backbone, including IdeaScientist-Base. System names were hidden. Figure [2](#S5.F2)(b) reports the win rates: IdeaScientist-Trained beats every other state-of-the-art system by a statistically significant margin, with DeepScientist the only exception. IdeaScientist-Trained also wins more often than IdeaScientist-Base, although the difference is not statistically significant."
+      }
+    },
+    {
+      "purpose": "Metric qualification: Appendix C operationalizes In-domain novelty as binary structural transfer. This supports scrutiny of alignment between the metric and the system’s design, rather than treating the score as established scientific novelty.",
+      "locator": {
+        "type": "text",
+        "quote": "In-domain is the percentage of proposals that exhibit structural cross-setting transfer. A proposal receives one when it imports a mechanism from a different problem setting and adapts it through a shared underlying structure, and zero when the transfer is absent, superficial, or unsupported. Thus, unlike All and Cutoff, In-domain is a binary transfer judgment rather than a 1–10 comparison against a separate literature set."
+      }
+    },
+    {
+      "purpose": "Compute cost, reproducibility and comparison limits: Appendix E.1 reports matched caps for backbone controls, unmatched external loops and training hardware per role. Hardware allocation is not a dollar-cost estimate.",
+      "locator": {
+        "type": "text",
+        "quote": "The three IdeaScientist-Base controls (Qwen3.6-27B, Gemma-4-31B, and GPT-OSS-120B) run under these identical caps. The open source autoresearch systems and the general purpose agents run their own native agent loops, and we do not impose these caps on them. Each role is trained on \\(40\\) nodes of eight H100 GPUs, with \\(32\\) nodes dedicated to policy optimization and \\(8\\) nodes to asynchronous rollout generation."
+      }
+    },
+    {
+      "purpose": "Selection-independence claim: preserve E.1’s explicit validation-based checkpoint rule and final-evaluation-only assertion alongside the next passage.",
+      "locator": {
+        "type": "text",
+        "quote": "For each sub-agent, we select the checkpoint with the highest held-out validation reward; the test split is used only for final evaluation. The reported system uses gap-finder step 380, innovator step 310, and report-writer step 194."
+      }
+    },
+    {
+      "purpose": "Contradictory or qualifying evidence: F.4 reports multiple checkpoint combinations compared on the full test split. Read with E.1; the text leaves the timing and independence of selection unclear.",
+      "locator": {
+        "type": "text",
+        "quote": "We trained each role over multiple checkpoints and evaluated more than one checkpoint combination. Table [12](#A6.T12) compares the selected combination (gap finder step 380, innovator step 310, and report writer step 194) with the superseded combination (steps 122, 116, and 80) on the full test split under the same judge and metrics."
+      }
+    },
+    {
+      "purpose": "Contamination screening and its limits: E.2 reports negative title-only probes while explicitly preserving latent-memory uncertainty.",
+      "locator": {
+        "type": "text",
+        "quote": "As a direct screening check, we manually queried each of the five models about 10 randomly sampled post-cutoff target papers (50 model–paper queries in total). Each query supplied only the paper title and asked the model to describe the paper’s contents, without retrieval or an abstract. None of the models identified or described any of the queried papers as known work. We use a title-only probe because supplying the abstract would itself reveal substantive content. This result provides evidence against obvious title-level memorization in the sampled cases, but it cannot detect latent, paraphrased, or method-level memory and therefore cannot rule out contamination."
+      }
+    }
+  ]
+}

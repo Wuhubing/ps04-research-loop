@@ -1,0 +1,27 @@
+An agent finds a better score. Should you accept its result? Our interpretation of these reports is: check three things separately. Does the implementation pass validity checks? Does it improve the chosen metric? And does that improvement advance the scientific or practical objective? As of October fifteenth, twenty twenty-six, the defensible conclusions are conditional, tied to particular protocols and evaluations.
+
+Start with protein language models. The protein-search authors report that two recipes lowered validation loss and still beat their reference on that measure after twelve hours of training. But lower loss did not identify the strongest recipe for contact precision, itself a proxy for downstream protein folding.
+
+In their main campaign, only four of seven changes survived final ablation. The authors chose the search setup and applied a human gate. Our interpretation is narrow: search-time improvement was an incomplete acceptance criterion in this study, not evidence of a fully autonomous scientific discovery.
+
+The kernel authors tested whether generated programs survived checks beyond the public screen. In their first stress-test run, forty unrestricted programs entered. Thirty-five passed the public screen. Hidden checks then falsified twelve of those thirty-five.
+
+That is a finding about this generated cohort, not a universal agent failure rate. And surviving the broader checks still did not certify a program. The authors describe those survivors as empirically unfalsified. A finite test can expose a failure without proving that every remaining implementation is valid everywhere.
+
+Transfer is a separate question. In the kernel study, archived DWF won only four of sixteen real-data comparisons. In a separate forecasting check, all three ten-year forward diagnostic splits favored CAKE over the selected discovery.
+
+Our interpretation is that broad superiority does not survive these checks. These results do not erase every local gain. They limit where a gain can reasonably be claimed. A result under one evaluation protocol cannot silently become a promise about another dataset or forecasting horizon.
+
+The production report says that preventing the agent from changing evaluator code prevents metric gaming. But the same report describes improved coherence producing unusable clusters, with deep levels collapsing into singletons. The researchers added constraints and a usability metric.
+
+Our interpretation: the prevention claim is too strong. Evaluator integrity and metric validity need separate checks. This evidence comes from book recommendation at one organization. Its offline metrics were not validated against actual customer outcomes in this study, so a better offline score does not establish better customer outcomes.
+
+Malena adds a baseline lesson. Its authors report that, with model, hardware and budget matched, tested published harnesses did not significantly outperform their plain agent session with frontier backbones.
+
+But the weaker Gemma backbone favored MLEvolve on percentile. Backbone dependence and limited statistical power matter: a nonsignificant difference does not prove equivalence, and this study does not establish universal harness redundancy.
+
+Our practical interpretation is to compare added orchestration against a simple, resource-matched baseline before crediting the extra machinery for an improvement.
+
+For your next experiment, report three outcomes separately: validity checks, the chosen metric, and the intended objective. None should silently substitute for another.
+
+These are separate author-reported cases, not independent replications of one general effect. Independent replication is not supplied here. The useful lesson is conditional: an intervention helped under a particular protocol, or a verification step exposed a particular failure. Keep that boundary attached to the result when you decide what to trust.

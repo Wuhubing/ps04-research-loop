@@ -1,0 +1,50 @@
+[
+  {
+    "piece": "01",
+    "title": "Research Loop 01: What Can Research Agents Actually Automate?",
+    "description": "Which research tasks can students delegate to agents while retaining responsibility for the experiment? Research Loop examines author-reported protein model results, Agora’s shared experiment history, and Periodic Labs’ account of AI-assisted laboratory work.\n\nThe evidence supports bounded delegation, with human objectives and validation decisions. It does not establish fully autonomous discovery or portable speed and cost gains. The protein result is a proxy improvement; Agora’s history does not establish independent validation; Periodic’s commercially interested testimony uses a provisional transcript.\n\nAs of: 2026-10-15 UTC. Frozen evidence window: September 16–October 15, 2026. Agora’s reported execution occurred April 26–May 8, before this publication window.\n\n\nSources and locators:\n\n- Li and Lu: NanoProteinLM: https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/ — “A better PLM recipe by hill-climbing NanoProteinLM”; “Building hill-climbable environments for research tasks”; “Failure mode: Perfect on reward, failure on science.”\n- Agora: https://arxiv.org/abs/2609.18094 — §4.3, “Negative results,” “Primary result,” §4.7 and §4.8.\n- Periodic Labs interview: https://www.latent.space/p/periodic — recording 00:50:46–00:51:39, 01:04:24–01:05:04 and 01:15:06–01:16:53. Transcript provisional.\n\nCompanion article (free): https://researchloopweibing.substack.com/p/research-loop-delegate-the-experiment\n\nAI disclosure: AI assisted with research selection, synthesis, scripting, and video production. Narration uses an authorized local AI clone of the student’s own voice. The student listened to the videos and authorized this unlisted upload. This does not assert independent replication of the reported research or completed verification of every source recording.\nProduction: Visuals authored in Google Vids; local audio and caption finishing. English captions are embedded in the video.\n",
+    "file": "/Users/ww/Desktop/26f/software/ps04/data/media/video-01/Research-Loop-01-review.mp4",
+    "sha256": "74321112e843cc568c9482e72eee1a27166a8b24e4236d9e53b27b13a221c1bd",
+    "visibility": "unlisted",
+    "audience": "not made for kids",
+    "published": true,
+    "url": "https://youtu.be/GpkQYzDhcTs",
+    "verified_at": "2026-10-16T19:55:56.884628+00:00",
+    "verification": "YouTube Studio Content listing explicitly shows Unlisted",
+    "signed_out_access_verified": false,
+    "companion_article_url": "https://researchloopweibing.substack.com/p/research-loop-delegate-the-experiment",
+    "reciprocal_link_saved_at": "2026-10-16T20:04:51.908879+00:00"
+  },
+  {
+    "piece": "02",
+    "title": "Research Loop 02: Why a Better Score Can Mislead You",
+    "description": "A higher search score is only one part of an experimental result. Research Loop examines four author-reported cases involving protein-model recipes, kernel validity and transfer, production metrics, and agent harness comparisons.\n\nThe practical takeaway: report implementation validity, metric improvement and progress toward the intended objective separately. Findings remain bounded by the authors’ protocols, baselines and limitations. These separate cases do not supply independent replication of a general effect.\n\nAs of: 2026-10-15 UTC. Evidence window: 2026-09-16–2026-10-15, inclusive.\n\n\nSources and text locators:\n\n- Protein-search report: https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/ — “Failure mode: Perfect on reward, failure on science”; “What survived the human gate.”\n- Kernel Autoresearch: https://arxiv.org/abs/2610.10394 — “Results and failure modes”; “Repeated generation and a formulation-first prompt”; Appendix B.7, “The real-data check is less favorable”; “Long-horizon diagnostic.”\n- AutoResearch at Production Scale: https://arxiv.org/abs/2609.30541 — “III-E Metric Fixation”; “V-E Validation Protocol”; “Limitations.”\n- Malena harness study: https://arxiv.org/abs/2609.40303 — opening excerpt beginning “We then confirm the same picture”; “D.2 Detailed MLE-bench results”; “Limitations.”\n\nAll cited materials are text sources. Locators identify sections or excerpts; there are no recording timestamps.\n\nCompanion article (free): https://researchloopweibing.substack.com/p/research-loop-a-better-score-is-only\n\nAI disclosure: AI assisted with research selection, synthesis, scripting, and video production. Narration uses an authorized local AI clone of the student’s own voice. The student listened to the videos and authorized this unlisted upload. This does not assert independent replication of the reported research or completed verification of every source recording.\nProduction: Visual cards, narration, and captions produced locally, then imported into Google Vids. English captions are embedded in the video.\n",
+    "file": "/Users/ww/Desktop/26f/software/ps04/data/media/video-02/Research-Loop-02-review.mp4",
+    "sha256": "2e94aa50486dffe93845f43661a731ee6d34d0b1385de1d20dc9adac0c959dab",
+    "visibility": "unlisted",
+    "audience": "not made for kids",
+    "published": true,
+    "url": "https://youtu.be/dYsUBNhOEtA",
+    "verified_at": "2026-10-16T19:55:56.884628+00:00",
+    "verification": "YouTube Studio Content listing explicitly shows Unlisted",
+    "signed_out_access_verified": false,
+    "companion_article_url": "https://researchloopweibing.substack.com/p/research-loop-a-better-score-is-only",
+    "reciprocal_link_saved_at": "2026-10-16T20:04:51.908879+00:00"
+  },
+  {
+    "piece": "03",
+    "title": "Research Loop 03: Build an Experiment Someone Else Can Check",
+    "description": "How can student researchers make agent experiments checkable? Research Loop examines instruction optimization, held-out comparisons, provenance, claim-level evaluation and resource accounting.\n\nAs of 2026-10-15 (UTC). Frozen evidence window: September 16–October 15, 2026. This is an editorial synthesis of supplied evidence, not a new live collection. Reported findings remain attributed to their authors; the proposed student protocol is interpretation, not a replication guarantee.\n\n\nSources and locators:\n\n- AI Code King tutorial: https://www.youtube.com/watch?v=wMQB33rM28I: source recording timestamps 00:56.800–01:01.780; 04:30.980–04:35.980; 10:49.900–10:53.820; 11:35.580–11:47.580; 13:29.460–13:38.780.\n- Campus Talks: How is AI affecting open research?: https://timeshighered.podbean.com/e/campus-talks-how-is-ai-affecting-open-research/: source recording timestamps 16:14.680–16:20.000; 39:07.310–39:10.510; 41:08.670–41:11.870; 41:13.710–41:16.430; 54:36.070–54:40.270.\n- ResearchFlow-Eval: https://arxiv.org/abs/2610.18088: §3.3 “LLM judge”; §6; task-package “Data and test access”; Appendix G and Table 16.\n- Malena paper: https://arxiv.org/abs/2609.40303: §5.1, Figure 3 cost discussion and results-table inconsistency; Appendix A.4, modeled cache costs.\n\nLimitations: automatic transcripts remain provisional. The tutorial does not establish measured improvement; podcast guidance is not a tested intervention. ResearchFlow-Eval uses one anchor task and permits logged test access during optimization. Malena’s costs are modeled, and its supplied comparative-results inconsistency remains unresolved. These sources do not independently validate the proposed combined protocol.\n\nCompanion article (free): https://researchloopweibing.substack.com/p/research-loop-build-an-experiment\n\nAI disclosure: AI assisted with research selection, synthesis, scripting, and video production. Narration uses an authorized local AI clone of the student’s own voice. The student listened to the videos and authorized this unlisted upload. This does not assert independent replication of the reported research or completed verification of every source recording.\nProduction: Visual cards, narration, and captions produced locally, then imported into Google Vids. English captions are embedded in the video.\n",
+    "file": "/Users/ww/Desktop/26f/software/ps04/data/media/video-03/Research-Loop-03-review.mp4",
+    "sha256": "97c3406c4d8856636e2638d3a4052b45612a7f1e19e54b85e948736e4d29a5fa",
+    "visibility": "unlisted",
+    "audience": "not made for kids",
+    "published": true,
+    "url": "https://youtu.be/l2P54o1BgG8",
+    "verified_at": "2026-10-16T19:55:56.884628+00:00",
+    "verification": "YouTube Studio Content listing explicitly shows Unlisted",
+    "signed_out_access_verified": false,
+    "companion_article_url": "https://researchloopweibing.substack.com/p/research-loop-build-an-experiment",
+    "reciprocal_link_saved_at": "2026-10-16T20:04:51.908879+00:00"
+  }
+]

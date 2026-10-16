@@ -1,0 +1,11 @@
+{
+  "mode": "replay",
+  "passed": true,
+  "records": 26,
+  "changes": {
+    "new": 0,
+    "changed": 0,
+    "unchanged": 26
+  },
+  "note": "Storage-only replay; no new sources collected, no new series generated, not a second live run"
+}

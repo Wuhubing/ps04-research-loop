@@ -1,0 +1,15 @@
+{
+  "stage": "model_distill_evidence",
+  "status": "completed",
+  "input_count": 1,
+  "output_count": 1,
+  "started_at": "2026-10-15T00:41:17.499261Z",
+  "tools_or_models": [
+    "codex exec",
+    "gpt-6-astra"
+  ],
+  "cost_usd": null,
+  "cost_estimated": false,
+  "errors": [],
+  "finished_at": "2026-10-15T00:41:55.530552Z"
+}

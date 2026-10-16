@@ -1,0 +1,15 @@
+{
+  "stage": "model_write_articles",
+  "status": "completed",
+  "input_count": 1,
+  "output_count": 1,
+  "started_at": "2026-10-16T18:56:16.233435Z",
+  "tools_or_models": [
+    "codex exec",
+    "gpt-6-astra"
+  ],
+  "cost_usd": null,
+  "cost_estimated": false,
+  "errors": [],
+  "finished_at": "2026-10-16T18:56:49.911330Z"
+}

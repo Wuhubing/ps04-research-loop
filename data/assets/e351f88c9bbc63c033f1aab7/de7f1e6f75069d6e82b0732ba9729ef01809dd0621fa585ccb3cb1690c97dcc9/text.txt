@@ -1,0 +1,1175 @@
+You're listening to a Times Higher Education podcast.
+Hello, and welcome to Campus Talks.
+I'm Eliza Compton, Deputy Editor of Campus,
+the platform from Times Higher Education
+that shares best practice across all aspects
+of the global university sector.
+For this episode, I'm talking to two experts based in Europe
+about open research and specifically developments
+that are shaping how it is practiced.
+That is, the rise of AI
+and reform around research assessment.
+My first guest is Julia Priest-Bookhite,
+who is an award-winning educator with expertise
+in open science, scientific practice,
+research ethics, and social technologies.
+I talked to her about the benefits and challenges
+that AI presents for open science,
+including how these tools decouple the creation of knowledge
+from how it is understood and used.
+My second interview is with Saran Field,
+an educator and researcher who advocates for open science
+and practices like replication, registered reports,
+and responsible research.
+Our conversation looks at what open science brings
+to the humanities and social sciences,
+why academic publishing needs reform,
+and how early career researchers
+can embed open science practices in their own work.
+This element of practical advice is key here.
+Most academics will know about open research
+and how its practices across research, conduct,
+and communication aim to make knowledge findable,
+accessible, reusable, and interoperable.
+A recent survey from the Royal Society of Publishing,
+however, indicated that while awareness of practices,
+such as open access publishing, pre-prints,
+and open data, code, materials, and peer review,
+were as high as 92%.
+The proportion of researchers
+who actually use these practices is much lower.
+Both my guests were generous with their insights
+for researchers of any stage,
+looking to make their own processes
+more open, ethical, and transparent.
+And so did my first interview.
+Yulia Presbokait is a professor and researcher
+at Keel University in Germany,
+and since 2018 has been scientific director
+and chair of the Board of the Centre
+for Constructive Science.
+Yulia has provided scientific advice
+to international and European initiatives,
+including the Global Research Initiative on Open Science,
+the European Commission on Research Integrity Education,
+and the European Open Science Cloud Association.
+In June, the report she co-authored on open science
+and the effects of generative artificial intelligence
+on scientific exchange was presented at the meeting
+of the Panel for the Future of Science and Technology
+at the European Parliament.
+I was really keen to talk to her
+about the insights and policy lessons
+that came out of this report.
+And I began by asking her about using scientific exchange
+as a frame for the issue of AI and open science.
+Hi, Yulia, it's great to be talking to you today
+about open science and AI.
+Hi, it's nice to meet you and thank you for inviting me.
+So the report that you presented to the panel
+at the European Parliament in June
+on open science and generative artificial intelligence
+focuses on scientific exchange.
+Why did the research team choose this lens?
+Yeah, it's a very interesting perspective
+if you focus on scientific exchange
+because scientific exchange is more or less the middle
+of all what research is doing.
+So we normally don't do research for ourselves.
+Some people do, but not the organizations.
+So when we do research, we actually want to share it
+so that somebody else can pick it up
+or an enterprise can pick it up
+or society can pick it up.
+So scientific exchange is more or less a core point
+which we need and it changed a lot
+when we look back the last 200 years.
+So scientific exchange is constantly developing
+in how we are doing it.
+Yeah, so really focusing on the methods and systems
+for exchanging of scientific information.
+So not just publications, but also exchanges
+between researchers and the frameworks
+through which all that works.
+Now, the report is the effects of generative AI
+on scientific exchange.
+Can you tell us a bit about the report itself?
+So how did it come about?
+Let's start there.
+Yeah, so I was asked by the European Parliament
+STUO members to look into scientific exchange
+in times of gen AI and open science.
+They were interested in informing their members
+of parliament because in the near future
+there are several new acts coming along
+which somehow are related to the topic gen AI research
+and open science.
+And for them, it's always important
+that they are informed what's going on right now
+what are the questions so that they can decide
+in the best way on how to govern
+the European research area.
+And STOA is the Panel for the Future of Science
+and Technology within the European Parliament.
+Is that right?
+Yes, exactly.
+So that's the place where the European Parliament
+discusses research and the European research area
+and how they can govern it in the future.
+So gen AI, as we all know,
+of course they already had gen AI
+as a point to be discussed.
+But the specifics between gen AI and open science
+which is a principle which is very much acknowledged
+by the European research area,
+in combination with how do we share our research results
+but also our data and software in the future
+actually opens up a very broad field in,
+okay, where do we want to go in the future?
+And maybe you also heard about the new arising topic
+of research security, which is not the topic of the report
+but if you are a member of the European Parliament
+and you have to decide between going heavily on security
+and research security or going heavily on open science,
+you're more or less lost if you do not have
+the information at hand
+which can lead you through all these difficult times.
+So the report is a bit of a roadmap
+with possible ways through this landscape.
+And one of the things that is very clear from it
+is that there are definite benefits to gen AI
+for open science as well as the risks
+which include things like security and trust and provenance
+which is an aspect I want to talk a little bit more about.
+Let's start with the benefits of gen AI to open science.
+Like where can the goods come from this convergence?
+Yeah, so gen AI makes research more accessible
+in a sense of you ask whatever AI you are using,
+you ask, okay, what's new in the field
+of biomedical research right now?
+And the answer comes quickly and you can follow that up.
+So there's a lot of information
+which we have suddenly at hand
+by using only one single tool in comparison to,
+maybe you remember what we had to do,
+we had to go into a library and we had to look it up
+and we had to see, okay, what is connected,
+what's going on right now in a specific research field?
+So yes, so accessibility and findability
+is enhanced through gen AI, that's for sure.
+Also some disciplines use gen AI to actually generate data
+like synthesized data, which also can help us researchers
+to make better future statements on specific things.
+And there are a lot of more benefits.
+If you look into the more social sphere,
+you can see that gen AI makes research more inclusive
+because even people from parts of the world
+which were not yet in the core dialogue of research
+can now join this dialogue because they have access to it.
+So it connects everything better and more efficient,
+but there's also the downside.
+So I stay with the social thing.
+We all know that the data AI tools are trained with
+are somehow homogenized data.
+Not everything is included.
+The question is who decides what is included?
+So now that we are all starting or that we are all using it,
+it needs to be clear for us that it is not
+the whole data world we are accessing.
+It is a specific data world we are accessing.
+And so this is more than the downside
+because some minorities or some people
+or even some research disciplines,
+they're not represented when we only use AI in general
+and gen AI in specific.
+And the same, so you can go more or less
+through many, many different lenses
+and you always see the same.
+From a economical point of view, it's the same.
+So we are so much more efficient in doing our research
+because a lot of tasks are now,
+we do not need human workforce anymore.
+It can be done by the algorithm.
+And some actually can be done in a very,
+even in a better way by the algorithm than by hand.
+However, only a few institutions and countries
+can pay for the energy which is needed to do that.
+So also when you look into this economical perspective,
+you see, oh, okay, there's a lot of change
+and there's a lot of positive things
+and benefits and with these positive benefits,
+we buy in a lot of challenges which we have to tackle now.
+I think that's the most important learning from the report
+is that whichever angle you take,
+the social angle or the economical angle
+or even the research angle by itself,
+like can we do better research?
+Actually, all experts said, yes, we can.
+However, all these benefits,
+they come with a buy in of new challenges,
+which we have somehow, yeah, which we have to take care of.
+So there are significant benefits to open science
+with the arrival of Gen AIS, you've said,
+but with that comes the responsibility
+to put in frameworks and guidelines.
+One of the risks that the report identifies
+is the risk of decoupling knowledge creation
+from where the knowledge ends up.
+Can you talk a bit about this issue of provenance
+as it relates to open science and Gen AI?
+Yeah, yeah, I think this is one of the most important
+aspects we have to take into account.
+So when we go back to scientific exchange,
+to our starting point,
+so a very simple way of imagining scientific exchange
+is two people come together, one person knows something
+and explains it to the other person.
+So this is signed and then the other person can ask back
+in a sense, okay, I didn't understand it in that way,
+do you mean it in that way?
+And is it the right way I understand it?
+And the other person can answer and can say yes or no
+or correct or whatever, yeah.
+So this is a really a dialogical thing,
+like scientific exchange is not a one way, yeah,
+it doesn't help if we present something,
+even if it is written in the best way, people have questions,
+not everybody understands it in the same way.
+So what's happening now, it already happened
+with digitalization, yeah, is we are decoupling
+the knowledge from the person, yeah,
+we still have authors and of course you can ask, yeah,
+or you can comment on a research article
+if you don't understand it or if you have questions
+or if you doubt it, but it's opening on the one hand,
+the benefit is that we can share even over national
+or internationally and we can share it not taking care
+of our regional provenance, but what we buy in
+is that we can't ask back in the moment we are reading
+or in the moment we are understanding.
+And so this was, as I said, this was already difficult
+in the digital age, yeah, so this was something we realized
+and then new platforms actually came up and they took it on
+so the new platforms where you can comment
+on a research article and the original author
+can then answer, yeah, so this is something
+which we organized in our research community.
+But Gen AI puts a new level on that, you know,
+because Gen AI actually doesn't care about the author,
+Gen AI works in a different way, you know,
+it's not that the Gen AI tool doesn't follow sense
+or understanding, it follows very probabilistic algorithms.
+So Gen AI would never ask the author, yeah,
+if they're not programmed to ask, yeah,
+what did you mean with that?
+So there we really have a cut.
+So Gen AI uses information, which is good,
+which was opened up with the open science movement, yeah,
+so like here you have, like use it, yeah,
+and I think this is a really good thing, yeah.
+But Gen AI doesn't care who wrote it, yeah,
+and if it is right or wrong or explained in the right way
+or justified in the right way, and then,
+and I think this is the main part is
+it even gives it to other people.
+So the question is, who do we ask now?
+If Gen AI gives us a statement, yeah,
+we can't ask Gen AI, we can ask Gen AI,
+but there is not, Gen AI is not the author in a sense
+that we can ask, what did you mean by that?
+So Gen AI is only the tool which connects
+and we don't have an answer right now
+in the research community on how we connect it back
+to the authors, yeah, which is important
+because research results or research processes
+are always connected to understanding
+so that we can develop, yeah, even furthermore,
+our knowledge and understanding about the world.
+And the word provenance is more or less now
+the core point which explains this challenge.
+So what we are working on is,
+or what we are suggesting in the report,
+is that data needs to be connected
+to the provenance it comes from, yeah.
+So I always said author,
+maybe we do not need the author, yeah,
+maybe we only need the research organization it comes from,
+yeah, or a specific region it comes from,
+but we do need to know where data,
+which Gen AI used to produce something else comes from
+so that we can actually understand
+the justification backwards, yeah,
+so that we can understand where it comes from.
+And there are technological developments
+in data infrastructures, yeah,
+and also in publishing infrastructure
+which are working on that, yeah,
+so that we, I would say it's a further development
+of naming the authors on research articles
+in the new age of Gen AI.
+And this includes not just outputs like articles and books
+but also data sets, methodologies, sources,
+all the aspects that go into putting together
+a piece of research.
+It's interesting you say that maybe the author
+doesn't matter, what or is less important?
+So that's, I don't mean to put words into your mouth.
+Oh, they will ask him now, you said that.
+That's not what I mean, sorry.
+But I am interested in, because metrics,
+publication metrics are so important to individual academics.
+How does that work?
+Yeah, yeah, this is a research assessment point.
+So it is a big discussion
+and it was a discussion before Gen AI
+that our research assessment doesn't fit very well
+with the research environment we wish to be in place.
+So there are a lot of movements, DORA and QAARA,
+which are working on that.
+And I absolutely support them in a sense of,
+okay, we really have to change these metrics.
+I think what comes now with Gen AI
+actually is even, yeah, as here too,
+it's the next level, yeah.
+So the question really is,
+who is the author of synthesized data?
+Yeah, of course, the person who had the idea
+and prompted it, I would say yes.
+However, if the tool uses a lot of other data,
+which it is trained by, yeah,
+are we now counting all these authors then too?
+Maybe you saw one of the physics paper
+which have 250 authors already without Gen AI.
+So you can just imagine what will go on, yeah.
+Yes, so I do think we need change there.
+Yeah, we still need authors because we do need people
+who are experts in the field
+and have an overview of what's going on
+and do understand, yeah, the theory
+and the practice of their field.
+Absolutely, however, in detail,
+the research broke has changed so much
+that only counting metrics of research articles
+which have research results
+will not make sense in the future, I don't think so.
+But it's not that we're saying,
+the report is silent on, okay,
+how should we do it in the future?
+Because actually we do think Kawara and Dora
+are already on a very good way, yeah.
+So we support that.
+And there, the shift is much more on, okay,
+how much teaching, how much supervising,
+how much mentoring are people doing?
+Because that also shows, okay,
+am I the expert in that field?
+Can I give this knowledge to somebody else?
+The, how do you say that in English?
+The mere production of texts
+will not be as important
+as it was in the last 100 years.
+It's such a fundamental shift.
+The report also mentions the fact
+that AI is already deeply embedded in research
+into all these aspects.
+So if you are thinking about, I don't know,
+like the layers of knowledge
+that go into each prompt, for example,
+then what you're saying about it being very difficult
+to then tease out who is responsible
+becomes much, much more difficult.
+With the current situation with AI,
+it's new, it's emerging frameworks
+and how to deal with all these questions
+are very much works in progress.
+What can individual researchers do at the moment
+to navigate this space, to protect their,
+I guess to protect their work in a sense.
+Yeah, this is, yeah.
+So we are right now in times
+where a lot of things are changing.
+So I always, so my team also gives open signs
+and gen AI trainings for researchers.
+And actually I can, we can observe
+that the questions we receive as trainers are changing.
+So just to make an example for everybody,
+two years ago, yeah, we were often asked
+how researchers can protect that their material
+or what they're doing, their research result doesn't,
+is not used by AI tools.
+So they wanted to protect their research results,
+which I can understand
+and I could understand at that time.
+However, this is changing now.
+So in the trainings now, people are actually asking us,
+okay, how can we make it that AI tools
+pick up our research results
+because we want it to be included so that it is used.
+And we all know this is a big field, yeah.
+So some people want their research results to be used,
+some others not, and it really depends
+on your discipline you are in and how it works
+and how researchers also do their research in the discipline.
+But what I can say is be aware
+of how your discipline is developing
+because the disciplines are very different.
+So some disciplines are very much concentrating
+or focusing on disclosure agreements
+so that everybody tells, okay,
+which AI tool did I use while doing my research.
+They are also concentrating
+or developing intellectual property management tools,
+which you can then use licensing, which you can use,
+which makes it very clear,
+do I want my publication to be used by AI or not?
+But as I said, so there's no general standard.
+If you look into your own discipline, yeah,
+just see in which direction they go.
+And I actually do think that we all,
+as a research community, need to think about,
+okay, which ways can we go in the future?
+So it's not that there's already a clear picture
+which we can follow.
+It's more we have to create the world in a way
+so that we produce reliable research results
+because yes, misconduct or very obscure research results
+are developing faster and faster and faster with Gen AI.
+So we also have to take care
+that we know what is reliable in these times
+and what is not reliable.
+There's a term on that subject.
+There was a term that came up in your report
+that is probably quite common,
+but that I hadn't seen before,
+which is synthetic overload.
+And how this is creating problems,
+not just for researchers in terms of,
+there's so much material that is produced,
+but also in terms of funding,
+for funding bodies in that there are being more
+and more grant applications generated.
+And that's another layer of complication,
+I guess is the best word.
+So what's the role here of institutions
+and maybe funding bodies?
+So larger, the next layer of the umbrella
+above the individual researcher
+in finding the path forward.
+Yeah, actually I do think this is the layer
+where we have to find solutions.
+So the single researcher can make a suggestion
+or can find something which we can use
+then to make a more reliable research system.
+However, the institutions are the layer
+where the decisions are made
+and which will steer us into the future
+together with the political governance.
+Yes, and there are many institutions.
+So we do have the research performing organizations,
+but we, as you said, the funding bodies,
+but also data infrastructures,
+which are completely other,
+like a stakeholder and player.
+And of course the existing publishing world,
+which is also a big stakeholder.
+And they are all confronted.
+They're all confronted with the situation
+and they are all starting now to adapt and to find ways.
+I think the important part is that they speak to each other
+so that we can find actually ways
+which is good for the complete research ecosystem
+and not only for this one stakeholder.
+So your example with the funding bodies
+is a really good one
+because every funding body has this issue now.
+So they are swamped by proposals
+and they don't know how to organize that.
+However, they already started some mechanisms.
+So some of them use also AI to screen and review,
+which are going to go into review by humans
+and which are not going to go into review by humans.
+Others change to a lottery
+because there are studies that lottery actually makes sense.
+And others actually say,
+okay, we don't want text-based proposals anymore.
+We go into meetings where you present your idea
+so that we can have a dialogue on it.
+Only making this as an example.
+So there are many, many different mechanisms
+which now spring out of this challenge.
+However, I do think we need to talk to the other stakeholders
+if it makes sense or not.
+So what I mean with that is,
+does it make sense that a researcher now travels from A, B, C, D
+just to explain their research idea?
+We normally do that, I don't know, 10 times,
+like how many proposals do we write?
+It's also very different from discipline to discipline.
+So this might make sense for the funding body,
+but it doesn't make sense at all
+for the research performing organization.
+So this is what we are saying also in the report.
+We really need to do this together.
+We can try, we can do try runs
+and then see if it works,
+some mechanisms and techniques.
+But then we have to decide to category
+which is a good way to go.
+And as I say, there are always different layers.
+So we always have this social and personal change.
+Or like here, the mobility and travel in our example.
+But we also have a technical change.
+Technology is developing so fast.
+So as I said, for example, these indicators for provenance,
+they are already in place.
+The question is which one do we use?
+And which one is really going to lead us into the future?
+So it's not only decision for one specific system.
+These are decisions, okay,
+which technology are we going to use now into in the future?
+So that we can organize the research system
+which is much more efficient now.
+Don't forget it's much more efficient.
+I really think that we can solve a lot of
+societal challenges we had for years
+because we do have Gen AI now
+and researchers are using it.
+But how do we do it in a way which is reliable?
+And coming back to your synthesized overload,
+we actually do have, we had two experts with us
+which emphasized very much that
+there is a synthesized overload with funding bodies, yes.
+But there's also this fear
+that data in general
+will be overloaded with synthesized data.
+So our system only works,
+our empirical research only works
+as long as the empirical data is reliable.
+So that was in experiments before.
+Now we are using digital data, yeah,
+which is a twin or a representative of the real world.
+And now we are using synthesized data,
+which should be also a twin, yeah.
+But who is sure of, is it a twin?
+Is it not?
+And if when AI tools get fed or get trained
+with more and more and more synthesized data,
+our results will fail
+because it doesn't represent the world anymore.
+So these are all points we have to take into account.
+So Gen AI helps us, but if we move it too fast,
+it will actually turn into the opposite
+so that it cannot give us any answer anymore.
+They are such fundamental questions.
+And what I really like about what you're saying, Yulia,
+is that there's a real connection
+between the machine and the human here.
+I know we are coming to the end of time.
+I just have one more question.
+The report is going to be published in September, I believe.
+And can you give us a quick pressy
+of the policy lessons that came out of it?
+Oh, yeah.
+So the report really was written
+for the members of Parliament.
+So that means the report explains
+what is Gen AI doing right now
+in an area of open science,
+focusing on scientific exchange.
+So it first explains that.
+And then at the end, we develop options
+for the European Parliament,
+what could be done to govern us into a future
+which is more reliable.
+And there are several options
+because there are several risks,
+which we more or less touched on in our talk right now.
+We never said, okay, this is the best option to go.
+So we always made up,
+or we always offered different options.
+But just to choose one,
+which I think personally is very, very important
+and is not often discussed,
+is we really need to align
+our intellectual property rights
+so that it fits the research area better.
+What I mean with that is the licensing
+and who does this data belong to
+and how can we indicate who it belongs to
+and how can we transport this indication
+through all these different steps
+our world is now offering
+through all the tools which we are using.
+And this is called intellectual property rights question.
+Because right now it's fragmented across Europe.
+Just to make an example,
+the publishers normally do not sit
+in the same country as the researcher.
+So we do have different intellectual property rights
+with the researcher and with the publishing agency.
+And there, yeah, you can already see, yeah,
+the issue starts.
+And this is now exponential going up with Gen AI.
+So this is a point, yeah,
+which we offer as an option.
+Please look, yeah,
+please look at the intellectual property rights
+and not only for commercialization,
+because MEPs, they're doing a lot of stuff, yeah.
+They're not always concentrating on research.
+But what we're saying is, okay,
+if you really discuss new intellectual property rights
+and how you align them,
+please, please, please take research into account
+and make it easier for us to handle that in the future.
+That's a great note to end on.
+Thank you so much for your time today, Yulia.
+Thank you very much, Eliza.
+As Yulia says, generative AI opens up broader questions
+about open science and scientific exchange,
+such as how to secure security and provenance.
+I did find it interesting though,
+that concern about protecting ownership
+and data from being used to train AI models,
+especially when AI is embedded across the research process
+is also changing.
+And that now those same researchers are asking
+how to make their work more findable by AI models
+so that their research and work can be included and used.
+And now onto my second interview.
+Surround Field is an associate professor in pedagogy
+at the University of Groningen in the Netherlands,
+where her research looks at how institutional
+and cultural forces shape behaviour and identity.
+And part of that research
+concerns science reform practice and culture.
+With a background in psychology and metascience,
+she also teaches on ethics research practice,
+scientific knowledge production
+and its relationship to society,
+as well as qualitative research methods.
+Surround is editor-in-chief
+of the Journal of Trial and Error,
+an open access journal that publishes negative findings
+and work that doesn't always show tidy or explained results.
+In our interview,
+she describes ways that educators and mentors
+can support open science practices becoming the norm.
+That includes explaining to early career researchers
+how to build in time in a PhD thesis, for example,
+to include registered reports or pre-registration,
+as well as challenging the dominance
+of large academic publishers
+through open access journals and peer-reviewed communities.
+Our conversation began with the question
+of what open science practices
+bring to the humanities and social sciences.
+Hi, Surround, and welcome to Campus Talks.
+Hi, thanks for having me.
+You started studying psychology for your BA
+and moved into metascience.
+Why do you think open science is important
+to the humanities and the social sciences?
+We often hear it spoken about in terms of open data
+and things related to STEM,
+but I was interested in open science
+with regards to qualitative data,
+making it shareable and transparent.
+Yeah, it's a great question.
+So firstly, when it comes to open science
+and why it's so good
+for behaviour on social sciences and humanities,
+is simply that we deal with a lot of questions
+in these disciplines that are really slippery.
+You know, we're asking questions
+that require a lot of really difficult
+experimental stuff to get right.
+And I think when you're facing that kind of challenge,
+you really need to be very transparent
+about what you're doing.
+You need for it to be followable,
+so for people to be able to follow the same steps as you.
+And even if they don't agree with the conclusion to say,
+okay, I see how you got there.
+So that's why open science is really interesting
+and useful for us.
+And when it comes specifically to qualitative,
+I think that there are a lot of really interesting discussions
+and challenges to face there too,
+because although, yes, we think, okay,
+if you have someone else's data, you can investigate it,
+you can scrutinise it
+and see if you find the same things as them.
+But I think there are a lot of ethical and privacy concerns
+that we need to think about
+when it comes to sensitive data.
+So just saying, oh, we should share everything.
+I think that's a mandate or a suggestion
+that needs to be taken with care and reflexivity
+for it to be ethical.
+Now let's talk about science reform.
+It is an area that overlaps considerably with open science,
+particularly in the area of transparency.
+So what is it about academic culture currently
+that works against this transparency?
+Look, I think one thing is simply workflows.
+Most of us, whenever initially trained to share our materials,
+to share our code, to pre-register our plans for a study,
+so we just are working within,
+still a fairly traditional training kind of scheme
+that doesn't really emphasise these sorts of things.
+So one of the challenges I see
+is simply that although people are interested,
+they haven't learned how to incorporate open science,
+practices that help transparency in their workflows.
+So that's already one problem.
+And another thing has to do a lot
+with not so much of practices per se,
+but the culture, the broader culture.
+People worry about being scooped,
+having their ideas taken by someone else
+before they've had a chance to publish them
+and claim ownership of them.
+And I think that makes people a little bit cautious
+when it comes to being transparent,
+especially with sharing pre-prints, for example,
+or ideas for studies before they've hit a journal
+and are peer-reviewed and out for publication.
+So how do you go about countering
+some of these problems and misconceptions?
+So you are a member of the open science community at Groningen.
+Is your work about awareness?
+Is it about training research practices
+in the next generation?
+How do you go about meeting some of these challenges?
+Yeah, I think one of the things
+that I really suggest to other mentors
+who are working with students
+is to just make it normal,
+make sharing, if it's appropriate and ethical,
+make it normal.
+It's a normal thing to do.
+It's not weird, it's not difficult,
+it's not time-consuming, it's just part of the process.
+I think I like to suggest to people also,
+if you're interested in registered reports
+or pre-registration,
+that you add a little bit of extra planning
+into the timeframe for, say, a PhD thesis.
+It's normal to pre-describe your plans
+for a study before you collect the data.
+It's normal to share and be transparent about the process,
+just helping students see that open science
+really is just science done right
+and making that normal and training them from the start,
+that this is just what we do.
+I think that's a really big part of it.
+So specifically, what are you telling them
+that they need to be doing?
+So pre-registered reports is part of it.
+Obviously, are there other sort of things
+that students or early career researchers
+should be aware of and building into their science
+from the beginning?
+I think just being aware from the beginning
+of when you start planning a study,
+taking into account whether or not
+you're wanting to share data
+and considering what that would require
+of participants and consent
+before you approach participants for recruitment.
+So that's one thing that I think often
+is a little bit of an afterthought
+and then we get into this situation,
+oh, I really wanted to share these data,
+but I didn't ask the participants
+when I asked them for consent.
+So things like that,
+having these sorts of considerations
+and putting those already sewing them into the plan,
+already sewing them into the ethics request, for example,
+things like that I think can be really beneficial,
+especially for students who really do at their core
+want to share the data eventually,
+just a plan already for that eventuality
+and think, anticipate what that means.
+I also like to encourage students
+to think about just sharing other materials.
+You don't have to share the data.
+You can share, for example, the interview guide.
+You can share descriptions of your variables
+and how you coded certain things.
+You can share code if you have run a program
+using R or Python, for example,
+you can share all of that stuff.
+Very simply done on a lot of different repositories.
+So also just keeping the bar low.
+You don't have to do all of the things.
+You don't have to do everything perfectly,
+but start sharing things
+and start making your process open
+and transparent to others.
+I think that's a really great place to start as well.
+And this is probably a very lay question,
+but how much control do individual researchers have
+in how that data is stored and therefore shared?
+Storage is a lockdown to the researcher themselves.
+That can be very much a matter of an individual choice
+as to where you store it, how you store it,
+where you add any restrictions for its use.
+And usually individuals can talk to their university library
+or a digital competency center or something to help them
+with that sort of stuff,
+especially in the case of they have sensitive data.
+But I would urge caution
+when it comes to sensitive research data,
+because although you can control how
+and when you initially share it,
+you can't control what happens to it
+once it's traveled beyond your desk.
+So when you've released it to others,
+if you post it openly, for example,
+on the Open Science Framework,
+or you put it in some other kind of repository,
+I think you need to anticipate very carefully
+and very thoroughly, okay,
+if say an LLM got this and was trained on these data.
+Are there ethical issues there that I need to think about?
+So we have an element of control,
+but I think we need to anticipate cases
+where we've lost control of where the data are going
+and where indirectly, but very importantly,
+participants have lost control of where their own data
+is going when it travels beyond the research study
+that it was initially intended for.
+Once the data is out there and open and shareable,
+then obviously there's a lot of variables
+around how the data is collected
+and then how it's interpreted
+and how the ownership is seen of that data.
+So how far the ownership extends,
+like what sort of conversations are going on
+within Open Science about how that works?
+I think the initial conversations have been had
+when it comes to quantitative data.
+So say if you have a priming study
+and you're asking participants to respond with the L key
+if they've seen an upper case H or the F key
+if they've seen a lower case H,
+that kind of data can be extremely effectively removed
+from the identity of the participant.
+So you can completely separate the participant
+and the data from each other.
+And also, if you weren't to do that,
+it also just wouldn't matter.
+I mean, there's nothing that can be derived.
+No one can be attacked based on whether they
+have an error rate of X versus Y, right?
+But when it comes to qualitative data,
+there are still a lot of discussions
+that are very much in their infancy
+about how we can really effectively anticipate
+the use of the data beyond the study
+they were intended for,
+because we simply cannot reasonably anticipate
+what can be done with sensitive data
+once it has gone out into the real world
+and can be, for example,
+ingested into an AI training process, for example.
+I think that's something that really concerns me
+quite a great deal
+because we don't know how effectively,
+especially in the future,
+an LLM would be able to string together
+someone's identity potentially
+from existing data that are out there.
+We just don't know enough, I think,
+to be making informed decisions about what's safe
+and how to anticipate harm.
+So we need to be very, very careful.
+And the discussions there, like I said,
+are very much still in the early stages.
+So a lot of critical thinking and reflexivity is essential.
+Yeah, it's interesting, isn't it?
+I mean, the crisis of trust around science is very real.
+And AI is obviously another wind that is buffeting this.
+So is open science sort of moving forward
+in the same way that it was?
+Or do you feel like there's pushback against it?
+Or are people more strongly in favor of it?
+Like, is transparency an answer
+to some of the problems that you've talked about?
+There are so many possible different answers
+to this that I could give
+that cover different angles of the question.
+It's a really good question.
+It's also a tricky one to answer.
+It is moving along to the point where we are going
+from it being a matter of a grassroots movement
+to being institutionalized or bureaucratized.
+What that means is that we're seeing a lot of
+sort of blanket mandates,
+requirements for funding for publication, for example,
+that require openness in some fashion
+or a commitment to open science kind of on a default basis.
+I take issue with that,
+but that's probably another podcast discussion.
+But I think that there are benefits and drawbacks to that.
+So in one sense, you could say,
+well, the open science movement
+is kind of becoming normalized in academia.
+And I think there is a lot of really good stuff
+that can come out of that.
+I mean, more transparency,
+providing it is ethical and reflexively thought through.
+I think that's great.
+I also think that it's necessary
+along with this normalization of open science
+that we also increase scrutiny on open science
+and open scientists themselves.
+I think that it is very necessary to police the police,
+I guess you could say, be critical
+and also require a lot of accountability
+from the people that are pushing open science
+beyond the grassroots level, grassroots involvement.
+But I think that we also have a lot of people
+who are critical of better science and open science as well.
+So I think as long as these checks and balances develop
+along with the innovation and the adoption
+that's happening as a result of open science movements,
+that's a good thing.
+So on the whole, I think it's going well, it's complex.
+Well, as you say,
+and things are moving at different speeds as well.
+There's some parts that are much more deeply embedded
+into the open science movement,
+like you say, like data collection
+and more quantitative research,
+as opposed to qualitative,
+which is understandably moving with more caution.
+I mean, there's also a sense of who decides
+what research is shared.
+So you're the editor in chief
+of the Journal of Trial and Error,
+which I do think is the most fantastic title.
+It sounds vaguely 1984,
+but I don't mean to put that kind of spin on it.
+But it does give a forum for studies
+that produce negative results.
+And in that context, what role do smaller publications
+and maybe even individual teams and researchers
+play in changing the culture of science?
+It's a good question.
+What I like about what the Journal of Trial and Error does
+is exactly give a platform to smaller groups
+who are committed to putting the work into a paper,
+even if it doesn't show fancy, flashy, tidy results.
+I really appreciate, we get work
+from so many different authors
+who've put a lot of effort into creating a resource
+for others in the form of a publication
+that discusses or describes something that's gone wrong,
+something that went unexpectedly,
+something that they can't really explain,
+but there's something to learn from it.
+So there's a huge role that individuals
+and smaller groups can play,
+because I think at some point,
+if you have enough small groups and individuals,
+then you're going to have a really substantial group
+of people that are all committed
+to being open about the whole story of science
+and not just sharing the things
+that are impactful and shiny and perfect.
+So they have a huge role to play.
+And I think that that's the only way we can do it,
+is by individuals one by one,
+coming up and deciding, hey, I wanna share this,
+I wanna put work into making this a resource for others,
+even if I personally didn't get the result
+I was looking for.
+And what are the other,
+are there other sorts of ways that research assessment
+can move into that foster the kind of science
+that you see as being the goal
+and away from the models that are currently in place?
+I think peer reviewing is really one way
+that we can start to move here.
+Given that for the foreseeable future,
+we are still dealing with a lot of big publishers
+dominating the publishing sphere.
+Given that, I would encourage for authors
+to submit to initiatives like peer communities in.
+So that is a, they are platforms,
+a series of platforms for several different disciplines now,
+which essentially outsourced the peer reviewing.
+So the peer reviewing is done by the community,
+but it's not attached to any journal.
+And so once you've received a recommendation,
+which is kind of like acceptance without a journal,
+then that gets sent recommended to a journal,
+and a journal can accept the article then.
+And then you have a little bit of choice
+and you have a little bit more leverage
+because you've already got the peer review,
+you've already got an acceptance.
+So you can choose between a selection of ethical journals
+that work with this scheme.
+So I think that's one thing that I would recommend
+for people to look into.
+Another thing that I would suggest
+is to only work with journals who do open peer review.
+So then at least the, you know,
+the discussion that goes on behind the scenes
+before a paper is published, that that is also open
+because I think it's one thing to open our data.
+It's one thing to be able to share the finished article.
+But the knowledge production process
+that goes into what that final product becomes,
+I think that also needs to be open.
+So the Journal of Trial and Error, for example,
+we have an open process, so that involves also not blinding.
+So the author's name is known to the reviewer.
+The reviewer's names are known to the author.
+They are signed by default.
+And we also publish the reviews themselves
+so that you can see this discussion that goes on
+before the paper is eventually published and disseminated.
+And so I would encourage people to work with journals
+that embrace this kind of openness
+with the peer review process as well.
+And I would also just encourage authors again,
+if you have time to do a review,
+choose to do a review with an ethical publisher
+who is not gonna charge authors
+for reading their own articles.
+That's a big one.
+So on the Journal of Trial and Error,
+am I right in thinking that it is run by master's students?
+It initially was.
+Most of those students have moved on into PhD positions.
+So Stefan Gail, he's one of our former,
+our founding people and former editor-in-chief.
+He's, for example, just at the end of his PhD.
+I joined the party a couple of years after,
+but it's certainly done by very young researchers
+who were very early on in their careers
+and all on a volunteer basis.
+So these are PhD researchers, master students
+and very early faculty that are giving up their own time
+to run this thing.
+So it's very much a labor of love for these people.
+Well, very much grassroots as well
+in terms of nurturing the next generation
+and seeing how science could be done differently.
+Just as a final question, Saran,
+you teach ethics of research and research practice.
+What are the key things that new scientists need to know
+about moving within the open science movement?
+So finding the path between transparency
+and all the fair practices and the things in the ideal,
+but also building a career within these existing structures.
+That's a great question
+because I think it's a difficult thing to balance.
+On one hand, we have a lot of students,
+young early career researchers who are very interested
+and committed to doing really good transparent science,
+but that takes time.
+That takes a little bit more time
+than regular closed science does
+because there are a couple of extra steps
+or extra processes involved.
+So I think you need to be ambitious
+and you need to be aware of that.
+I think it's unfair for students to come into science
+thinking, oh, it's all this perfect process that happens
+just on its own, it's great on its own.
+Work needs to be done.
+I believe it can be done from within.
+That's what I'm doing
+and that's what I believe is possible.
+But make sure that you build extra time into your planning.
+If you are planning a study,
+plan a bit of extra time for the ethics application.
+Plan a little bit extra time
+for preparing maybe a pre-registration document
+or even preparing a registered report submission,
+which is pre-registration where you have the plans,
+but then you also get those plans
+methodologically peer reviewed before you collect the data.
+So I would say just build an extra time
+and be aware that a little extra time is needed.
+Better science comes out as a result.
+I am certain about that, but it does take extra time
+and it doesn't always go as planned
+even when you do everything exactly right.
+But I would also say to treat open science as a buffet.
+Yes, be aware of what things you can adopt,
+data sharing, material sharing,
+any kind of thing that is open science,
+but be selective about
+what you're going to spend your time with.
+It is not feasible for every person
+to do every open science thing.
+You're going to burn yourself out.
+And it's not even as if every single thing
+is applicable to every research question,
+every research problem.
+So be selective about what you choose to train with,
+to attempt to do and get started somewhere
+because I think once you get a little bit of a feel
+for what open science is
+and how to do higher quality rigorous science,
+you really get into the hang of it
+and you start to see what you can do.
+That's what I would say.
+Well, thank you.
+That is a very good note,
+very practical note for us to finish on.
+Thank you so much for your time, Saran.
+I've really enjoyed this conversation.
+Thanks for having me once again.
+Saran clearly places open science practices
+across the research process.
+So that study design, how data is collected, consent
+and what is shared and how
+are considered from the beginning.
+Researchers also need to consider how their data sets
+might be used once they're shared
+for training LLMs, for example.
+As she says, open science is just science done right.
+So open science or open research is a massive topic
+and one that requires clearly
+much more than a 60 minute podcast.
+However, I think both Yulia and Saran
+have highlighted key issues
+with how it is practiced in Europe.
+Both make clear that checks and balances
+that extend through all levels of the research system
+are needed to protect trust in science,
+academic integrity and ethical sharing of data.
+For early career researchers interested in open science,
+I hope these conversations have given insight
+into what is required to make these practices work for you
+within a system that still leans
+into traditional metrics of publications and citations.
+Saran's advice to treat open science
+as a buffet seems wise.
+If you're interested in US and UK perspectives
+on this topic, I'll link a past episode
+about open access into the show notes.
+And if you're interested in more resources
+about how to foster an open research culture,
+you'll find a collection of articles
+from scholars across the globe
+in our latest campus spotlight
+at timeshireeducation.com forward slash campus.
+So that's it for this episode.
+I'd like to thank my guests, Yulia Priess-Bookhart
+from Keel University and Saran Field
+from the University of Groningen.
+If you enjoyed this episode, please drop us a comment,
+like or share it with a colleague
+and we'll be back in two weeks time.
+Thanks for listening.
+You're listening to a Times Higher Education podcast.

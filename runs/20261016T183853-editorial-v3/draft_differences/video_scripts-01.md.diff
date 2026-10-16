@@ -1,0 +1,168 @@
+--- runs/20261015T003111-ebae97/video_scripts/01.md
++++ runs/20261016T183853-editorial-v3/video_scripts/01.md
+@@ -1,118 +1,107 @@
+-# What changed: bounded experimental loops became more inspectable
++# What changed: agents can run bounded research loops
+ 
+-Research Loop · Google Vids script · Piece 01  
++**Research Loop · Google Vids script draft**  
+ **As of: 2026-10-15 (UTC)**  
+-Evidence window: 2026-09-16–2026-10-15, inclusive  
+-Planned duration: approximately 4 minutes at 130–140 words per minute. Narration only is spoken; approximately 540 words. Use narration verbatim for subtitles. All visuals below are production instructions, not completed assets. No avatar required.
++**Evidence window: 2026-09-16–2026-10-15, inclusive; frozen collection**  
++**Estimated runtime:** 4 minutes at approximately 130 words per minute. Narration only is intended to be spoken and used for subtitles. Visual directions and citations are not spoken. No avatar required.
+ 
+-### Scene 1 — What can we delegate?
+-<!-- 01-c7 -->
++### Scene 1 — Who controls the experiment?
++<!-- 01-c6 -->
+ 
+ **Narration**
+ 
+-Which research tasks can you delegate to an agent, and what makes its results trustworthy? This is Research Loop, as of October fifteenth, twenty twenty-six. The September sixteenth to October fifteenth evidence window adds a more concrete account of bounded experimental loops. Our interpretation is practical: delegate a defined change, keep evaluation fixed, and decide in advance what evidence would satisfy the scientific claim. These reports support testing specific workflows. They do not establish that autonomous scientific discovery is solved.
++Which research tasks can you delegate to an agent while keeping responsibility for the experiment? Our interpretation of these reports is a practical division of work. Agents can execute bounded changes and record attempts. Humans define the scientific objective and decide which candidates deserve larger validation runs. That is bounded delegation, not evidence of fully autonomous discovery. We will look at a protein model recipe, a shared experiment history, and a physical laboratory account. They offer different perspectives, rather than independent replications of one result.
+ 
+ **Visual**
+ 
+-Title and exact as-of date. Animate a simple diagram: “Defined change → Experiment → Fixed evaluation → Scientific acceptance check.” Label it **Interpretation**, with citations to [solar segmentation, §2](https://arxiv.org/abs/2610.10491) and [ResearchFlow-Eval, Appendix G](https://arxiv.org/abs/2610.18088). Excerpt locator: “a reported success can refer to a narrower experiment than the required claim.”
++Show title and exact as-of date. Draw: “Human: objective” → “Agent: bounded iterations + records” → “Human: validation decision.” Label **Interpretation**. Cite [NanoProteinLM](https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/), “Building hill-climbable environments for research tasks,” table rows “Research objective” and “Validation”; and [Agora](https://arxiv.org/abs/2609.18094), “Negative results,” excerpt beginning “The graph also records what did not work.”
+ 
+-### Scene 2 — A gain with a human gate
++### Scene 2 — A result with a human gate
+ <!-- 01-c1 -->
+ 
+ **Narration**
+ 
+-First, NanoProteinLM. Its authors report long-range contact precision rising from twenty-eight point two to thirty-six point six percent, measured as P at L, at the same forty-eight point four billion token budget. Humans decided which recipes to scale up. That human gate is part of the result, not a detail to remove from the headline. This is a bounded, author-reported improvement, rather than evidence of fully autonomous discovery.
++First, the protein model example. Li and Lu report that long-range contact precision increased from 28.2 percent to 36.6 percent at the same 48.4-billion-token budget. A human chose which recipes to scale up. That gate matters: this was a human-guided result. Contact precision is a proxy for downstream protein folding, so the reported improvement should retain that qualification. It is an author-reported result at a matched token budget, not evidence that agents generally deliver faster, cheaper, or independently validated scientific discoveries.
+ 
+ **Visual**
+ 
+-Two bars on the same zero-based scale: “28.2%” and “36.6% P@L.” Persistent labels: **Author-reported**, “Same 48.4B-token budget,” and “Human scaling decisions.” [Source](https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/), section “A better PLM recipe by hill-climbing NanoProteinLM”; excerpt locator: “with a human deciding which recipes to scale up”.
++Use two bars on a common zero-based scale: “28.2%” and “36.6%.” Underneath: “Same 48.4B-token budget · Author-reported proxy result.” Add a human decision diamond before scaling.
+ 
+-### Scene 3 — Search needs confirmation
++Source: [NanoProteinLM](https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/), “A better PLM recipe by hill-climbing NanoProteinLM,” paragraph beginning “Starting from the ESMC recipe.” Display excerpt: “with a human deciding which recipes to scale up.” Proxy qualification: “Failure mode: Perfect on reward, failure on science.”
++
++### Scene 3 — An inspectable research history
+ <!-- 01-c2 -->
+ 
+ **Narration**
+ 
+-The same project also shows why confirmation matters. Four of seven proposed changes survived the final ablation study. Three did not remain in the final set. The practical interpretation is that a promising search result still needs a separate confirmation stage. Finding a candidate and confirming that its contribution survives further testing are different steps. Preserve that distinction when you decide what an agent has actually established.
++Agora describes a different part of the research process: shared experiment memory. Agents pick a parent, check out its exact code commit, make a change, evaluate it, and record the result with material needed for reproduction. This gives later work a traceable starting point. Keep the chronology straight, though. The reported run took place from April 26 to May 8. Its September publication falls within our evidence window; the experiment itself does not. A recent report can document older work without making that execution a new event.
+ 
+ **Visual**
+ 
+-Seven small boxes flow through “Final ablation”; four remain highlighted. Label the count **Source claim** and the confirmation lesson **Interpretation**. [Source](https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/), “What survived the human gate”; exact excerpt: “Four of the seven changes survive the final ablation study.”
++Animate a simple loop: “Exact parent commit → Change → Evaluate → Commit and record.” Label **Authors’ workflow description**.
+ 
+-### Scene 4 — Clear boundaries, limited comparisons
++Source: [Agora](https://arxiv.org/abs/2609.18094), §4.3 “Research loop.” Display excerpt: “fetch and check out that exact commit.” Separate calendar cards: “Execution: April 26–May 8” and “Publication: September 16, 2026.” These are dates, not recording timestamps.
++
++### Scene 4 — Records do not settle validation
+ <!-- 01-c3 -->
+-<!-- 01-c4 -->
+ 
+ **Narration**
+ 
+-The solar-panel segmentation study makes the boundaries explicit. Agents may edit the training program, but cannot edit the evaluator or train on validation or test images. Each campaign allows twenty-four logged experiments, including the baseline.
+-
+-The limitations matter just as much. Every proposed change uses one random seed. Loops A and C have no test evaluation. Coding model and GPU class vary together. Our inference is that these results cannot identify a generally superior coding model or training recipe.
++An experiment history is not the same as independent validation. Agora’s authors describe human interventions during the run, including server changes and a worker prompt change. Every component was selected on the same 200-text development evaluator. The authors also say they did not rerun the winning method. Their primary result is archived evaluator output, supported by agents’ cross-hardware reproductions. Our inference is limited: the history documents the process, but does not establish independent validation. Keep the record of what happened separate from the question of whether the result generalizes.
+ 
+ **Visual**
+ 
+-Show an editable “Training program” box beside a locked “Evaluator” box, with a counter capped at “24, including baseline.” Then show three limitation cards. [Source](https://arxiv.org/abs/2610.10491), §2 “Method”: “The agent may edit only the training program”; §3, limitation paragraph before §4: “The coding model is confounded with GPU class”. Label the comparative conclusion **Inference**.
++Show three evidence cards: “Human interventions,” “One development evaluator,” and “No fresh author rerun.” Label the conclusion **Interpretation: independent validation not established**.
+ 
+-### Scene 5 — Ancestry is not replication
++Source: [Agora](https://arxiv.org/abs/2609.18094), §4.7 “Human intervention”; “Primary result,” excerpt “Every component was selected on the same 200-text development evaluator”; §4.8 “How we verified the record,” excerpt “We did not rerun the winning method.”
++
++### Scene 5 — Physical labs: an interested perspective
++<!-- 01-c4 -->
+ <!-- 01-c5 -->
+ 
+ **Narration**
+ 
+-Agora offers another useful component: an experiment record with immutable Git ancestry. Its newly published account concerns an older run, from April twenty-sixth to May eighth. That distinction matters when asking what changed this month.
+-
+-The authors explicitly say they did not rerun the winning method. Our interpretation is that preserved code lineage helps make evidence inspectable. It does not, by itself, prove independently reproduced performance.
++For a physical laboratory contrast, Periodic Labs’ founders say characterization shifted substantially toward AI assistance, while campaign guidance became a mixture of human and AI work. They explicitly call full autonomy a non-goal. They also describe taking their tools to industry partners, so this is a commercially interested operational perspective. It describes their workflow, not a measured productivity gain. The supplied transcript is provisional, and the evidence contains no controlled measurements or inspectable execution logs for that account. Treat it as testimony about how they organize work, with those uncertainties attached.
+ 
+ **Visual**
+ 
+-Draw three connected commit nodes. Separate “Report published: September 16” from “Run: April 26–May 8.” [Source](https://arxiv.org/abs/2609.18094), §3.2: “Git hashes identify immutable commits”; §4.3: “from the setup commit on April 26 to our cutoff on May 8”; §4.8: “We did not rerun the winning method”. Label the conclusion **Inference**.
++Draw two boxes: “Characterization: shift toward AI assistance” and “Campaign guidance: human + AI.” Label **Founders’ account · Provisional transcript**. Display transcript excerpt: “full autonomy is a non-goal.”
+ 
+-### Scene 6 — Running code versus meeting a claim
++Source: [Periodic Labs interview](https://www.latent.space/p/periodic) · [Recording](https://api.substack.com/feed/podcast/219146438/4de3baad7036438bcc048cc532556c6a.mp3).
++
++Exact recording timestamp labels from supplied segments:
++
++- **01:04:24–01:05:04** — s00305: characterization and campaign guidance.
++- **00:50:46–00:51:39** — s00230: autonomy as a non-goal.
++- **01:15:06–01:16:53** — s00341: commercial deployment to industry partners.
++
++### Scene 6 — A boundary students can use
+ <!-- 01-c6 -->
+ 
+ **Narration**
+ 
+-ResearchFlow-Eval reports that only fourteen of ninety end-to-end claims met their criteria, including just one empirical claim. But this is not a universal success rate for research agents. The study uses an LLM judge, and its rubric follows an anchor paper. The authors acknowledge that this may undervalue scientifically valid alternatives. Read the result as evidence about this evaluation, with those limits attached.
++For your next small computational experiment, our practical recommendation is to fix the scientific objective before search. Let the agent make bounded changes and preserve failed attempts alongside successful ones. Then retain the decision about which candidates deserve larger validation runs against the baseline. This recommendation combines the protein account’s human gate with Agora’s reusable history. It does not promise portable speed, cost, or discovery gains. The useful question is concrete: what will the agent execute, what evidence will it preserve, and what will you require before trusting the result?
+ 
+ **Visual**
+ 
+-Show “14 / 90 claims met” and “Includes 1 empirical claim,” labeled **Study-reported**. Beside it: “LLM judge” and “Anchor-paper-dependent rubric.” [Source](https://arxiv.org/abs/2610.18088): Appendix G, opening paragraph before Table 15; §3.3, “LLM judge”; §6, excerpt locator: “they may undervalue scientifically valid alternatives to its design.”
++Return to the opening diagram. Add a branch for “Failed attempts retained” and a final gate marked “Larger validation against baseline.” Label **Practical interpretation**.
+ 
+-### Scene 7 — Your acceptance criterion stays central
+-<!-- 01-c7 -->
+-
+-**Narration**
+-
+-For students, the defensible delegation unit is a bounded change with a fixed evaluator and an explicit scientific acceptance criterion. Successful execution alone should not count as completing the intended claim. Across these reports, no independent replication is supplied. They establish neither a universal success rate nor a student-scale cost advantage. Use them to design an inspectable experiment, while retaining responsibility for deciding whether its evidence answers your question.
+-
+-**Visual**
+-
+-Return to the opening diagram. End on “Did the evidence satisfy the intended claim?” Label the recommendation **Interpretation** and the replication and cost limits **Uncertainty**. Cite [solar segmentation, §2](https://arxiv.org/abs/2610.10491), excerpt “Failed runs are treated as rejections”; [ResearchFlow-Eval, Appendix G](https://arxiv.org/abs/2610.18088), “Example of reported success without a met criterion”; and [NanoProteinLM, “What survived the human gate”](https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/), “A final scaled-up ablation of the confirmed improvements.”
+-
+-### Source labels for production
+-
+-All supplied sources are text. **Recording timestamps: not applicable; no media supplied.** Use the section and exact excerpt locators above. The following are publication metadata from the supplied evidence, not source timestamps or recording offsets.
+-
+-| Source | Exact publication date/time (UTC) |
+-|---|---|
+-| [NanoProteinLM](https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/) | 2026-09-30T07:00:00Z |
+-| [Solar-panel segmentation](https://arxiv.org/abs/2610.10491) | 2026-10-07T17:45:31Z |
+-| [Agora](https://arxiv.org/abs/2609.18094) | 2026-09-16T04:00:54Z |
+-| [ResearchFlow-Eval](https://arxiv.org/abs/2610.18088) | 2026-10-13T10:09:15Z |
++Sources: [NanoProteinLM](https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/), “Building hill-climbable environments for research tasks,” “Research objective” and “Validation” rows; [Agora](https://arxiv.org/abs/2609.18094), “Negative results.” Display excerpt: “The graph also records what did not work.”
+ 
+ ### YouTube description — draft
+ 
+-Which computational research tasks can students delegate to agents, and what evidence makes their results trustworthy?
++Which research tasks can students delegate to agents while retaining responsibility for the experiment? Research Loop examines author-reported protein model results, Agora’s shared experiment history, and Periodic Labs’ account of AI-assisted laboratory work.
+ 
+-Research Loop examines bounded experiment design, human scaling decisions, fixed evaluators, code ancestry, and claim-level acceptance criteria. Reported findings are distinguished from our interpretation and their limitations. No independent replication is supplied, and these reports do not establish universal success rates or student-scale cost advantages.
++The evidence supports bounded delegation, with human objectives and validation decisions. It does not establish fully autonomous discovery or portable speed and cost gains. The protein result is a proxy improvement; Agora’s history does not establish independent validation; Periodic’s commercially interested testimony uses a provisional transcript.
+ 
+-As of: **2026-10-15 UTC**. Evidence window: **2026-09-16–2026-10-15**, inclusive. Agora’s account describes an older April–May run.
++**As of:** 2026-10-15 UTC. **Frozen evidence window:** September 16–October 15, 2026. Agora’s reported execution occurred April 26–May 8, before this publication window.
+ 
+-Companion article, unpublished: [ARTICLE_URL_PENDING_PUBLICATION]
++**Article:** [UNPUBLISHED_ARTICLE_URL]
+ 
+-Sources:
++**Sources and locators:**
+ 
+-- [NanoProteinLM — reported gains and final ablation](https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/)
+-- [Solar-panel segmentation — experimental boundaries and limitations](https://arxiv.org/abs/2610.10491)
+-- [Agora — code ancestry and verification limits](https://arxiv.org/abs/2609.18094)
+-- [ResearchFlow-Eval — claim completion and evaluation limitations](https://arxiv.org/abs/2610.18088)
++- [Li and Lu: NanoProteinLM](https://jojoml.github.io/blog/2026/nanoproteinlm-agenticls/) — “A better PLM recipe by hill-climbing NanoProteinLM”; “Building hill-climbable environments for research tasks”; “Failure mode: Perfect on reward, failure on science.”
++- [Agora](https://arxiv.org/abs/2609.18094) — §4.3, “Negative results,” “Primary result,” §4.7 and §4.8.
++- [Periodic Labs interview](https://www.latent.space/p/periodic) — recording 00:50:46–00:51:39, 01:04:24–01:05:04 and 01:15:06–01:16:53. Transcript provisional.
+ 
+-AI-assistance disclosure: AI assisted in drafting this script and description from the supplied brief and evidence. Editorial approval remains with the student. This draft does not indicate that human review, video production, or publication is complete.+**AI-assistance disclosure:** AI assisted in drafting this script and description from supplied excerpts and an editorial brief. This disclosure does not indicate completed human review, audio verification, video production, or publication. Editorial approval remains with the student.

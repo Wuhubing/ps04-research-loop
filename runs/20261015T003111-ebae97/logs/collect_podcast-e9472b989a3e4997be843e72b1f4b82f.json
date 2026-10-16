@@ -1,0 +1,15 @@
+{
+  "stage": "collect_podcast",
+  "status": "completed",
+  "input_count": 3,
+  "output_count": 3,
+  "started_at": "2026-10-15T00:31:18.367210Z",
+  "tools_or_models": [
+    "requests",
+    "feedparser"
+  ],
+  "cost_usd": null,
+  "cost_estimated": false,
+  "errors": [],
+  "finished_at": "2026-10-15T00:31:19.362713Z"
+}

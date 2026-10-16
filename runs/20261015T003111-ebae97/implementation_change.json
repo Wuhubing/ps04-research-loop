@@ -1,0 +1,8 @@
+{
+  "change": "Validated evidence excerpts for large synthesis context",
+  "reason": "Expanded retained full text exceeds single-call input limit",
+  "scope": "Selection still sees full sources; synthesis uses validated quote/segment cards only when accepted payload exceeds 800000 characters; original source files retained.",
+  "new_prompt": "prompts/distill_evidence.md",
+  "validation": "Exact source substring / existing segment ID and item-version identity; 11 contract tests pass.",
+  "not_student_editorial_revision": true
+}

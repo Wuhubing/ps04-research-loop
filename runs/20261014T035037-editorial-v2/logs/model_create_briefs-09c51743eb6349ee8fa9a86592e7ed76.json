@@ -1,0 +1,15 @@
+{
+  "stage": "model_create_briefs",
+  "status": "completed",
+  "input_count": 1,
+  "output_count": 1,
+  "started_at": "2026-10-14T03:52:42.234917Z",
+  "tools_or_models": [
+    "codex exec",
+    "gpt-6-astra"
+  ],
+  "cost_usd": null,
+  "cost_estimated": false,
+  "errors": [],
+  "finished_at": "2026-10-14T03:56:03.159257Z"
+}

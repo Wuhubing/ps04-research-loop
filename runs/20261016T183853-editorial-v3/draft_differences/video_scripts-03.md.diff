@@ -1,0 +1,219 @@
+--- runs/20261015T003111-ebae97/video_scripts/03.md
++++ runs/20261016T183853-editorial-v3/video_scripts/03.md
+@@ -1,171 +1,114 @@
+-# Build a Small Audit Trail Before Expanding Autonomy
++# Build an experiment another person can check
+ 
+-**Research Loop · Google Vids script draft**  
++Research Loop · Google Vids script draft  
+ **As of: 2026-10-15 (UTC)**  
+-**Evidence window: 2026-09-16–2026-10-15, inclusive**  
+-**Estimated duration:** 4–5 minutes · approximately 570 spoken words  
+-Production direction: simple diagrams, source excerpt cards and subtitle-ready narration. No avatar required. Scene timings below are proposed video timings; recording timestamps identify source evidence.
++Evidence window: 2026-09-16 through 2026-10-15, inclusive.  
++Approximately 600 spoken words; approximately 4–5 minutes. Scene timings are proposed edit positions, not source timestamps. Use narration verbatim for subtitles. Simple diagrams and excerpt cards; no avatar.
+ 
+-### Scene 1 · What is actually changing? · 0:00–0:45
++### Scene 1 · What actually changes? · 0:00–0:40
+ <!-- 03-c1 -->
+-
+ **Narration**
+ 
+-Which research tasks should you delegate to an agent? Start with a small experiment whose instructions, evaluator, records and total budget you can inspect.
+-
+-AI Code King’s tutorial offers one procedure: change workflow instructions while keeping the underlying model and grading rules fixed. That is instruction optimization, not training model weights.
+-
+-The suggested instruction changes are candidates, not demonstrated improvements. Treat this tutorial as an operational demonstration. The supplied evidence does not include execution logs establishing measured gains.
++What should you delegate to a research agent, and how will someone check the result? Start by identifying what the agent can change. In AI Code King’s tutorial, the optimizer changes workflow instructions. The underlying model stays the same, and the grading rules stay fixed. So its “self-training” framing means instruction optimization here, not training model weights. That distinction defines the experiment: you are testing changes to instructions under unchanged grading rules.
+ 
+ **Visual**
+ 
+-Title card with exact as-of date. Diagram: “Instruction candidates → Worker → Fixed evaluator.” Lock icons beside “Underlying model” and “Grading rules.” Badge: “Source procedure—not measured performance.”
++Title and as-of date, followed by three boxes: “Model: unchanged,” “Instructions: editable,” and “Grading: fixed.” Badge: “Source procedure; no measured gain established.”
+ 
+-Source excerpt: “The underlying Claude model stays the same.”
++[AI Code King](https://www.youtube.com/watch?v=wMQB33rM28I) — **source recording timestamps:** 00:56.800–01:01.780 (s00011); 04:30.980–04:35.980 (s00056). Provisional transcript excerpt: “The grading rules stay fixed.”
+ 
+-Source: [AI Code King](https://www.youtube.com/watch?v=wMQB33rM28I). **Recording timestamps:** 00:56.80–01:01.78 (`s00011`); 04:30.98–04:35.98 (`s00056`); 09:25.32–09:29.62 (`s00122`).
+-
+-### Scene 2 · Count the whole search · 0:45–1:15
++### Scene 2 · Keep comparison tasks outside the search · 0:40–1:20
+ <!-- 03-c2 -->
+-
+ **Narration**
+ 
+-Before running anything, set a budget for the whole search.
+-
+-The tutorial plans forty-eight coding trials. That count excludes the optimizer’s own reasoning, setup and rehearsals. Forty-eight trials therefore does not describe total expenditure.
+-
+-Our practical interpretation is to account for those additional activities alongside worker trials. A bounded experiment needs a total budget you can inspect, not just a count of its most visible runs.
++The tutorial recommends comparing the original and optimized instructions on tasks excluded from the search. Then a person reviews the winning instruction changes. If that person edits the instructions, the edited version becomes a new candidate requiring evaluation. Human cleanup changes what was tested. This is procedural advice, not an observed improvement: the supplied tutorial evidence contains no inspectable measured gain. An ambiguous passage about rerunning is excluded pending audio review, and the automatic transcript remains provisional.
+ 
+ **Visual**
+ 
+-An unscaled accounting diagram: “48 planned coding trials + optimizer reasoning + setup + rehearsals.” Do not show invented prices or measured totals. Badge: “Reported plan → editorial recommendation.”
++Diagram: “Instruction search → Frozen candidate → Held-out comparison → Human review.” An arrow from “Human edits” returns to “New candidate → Evaluation.”
+ 
+-Source excerpt: “own thinking, setup, or any rehearsals.”
++[AI Code King](https://www.youtube.com/watch?v=wMQB33rM28I) — **source recording timestamps:** 10:49.900–10:53.820 (s00141); 13:29.460–13:34.140 (s00176); 13:34.140–13:38.780 (s00177). Provisional excerpt: “treat that edited version as a new candidate that needs checking.”
+ 
+-Source: [AI Code King](https://www.youtube.com/watch?v=wMQB33rM28I). **Recording timestamps:** 12:31.74–12:37.46 (`s00163`); 12:37.46–12:42.38 (`s00164`).
+-
+-### Scene 3 · Make comparisons inspectable · 1:15–1:50
++### Scene 3 · Budget for documentation · 1:20–2:00
+ <!-- 03-c3 -->
+-
+ **Narration**
+ 
+-Next, choose tasks that represent your actual work and whose outcomes you can evaluate.
+-
+-Why Try AI recommends fresh chats, equal access to files and tools, and judgments tied to specific parts of each answer. Flag anything you cannot verify.
+-
+-These are usable comparison procedures. The author’s preference for one model on a scoped research task does not establish general superiority. Use the procedure to investigate your own task, without assuming the author’s preference will transfer.
++Campus Talks adds a researcher perspective: connect data to its provenance, share variable descriptions and executed analysis code, and allow extra planning time. Sharing should be appropriate and ethical. Our interpretation for agent experiments is to budget documentation alongside execution. Preserve enough context for another researcher to understand what happened. This podcast offers guidance, not a tested agent intervention. Its automatic transcript is provisional, and the guests’ report and journal roles carry professional interests. Their advice is not independent performance validation.
+ 
+ **Visual**
+ 
+-Two parallel boxes receive “Same task,” “Same files,” and “Same tools.” Both lead to “Evidence-based comparison.” Badge: “Procedure; scoped personal comparison.”
++Diagram: “Data → Provenance → Variable descriptions → Executed code,” beside a planning calendar. Badge: “Researcher guidance → editorial application.”
+ 
+-Source excerpt: “Point to specific parts of each answer that support your judgment. Flag anything you can’t verify.”
++[Campus Talks](https://timeshighered.podbean.com/e/campus-talks-how-is-ai-affecting-open-research/) — **source recording timestamps:** 16:14.680–16:17.600 (s00291), 16:17.600–16:20.000 (s00292); 39:07.310–39:10.510 (s00748); 41:08.670–41:11.870 (s00799); 41:13.710–41:16.430 (s00801); 54:36.070–54:40.270 (s01090). Provisional excerpt: “build extra time into your planning.”
+ 
+-Source: [Why Try AI, “The Best AI Benchmark Is Your Own Work”](https://www.whytryai.com/p/switch-ai-models). **Text locators:** “The fix,” prompt beginning “Based on what you know about me…” and paragraph beginning “Run the resulting test prompt…”; demonstration paragraph beginning “ChatGPT was clearly better for my scoped research”; “Do this now,” comparison prompt. These are text locators, not recording timestamps.
+-
+-### Scene 4 · Give the agent a bounded work order · 1:50–2:25
++### Scene 4 · Check individual claims · 2:00–2:40
+ <!-- 03-c4 -->
+-
+ **Narration**
+ 
+-For the execution record, MIRA offers a structure worth examining.
+-
+-Its paper describes work orders containing an objective, relevant evidence, resource guidance, acceptance criteria and a stopping condition. It also describes retaining failures and contradictory results in the repository for later decisions.
+-
+-Our recommendation is to adopt that record structure for a student pilot. This is an inference about useful documentation, not a claim that MIRA’s performance will transfer to your experiment. Keep unsuccessful attempts available for inspection, too.
++ResearchFlow-Eval’s authors report that fourteen of ninety end-to-end claims met their criteria. Only one empirical claim was met. These are findings within their evaluation, which uses one anchor task, not a universal success rate for research agents. A domain researcher spot-checked the AI judge’s ratings and rationales. Our practical inference is to retain human review of AI judgments, especially when a model judges its own output. That is a safeguard; it does not establish that judge bias occurred.
+ 
+ **Visual**
+ 
+-A five-field work-order card feeds a repository containing “Results,” “Failures” and “Contradictions.” Badge: “Paper-described design → proposed student practice.”
++Show “14 / 90 claims met” and a separate annotation: “Only one empirical claim met.” Do not depict these as independent replications. Badge: “Authors’ reported result; one anchor task.”
+ 
+-Source excerpt: “Recorded failures and contradictory results remain available to later decisions through the repository.”
++[ResearchFlow-Eval](https://arxiv.org/abs/2610.18088) — **text locators:** Appendix G, opening paragraph before Table 15 and reference to Table 16; §3.3, “LLM judge”; §6, limitations. Excerpt: “A domain researcher spot-checked the judge’s ratings and rationales”.
+ 
+-Source: [MIRA paper](https://arxiv.org/abs/2610.02525). **Text locators:** Appendix C.1, “Context Construction,” paragraph beginning “The policy is instructed…”; Appendix C.2, “Decision and Execution,” first paragraph.
+-
+-### Scene 5 · Review the plan before collecting data · 2:25–3:00
++### Scene 5 · Record how results were selected · 2:40–3:10
+ <!-- 03-c5 -->
+-
+ **Narration**
+ 
+-Documentation should begin before the experiment.
+-
+-Campus Talks recommends describing study plans before collecting data, sharing code and variable descriptions, and allowing extra planning time.
+-
+-Applied to agent experiments, our interpretation is to add a prospective review checkpoint: inspect the plan before the run begins. Budget time for that review.
+-
+-These podcast recommendations are methodological advice, not controlled evidence that this process improves outcomes. They support making the pilot reviewable, without promising a speedup or cost saving.
++ResearchFlow-Eval permits optimization using test sessions, but requires every test access to be logged with its purpose, configuration, and result. Results that informed optimization cannot be described as untouched or unbiased estimates. Our recommendation follows that distinction: record when evaluation data influenced selection. A reader needs both the result and its selection history. This study’s test-access policy also limits how its findings should be interpreted as held-out evidence.
+ 
+ **Visual**
+ 
+-Timeline: “Describe plan → Review checkpoint → Collect data → Share code and variable descriptions.” Mark the checkpoint “Research Loop interpretation.”
++A simple log: “Purpose | Configuration | Result | Influenced selection?” Arrow from “Used for optimization” to “Disclose in result.”
+ 
+-Source excerpt: “before you collect the data.”
++[ResearchFlow-Eval](https://arxiv.org/abs/2610.18088) — **text locator:** task-package passage headed “Data and test access.” Excerpt: “test results that informed optimization may not be described as untouched or unbiased estimates.”
+ 
+-Source: [Campus Talks](https://timeshighered.podbean.com/e/campus-talks-how-is-ai-affecting-open-research/). **Recording timestamps:** 39:29.31–39:34.67 (`s00758–s00759`); 41:08.67–41:11.87 (`s00799`); 41:13.71–41:16.43 (`s00801`); 54:36.07–54:40.27 (`s01090`).
+-
+-### Scene 6 · Physical labs offer a contrasting priority · 3:00–3:35
++### Scene 6 · Simple orchestration still needs accounting · 3:10–3:55
+ <!-- 03-c6 -->
+-
+ **Narration**
+ 
+-Physical labs offer a contrasting perspective.
+-
+-Periodic Labs’ founders describe full autonomy as a non-goal. They prioritize useful experimental data and tractable bottlenecks, using automation in service of those goals.
+-
+-This is a commercially interested practitioner account. The same interview describes bringing their tools into industry. It supplies no independent replication and does not independently confirm the computational studies. Its value here is the founders’ stated priority: useful data, rather than full autonomy as the objective.
++Minimal orchestration does not establish low cost. Malena’s authors modeled its GLM 5.2 inference cost at twelve dollars and twelve cents, versus one dollar and ninety-five cents for AiScientist. Real cache-hit counts were unavailable. These are modeled inference costs, not complete measured expenditure. The supplied source also contains an unresolved inconsistency: its claim of matching or beating every tested pair conflicts with a table entry. We therefore draw no best-result conclusion. Measure your own resource use instead of adopting these figures as a complete budget.
+ 
+ **Visual**
+ 
+-Diagram: “Humans + automation → Address tractable bottlenecks → Useful experimental data.” Badge: “Founder account · commercial interest · no independent replication supplied.”
++Two cost cards, prominently labeled “Authors’ modeled inference cost”: “Malena: $12.12” and “AiScientist: $1.95.” Keep “Actual cache-hit counts unavailable” visible.
+ 
+-Source excerpt: “full autonomy is a non-goal.”
++[Malena paper](https://arxiv.org/abs/2609.40303) — **text locators:** §5.1, paragraph discussing Figure 3’s inference costs; Appendix A.4, cache-read modeling paragraph. Excerpt: “none of the harnesses compared here report real cache-hit token counts directly”.
+ 
+-Source: [Latent Space, Periodic Labs interview](https://www.latent.space/p/periodic). **Recording timestamps:** 50:46–51:39 (`s00230`, data priorities and autonomy); 01:15:06–01:16:53 (`s00341`, industrial deployment).
++Uncertainty card: “Supplied results table, Kimi-K3 row: Malena 26.7%; AiScientist 27.1%. Adjacent headline text says Malena ‘matches or beats every harness on every tested pair.’ Unresolved.” Do not present this as proof of comparative superiority.
+ 
+-### Scene 7 · What would justify more delegation? · 3:35–4:20
++### Scene 7 · What to build, and what to watch · 3:55–4:35
+ <!-- 03-c7 -->
+-
++<!-- 03-c1 03-c2 03-c3 03-c4 03-c5 03-c6 -->
+ **Narration**
+ 
+-What evidence should you watch for next?
+-
+-Our recommendation is repeated performance on unused tasks, accompanied by inspectable code and retained failure records. The tutorial proposes repeated comparisons and warns that better development scores without held-out improvement do not demonstrate transferable improvement.
+-
+-Do not expand delegation on that basis alone.
+-
+-The media transcripts remain provisional; the ambiguous tutorial passage is excluded. Together, these sources justify a reviewable pilot, not a reliable autonomous workflow. Start bounded, preserve the evidence, and expand only when repeated tests on unused tasks justify it.
++Our editorial recommendation is a small, auditable experiment: fixed grading, held-out comparisons, recorded provenance, human review, and complete resource accounting. This protocol is an inference, not a validated guarantee. Next, watch for evaluations on additional research tasks, claim judgments linked to evidence, and improvements that transfer to held-out work. Those would make future reports more useful than another unqualified success score. None alone guarantees replication. The goal is an experiment another researcher can reconstruct, including how its result was selected.
+ 
+ **Visual**
+ 
+-Decision diagram: “Development improvement → Repeated tests on unused tasks.” Branches: “Held-out results flat or worse → No demonstrated transfer”; “Repeated held-out improvement + inspectable records → Assess whether expansion is justified.” No invented result charts.
++Checklist diagram of the five proposed practices. Badge: “Editorial interpretation; not a validated guarantee.” End card: “Can another researcher reconstruct the result—and its selection history?”
+ 
+-Source excerpt: “we haven't demonstrated a transferable improvement.”
++[ResearchFlow-Eval](https://arxiv.org/abs/2610.18088) — **text locators:** §3.3, “LLM judge,” evidence locations and rationale; §6, final future-work sentence about additional systems, models and anchor papers. Excerpt: “the locations of the supporting evidence and a short rationale”.
+ 
+-Sources and exact locators:
++[AI Code King](https://www.youtube.com/watch?v=wMQB33rM28I) — **source recording timestamps:** 11:35.580–11:41.740 (s00152); 11:41.740–11:47.580 (s00153). Provisional excerpt: “we haven't demonstrated a transferable improvement.”
+ 
+-- [AI Code King](https://www.youtube.com/watch?v=wMQB33rM28I), **recording timestamps:** 10:53.82–10:58.94 (`s00142`); 11:35.58–11:47.58 (`s00152–s00153`).
+-- [Campus Talks](https://timeshighered.podbean.com/e/campus-talks-how-is-ai-affecting-open-research/), **recording timestamp:** 41:13.71–41:16.43 (`s00801`, sharing code).
+-- [MIRA paper](https://arxiv.org/abs/2610.02525), **text locator:** Appendix C.2, first paragraph, sentence beginning “Recorded failures and contradictory results…”.
++### YouTube description — draft
+ 
+-## YouTube description draft
++How can student researchers make agent experiments checkable? Research Loop examines instruction optimization, held-out comparisons, provenance, claim-level evaluation and resource accounting.
+ 
+-Which research tasks can students delegate to agents—and what evidence would justify expanding that delegation?
++As of **2026-10-15 (UTC)**. Frozen evidence window: September 16–October 15, 2026. This is an editorial synthesis of supplied evidence, not a new live collection. Reported findings remain attributed to their authors; the proposed student protocol is interpretation, not a replication guarantee.
+ 
+-Research Loop examines instruction optimization, fair comparisons, bounded work orders, prospective planning and complete budget accounting. The practical recommendation is a small, inspectable pilot. These sources do not establish a promised speedup, cost saving or reliable autonomous workflow.
++Companion article, currently unpublished: **[ARTICLE_URL_PENDING_PUBLICATION]**
+ 
+-**As of:** 2026-10-15 UTC. **Evidence window:** 2026-09-16–2026-10-15, inclusive.
++Sources and locators:
+ 
+-**Companion article, unpublished:** [ARTICLE_URL_PLACEHOLDER]  
+-**Article evidence and claim references:** [ARTICLE_URL_WITH_EVIDENCE_SECTION_PLACEHOLDER]
++- [AI Code King tutorial](https://www.youtube.com/watch?v=wMQB33rM28I): source recording timestamps 00:56.800–01:01.780; 04:30.980–04:35.980; 10:49.900–10:53.820; 11:35.580–11:47.580; 13:29.460–13:38.780.
++- [Campus Talks: How is AI affecting open research?](https://timeshighered.podbean.com/e/campus-talks-how-is-ai-affecting-open-research/): source recording timestamps 16:14.680–16:20.000; 39:07.310–39:10.510; 41:08.670–41:11.870; 41:13.710–41:16.430; 54:36.070–54:40.270.
++- [ResearchFlow-Eval](https://arxiv.org/abs/2610.18088): §3.3 “LLM judge”; §6; task-package “Data and test access”; Appendix G and Table 16.
++- [Malena paper](https://arxiv.org/abs/2609.40303): §5.1, Figure 3 cost discussion and results-table inconsistency; Appendix A.4, modeled cache costs.
+ 
+-Sources:
++Limitations: automatic transcripts remain provisional. The tutorial does not establish measured improvement; podcast guidance is not a tested intervention. ResearchFlow-Eval uses one anchor task and permits logged test access during optimization. Malena’s costs are modeled, and its supplied comparative-results inconsistency remains unresolved. These sources do not independently validate the proposed combined protocol.
+ 
+-- [AI Code King tutorial](https://www.youtube.com/watch?v=wMQB33rM28I): recording 00:56.80–01:01.78, 04:30.98–04:35.98, 09:25.32–09:29.62, 10:53.82–10:58.94, 11:35.58–11:47.58 and 12:31.74–12:42.38.
+-- [Why Try AI](https://www.whytryai.com/p/switch-ai-models): text sections “The fix” and “Do this now,” including the scoped research comparison.
+-- [MIRA paper](https://arxiv.org/abs/2610.02525): Appendix C.1, “Context Construction,” and C.2, “Decision and Execution.”
+-- [Campus Talks](https://timeshighered.podbean.com/e/campus-talks-how-is-ai-affecting-open-research/): recording 39:29.31–39:34.67, 41:08.67–41:11.87, 41:13.71–41:16.43 and 54:36.07–54:40.27.
+-- [Periodic Labs founders on Latent Space](https://www.latent.space/p/periodic): recording 50:46–51:39 and 01:15:06–01:16:53.
+-
+-Evidence limits: tutorials supply procedures without supplied execution logs establishing measured gains. Podcast advice is not a controlled outcome evaluation. Media transcripts are provisional, and an ambiguous tutorial passage is excluded. The founders’ commercially interested account provides no independent replication.
+-
+-**AI-assistance disclosure:** AI assisted in drafting this script and description from the supplied brief and evidence. This draft does not establish that student editorial approval, video production or publication is complete.+AI-assistance disclosure: AI assisted in drafting and organizing this script from supplied evidence. Final editorial approval remains with the student. This draft does not establish that full-source review, audio verification, video production or publication is complete.

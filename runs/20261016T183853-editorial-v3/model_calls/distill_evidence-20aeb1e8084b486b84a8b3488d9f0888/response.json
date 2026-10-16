@@ -1,0 +1,71 @@
+{
+  "item_id": "084a91218ed6d51df5ab9f17",
+  "version_id": "2b0d8382c674620fd174f5c60697d5bdf4728371aa386ebba1986c60e1eef65b",
+  "synopsis": "Researcher-authored account contributing to pieces 01–03 on delegation, trustworthy evaluation and reproduction costs. Li and Lu describe agent-driven training-recipe search with human selection for scaling, report a matched-token improvement over ESMC, and show that better validation loss can miss the scientific proxy objective. Its evidentiary role is an attributed report of methods and results, including counterevidence—not independent verification or evidence of fully autonomous discovery. The supplied September 30 publication date falls within the frozen evidence window.",
+  "limitations_and_counterevidence": "The authors report their own environment and experiments; the referenced paper shares that evidence lineage. Human scaling decisions limit autonomy claims. Contact precision is a proxy, is noisy at short training durations, and did not track validation-loss improvements reliably. Only four of seven changes survived final ablation. The supplied account lacks underlying ablation tables, execution logs, hardware specifications, monetary costs and independent replication. Equal token budgets do not establish equal runtime or financial cost; the reported training duration is not a complete campaign budget. Reproducibility features are described but not audited here. These orientation statements do not replace passage citations for later substantive claims.",
+  "passages": [
+    {
+      "purpose": "Pieces 01–02: attribute the main reported comparison and matched token budget while preserving the human gate.",
+      "locator": {
+        "type": "text",
+        "quote": "Starting from the ESMC recipe, a simple sequential search, with a human deciding which recipes to scale up, gave a recipe with about 30% higher long-range contact precision, from 28.2% to 36.6% P@L, at the same 48.4B-token budget."
+      }
+    },
+    {
+      "purpose": "Pieces 01–03: extract the proposed experimental controls, comparable resource budgets, held-out reward and larger-budget validation.",
+      "locator": {
+        "type": "text",
+        "quote": "| Research objective | The scientific outcome the campaign should improve, fixed before search. | \n| Design space | What the agent may change and what must stay fixed, with bounds that exclude gains the objective does not value. | \n| Round budget | The resources each candidate may spend, identical for the baseline and every candidate so rewards compare across rounds. | \n| Round reward | A scalar measured on held-out validation data after each round, which the loop compares with the incumbent’s to keep or discard the candidate. | \n| Validation | A larger-budget retraining of the selected recipe against the baseline, testing whether search-time gains carry over. | "
+      }
+    },
+    {
+      "purpose": "Piece 02: preserve the reported reward–science mismatch, search-round count, training duration and explicit proxy qualification; this does not quantify the contact-precision gap.",
+      "locator": {
+        "type": "text",
+        "quote": "To see how agents behave in this environment, we let Codex Astra and Claude Opus 5.5 each run 72 rounds of search against validation loss. Both lowered the loss, and after 12 hours of training both recipes still beat our reference on it. Their contact precision (a proxy metric for downstream protein folding), though, shows a large gap to the best setting."
+      }
+    },
+    {
+      "purpose": "Pieces 01–02: document seed-based screening, short-run measurement noise, the change of search objective and the final ablation procedure.",
+      "locator": {
+        "type": "text",
+        "quote": "- Every candidate trains with two seeds and is kept only if its mean gain beats the seed-to-seed spread.\n- P@L is too noisy to steer by at one hour, so we climbed validation loss while watching P@L, then ran a second search on P@L itself.\n- A final scaled-up ablation of the confirmed improvements."
+      }
+    },
+    {
+      "purpose": "Piece 02: retain attrition under scaled ablation as counterevidence to treating every search improvement as robust.",
+      "locator": {
+        "type": "text",
+        "quote": "Four of the seven changes survive the final ablation study. All four change the optimizer, the loss weighting or how batches are split across GPUs."
+      }
+    },
+    {
+      "purpose": "Pieces 01 and 03: capture the authors’ conditional argument about experiment latency and cost, including the physical-lab contrast; these are illustrative claims, not measured speedups.",
+      "locator": {
+        "type": "text",
+        "quote": "Hill-climbing pays off most when progress is capped by researcher effort, as with compute experiments that finish in an hour while a person needs a day to choose the next one. When the smallest loop that returns a useful signal is itself slow or expensive, such as a week of growing cells, automation buys little and the quality of each decision matters more."
+      }
+    },
+    {
+      "purpose": "Piece 03: identify the reproduction materials the authors say they provide, without treating their availability or completeness as independently checked.",
+      "locator": {
+        "type": "text",
+        "quote": "For protein researchers, we provide a minimal reproduction of ESMC-style model training: public data, readable PyTorch code, training recipes and evaluations in one place."
+      }
+    },
+    {
+      "purpose": "Pieces 01 and 03: identify claimed reproducibility controls and the operations delegated to an agent; these claims do not supply execution logs or hardware and cost details.",
+      "locator": {
+        "type": "text",
+        "quote": "Deterministic data selection, fixed seeds, explicit compute budgets and frozen evaluation protocols make recipe changes measurable. An agent can modify the training recipe, train, evaluate and improve it; the choice of agent and search strategy remains yours."
+      }
+    },
+    {
+      "purpose": "Pieces 01–03: establish author attribution and the authors’ referral to their own paper, preserving the shared evidence lineage rather than counting it as independent corroboration.",
+      "locator": {
+        "type": "text",
+        "quote": "For more details, please refer to our paper, accepted as a spotlight presentation at the AgenticLS workshop (Agentic AI for Biological Discovery) at NeurIPS 2026.\nMuchen Li (University of British Columbia) and Chixiang Lu (The University of Hong Kong)"
+      }
+    }
+  ]
+}

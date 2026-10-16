@@ -1,0 +1,16 @@
+{
+  "events": [
+    {
+      "type": "turn.completed",
+      "usage": {
+        "input_tokens": 28320,
+        "cached_input_tokens": 12416,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2789,
+        "reasoning_output_tokens": 123
+      }
+    }
+  ],
+  "cost_usd": null,
+  "cost_note": "Subscription usage; no verified dollar conversion"
+}

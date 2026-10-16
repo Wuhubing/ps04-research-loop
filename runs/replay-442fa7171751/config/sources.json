@@ -1,0 +1,82 @@
+[
+  {
+    "source_id": "arxiv-seeds",
+    "publisher_id": "arxiv-unresolved-team",
+    "kind": "feed",
+    "url": "https://export.arxiv.org/api/query?id_list=2609.30541,2609.28614,2609.18094,2609.40303,2610.10491,2609.39360",
+    "limit": 6,
+    "publisher_overrides": {
+      "https://arxiv.org/abs/2609.30541": "research-team-2609.30541",
+      "https://arxiv.org/abs/2609.28614": "research-team-2609.28614",
+      "https://arxiv.org/abs/2609.18094": "research-team-2609.18094",
+      "https://arxiv.org/abs/2609.40303": "research-team-2609.40303",
+      "https://arxiv.org/abs/2610.10491": "research-team-2610.10491",
+      "https://arxiv.org/abs/2609.39360": "research-team-2609.39360"
+    },
+    "fallback_urls": [
+      "https://arxiv.org/abs/2609.30541",
+      "https://arxiv.org/abs/2609.28614",
+      "https://arxiv.org/abs/2609.18094",
+      "https://arxiv.org/abs/2609.40303",
+      "https://arxiv.org/abs/2610.10491",
+      "https://arxiv.org/abs/2609.39360"
+    ]
+  },
+  {
+    "source_id": "arxiv-discovery",
+    "publisher_id": "arxiv-unresolved-team",
+    "kind": "feed",
+    "url": "https://export.arxiv.org/api/query?search_query=all:autoresearch&sortBy=submittedDate&sortOrder=descending&max_results=8",
+    "limit": 8,
+    "publisher_overrides": {
+      "https://arxiv.org/abs/2609.30541": "research-team-2609.30541",
+      "https://arxiv.org/abs/2609.28614": "research-team-2609.28614",
+      "https://arxiv.org/abs/2609.18094": "research-team-2609.18094",
+      "https://arxiv.org/abs/2609.40303": "research-team-2609.40303",
+      "https://arxiv.org/abs/2610.10491": "research-team-2610.10491",
+      "https://arxiv.org/abs/2609.39360": "research-team-2609.39360"
+    }
+  },
+  {
+    "source_id": "nanoproteinlm",
+    "publisher_id": "nanoproteinlm-authors",
+    "kind": "feed",
+    "url": "https://jojoml.github.io/feed.xml",
+    "limit": 3
+  },
+  {
+    "source_id": "latent-space",
+    "publisher_id": "periodic-labs-interviews",
+    "kind": "podcast",
+    "url": "https://www.latent.space/feed",
+    "match": "Periodic|Synthesis Superintelligence",
+    "limit": 2
+  },
+  {
+    "source_id": "generalist",
+    "publisher_id": "periodic-labs-interviews",
+    "kind": "podcast",
+    "url": "https://www.generalist.com/feed",
+    "match": "chatbot walks into a laboratory",
+    "limit": 1
+  },
+  {
+    "source_id": "aicodeking",
+    "publisher_id": "aicodeking",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=wMQB33rM28I"
+  },
+  {
+    "source_id": "ai-explained",
+    "publisher_id": "ai-explained",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=R9momwXV9w4"
+  },
+  {
+    "source_id": "whytryai",
+    "publisher_id": "whytryai",
+    "kind": "feed",
+    "url": "https://www.whytryai.com/feed",
+    "limit": 5
+  }
+]

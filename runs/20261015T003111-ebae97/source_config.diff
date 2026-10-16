@@ -1,0 +1,16 @@
+--- October14-sources
++++ October15-sources
+@@ -78,5 +78,13 @@
+     "kind": "feed",
+     "url": "https://www.whytryai.com/feed",
+     "limit": 5
++  },
++  {
++    "source_id": "campus-talks",
++    "publisher_id": "times-higher-education-campus",
++    "kind": "podcast",
++    "url": "https://feed.podbean.com/timeshighered/feed.xml",
++    "match": "How is AI affecting open research",
++    "limit": 1
+   }
+ ]

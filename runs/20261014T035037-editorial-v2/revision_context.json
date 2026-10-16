@@ -1,0 +1,7 @@
+{
+  "authorization": "User agreed to proposed tutorial-as-demonstration policy direction; no final approval or six individual judgments supplied.",
+  "policy_before": "runs/20261014T032814-a43e45/config/editorial_policy.md",
+  "policy_after": "runs/20261014T035037-editorial-v2/config/editorial_policy.md",
+  "rerun_scope": "All four media candidates; written-item decisions retained. Briefs and all drafts regenerated against revised policy.",
+  "does_not_count_as_second_live_run": true
+}

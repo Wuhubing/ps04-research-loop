@@ -1,0 +1,18 @@
+{
+  "stage": "collect_feed",
+  "status": "failed",
+  "input_count": 4,
+  "output_count": 13,
+  "started_at": "2026-10-14T03:28:15.056526Z",
+  "tools_or_models": [
+    "requests",
+    "feedparser"
+  ],
+  "cost_usd": null,
+  "cost_estimated": false,
+  "errors": [
+    "arxiv-seeds: 429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?id_list=2609.30541,2609.28614,2609.18094,2609.40303,2610.10491,2609.39360",
+    "arxiv-discovery: 429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:autoresearch&sortBy=submittedDate&sortOrder=descending&max_results=8"
+  ],
+  "finished_at": "2026-10-14T03:28:57.793383Z"
+}
