@@ -44,7 +44,8 @@ def main():
    if not all(x.get('human_source_listening') for x in production):pending.append('Student verifies original source audio excerpts')
   if (r/'technical_demo.json').exists() and read(r/'technical_demo.json').get('url'):
    pending.remove('Record separate narrated technical demonstration')
-   pending.append('Student watches the AI-narrated technical demo and confirms understanding')
+   demo=read(r/'technical_demo.json')
+   if not (demo.get('human_listened') and demo.get('human_understanding_confirmed')):pending.append('Student watches the AI-narrated technical demo and confirms understanding')
   manifest=dict(review_id=current['review_id'],assets=assets,remaining_manual_actions=pending)
   write(dest/'manifest.json',manifest)
   if not (dest/'publication_links.json').exists():write(dest/'publication_links.json',[dict(piece_id=p,substack_url=None,youtube_url=None) for p in ['01','02','03']])

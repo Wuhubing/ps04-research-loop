@@ -11,6 +11,6 @@ test_synthesis_digest_rejects_invented_passage (test_contracts.Contracts.test_sy
 test_wrong_window_rejected_despite_correct_asof (test_contracts.Contracts.test_wrong_window_rejected_despite_correct_asof) ... ok
 
 ----------------------------------------------------------------------
-Ran 11 tests in 1.220s
+Ran 11 tests in 1.216s
 
 OK

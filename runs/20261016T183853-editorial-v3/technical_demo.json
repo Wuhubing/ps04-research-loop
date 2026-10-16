@@ -8,7 +8,9 @@
   "full_decode_passed": true,
   "visual_panels_inspected": true,
   "ai_narration": true,
-  "human_listened": false,
+  "human_listened": true,
   "workflow": "Narrated saved-artifact walkthrough; no simulated live collection",
-  "source_listening_pending": true
+  "source_listening_pending": false,
+  "human_understanding_confirmed": true,
+  "student_confirmation_record": "final_student_confirmation.json"
 }

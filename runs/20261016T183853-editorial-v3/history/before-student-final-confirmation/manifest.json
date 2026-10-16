@@ -1,0 +1,61 @@
+{
+  "review_id": "00379d8b48333c5a6f390d20ea48117847e1b453e7044536ca88b5f2d3138be9",
+  "assets": [
+    {
+      "piece_id": "01",
+      "path": "runs/20261016T183853-editorial-v3/package/articles-01.md"
+    },
+    {
+      "piece_id": "02",
+      "path": "runs/20261016T183853-editorial-v3/package/articles-02.md"
+    },
+    {
+      "piece_id": "03",
+      "path": "runs/20261016T183853-editorial-v3/package/articles-03.md"
+    },
+    {
+      "piece_id": "01",
+      "path": "runs/20261016T183853-editorial-v3/package/video_scripts-01.md"
+    },
+    {
+      "piece_id": "01",
+      "path": "runs/20261016T183853-editorial-v3/package/subtitle-text-01.txt",
+      "note": "Approved narration text; align caption timings to the actual rendered video."
+    },
+    {
+      "piece_id": "02",
+      "path": "runs/20261016T183853-editorial-v3/package/video_scripts-02.md"
+    },
+    {
+      "piece_id": "02",
+      "path": "runs/20261016T183853-editorial-v3/package/subtitle-text-02.txt",
+      "note": "Approved narration text; align caption timings to the actual rendered video."
+    },
+    {
+      "piece_id": "03",
+      "path": "runs/20261016T183853-editorial-v3/package/video_scripts-03.md"
+    },
+    {
+      "piece_id": "03",
+      "path": "runs/20261016T183853-editorial-v3/package/subtitle-text-03.txt",
+      "note": "Approved narration text; align caption timings to the actual rendered video."
+    },
+    {
+      "piece_id": "01",
+      "path": "runs/20261016T183853-editorial-v3/package/sources-01.md"
+    },
+    {
+      "piece_id": "02",
+      "path": "runs/20261016T183853-editorial-v3/package/sources-02.md"
+    },
+    {
+      "piece_id": "03",
+      "path": "runs/20261016T183853-editorial-v3/package/sources-03.md"
+    }
+  ],
+  "remaining_manual_actions": [
+    "Verify published links signed out",
+    "Student verifies original source audio excerpts",
+    "Student watches the AI-narrated technical demo and confirms understanding"
+  ]
+}

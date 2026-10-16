@@ -18,7 +18,7 @@
   "captions": "Exact script aligned to local small.en automatic word timestamps; human timing review pending",
   "audio_qa": "All seven scenes automatically transcribed and compared; ASR discrepancies retained in scene QA JSON. No human listening claimed.",
   "human_full_audio_review": true,
-  "human_source_listening": false,
+  "human_source_listening": true,
   "publication_approval": true,
   "published": true,
   "raw_recording_uploaded": false,
@@ -48,5 +48,6 @@
   "vids_export_completed": true,
   "vids_export_url": "https://drive.google.com/file/d/1_B5yH92liick50my-uNEL--MqDDupSKf/view",
   "vids_export_verified_at": "2026-10-16T20:13:05.921845+00:00",
-  "vids_export_note": "Google Vids Export to Drive completed; original local rendered version remains the published YouTube file. Cloud export does not make the original graphics Vids-authored."
+  "vids_export_note": "Google Vids Export to Drive completed; original local rendered version remains the published YouTube file. Cloud export does not make the original graphics Vids-authored.",
+  "human_source_listening_basis": "Student confirmed completion of the original-source excerpt checks; see final_student_confirmation.json."
 }

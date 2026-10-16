@@ -17,7 +17,7 @@
   "captions": "script text aligned to automatic local word timestamps; human timing review pending",
   "raw_recording_uploaded": false,
   "human_full_audio_review": true,
-  "human_source_listening": false,
+  "human_source_listening": true,
   "publication_approval": true,
   "published": true,
   "api_charge_usd": 0,
@@ -33,9 +33,10 @@
   ],
   "cloud_upload_retry": "User manually uploaded Research-Loop-01-review.mp4; visible in timeline at 04:04.3. Original editable six-scene visual draft preserved.",
   "cloud_production_url": "https://docs.google.com/videos/d/1kfNQMx0PKDRiKU4uKZKiBQrBjMZnnfwuhjElAEtij_8/edit",
-  "human_audio_review_basis": "Student stated in chat: 我听了没问题，继续帮我把三个视频发布到 YouTube，设成 unlisted。",
+  "human_audio_review_basis": "Student stated in chat: \u6211\u542c\u4e86\u6ca1\u95ee\u9898\uff0c\u7ee7\u7eed\u5e2e\u6211\u628a\u4e09\u4e2a\u89c6\u9891\u53d1\u5e03\u5230 YouTube\uff0c\u8bbe\u6210 unlisted\u3002",
   "approval_scope": "These rendered videos only; original-source listening and article approval not asserted.",
   "youtube_url": "https://youtu.be/GpkQYzDhcTs",
   "youtube_visibility": "unlisted",
-  "youtube_verified_at": "2026-10-16T19:55:56.884628+00:00"
+  "youtube_verified_at": "2026-10-16T19:55:56.884628+00:00",
+  "human_source_listening_basis": "Student confirmed completion of the original-source excerpt checks; see final_student_confirmation.json."
 }

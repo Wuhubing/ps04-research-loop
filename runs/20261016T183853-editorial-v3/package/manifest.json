@@ -53,9 +53,5 @@
       "path": "runs/20261016T183853-editorial-v3/package/sources-03.md"
     }
   ],
-  "remaining_manual_actions": [
-    "Verify published links signed out",
-    "Student verifies original source audio excerpts",
-    "Student watches the AI-narrated technical demo and confirms understanding"
-  ]
+  "remaining_manual_actions": []
 }

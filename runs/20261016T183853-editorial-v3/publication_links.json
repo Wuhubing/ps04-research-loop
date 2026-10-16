@@ -11,9 +11,12 @@
     "03": "https://researchloopweibing.substack.com/p/research-loop-build-an-experiment"
   },
   "technical_demo": "https://github.com/Wuhubing/ps04-research-loop/releases/download/delivery-20261016/Research-Loop-Technical-Demo.mp4",
-  "signed_out_access_verified": false,
+  "signed_out_access_verified": true,
   "external_source_links": "Source URLs included; Studio warns external clickable links require channel verification.",
   "reciprocal_links_verified": true,
   "substack_access": "Everyone; free web publication; email delivery disabled",
-  "substack_signed_out_verification": "External unauthenticated fetch tool could not access newly published URLs; Everyone setting and full reader-facing pages verified in signed-in browser."
+  "substack_signed_out_verification": "Student-confirmed signed-out access; earlier assistant unauthenticated fetch attempt was inconclusive.",
+  "signed_out_verification_basis": "Student explicitly confirmed signed-out access for all three article/video pairs in chat.",
+  "student_confirmation_record": "final_student_confirmation.json",
+  "student_confirmation_recorded_at": "2026-10-16T20:24:45.562551+00:00"
 }

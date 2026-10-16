@@ -1,6 +1,6 @@
 # Delivered technical demonstration
 
-The 5:19 saved-artifact walkthrough is now delivered via the GitHub release linked in SUBMISSION.md. Its script is docs/demo/narration.md; production and automatic QA records are in the latest editorial run. This uses AI narration and readable excerpts, not a live screen capture. Student playback and understanding verification remain pending.
+The 5:19 saved-artifact walkthrough is now delivered via the GitHub release linked in SUBMISSION.md. Its script is docs/demo/narration.md; production and automatic QA records are in the latest editorial run. This uses AI narration and readable excerpts, not a live screen capture. Student playback and understanding are now confirmed; see the final student confirmation record.
 
 ## Original recording outline (retained)
 

@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-10-16T20:15:05.167176+00:00",
+  "path": "data/media/technical-demo/Research-Loop-Technical-Demo.mp4",
+  "duration_seconds": 318.718333,
+  "sha256": "361c192195b89020b84f347923e98d631614782fc214e98e607899b0e7ab43c2",
+  "url": "https://github.com/Wuhubing/ps04-research-loop/releases/download/delivery-20261016/Research-Loop-Technical-Demo.mp4",
+  "format": "1920x1080 H.264/AAC",
+  "full_decode_passed": true,
+  "visual_panels_inspected": true,
+  "ai_narration": true,
+  "human_listened": false,
+  "workflow": "Narrated saved-artifact walkthrough; no simulated live collection",
+  "source_listening_pending": true
+}
